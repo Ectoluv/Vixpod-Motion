@@ -4332,6 +4332,141 @@
         display: none;
       }
     }
+  
+    /* Mobile navigation patch: phone-only menu button and panel */
+    .mobile-only-link {
+      display: none !important;
+    }
+
+    .top-pill__hamburger {
+      display: none;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      background: var(--black);
+      color: #fff;
+      cursor: pointer;
+      pointer-events: auto;
+      touch-action: manipulation;
+      place-items: center;
+      gap: 4px;
+      padding: 0;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.17);
+      transition: transform 0.45s var(--ease), border-color 0.45s var(--ease), background 0.45s var(--ease), box-shadow 0.45s var(--ease);
+    }
+
+    .top-pill__hamburger span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.45s var(--ease), opacity 0.45s var(--ease);
+    }
+
+    .top-pill.is-mobile-nav-open .top-pill__hamburger {
+      border-color: rgba(143,216,232,0.45);
+      background: #02070A;
+      box-shadow: 0 0 28px rgba(143,216,232,0.24), 0 10px 26px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.17);
+      transform: scale(1.04);
+    }
+
+    .top-pill.is-mobile-nav-open .top-pill__hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .top-pill.is-mobile-nav-open .top-pill__hamburger span:nth-child(2) { opacity: 0; }
+    .top-pill.is-mobile-nav-open .top-pill__hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .top-pill {
+        z-index: 2000;
+        top: 12px;
+        width: calc(100% - 24px);
+        min-height: 54px;
+        height: auto;
+        padding: 7px 7px 7px 16px;
+        gap: 8px;
+      }
+
+      .top-pill__brand {
+        min-width: 0;
+        margin-right: auto;
+      }
+
+      .top-pill__action,
+      .top-pill__plus {
+        display: none !important;
+        pointer-events: none !important;
+      }
+
+      .top-pill__hamburger {
+        display: grid;
+        order: 50;
+      }
+
+      .top-pill__nav {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 12px);
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin: 0;
+        max-height: min(76vh, calc(100vh - 96px));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(8,24,31,0.96), rgba(18,54,66,0.92));
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 28px 80px rgba(0,0,0,0.36), inset 0 1px 0 rgba(255,255,255,0.14);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px) scale(0.98);
+        transform-origin: top center;
+        transition: opacity 0.45s var(--ease), visibility 0.45s var(--ease), transform 0.45s var(--ease);
+      }
+
+      .top-pill.is-mobile-nav-open .top-pill__nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+      }
+
+      .top-pill__nav .desktop-nav-link {
+        display: none !important;
+      }
+
+      .top-pill__nav .mobile-only-link {
+        display: flex !important;
+      }
+
+      .top-pill__nav a {
+        width: 100%;
+        min-height: 44px;
+        justify-content: flex-start;
+        padding-inline: 16px;
+        font-size: 9px;
+        background: rgba(255,255,255,0.045);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-pill__hamburger {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+      }
+
+      .top-pill__nav {
+        border-radius: 22px;
+      }
+    }
   </style>
 </head>
 
@@ -4354,10 +4489,21 @@
       <span class="top-pill__wordmark-sub">MOTION</span>
     </a>
     <nav class="top-pill__nav" id="primaryNav" aria-label="Primary pages">
-      <a href="about.html">About Us</a>
-      <a href="work.html">Our Work</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="services.html">Services</a>
+      <a class="desktop-nav-link" href="about.html">About Us</a>
+      <a class="desktop-nav-link" href="work.html">Our Work</a>
+      <a class="desktop-nav-link" href="why-us.html">Why Us</a>
+      <a class="desktop-nav-link" href="services.html">Services</a>
+      <a class="mobile-only-link" href="#top">Home</a>
+      <a class="mobile-only-link" href="about.html#about">About</a>
+      <a class="mobile-only-link" href="about.html#team">Our Team</a>
+      <a class="mobile-only-link" href="work.html#work">Our Work</a>
+      <a class="mobile-only-link" href="why-us.html#why-us">Why Us</a>
+      <a class="mobile-only-link" href="services.html#services">Services</a>
+      <a class="mobile-only-link" href="#pricing">Investment / Pricing</a>
+      <a class="mobile-only-link" href="#reviews">Client Reviews</a>
+      <a class="mobile-only-link" href="#talk">Book Consultation</a>
+      <a class="mobile-only-link" href="#talk">Let&rsquo;s Talk</a>
+      <a class="mobile-only-link" href="#talk">Contact</a>
     </nav>
     <button class="top-pill__hamburger" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-controls="primaryNav" aria-expanded="false">
       <span></span>
@@ -5960,7 +6106,16 @@
       });
 
       primaryNav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => setMobileNavOpen(false));
+        link.addEventListener('click', (event) => {
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#') && href.length > 1) {
+            event.preventDefault();
+            scrollToMenuTarget(link);
+            return;
+          }
+
+          setMobileNavOpen(false);
+        });
       });
 
       document.addEventListener('pointerdown', (event) => {
