@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Vixpod Motion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0B2530;
+      --bg-2: #123642;
+      --text: #F4FBFF;
+      --muted: rgba(244,251,255,0.72);
+      --border: rgba(255,255,255,0.18);
+      --glow: #8FD8E8;
+      --black: #02070A;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow: 0 28px 90px rgba(0,0,0,0.28);
+      --soft-shadow: 0 18px 55px rgba(0,0,0,0.24);
+      --radius-xl: 42px;
+      --radius-lg: 30px;
+      --container: 1160px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% 8%, rgba(143,216,232,0.16), transparent 28vw),
+        radial-gradient(circle at 78% 44%, rgba(143,216,232,0.09), transparent 26vw),
+        radial-gradient(circle at 22% 72%, rgba(255,255,255,0.07), transparent 24vw),
+        linear-gradient(180deg, var(--bg) 0%, #0A202A 42%, var(--bg-2) 100%);
+      overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.035) 0px,
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px,
+          transparent 74px
+        );
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.26));
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { font-family: inherit; }
+
+    .site-shell {
+      width: min(calc(100% - 32px), var(--container));
+      margin-inline: auto;
+    }
+
+    .top-pill {
+      position: fixed;
+      z-index: 1000;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(86vw, 690px);
+      height: 58px;
+      padding: 8px 8px 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(18,54,66,0.78), rgba(255,255,255,0.09));
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 22px 80px rgba(0,0,0,0.26), inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    .top-pill__brand {
+      display: grid;
+      gap: 3px;
+      line-height: 1;
+      color: var(--text);
+      white-space: nowrap;
+      text-transform: uppercase;
+      text-shadow: 0 0 18px rgba(143,216,232,0.28);
+    }
+
+    .top-pill__wordmark-main {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: #F4FBFF;
+    }
+
+    .top-pill__wordmark-sub {
+      display: block;
+      font-size: 7px;
+      font-weight: 600;
+      letter-spacing: 0.42em;
+      color: #8FD8E8;
+      padding-left: 1px;
+    }
+
+    .top-pill__nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      margin-right: 12px;
+    }
+
+    .top-pill__nav a {
+      min-height: 32px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: rgba(244,251,255,0.78);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.45s var(--ease), background 0.45s var(--ease), transform 0.45s var(--ease);
+    }
+
+    .top-pill__nav a:hover,
+    .top-pill__nav a.is-active {
+      color: var(--text);
+      background: rgba(255,255,255,0.09);
+      transform: translateY(-1px);
+    }
+
+    .top-pill__plus {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--black);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.17);
+    }
+
+    .section { padding: clamp(120px, 14vw, 172px) 0 88px; }
+
+    .policy-shell {
+      width: min(calc(100% - 32px), 900px);
+      margin-inline: auto;
+    }
+
+    .breadcrumb {
+      display: inline-flex;
+      min-height: 36px;
+      padding: 0 16px;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(143,216,232,0.24);
+      color: var(--muted);
+      background: rgba(244,251,255,0.08);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .policy-hero h1 {
+      margin-top: 26px;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.96;
+      font-weight: 900;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .policy-hero p {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: clamp(13px, 1.35vw, 18px);
+      line-height: 1.8;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .policy-meta {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .policy-meta span {
+      min-height: 34px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(244,251,255,0.14);
+      background: rgba(244,251,255,0.07);
+      color: rgba(244,251,255,0.78);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .policy-stack {
+      margin-top: 38px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .policy-card {
+      padding: clamp(24px, 3vw, 34px);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(143,216,232,0.22);
+      background:
+        radial-gradient(circle at 86% 10%, rgba(143,216,232,0.12), transparent 26%),
+        linear-gradient(145deg, rgba(18,54,66,0.78), rgba(11,37,48,0.82));
+      box-shadow: var(--soft-shadow), inset 0 1px 0 rgba(255,255,255,0.12);
+      opacity: 0;
+      transform: translateY(46px) scale(0.98);
+      filter: blur(8px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease), filter 0.9s var(--ease), border-color 0.45s var(--ease), box-shadow 0.45s var(--ease);
+    }
+
+    .policy-card.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    .policy-card:hover {
+      border-color: rgba(143,216,232,0.42);
+      box-shadow: 0 28px 86px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.14), 0 0 38px rgba(143,216,232,0.10);
+    }
+
+    .policy-card h2 {
+      color: var(--text);
+      font-size: clamp(18px, 2vw, 26px);
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .policy-card p,
+    .policy-card li {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+      font-weight: 700;
+      letter-spacing: 0.015em;
+    }
+
+    .policy-card p { margin-top: 14px; }
+    .policy-card ul { margin-top: 14px; padding-left: 20px; display: grid; gap: 6px; }
+
+    .footer {
+      padding: 74px 0 34px;
+      border-top: 1px solid rgba(244,251,255,0.12);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.15fr repeat(3, 0.75fr);
+      gap: 28px;
+    }
+
+    .footer-brand {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+      font-weight: 700;
+      max-width: 350px;
+    }
+
+    .footer-title {
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-list { list-style: none; display: grid; gap: 12px; }
+
+    .footer-list a {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      transition: color 0.35s var(--ease);
+    }
+
+    .footer-list a:hover { color: var(--text); }
+
+    .footer-bottom {
+      margin-top: 54px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(244,251,255,0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: rgba(244,251,255,0.55);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .top-pill {
+        top: 14px;
+        height: 54px;
+        width: calc(100% - 28px);
+        padding-left: 18px;
+      }
+
+      .top-pill__nav { display: none; }
+      .top-pill__wordmark-main { font-size: 11px; }
+      .top-pill__wordmark-sub { font-size: 6px; letter-spacing: 0.36em; }
+      .top-pill__plus { width: 38px; height: 38px; }
+      .section { padding-top: 118px; }
+      .policy-card { border-radius: 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .policy-card {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-pill" aria-label="Floating header">
+    <a href="index.html#top" class="top-pill__brand" aria-label="Vixpod Motion home">
+      <span class="top-pill__wordmark-main">VIXPOD</span>
+      <span class="top-pill__wordmark-sub">MOTION</span>
+    </a>
+    <nav class="top-pill__nav" aria-label="Primary pages">
+      <a href="about.html">About Us</a>
+      <a href="work.html">Our Work</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+    </nav>
+    <a class="top-pill__plus" href="index.html#talk" aria-label="Contact Vixpod Motion">+</a>
+  </header>
+
+  <main class="section" id="top">
+    <div class="policy-shell">
+      <section class="policy-hero">
+        <a class="breadcrumb" href="index.html#top">Home / Privacy Policy</a>
+        <h1>Privacy Policy</h1>
+        <p>How Vixpod Motion protects your information.</p>
+        <div class="policy-meta">
+          <span>Brand: Vixpod Motion</span>
+          <span>Last updated: 27 June 2026</span>
+        </div>
+      </section>
+
+      <div class="policy-stack">
+        <article class="policy-card"><h2>Overview</h2><p>At Vixpod Motion, we respect your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you visit our website, contact us, book a consultation, or use our creative services.</p></article>
+
+        <article class="policy-card"><h2>1. Information We Collect</h2><p>We may collect the following information:</p><ul><li>Name</li><li>Email address</li><li>Phone number</li><li>Country</li><li>Time zone</li><li>Company or brand name</li><li>Project details</li><li>Messages sent through contact forms</li><li>Consultation booking details</li><li>Files, links, or references shared for video editing work</li><li>Website usage data such as browser type, device type, pages visited, and basic analytics information</li></ul></article>
+
+        <article class="policy-card"><h2>2. How We Use Your Information</h2><p>We use your information to respond to enquiries, book and manage free consultations, contact you about your project, provide creative services, send project updates, improve our website and services, prevent spam, fraud, or misuse, and analyse website performance.</p><p>We do not use your personal information for unnecessary or unrelated purposes.</p></article>
+
+        <article class="policy-card"><h2>3. Consultation Booking</h2><p>When you book a consultation with Vixpod Motion, we may collect your name, contact details, country, time zone, selected date, selected time, and meeting preferences. This information is used only to manage your consultation and communicate with you.</p></article>
+
+        <article class="policy-card"><h2>4. Cookies and Tracking</h2><p>Our website may use cookies or similar technologies to improve performance, remember preferences, and understand how visitors use the website.</p><p>We may use tools such as analytics tools, booking tools, contact forms, or website performance tools. You can disable cookies through your browser settings, but some website features may not work properly.</p></article>
+
+        <article class="policy-card"><h2>5. Sharing Your Information</h2><p>We do not sell your personal information.</p><p>We may share limited information only with trusted service providers that help us run our business, such as website hosting providers, email service providers, booking tools, analytics tools, payment processors, and cloud storage tools. These providers are only allowed to use your information for the service they provide to us.</p></article>
+
+        <article class="policy-card"><h2>6. Payment Information</h2><p>If you make a payment for our services, payment details may be processed by a secure third-party payment provider. Vixpod Motion does not store your full card, UPI, or banking details on the website.</p></article>
+
+        <article class="policy-card"><h2>7. Data Security</h2><p>We take reasonable steps to protect your information from unauthorised access, misuse, loss, or disclosure.</p><p>However, no online platform is completely secure, so please avoid sharing highly sensitive information through website forms unless necessary.</p></article>
+
+        <article class="policy-card"><h2>8. Data Retention</h2><p>We keep your information only for as long as needed to respond to your enquiry, complete your project, maintain business records, meet legal or accounting requirements, and improve our services.</p><p>When your information is no longer needed, we may delete or anonymise it.</p></article>
+
+        <article class="policy-card"><h2>9. Your Privacy Rights</h2><p>Depending on your location, you may have the right to request access to your personal information, request correction of incorrect information, request deletion of your information, withdraw consent, object to certain data use, and ask how your data is used.</p><p>To request any of these, contact us through the contact form or email provided on the Vixpod Motion website.</p></article>
+
+        <article class="policy-card"><h2>10. Children's Privacy</h2><p>Our website and services are not intended for children. We do not knowingly collect personal information from children. If we discover that such information has been collected, we will take steps to delete it.</p></article>
+
+        <article class="policy-card"><h2>11. Third-Party Links</h2><p>Our website may contain links to third-party websites, tools, portfolios, social media pages, or booking platforms.</p><p>Vixpod Motion is not responsible for the privacy practices or content of third-party websites. Users should read their privacy policies before sharing information.</p></article>
+
+        <article class="policy-card"><h2>12. Changes to This Privacy Policy</h2><p>We may update this Privacy Policy from time to time. Any changes should appear on this page with the updated date.</p></article>
+
+        <article class="policy-card"><h2>13. Contact Us</h2><p>For privacy questions, data requests, or concerns, users can contact Vixpod Motion through the website contact form or official email.</p></article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="site-shell">
+      <div class="footer-grid">
+        <div><p class="footer-brand">Vixpod Motion</p><p class="footer-copy">Premium futuristic video editing studio by Ashu Rawat for creators, brands, founders, and agencies that need sharp pacing, clean storytelling, and cinematic delivery.</p></div>
+        <div><h3 class="footer-title">Company</h3><ul class="footer-list"><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="work.html">Portfolio</a></li><li><a href="index.html#talk">Contact</a></li></ul></div>
+        <div><h3 class="footer-title">Resources</h3><ul class="footer-list"><li><a href="index.html#pricing">Investment Plans</a></li><li><a href="index.html#tools">Editing Tools</a></li><li><a href="index.html#reviews">Reviews</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="work.html">Blog</a></li></ul></div>
+        <div><h3 class="footer-title">Legal</h3><ul class="footer-list"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="privacy-policy.html#top">Cookie Policy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Vixpod Motion. All rights reserved.</p><p>Premium Video Editing Studio</p></div>
+    </div>
+  </footer>
+
+  <script>
+    const cards = Array.from(document.querySelectorAll('.policy-card'));
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach((card) => card.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          instance.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      cards.forEach((card) => observer.observe(card));
+    }
+  </script>
+</body>
+</html>
