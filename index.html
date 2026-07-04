@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vixpod Motion | Ashu Rawat - Premium Video Editing Studio</title>
+  <title>Vixpod Motion | Premium Video Editing Agency for Creators &amp; Brands</title>
+  <meta name="description" content="Vixpod Motion is a premium video editing agency for creators, brands, and agencies, offering cinematic edits, reels, YouTube editing, motion graphics, thumbnails, and fast post-production support." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -309,6 +310,18 @@
       line-height: 1.85;
       font-weight: 500;
       letter-spacing: 0.025em;
+    }
+
+    .hero-trust-line {
+      width: min(760px, 100%);
+      margin: 16px auto 0;
+      color: rgba(244,251,255,0.86);
+      font-size: clamp(10px, 1.1vw, 13px);
+      line-height: 1.75;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow: 0 0 22px rgba(143,216,232,0.16);
     }
 
     .button-row {
@@ -4332,106 +4345,6 @@
         display: none;
       }
     }
-  
-    /* Premium bone/skeleton loading reveal for existing objects */
-    .reveal-object {
-      position: relative;
-      isolation: isolate;
-    }
-
-    .bone-relative {
-      position: relative;
-    }
-
-    .bone-loading > :not(.bone-loader) {
-      opacity: 0;
-      translate: 0 20px;
-      scale: 0.96;
-      filter: blur(7px);
-      transition: opacity 0.85s var(--ease), translate 0.85s var(--ease), scale 0.85s var(--ease), filter 0.85s var(--ease);
-    }
-
-    .bone-loaded > :not(.bone-loader) {
-      opacity: 1;
-      translate: 0 0;
-      scale: 1;
-      filter: blur(0);
-      transition: opacity 0.9s var(--ease), translate 0.9s var(--ease), scale 0.9s var(--ease), filter 0.9s var(--ease);
-    }
-
-    .bone-loader {
-      position: absolute;
-      inset: 0;
-      z-index: 30;
-      display: block;
-      overflow: hidden;
-      border-radius: inherit;
-      pointer-events: none;
-      opacity: 1;
-      visibility: visible;
-      contain: paint;
-      background:
-        linear-gradient(145deg, rgba(18,54,66,0.9), rgba(8,24,31,0.78)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px);
-      box-shadow:
-        inset 0 0 0 1px rgba(143,216,232,0.22),
-        inset 0 1px 0 rgba(255,255,255,0.12),
-        0 0 34px rgba(143,216,232,0.14);
-      transition: opacity 0.72s var(--ease), visibility 0.72s var(--ease), filter 0.72s var(--ease);
-      animation: bonePulse 1.2s ease-in-out infinite;
-    }
-
-    .bone-loader::before {
-      content: "";
-      position: absolute;
-      inset: -40% -70%;
-      background: linear-gradient(100deg, transparent 30%, rgba(244,251,255,0.16) 46%, rgba(143,216,232,0.24) 52%, transparent 68%);
-      transform: translateX(-42%) skewX(-12deg);
-      animation: boneShimmer 1.15s ease-in-out infinite;
-    }
-
-    .bone-loader::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border-radius: inherit;
-      border: 1px solid rgba(244,251,255,0.08);
-      background: radial-gradient(circle at 28% 22%, rgba(143,216,232,0.16), transparent 38%);
-      opacity: 0.75;
-    }
-
-    .bone-loaded > .bone-loader {
-      opacity: 0;
-      visibility: hidden;
-      filter: blur(8px);
-      animation-play-state: paused;
-    }
-
-    @keyframes boneShimmer {
-      0% { transform: translateX(-45%) skewX(-12deg); }
-      100% { transform: translateX(45%) skewX(-12deg); }
-    }
-
-    @keyframes bonePulse {
-      0%, 100% { box-shadow: inset 0 0 0 1px rgba(143,216,232,0.18), inset 0 1px 0 rgba(255,255,255,0.10), 0 0 24px rgba(143,216,232,0.10); }
-      50% { box-shadow: inset 0 0 0 1px rgba(143,216,232,0.30), inset 0 1px 0 rgba(255,255,255,0.16), 0 0 42px rgba(143,216,232,0.18); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .bone-loading > :not(.bone-loader),
-      .bone-loaded > :not(.bone-loader) {
-        opacity: 1;
-        translate: 0 0;
-        scale: 1;
-        filter: none;
-        transition: opacity 0.25s ease;
-      }
-
-      .bone-loader,
-      .bone-loader::before {
-        animation: none !important;
-      }
-    }
   </style>
 </head>
 
@@ -4470,7 +4383,7 @@
         <a class="quick-menu__item" href="why-us.html"><span class="quick-menu__mark">WU</span><span><strong>Why Us</strong><span>Creator choice</span></span></a>
         <a class="quick-menu__item" href="#pricing"><span class="quick-menu__mark">IN</span><span><strong>Investment</strong><span>Investment plans</span></span></a>
         <a class="quick-menu__item" href="#reviews"><span class="quick-menu__mark">RV</span><span><strong>Reviews</strong><span>Client feedback</span></span></a>
-        <a class="quick-menu__item" href="#talk"><span class="quick-menu__mark">GO</span><span><strong>Let�s Talk</strong><span>Start your project</span></span></a>
+        <a class="quick-menu__item" href="#talk"><span class="quick-menu__mark">GO</span><span><strong>Letâ€™s Talk</strong><span>Start your project</span></span></a>
       </div>
     </div>
   </header>
@@ -4480,11 +4393,12 @@
       <div class="site-shell">
         <div class="center-copy reveal">
           <span class="label-pill">Vixpod Motion Studio</span>
-          <h1>Crafting Videos That Hold Attention</h1>
+          <h1>Premium Video Editing That Holds Attention</h1>
           <p class="lead">Vixpod Motion crafts cinematic edits, motion graphics, color grading, and short-form content for creators, brands, and agencies built to stand out.</p>
+          <p class="hero-trust-line">50+ projects delivered &bull; 12h response time &bull; Revision support for every project</p>
           <div class="button-row">
-            <a class="btn btn--dark" href="work.html">Explore Our Work</a>
-            <a class="btn btn--glass" href="#talk">Start Project</a>
+            <a class="btn btn--dark" href="work.html">View Our Work</a>
+            <a class="btn btn--glass" href="#talk">Book Free Consultation</a>
           </div>
         </div>
 
@@ -4596,30 +4510,37 @@
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">WORKFLOW SYSTEM</span>
-          <h2>Reliable Talent, Smooth Creative Systems</h2>
-          <p class="lead">Our workflow is designed to make editing simple: clear briefs, organised files, review rounds, secure handling, and final delivery in the right format.</p>
+          <h2>Our 4-Step Editing Process</h2>
+          <p class="lead">A simple client-focused workflow built around clear briefs, fast updates, revision support, secure files, and final delivery in the right format.</p>
         </div>
 
         <div class="workflow-grid">
           <article class="trust-card trust-reveal" style="--trust-delay: 0s;">
             <span class="trust-card__icon">01</span>
             <div>
-              <h3>Dedicated Workflow</h3>
-              <p>From brief to final export, every project is organised with clear steps, feedback rounds, revisions, and delivery checkpoints.</p>
+              <h3>Creative Brief</h3>
+              <p>We confirm your goals, audience, brand style, references, upload format, timeline, and revision expectations before editing starts.</p>
             </div>
           </article>
           <article class="trust-card trust-reveal" style="--trust-delay: 0.10s;">
             <span class="trust-card__icon">02</span>
             <div>
-              <h3>Creative Tools</h3>
-              <p>We work with professional editing tools for cutting, colour, audio, captions, thumbnails, graphics, and motion animation.</p>
+              <h3>Footage & Strategy</h3>
+              <p>Your files are organised into a clean editing plan for pacing, hooks, captions, graphics, sound, thumbnails, and platform delivery.</p>
             </div>
           </article>
           <article class="trust-card trust-reveal" style="--trust-delay: 0.20s;">
             <span class="trust-card__icon">03</span>
             <div>
-              <h3>Client Privacy</h3>
-              <p>Your footage, brand assets, and project details are handled carefully and kept private through the full post-production process.</p>
+              <h3>Edit + Review</h3>
+              <p>We send polished versions for feedback, keep communication clear, and refine the cut through focused revision rounds.</p>
+            </div>
+          </article>
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.30s;">
+            <span class="trust-card__icon">04</span>
+            <div>
+              <h3>Final Delivery</h3>
+              <p>Final files are exported cleanly for YouTube, Instagram, TikTok, LinkedIn, websites, ads, and campaign launches.</p>
             </div>
           </article>
         </div>
@@ -4644,8 +4565,8 @@
         </div>
 
         <div class="tools-cta reveal">
-          <h3>Hire Professional Video Editing Services That Understand Your Creative Vision.</h3>
-          <a class="contact-disc" href="#talk" aria-label="Lets talk with Vixpod Motion"><span>LET�S TALK</span><span class="contact-disc__arrow" aria-hidden="true">?</span></a>
+          <h3>Hire professional video editors who understand your creative vision, deadlines, and revision needs.</h3>
+          <a class="contact-disc" href="#talk" aria-label="Lets talk with Vixpod Motion"><span>LETâ€™S TALK</span><span class="contact-disc__arrow" aria-hidden="true">?</span></a>
         </div>
       </div>
     </section>
@@ -4697,7 +4618,7 @@
               <span class="review-card__mark">01</span>
               <span><span class="review-card__name">Arjun Mehta</span><span class="review-card__role">YouTube Creator</span></span>
             </div>
-            <p class="review-card__quote">�Vixpod Motion completely upgraded my long-form videos. The pacing, hooks, and storytelling made my content feel much more premium.�</p>
+            <p class="review-card__quote">â€œVixpod Motion completely upgraded my long-form videos. The pacing, hooks, and storytelling made my content feel much more premium.â€</p>
           </article>
 
           <article class="review-card" style="--review-delay: 0.12s;">
@@ -4705,7 +4626,7 @@
               <span class="review-card__mark">02</span>
               <span><span class="review-card__name">Priya Sharma</span><span class="review-card__role">Brand Founder</span></span>
             </div>
-            <p class="review-card__quote">�Our reels started looking cleaner, sharper, and more cinematic. The team understands brand visuals very well.�</p>
+            <p class="review-card__quote">â€œOur reels started looking cleaner, sharper, and more cinematic. The team understands brand visuals very well.â€</p>
           </article>
 
           <article class="review-card" style="--review-delay: 0.24s;">
@@ -4713,7 +4634,7 @@
               <span class="review-card__mark">03</span>
               <span><span class="review-card__name">Karan Malhotra</span><span class="review-card__role">Agency Owner</span></span>
             </div>
-            <p class="review-card__quote">�They deliver fast, communicate clearly, and keep the edits polished. Perfect editing partner for client content.�</p>
+            <p class="review-card__quote">â€œThey deliver fast, communicate clearly, and keep the edits polished. Perfect editing partner for client content.â€</p>
           </article>
 
           <article class="review-card" style="--review-delay: 0.36s;">
@@ -4721,7 +4642,7 @@
               <span class="review-card__mark">04</span>
               <span><span class="review-card__name">Neha Kapoor</span><span class="review-card__role">Content Strategist</span></span>
             </div>
-            <p class="review-card__quote">�The motion graphics and color grading gave our campaign a high-end studio feel. Very professional work.�</p>
+            <p class="review-card__quote">â€œThe motion graphics and color grading gave our campaign a high-end studio feel. Very professional work.â€</p>
           </article>
         </div>
       </div>
@@ -4751,7 +4672,7 @@
               <li><span class="check-dot">&#10003;</span><span>Unlimited Revisions</span></li>
               <li><span class="check-dot">&#10003;</span><span>Premiere and After Effects</span></li>
             </ul>
-            <a class="btn btn--glass" href="#talk">Select Plan</a>
+            <a class="btn btn--glass" href="#talk">Book Free Consultation</a>
           </article>
 
           <article class="pricing-card stagger-item">
@@ -4770,7 +4691,7 @@
               <li><span class="check-dot">&#10003;</span><span>Unlimited Revisions</span></li>
               <li><span class="check-dot">&#10003;</span><span>Premiere and After Effects</span></li>
             </ul>
-            <a class="btn btn--dark" href="#talk">Select Plan</a>
+            <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
           </article>
 
           <article class="pricing-card stagger-item">
@@ -4788,7 +4709,7 @@
               <li><span class="check-dot">&#10003;</span><span>Unlimited Revisions</span></li>
               <li><span class="check-dot">&#10003;</span><span>Premiere and After Effects</span></li>
             </ul>
-            <a class="btn btn--glass" href="#talk">Select Plan</a>
+            <a class="btn btn--glass" href="#talk">Book Free Consultation</a>
           </article>
 
           <article class="pricing-card stagger-item">
@@ -4806,7 +4727,7 @@
               <li><span class="check-dot">&#10003;</span><span>Expert in Adobe Suite</span></li>
               <li><span class="check-dot">&#10003;</span><span>Weekend availability for urgent support</span></li>
             </ul>
-            <a class="btn btn--dark" href="#talk">Select Plan</a>
+            <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
           </article>
 
           <article class="pricing-card stagger-item">
@@ -4823,7 +4744,7 @@
               <li><span class="check-dot">&#10003;</span><span>Unlimited revisions</span></li>
               <li><span class="check-dot">&#10003;</span><span>24/7 studio support</span></li>
             </ul>
-            <a class="btn btn--glass" href="#talk">Talk To Us</a>
+            <a class="btn btn--glass" href="#talk">Letâ€™s Talk</a>
           </article>
         </div>
       </div>
@@ -4844,7 +4765,7 @@
               <h3>Start with the right editing plan.</h3>
               <p>Get quick clarity on editors, formats, timelines, investment, and production support before sending your footage.</p>
             </div>
-            <a class="btn btn--dark" href="#talk">HIRE OUR EDITOR</a>
+            <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
           </aside>
 
           <div class="faq-list trust-reveal" style="--trust-delay: 0.12s;" data-faq-list>
@@ -4909,8 +4830,8 @@
             <span class="label-pill">Start Editing</span>
             <h2>Ready to Upgrade Your Videos?</h2>
             <div class="button-row">
-              <a class="btn btn--dark" href="#talk">Book a Project</a>
-              <a class="btn btn--glass" href="#pricing">View Investment</a>
+              <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
+              <a class="btn btn--glass" href="#pricing">View Investment Plans</a>
             </div>
           </div>
         </div>
@@ -4922,15 +4843,15 @@
         <div class="talk-layout">
           <div class="talk-info reveal">
             <div>
-              <span class="label-pill">Let�s Talk</span>
-              <h2>Let�s Build Videos That Work.</h2>
-              <p class="lead">Share your project details and we�ll help you choose the best editing plan, workflow, and delivery structure for your content.</p>
+              <span class="label-pill">Letâ€™s Talk</span>
+              <h2>Letâ€™s Build Videos That Work.</h2>
+              <p class="lead">Share your project details and weâ€™ll help you choose the best editing plan, workflow, delivery structure, and revision support for your content.</p>
             </div>
 
             <div class="contact-stack">
               <div><span class="contact-kicker">Company</span><p class="contact-value">Vixpod Motion</p></div>
               <div><span class="contact-kicker">Founder</span><p class="contact-value">Ashu Rawat</p></div>
-              <div><span class="contact-kicker">Email</span><p class="contact-value">hello@vixpodmotion.com</p></div>
+              <div><span class="contact-kicker">Email</span><p class="contact-value">contact@vixpodmotion.com</p></div>
               <div><span class="contact-kicker">Studio</span><p class="contact-value">Remote Post-Production Studio<br />Serving creators worldwide</p></div>
               <div><span class="contact-kicker">Response Time</span><p class="contact-value">Usually within 12 hours</p></div>
               <div>
@@ -4945,19 +4866,19 @@
             </div>
           </div>
 
-          <form class="talk-form reveal" action="mailto:hello@vixpodmotion.com" method="post" enctype="text/plain" data-secure-form>
+          <form class="talk-form reveal" action="mailto:contact@vixpodmotion.com" method="post" enctype="text/plain" data-secure-form>
             <div class="form-grid">
               <div class="form-field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
               <div class="form-field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
               <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" required /></div>
-              <div class="form-field"><label for="service">Service</label><select id="service" name="service" required><option>Short-Form Editing</option><option>YouTube Video Editing</option><option>Motion Graphics</option><option>Color Grading</option><option>Dedicated Editor</option></select></div>
+              <div class="form-field"><label for="service">Service</label><select id="service" name="service" required><option>Short-form Reels &amp; Shorts Editing</option><option>YouTube Video Editing</option><option>Ad Creative Editing</option><option>Podcast Editing</option><option>Thumbnail &amp; Social Media Assets</option><option>Motion Graphics</option></select></div>
               <div class="form-field"><label for="budget">Budget</label><select id="budget" name="budget" required><option>Creator Kickstart - $999 /-Month</option><option>Growth Pro - $1499 /-Month</option><option>Creator Supreme - $2149 /-Month</option><option>Hire an Editor - $2399</option><option>Custom - Tailored</option></select></div>
               <div class="form-field"><label for="timeline">Timeline</label><select id="timeline" name="timeline" required><option>Urgent</option><option>This Week</option><option>This Month</option><option>Ongoing</option></select></div>
               <div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project, content style, upload schedule, and editing goals." minlength="10" maxlength="1200" required></textarea></div>
               <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
               <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" data-size="normal" hidden aria-hidden="true"></div>
               <p class="form-status" id="talkFormStatus" aria-live="polite"></p>
-              <div class="form-field full"><button class="btn btn--dark" type="submit">Send Message</button></div>
+              <div class="form-field full"><button class="btn btn--dark" type="submit">Book Free Consultation</button></div>
             </div>
           </form>
         </div>
@@ -4975,7 +4896,7 @@
             </h2>
             <p class="final-brand-copy">Premium motion edits, cinematic pacing, and creator-first video production by Ashu Rawat.</p>
             <div class="final-brand-actions">
-              <a class="btn btn--dark" href="#talk">Start Project</a>
+              <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
               <a class="social-dot" href="https://www.instagram.com/vixpodmotion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></a>
               <a class="social-dot" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
               <a class="social-dot" href="https://www.youtube.com/@ashensvow" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></a>
@@ -4987,7 +4908,7 @@
     </section>
   </main>
 
-  <a class="floating-contact" href="#talk" aria-label="Let�s talk"><span>LET�S TALK</span><span class="floating-contact__arrow" aria-hidden="true">?</span></a>
+  <a class="floating-contact" href="#talk" aria-label="Letâ€™s talk"><span>LETâ€™S TALK</span><span class="floating-contact__arrow" aria-hidden="true">?</span></a>
 
   <footer class="footer">
     <div class="site-shell">
@@ -5006,7 +4927,7 @@
             <li><a href="#pricing">Investment</a></li>
             <li><a href="about.html#team">Creative Team</a></li>
             <li><a href="work.html">Portfolio</a></li>
-            <li><a href="#talk">Contact</a></li>
+            <li><a href="#talk">Letâ€™s Talk</a></li>
           </ul>
         </div>
 
@@ -5015,8 +4936,8 @@
           <ul class="footer-list">
             <li><a href="#pricing">Investment Plans</a></li>
             <li><a href="#tools">Editing Tools</a></li>
-            <li><a href="#reviews">Content Strategy</a></li>
-            <li><a href="#numbers">FAQ</a></li>
+            <li><a href="#reviews">Client Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="work.html">Blog</a></li>
           </ul>
         </div>
@@ -6241,95 +6162,6 @@
         });
       });
     }
-
-  
-
-  
-    (function setupBoneRevealLoaders() {
-      const bonePrefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const boneSelectors = [
-        '.hero-card__float',
-        '.team-showcase',
-        '.team-card',
-        '.trust-card',
-        '.trust-service-card',
-        '.trust-metric-panel',
-        '.trust-metric',
-        '.trust-metric-highlight',
-        '.project-card',
-        '.pricing-card',
-        '.pricing-addon',
-        '.tool-card',
-        '.tools-cta',
-        '.review-card',
-        '.stats-card',
-        '.image-banner',
-        '.cta-card',
-        '.talk-info',
-        '.talk-form',
-        '.final-brand-card',
-        '.policy-card',
-        '.service-icon',
-        '.tool-logo-box',
-        '.social-link',
-        '.floating-contact'
-      ];
-
-      const rawTargets = Array.from(document.querySelectorAll(boneSelectors.join(',')))
-        .filter((element) => element instanceof HTMLElement)
-        .filter((element) => !element.closest('.top-pill, .quick-menu'))
-        .filter((element) => !element.classList.contains('bone-prepared'));
-
-      const targets = rawTargets.filter((element) => !rawTargets.some((other) => other !== element && other.contains(element)));
-      if (!targets.length) return;
-
-      function prepareBoneTarget(element, index) {
-        element.classList.add('bone-prepared', 'reveal-object', 'bone-loading');
-        element.style.setProperty('--bone-index', index);
-
-        if (window.getComputedStyle(element).position === 'static') {
-          element.classList.add('bone-relative');
-        }
-
-        const loader = document.createElement('span');
-        loader.className = 'bone-loader';
-        loader.setAttribute('aria-hidden', 'true');
-        element.appendChild(loader);
-      }
-
-      function revealBoneTarget(element, index) {
-        if (element.classList.contains('bone-loaded')) return;
-
-        const loadingTime = bonePrefersReduced ? 0 : 820 + ((index % 5) * 110);
-        window.setTimeout(() => {
-          element.classList.add('bone-loaded');
-          element.classList.remove('bone-loading');
-
-          const loader = element.querySelector(':scope > .bone-loader');
-          if (loader) {
-            window.setTimeout(() => loader.remove(), bonePrefersReduced ? 60 : 780);
-          }
-        }, loadingTime);
-      }
-
-      targets.forEach(prepareBoneTarget);
-
-      if (bonePrefersReduced || !('IntersectionObserver' in window)) {
-        targets.forEach(revealBoneTarget);
-        return;
-      }
-
-      const observer = new IntersectionObserver((entries, instance) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const index = targets.indexOf(entry.target);
-          revealBoneTarget(entry.target, index < 0 ? 0 : index);
-          instance.unobserve(entry.target);
-        });
-      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-
-      targets.forEach((target) => observer.observe(target));
-    })();
   </script>
 </body>
 </html>

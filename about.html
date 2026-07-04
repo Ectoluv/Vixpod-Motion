@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Vixpod Motion</title>
+  <title>About Vixpod Motion | Premium Video Editing Partner</title>
+  <meta name="description" content="Learn about Vixpod Motion, a premium video editing partner for creators, brands, and agencies focused on cinematic pacing, motion design, fast delivery, and revision support." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -3432,106 +3433,6 @@
         transition-duration: 0.01ms !important;
       }
     }
-  
-    /* Premium bone/skeleton loading reveal for existing objects */
-    .reveal-object {
-      position: relative;
-      isolation: isolate;
-    }
-
-    .bone-relative {
-      position: relative;
-    }
-
-    .bone-loading > :not(.bone-loader) {
-      opacity: 0;
-      translate: 0 20px;
-      scale: 0.96;
-      filter: blur(7px);
-      transition: opacity 0.85s var(--ease), translate 0.85s var(--ease), scale 0.85s var(--ease), filter 0.85s var(--ease);
-    }
-
-    .bone-loaded > :not(.bone-loader) {
-      opacity: 1;
-      translate: 0 0;
-      scale: 1;
-      filter: blur(0);
-      transition: opacity 0.9s var(--ease), translate 0.9s var(--ease), scale 0.9s var(--ease), filter 0.9s var(--ease);
-    }
-
-    .bone-loader {
-      position: absolute;
-      inset: 0;
-      z-index: 30;
-      display: block;
-      overflow: hidden;
-      border-radius: inherit;
-      pointer-events: none;
-      opacity: 1;
-      visibility: visible;
-      contain: paint;
-      background:
-        linear-gradient(145deg, rgba(18,54,66,0.9), rgba(8,24,31,0.78)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px);
-      box-shadow:
-        inset 0 0 0 1px rgba(143,216,232,0.22),
-        inset 0 1px 0 rgba(255,255,255,0.12),
-        0 0 34px rgba(143,216,232,0.14);
-      transition: opacity 0.72s var(--ease), visibility 0.72s var(--ease), filter 0.72s var(--ease);
-      animation: bonePulse 1.2s ease-in-out infinite;
-    }
-
-    .bone-loader::before {
-      content: "";
-      position: absolute;
-      inset: -40% -70%;
-      background: linear-gradient(100deg, transparent 30%, rgba(244,251,255,0.16) 46%, rgba(143,216,232,0.24) 52%, transparent 68%);
-      transform: translateX(-42%) skewX(-12deg);
-      animation: boneShimmer 1.15s ease-in-out infinite;
-    }
-
-    .bone-loader::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border-radius: inherit;
-      border: 1px solid rgba(244,251,255,0.08);
-      background: radial-gradient(circle at 28% 22%, rgba(143,216,232,0.16), transparent 38%);
-      opacity: 0.75;
-    }
-
-    .bone-loaded > .bone-loader {
-      opacity: 0;
-      visibility: hidden;
-      filter: blur(8px);
-      animation-play-state: paused;
-    }
-
-    @keyframes boneShimmer {
-      0% { transform: translateX(-45%) skewX(-12deg); }
-      100% { transform: translateX(45%) skewX(-12deg); }
-    }
-
-    @keyframes bonePulse {
-      0%, 100% { box-shadow: inset 0 0 0 1px rgba(143,216,232,0.18), inset 0 1px 0 rgba(255,255,255,0.10), 0 0 24px rgba(143,216,232,0.10); }
-      50% { box-shadow: inset 0 0 0 1px rgba(143,216,232,0.30), inset 0 1px 0 rgba(255,255,255,0.16), 0 0 42px rgba(143,216,232,0.18); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .bone-loading > :not(.bone-loader),
-      .bone-loaded > :not(.bone-loader) {
-        opacity: 1;
-        translate: 0 0;
-        scale: 1;
-        filter: none;
-        transition: opacity 0.25s ease;
-      }
-
-      .bone-loader,
-      .bone-loader::before {
-        animation: none !important;
-      }
-    }
   </style>
 </head>
 
@@ -3565,7 +3466,7 @@
         <a class="quick-menu__item" href="why-us.html"><span class="quick-menu__mark">WU</span><span><strong>Why Us</strong><span>Creator choice</span></span></a>
         <a class="quick-menu__item" href="index.html#pricing"><span class="quick-menu__mark">IN</span><span><strong>Investment</strong><span>Investment plans</span></span></a>
         <a class="quick-menu__item" href="index.html#reviews"><span class="quick-menu__mark">RV</span><span><strong>Reviews</strong><span>Client feedback</span></span></a>
-        <a class="quick-menu__item" href="index.html#talk"><span class="quick-menu__mark">GO</span><span><strong>Let�s Talk</strong><span>Start your project</span></span></a>
+        <a class="quick-menu__item" href="index.html#talk"><span class="quick-menu__mark">GO</span><span><strong>Letâ€™s Talk</strong><span>Start your project</span></span></a>
       </div>
     </div>
   </header>
@@ -3632,8 +3533,8 @@
             <p class="team-showcase__role" data-team-role>Video Editing Lead</p>
             <p class="team-showcase__bio" data-team-bio>Leads cinematic edit direction, pacing, storytelling structure, and final polish so every Vixpod Motion project feels sharp, premium, and ready to publish.</p>
             <div class="team-showcase__actions">
-              <a href="index.html#talk">Start Project</a>
-              <a href="work.html">View Work</a>
+              <a href="index.html#talk">Book Free Consultation</a>
+              <a href="work.html">View Our Work</a>
             </div>
           </div>
 
@@ -4632,94 +4533,6 @@
         });
       });
     }
-
-  
-  
-    (function setupBoneRevealLoaders() {
-      const bonePrefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const boneSelectors = [
-        '.hero-card__float',
-        '.team-showcase',
-        '.team-card',
-        '.trust-card',
-        '.trust-service-card',
-        '.trust-metric-panel',
-        '.trust-metric',
-        '.trust-metric-highlight',
-        '.project-card',
-        '.pricing-card',
-        '.pricing-addon',
-        '.tool-card',
-        '.tools-cta',
-        '.review-card',
-        '.stats-card',
-        '.image-banner',
-        '.cta-card',
-        '.talk-info',
-        '.talk-form',
-        '.final-brand-card',
-        '.policy-card',
-        '.service-icon',
-        '.tool-logo-box',
-        '.social-link',
-        '.floating-contact'
-      ];
-
-      const rawTargets = Array.from(document.querySelectorAll(boneSelectors.join(',')))
-        .filter((element) => element instanceof HTMLElement)
-        .filter((element) => !element.closest('.top-pill, .quick-menu'))
-        .filter((element) => !element.classList.contains('bone-prepared'));
-
-      const targets = rawTargets.filter((element) => !rawTargets.some((other) => other !== element && other.contains(element)));
-      if (!targets.length) return;
-
-      function prepareBoneTarget(element, index) {
-        element.classList.add('bone-prepared', 'reveal-object', 'bone-loading');
-        element.style.setProperty('--bone-index', index);
-
-        if (window.getComputedStyle(element).position === 'static') {
-          element.classList.add('bone-relative');
-        }
-
-        const loader = document.createElement('span');
-        loader.className = 'bone-loader';
-        loader.setAttribute('aria-hidden', 'true');
-        element.appendChild(loader);
-      }
-
-      function revealBoneTarget(element, index) {
-        if (element.classList.contains('bone-loaded')) return;
-
-        const loadingTime = bonePrefersReduced ? 0 : 820 + ((index % 5) * 110);
-        window.setTimeout(() => {
-          element.classList.add('bone-loaded');
-          element.classList.remove('bone-loading');
-
-          const loader = element.querySelector(':scope > .bone-loader');
-          if (loader) {
-            window.setTimeout(() => loader.remove(), bonePrefersReduced ? 60 : 780);
-          }
-        }, loadingTime);
-      }
-
-      targets.forEach(prepareBoneTarget);
-
-      if (bonePrefersReduced || !('IntersectionObserver' in window)) {
-        targets.forEach(revealBoneTarget);
-        return;
-      }
-
-      const observer = new IntersectionObserver((entries, instance) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const index = targets.indexOf(entry.target);
-          revealBoneTarget(entry.target, index < 0 ? 0 : index);
-          instance.unobserve(entry.target);
-        });
-      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-
-      targets.forEach((target) => observer.observe(target));
-    })();
   </script>
 </body>
 </html>

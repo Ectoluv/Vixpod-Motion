@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Us | Vixpod Motion</title>
+  <title>Why Choose Vixpod Motion | Trusted Video Editing Studio</title>
+  <meta name="description" content="See why creators, brands, and agencies choose Vixpod Motion for cinematic editing, fast delivery, motion graphics, revision support, and ready-to-publish content." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -948,106 +949,6 @@
         filter: none;
       }
     }
-  
-    /* Premium bone/skeleton loading reveal for existing objects */
-    .reveal-object {
-      position: relative;
-      isolation: isolate;
-    }
-
-    .bone-relative {
-      position: relative;
-    }
-
-    .bone-loading > :not(.bone-loader) {
-      opacity: 0;
-      translate: 0 20px;
-      scale: 0.96;
-      filter: blur(7px);
-      transition: opacity 0.85s var(--ease), translate 0.85s var(--ease), scale 0.85s var(--ease), filter 0.85s var(--ease);
-    }
-
-    .bone-loaded > :not(.bone-loader) {
-      opacity: 1;
-      translate: 0 0;
-      scale: 1;
-      filter: blur(0);
-      transition: opacity 0.9s var(--ease), translate 0.9s var(--ease), scale 0.9s var(--ease), filter 0.9s var(--ease);
-    }
-
-    .bone-loader {
-      position: absolute;
-      inset: 0;
-      z-index: 30;
-      display: block;
-      overflow: hidden;
-      border-radius: inherit;
-      pointer-events: none;
-      opacity: 1;
-      visibility: visible;
-      contain: paint;
-      background:
-        linear-gradient(145deg, rgba(18,54,66,0.9), rgba(8,24,31,0.78)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px);
-      box-shadow:
-        inset 0 0 0 1px rgba(143,216,232,0.22),
-        inset 0 1px 0 rgba(255,255,255,0.12),
-        0 0 34px rgba(143,216,232,0.14);
-      transition: opacity 0.72s var(--ease), visibility 0.72s var(--ease), filter 0.72s var(--ease);
-      animation: bonePulse 1.2s ease-in-out infinite;
-    }
-
-    .bone-loader::before {
-      content: "";
-      position: absolute;
-      inset: -40% -70%;
-      background: linear-gradient(100deg, transparent 30%, rgba(244,251,255,0.16) 46%, rgba(143,216,232,0.24) 52%, transparent 68%);
-      transform: translateX(-42%) skewX(-12deg);
-      animation: boneShimmer 1.15s ease-in-out infinite;
-    }
-
-    .bone-loader::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border-radius: inherit;
-      border: 1px solid rgba(244,251,255,0.08);
-      background: radial-gradient(circle at 28% 22%, rgba(143,216,232,0.16), transparent 38%);
-      opacity: 0.75;
-    }
-
-    .bone-loaded > .bone-loader {
-      opacity: 0;
-      visibility: hidden;
-      filter: blur(8px);
-      animation-play-state: paused;
-    }
-
-    @keyframes boneShimmer {
-      0% { transform: translateX(-45%) skewX(-12deg); }
-      100% { transform: translateX(45%) skewX(-12deg); }
-    }
-
-    @keyframes bonePulse {
-      0%, 100% { box-shadow: inset 0 0 0 1px rgba(143,216,232,0.18), inset 0 1px 0 rgba(255,255,255,0.10), 0 0 24px rgba(143,216,232,0.10); }
-      50% { box-shadow: inset 0 0 0 1px rgba(143,216,232,0.30), inset 0 1px 0 rgba(255,255,255,0.16), 0 0 42px rgba(143,216,232,0.18); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .bone-loading > :not(.bone-loader),
-      .bone-loaded > :not(.bone-loader) {
-        opacity: 1;
-        translate: 0 0;
-        scale: 1;
-        filter: none;
-        transition: opacity 0.25s ease;
-      }
-
-      .bone-loader,
-      .bone-loader::before {
-        animation: none !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1167,30 +1068,37 @@
       <div class="site-shell">
         <div class="section-head center reveal">
           <span class="label-pill">WORKFLOW SYSTEM</span>
-          <h2>Reliable Talent, Smooth Creative Systems</h2>
-          <p class="lead">Our workflow is designed to make editing simple: clear briefs, organised files, review rounds, secure handling, and final delivery in the right format.</p>
+          <h2>Our 4-Step Editing Process</h2>
+          <p class="lead">A simple client-focused workflow built around clear briefs, fast updates, revision support, secure files, and final delivery in the right format.</p>
         </div>
 
         <div class="workflow-grid">
           <article class="trust-card trust-reveal" style="--trust-delay: 0s;">
             <span class="trust-card__label">01</span>
             <div>
-              <h3>Dedicated Workflow</h3>
-              <p>From brief to final export, every project is organised with clear steps, feedback rounds, revisions, and delivery checkpoints.</p>
+              <h3>Creative Brief</h3>
+              <p>We confirm your goals, audience, brand style, references, upload format, timeline, and revision expectations before editing starts.</p>
             </div>
           </article>
           <article class="trust-card trust-reveal" style="--trust-delay: 0.10s;">
             <span class="trust-card__label">02</span>
             <div>
-              <h3>Creative Tools</h3>
-              <p>We work with professional editing tools for cutting, colour, audio, captions, thumbnails, graphics, and motion animation.</p>
+              <h3>Footage &amp; Strategy</h3>
+              <p>Your files are organised into a clean editing plan for pacing, hooks, captions, graphics, sound, thumbnails, and platform delivery.</p>
             </div>
           </article>
           <article class="trust-card trust-reveal" style="--trust-delay: 0.20s;">
             <span class="trust-card__label">03</span>
             <div>
-              <h3>Client Privacy</h3>
-              <p>Your footage, brand assets, and project details are handled carefully and kept private through the full post-production process.</p>
+              <h3>Edit + Review</h3>
+              <p>We send polished versions for feedback, keep communication clear, and refine the cut through focused revision rounds.</p>
+            </div>
+          </article>
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.30s;">
+            <span class="trust-card__label">04</span>
+            <div>
+              <h3>Final Delivery</h3>
+              <p>Final files are exported cleanly for YouTube, Instagram, TikTok, LinkedIn, websites, ads, and campaign launches.</p>
             </div>
           </article>
         </div>
@@ -1433,93 +1341,6 @@
     revealElements();
     setupTrustCounters();
     setupPointerGlow();
-  
-  
-    (function setupBoneRevealLoaders() {
-      const bonePrefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const boneSelectors = [
-        '.hero-card__float',
-        '.team-showcase',
-        '.team-card',
-        '.trust-card',
-        '.trust-service-card',
-        '.trust-metric-panel',
-        '.trust-metric',
-        '.trust-metric-highlight',
-        '.project-card',
-        '.pricing-card',
-        '.pricing-addon',
-        '.tool-card',
-        '.tools-cta',
-        '.review-card',
-        '.stats-card',
-        '.image-banner',
-        '.cta-card',
-        '.talk-info',
-        '.talk-form',
-        '.final-brand-card',
-        '.policy-card',
-        '.service-icon',
-        '.tool-logo-box',
-        '.social-link',
-        '.floating-contact'
-      ];
-
-      const rawTargets = Array.from(document.querySelectorAll(boneSelectors.join(',')))
-        .filter((element) => element instanceof HTMLElement)
-        .filter((element) => !element.closest('.top-pill, .quick-menu'))
-        .filter((element) => !element.classList.contains('bone-prepared'));
-
-      const targets = rawTargets.filter((element) => !rawTargets.some((other) => other !== element && other.contains(element)));
-      if (!targets.length) return;
-
-      function prepareBoneTarget(element, index) {
-        element.classList.add('bone-prepared', 'reveal-object', 'bone-loading');
-        element.style.setProperty('--bone-index', index);
-
-        if (window.getComputedStyle(element).position === 'static') {
-          element.classList.add('bone-relative');
-        }
-
-        const loader = document.createElement('span');
-        loader.className = 'bone-loader';
-        loader.setAttribute('aria-hidden', 'true');
-        element.appendChild(loader);
-      }
-
-      function revealBoneTarget(element, index) {
-        if (element.classList.contains('bone-loaded')) return;
-
-        const loadingTime = bonePrefersReduced ? 0 : 820 + ((index % 5) * 110);
-        window.setTimeout(() => {
-          element.classList.add('bone-loaded');
-          element.classList.remove('bone-loading');
-
-          const loader = element.querySelector(':scope > .bone-loader');
-          if (loader) {
-            window.setTimeout(() => loader.remove(), bonePrefersReduced ? 60 : 780);
-          }
-        }, loadingTime);
-      }
-
-      targets.forEach(prepareBoneTarget);
-
-      if (bonePrefersReduced || !('IntersectionObserver' in window)) {
-        targets.forEach(revealBoneTarget);
-        return;
-      }
-
-      const observer = new IntersectionObserver((entries, instance) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const index = targets.indexOf(entry.target);
-          revealBoneTarget(entry.target, index < 0 ? 0 : index);
-          instance.unobserve(entry.target);
-        });
-      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-
-      targets.forEach((target) => observer.observe(target));
-    })();
   </script>
 </body>
 </html>
