@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
   <style>
     :root {
@@ -3633,6 +3634,54 @@
       margin-top: 6px;
     }
 
+    .calendly-booking {
+      margin-top: 24px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+      box-shadow: var(--soft-shadow), inset 0 1px 0 rgba(255,255,255,0.13);
+      overflow: hidden;
+    }
+
+    .calendly-booking__head {
+      width: min(720px, 100%);
+      margin: 0 auto 22px;
+      text-align: center;
+    }
+
+    .calendly-booking__head h3 {
+      color: var(--text);
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    .calendly-booking__head p {
+      width: min(620px, 100%);
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.85;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .calendly-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(143,216,232,0.18);
+      background: rgba(6,22,29,0.42);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 0 42px rgba(143,216,232,0.08);
+    }
+
+    .calendly-inline-widget {
+      width: 100%;
+      min-width: 0 !important;
+      height: 700px;
+    }
+
     .floating-contact {
       position: fixed;
       z-index: 900;
@@ -3983,7 +4032,7 @@
 
     .section, .hero, .footer, .final-brand-section, .top-pill, .site-shell,
     .pricing-card, .trust-card, .trust-metric-panel, .tool-card, .review-card,
-    .talk-info, .talk-form, .cta-card, .final-brand-card { max-width: 100%; }
+    .talk-info, .talk-form, .calendly-booking, .cta-card, .final-brand-card { max-width: 100%; }
 
     .top-pill__hamburger {
       display: none;
@@ -4088,8 +4137,8 @@
       .hero-card { width: clamp(108px, 34vw, 138px); height: clamp(158px, 49vw, 198px); }
       .image-banner, .image-banner__content, .cta-card, .final-brand-card { border-radius: 28px; }
       .project-grid, .trust-grid, .trust-service-grid, .workflow-grid, .pricing-grid, .tools-grid, .reviews-grid, #numbers .carousel__track { grid-template-columns: 1fr; }
-      .trust-card, .trust-service-card, .pricing-card, .tool-card, .review-card, .talk-info, .talk-form, .stats-card, .faq-panel, .cta-card, .final-brand-card { width: 100%; min-width: 0; }
-      .pricing-card, .talk-info, .talk-form, .tools-cta, .pricing-addon, .trust-card, .trust-service-card, .faq-panel { padding: 24px; }
+      .trust-card, .trust-service-card, .pricing-card, .tool-card, .review-card, .talk-info, .talk-form, .calendly-booking, .stats-card, .faq-panel, .cta-card, .final-brand-card { width: 100%; min-width: 0; }
+      .pricing-card, .talk-info, .talk-form, .calendly-booking, .tools-cta, .pricing-addon, .trust-card, .trust-service-card, .faq-panel { padding: 24px; }
       .pricing-card { transform: none; }
       .price-value { font-size: clamp(38px, 13vw, 58px); letter-spacing: -0.06em; }
       .feature-list li { align-items: flex-start; gap: 12px; }
@@ -4107,6 +4156,7 @@
       .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 44px; }
       .custom-select__button { min-height: 44px; }
       .custom-select__menu { max-height: min(240px, calc(100vh - 118px)); }
+      .calendly-inline-widget { height: 680px; }
       .custom-select__option { min-height: 44px; }
       .social-row, .final-brand-actions { flex-wrap: wrap; }
       .social-dot { min-width: 44px; min-height: 44px; }
@@ -4136,7 +4186,7 @@
       .hero-card:nth-child(3) { --scale: 0.88; --y: 10px; }
       .hero-card:nth-child(4) { right: 11%; --scale: 0.78; --y: 25px; }
       .hero-card:nth-child(5) { right: 0; --scale: 0.68; --y: 43px; }
-      .pricing-card, .talk-info, .talk-form, .tools-cta, .pricing-addon, .trust-card, .trust-service-card, .faq-panel, .review-card { padding: 22px; border-radius: 24px; }
+      .pricing-card, .talk-info, .talk-form, .calendly-booking, .tools-cta, .pricing-addon, .trust-card, .trust-service-card, .faq-panel, .review-card { padding: 22px; border-radius: 24px; }
       .trust-card, .trust-service-card { min-height: 230px; }
       .project-card__image, .team-card { height: 320px; }
       .final-brand-section { min-height: 60vh; padding: 66px 0; }
@@ -4381,7 +4431,6 @@
       <a href="#talk" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
       <div class="quick-menu" id="quickMenu" aria-label="Quick services menu" aria-hidden="true">
         <a class="quick-menu__item" href="why-us.html"><span class="quick-menu__mark">WU</span><span><strong>Why Us</strong><span>Creator choice</span></span></a>
-        <a class="quick-menu__item" href="#pricing"><span class="quick-menu__mark">IN</span><span><strong>Investment</strong><span>Investment plans</span></span></a>
         <a class="quick-menu__item" href="#reviews"><span class="quick-menu__mark">RV</span><span><strong>Reviews</strong><span>Client feedback</span></span></a>
         <a class="quick-menu__item" href="#talk"><span class="quick-menu__mark">GO</span><span><strong>Letâ€™s Talk</strong><span>Start your project</span></span></a>
       </div>
@@ -4648,108 +4697,6 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="pricing">
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">INVESTMENT PLANS</span>
-          <h2>Choose Your Editing Investment</h2>
-          <p class="lead">Premium post-production plans designed for creators, brands, and agencies who want cinematic quality, stronger retention, and consistent content delivery.</p>
-        </div>
-
-        <div class="pricing-grid stagger-parent">
-          <article class="pricing-card stagger-item">
-            <div class="ambient-scan"></div>
-            <div class="pricing-head"><h3>Investment -<br />Creator Kickstart</h3></div>
-            <div class="price-value">$999<span class="meta price-period"> /-Month</span></div>
-            <p class="price-note">Perfect for growing creators who need quality edits.</p>
-            <div class="pricing-line"></div>
-            <ul class="feature-list">
-              <li><span class="check-dot">&#10003;</span><span>Everything in on-Demand +</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Up to 4 Long Form Videos*</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Up to 8 Shorts or Reels*</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Dedicated Editor</span></li>
-              <li><span class="check-dot">&#10003;</span><span>3-7 days Turnaround</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Unlimited Revisions</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Premiere and After Effects</span></li>
-            </ul>
-            <a class="btn btn--glass" href="#talk">Book Free Consultation</a>
-          </article>
-
-          <article class="pricing-card stagger-item">
-            <div class="ambient-scan"></div>
-            <span class="pricing-badge">Trending</span>
-            <div class="pricing-head"><h3>Investment -<br />Growth Pro</h3></div>
-            <div class="price-value">$1499<span class="meta price-period"> /-Month</span></div>
-            <p class="price-note">Ideal for active channels focused on scaling content.</p>
-            <div class="pricing-line"></div>
-            <ul class="feature-list">
-              <li><span class="check-dot">&#10003;</span><span>Everything in on-Demand +</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Up to 8 Long Form Videos*</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Up to 16 Shorts or Reels*</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Dedicated Editor</span></li>
-              <li><span class="check-dot">&#10003;</span><span>3-7 days Turnaround</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Unlimited Revisions</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Premiere and After Effects</span></li>
-            </ul>
-            <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
-          </article>
-
-          <article class="pricing-card stagger-item">
-            <div class="ambient-scan"></div>
-            <div class="pricing-head"><h3>Investment -<br />Creator Supreme</h3></div>
-            <div class="price-value">$2149<span class="meta price-period"> /-Month</span></div>
-            <p class="price-note">For creators who want nothing but the best.</p>
-            <div class="pricing-line"></div>
-            <ul class="feature-list">
-              <li><span class="check-dot">&#10003;</span><span>Everything in on-Demand +</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Up to 12 Long Form Videos*</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Up to 24 Shorts or Reels*</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Dedicated Editor</span></li>
-              <li><span class="check-dot">&#10003;</span><span>3-7 days Turnaround</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Unlimited Revisions</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Premiere and After Effects</span></li>
-            </ul>
-            <a class="btn btn--glass" href="#talk">Book Free Consultation</a>
-          </article>
-
-          <article class="pricing-card stagger-item">
-            <div class="ambient-scan"></div>
-            <span class="pricing-badge">Best for You</span>
-            <div class="pricing-head"><h3>Editor -<br />Investment</h3></div>
-            <div class="price-value">$2399</div>
-            <p class="price-note">40 hours per week</p>
-            <div class="pricing-line"></div>
-            <ul class="feature-list">
-              <li><span class="check-dot">&#10003;</span><span>Ideal for both short and long form projects</span></li>
-              <li><span class="check-dot">&#10003;</span><span>2-4 years experienced dedicated editor</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Skilled across various content style and genres</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Full time, 40 hours a week</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Expert in Adobe Suite</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Weekend availability for urgent support</span></li>
-            </ul>
-            <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
-          </article>
-
-          <article class="pricing-card stagger-item">
-            <div class="ambient-scan"></div>
-            <div class="pricing-head"><h3>Custom -<br />Investment</h3></div>
-            <div class="price-value">Custom</div>
-            <p class="price-note">Flagship campaigns, brand films, and series work.</p>
-            <div class="pricing-line"></div>
-            <ul class="feature-list">
-              <li><span class="check-dot">&#10003;</span><span>Unlimited duration</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Full motion design team</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Dolby-grade audio mix</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Dedicated colorist</span></li>
-              <li><span class="check-dot">&#10003;</span><span>Unlimited revisions</span></li>
-              <li><span class="check-dot">&#10003;</span><span>24/7 studio support</span></li>
-            </ul>
-            <a class="btn btn--glass" href="#talk">Letâ€™s Talk</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section trust-section glow-section" id="faq" data-trust-section>
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
@@ -4831,7 +4778,6 @@
             <h2>Ready to Upgrade Your Videos?</h2>
             <div class="button-row">
               <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
-              <a class="btn btn--glass" href="#pricing">View Investment Plans</a>
             </div>
           </div>
         </div>
@@ -4882,6 +4828,16 @@
             </div>
           </form>
         </div>
+
+        <div class="calendly-booking reveal">
+          <div class="calendly-booking__head">
+            <h3>Book a Free Consultation</h3>
+            <p>Choose a time that works for you and let&rsquo;s discuss your project.</p>
+          </div>
+          <div class="calendly-frame">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/ashensvow/30min" title="Book a free consultation with Vixpod Motion"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -4924,7 +4880,6 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Our Services</a></li>
             <li><a href="why-us.html">Why Us</a></li>
-            <li><a href="#pricing">Investment</a></li>
             <li><a href="about.html#team">Creative Team</a></li>
             <li><a href="work.html">Portfolio</a></li>
             <li><a href="#talk">Letâ€™s Talk</a></li>
@@ -4934,7 +4889,6 @@
         <div>
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
-            <li><a href="#pricing">Investment Plans</a></li>
             <li><a href="#tools">Editing Tools</a></li>
             <li><a href="#reviews">Client Reviews</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -6163,5 +6117,6 @@
       });
     }
   </script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
