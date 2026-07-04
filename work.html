@@ -1367,6 +1367,52 @@
       letter-spacing: 0.02em;
     }
 
+    .reviews-grid--three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .review-card--compact {
+      min-height: 300px;
+    }
+
+    .review-stars,
+    .review-badge {
+      position: relative;
+      z-index: 1;
+    }
+
+    .review-stars {
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-shadow: 0 0 18px rgba(143,216,232,0.22);
+    }
+
+    .review-badge {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(143,216,232,0.28);
+      background: rgba(143,216,232,0.10);
+      color: var(--text);
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: 0 0 18px rgba(143,216,232,0.10);
+    }
+
+    @media (max-width: 1024px) {
+      .reviews-grid--three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     .dots {
       display: flex;
       justify-content: center;
@@ -2983,6 +3029,45 @@
           </article>
         </div>
         <div class="floating-dots" data-card-dots="portfolio" aria-label="Portfolio pagination"></div>
+      </div>
+    </section>
+
+    <section class="section glow-section" id="work-reviews">
+      <div class="site-shell">
+        <div class="section-head reveal">
+          <span class="label-pill">Client Reviews</span>
+          <h2>Client Feedback on Our Work</h2>
+          <p class="lead">Every project is edited with a focus on storytelling, visuals, pacing, and audience attention.</p>
+        </div>
+
+        <div class="reviews-grid reviews-grid--three" data-review-reveal>
+          <article class="review-card review-card--compact" style="--review-delay: 0s;">
+            <span class="review-badge">YouTube Edit</span>
+            <div class="review-card__top">
+              <span class="review-card__mark">01</span>
+              <span><span class="review-card__name">Client Name 01</span><span class="review-card__role">YouTube Video Editing</span></span>
+            </div>
+            <p class="review-card__quote">&ldquo;The final video felt smooth, cinematic, and much more engaging than our previous edits.&rdquo;</p>
+          </article>
+
+          <article class="review-card review-card--compact" style="--review-delay: 0.12s;">
+            <span class="review-badge">Short-Form Edit</span>
+            <div class="review-card__top">
+              <span class="review-card__mark">02</span>
+              <span><span class="review-card__name">Client Name 02</span><span class="review-card__role">Short-Form Editing</span></span>
+            </div>
+            <p class="review-card__quote">&ldquo;The hooks, captions, and pacing made the content feel ready for Instagram Reels and YouTube Shorts.&rdquo;</p>
+          </article>
+
+          <article class="review-card review-card--compact" style="--review-delay: 0.24s;">
+            <span class="review-badge">VFX Work</span>
+            <div class="review-card__top">
+              <span class="review-card__mark">03</span>
+              <span><span class="review-card__name">Client Name 03</span><span class="review-card__role">VFX &amp; Visual Effects</span></span>
+            </div>
+            <p class="review-card__quote">&ldquo;The visual effects were clean, modern, and matched the premium style we wanted.&rdquo;</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
