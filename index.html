@@ -1681,6 +1681,336 @@
       will-change: transform, opacity;
     }
 
+    .glow-section {
+      position: relative;
+    }
+
+    .glow-section > .site-shell,
+    .hero > .site-shell {
+      position: relative;
+      z-index: 2;
+    }
+
+    .motion-icon-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .motion-icon {
+      --size: 56px;
+      --x: 50%;
+      --y: 50%;
+      --r: 0deg;
+      --float: 5.8s;
+      --icon-opacity: 0.18;
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--size);
+      height: var(--size);
+      border-radius: 18px;
+      border: 1px solid rgba(143,216,232,0.28);
+      color: rgba(244,251,255,0.72);
+      background:
+        linear-gradient(145deg, rgba(244,251,255,0.11), rgba(143,216,232,0.045)),
+        rgba(11,37,48,0.20);
+      box-shadow:
+        0 18px 48px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.14),
+        0 0 24px rgba(143,216,232,0.10);
+      opacity: var(--icon-opacity);
+      filter: drop-shadow(0 0 14px rgba(143,216,232,0.16));
+      transform: translate3d(0,0,0) rotate(var(--r));
+      animation: iconFloat var(--float) ease-in-out infinite alternate, softGlowPulse 6.2s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      pointer-events: none;
+    }
+
+    .motion-icon::before,
+    .motion-icon::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .motion-icon--play::before,
+    .motion-icon--reels::after,
+    .motion-icon--screen::after {
+      inset: 31% 29% 31% 38%;
+      background: currentColor;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+
+    .motion-icon--camera::before {
+      inset: 29% 18% 30%;
+      border: 2px solid currentColor;
+      border-radius: 9px;
+    }
+
+    .motion-icon--camera::after {
+      inset: 39% 37%;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      box-shadow: -16px -13px 0 -9px currentColor;
+    }
+
+    .motion-icon--timeline::before {
+      inset: 25% 17%;
+      background:
+        linear-gradient(currentColor 0 0) 0 19% / 100% 2px no-repeat,
+        linear-gradient(currentColor 0 0) 0 50% / 100% 2px no-repeat,
+        linear-gradient(currentColor 0 0) 0 81% / 100% 2px no-repeat,
+        repeating-linear-gradient(90deg, currentColor 0 8px, transparent 8px 14px);
+      opacity: 0.82;
+    }
+
+    .motion-icon--wave::before {
+      inset: 24% 18%;
+      background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 10px);
+      clip-path: polygon(0 45%, 8% 34%, 16% 62%, 24% 20%, 32% 80%, 40% 28%, 48% 70%, 56% 18%, 64% 84%, 72% 40%, 80% 66%, 88% 30%, 100% 50%, 100% 100%, 0 100%);
+    }
+
+    .motion-icon--caption::before {
+      inset: 24% 17%;
+      border: 2px solid currentColor;
+      border-radius: 8px;
+    }
+
+    .motion-icon--caption::after {
+      left: 28%;
+      right: 28%;
+      top: 46%;
+      height: 2px;
+      background: currentColor;
+      box-shadow: 0 9px 0 currentColor;
+      opacity: 0.82;
+    }
+
+    .motion-icon--cut::before {
+      left: 27%;
+      top: 25%;
+      width: 46%;
+      height: 46%;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(-38deg);
+    }
+
+    .motion-icon--cut::after {
+      width: 8px;
+      height: 8px;
+      left: 24%;
+      top: 61%;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      box-shadow: 22px -31px 0 -2px transparent, 22px -31px 0 0 currentColor;
+    }
+
+    .motion-icon--spark::before,
+    .motion-icon--send::before {
+      left: 50%;
+      top: 20%;
+      width: 2px;
+      height: 60%;
+      background: currentColor;
+      transform: translateX(-50%);
+      border-radius: 999px;
+    }
+
+    .motion-icon--spark::after,
+    .motion-icon--send::after {
+      left: 20%;
+      top: 50%;
+      width: 60%;
+      height: 2px;
+      background: currentColor;
+      transform: translateY(-50%);
+      border-radius: 999px;
+    }
+
+    .motion-icon--send::before {
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .motion-icon--send::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .motion-icon--chart::before {
+      inset: 24% 20% 22%;
+      background:
+        linear-gradient(currentColor 0 0) 0 100% / 100% 2px no-repeat,
+        linear-gradient(currentColor 0 0) 12% 100% / 9px 34% no-repeat,
+        linear-gradient(currentColor 0 0) 42% 100% / 9px 58% no-repeat,
+        linear-gradient(currentColor 0 0) 72% 100% / 9px 78% no-repeat;
+      border-radius: 4px;
+    }
+
+    .motion-icon--globe::before,
+    .motion-icon--target::before,
+    .motion-icon--color::before {
+      inset: 23%;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+    }
+
+    .motion-icon--globe::after {
+      inset: 23% 38%;
+      border-left: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      border-radius: 50%;
+      box-shadow: 0 12px 0 -10px currentColor, 0 -12px 0 -10px currentColor;
+    }
+
+    .motion-icon--target::after {
+      inset: 38%;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      box-shadow: 0 0 0 8px rgba(244,251,255,0.10);
+    }
+
+    .motion-icon--color::before {
+      border: 0;
+      background: conic-gradient(from 25deg, rgba(143,216,232,0.85), rgba(244,251,255,0.72), rgba(116,148,158,0.65), rgba(143,216,232,0.85));
+      opacity: 0.9;
+    }
+
+    .motion-icon--color::after {
+      inset: 41%;
+      border-radius: 999px;
+      background: #0B2530;
+    }
+
+    .motion-icon--film::before {
+      inset: 20%;
+      border: 2px solid currentColor;
+      border-radius: 8px;
+      background: repeating-linear-gradient(90deg, transparent 0 10px, rgba(244,251,255,0.18) 10px 12px);
+    }
+
+    .motion-icon--film::after {
+      left: 22%;
+      right: 22%;
+      top: 29%;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 9px);
+      box-shadow: 0 22px 0 currentColor;
+      opacity: 0.68;
+    }
+
+    .motion-icon--cursor::before {
+      inset: 22% 24% 18% 27%;
+      background: currentColor;
+      clip-path: polygon(0 0, 72% 50%, 47% 58%, 64% 96%, 49% 100%, 33% 62%, 13% 82%);
+    }
+
+    .motion-icon--message::before {
+      inset: 24% 18% 31%;
+      border: 2px solid currentColor;
+      border-radius: 10px;
+    }
+
+    .motion-icon--message::after {
+      left: 32%;
+      bottom: 25%;
+      width: 15px;
+      height: 15px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(-45deg);
+    }
+
+    .motion-icon--reels::before,
+    .motion-icon--screen::before {
+      inset: 20% 24%;
+      border: 2px solid currentColor;
+      border-radius: 10px;
+    }
+
+    .motion-icon--mic::before {
+      inset: 19% 35% 38%;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+    }
+
+    .motion-icon--mic::after {
+      left: 50%;
+      top: 55%;
+      width: 2px;
+      height: 22%;
+      background: currentColor;
+      transform: translateX(-50%);
+      box-shadow: -10px 12px 0 -1px currentColor, 10px 12px 0 -1px currentColor;
+    }
+
+    .motion-icon--quote::before {
+      content: "\201C";
+      inset: 8% 0 auto;
+      color: currentColor;
+      font-size: calc(var(--size) * 0.72);
+      line-height: 1;
+      text-align: center;
+      font-weight: 900;
+      opacity: 0.72;
+    }
+
+    .motion-icon--star::before {
+      content: "";
+      inset: 22%;
+      background: currentColor;
+      clip-path: polygon(50% 0, 61% 36%, 100% 36%, 68% 58%, 80% 100%, 50% 74%, 20% 100%, 32% 58%, 0 36%, 39% 36%);
+    }
+
+    .service-object.motion-icon {
+      --size: 54px;
+      --x: auto;
+      --y: auto;
+      --icon-opacity: 0.88;
+      left: auto;
+      top: 22px;
+      right: 22px;
+      z-index: 2;
+      border-color: rgba(143,216,232,0.34);
+      opacity: var(--icon-opacity);
+    }
+
+    .trust-service-card:hover .service-object {
+      opacity: 1;
+      filter: drop-shadow(0 0 20px rgba(143,216,232,0.30));
+    }
+
+    @keyframes iconFloat {
+      0% { transform: translate3d(0, -6px, 0) rotate(calc(var(--r) - 1.5deg)); }
+      100% { transform: translate3d(0, 6px, 0) rotate(calc(var(--r) + 1.5deg)); }
+    }
+
+    @keyframes softGlowPulse {
+      0%, 100% { box-shadow: 0 18px 48px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.14), 0 0 20px rgba(143,216,232,0.08); }
+      50% { box-shadow: 0 20px 54px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.18), 0 0 34px rgba(143,216,232,0.16); }
+    }
+
+    @media (max-width: 980px) {
+      .motion-icon {
+        --icon-opacity: 0.13;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .motion-icon-layer {
+        display: none;
+      }
+
+      .service-object.motion-icon {
+        display: block;
+        --size: 48px;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
 
 
     /* Premium add-on objects: kept inside the same Vixpod Motion theme */
@@ -2878,10 +3208,6 @@
       opacity: 1;
     }
 
-    #pricing .ambient-scan {
-      z-index: 0;
-    }
-
     .pricing-badge {
       position: absolute;
       top: 22px;
@@ -4024,7 +4350,7 @@
     /* Responsive refinement layer: mobile-only stability without changing desktop styling */
     html { scroll-padding-top: 96px; }
 
-    section[id], main[id], #talk, #pricing, #reviews, #faq, #creator-trust, #workflow-system, #tools, #numbers {
+    section[id], main[id], #talk, #reviews, #faq, #creator-trust, #workflow-system, #tools, #numbers {
       scroll-margin-top: 96px;
     }
 
@@ -4087,7 +4413,7 @@
 
     @media (max-width: 768px) {
       html { scroll-padding-top: 88px; }
-      section[id], main[id], #talk, #pricing, #reviews, #faq, #creator-trust, #workflow-system, #tools, #numbers { scroll-margin-top: 88px; }
+      section[id], main[id], #talk, #reviews, #faq, #creator-trust, #workflow-system, #tools, #numbers { scroll-margin-top: 88px; }
       body { overflow-x: hidden; }
       .site-shell { width: min(calc(100% - 28px), var(--container)); }
       .top-pill { top: 12px; width: calc(100% - 24px); min-height: 54px; height: auto; padding: 7px 7px 7px 16px; gap: 8px; }
@@ -4368,14 +4694,6 @@
         transition-duration: 0.01ms !important;
       }
 
-      #pricing .pricing-card {
-        transform: none !important;
-      }
-
-      #pricing .pricing-card::after {
-        display: none;
-      }
-
       .trust-reveal,
       .trust-title-block > *,
       .trust-metric,
@@ -4393,6 +4711,10 @@
       .trust-metric-panel::after,
       .faq-panel::after {
         display: none;
+      }
+
+      .motion-icon {
+        animation: none !important;
       }
     }
   </style>
@@ -4439,6 +4761,12 @@
 
   <main id="top">
     <section class="hero glow-section">
+      <div class="motion-icon-layer motion-icon-layer--hero reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--play" style="--x: 8%; --y: 27%; --size: 52px; --r: -8deg; --delay: 0s;"></span>
+        <span class="motion-icon motion-icon--timeline" style="--x: 84%; --y: 24%; --size: 72px; --r: 7deg; --delay: 0.5s;"></span>
+        <span class="motion-icon motion-icon--camera" style="--x: 12%; --y: 67%; --size: 64px; --r: 6deg; --delay: 0.9s;"></span>
+        <span class="motion-icon motion-icon--wave" style="--x: 78%; --y: 70%; --size: 58px; --r: -6deg; --delay: 1.2s;"></span>
+      </div>
       <div class="site-shell">
         <div class="center-copy reveal">
           <span class="label-pill">Vixpod Motion Studio</span>
@@ -4467,6 +4795,11 @@
 
 
     <section class="section trust-section glow-section" id="why-us" data-trust-section>
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--globe" style="--x: 7%; --y: 22%; --size: 62px; --r: -5deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--chart" style="--x: 88%; --y: 26%; --size: 68px; --r: 5deg; --delay: 0.5s;"></span>
+        <span class="motion-icon motion-icon--spark" style="--x: 81%; --y: 77%; --size: 48px; --r: 10deg; --delay: 1s;"></span>
+      </div>
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">WHY CREATORS CHOOSE US</span>
@@ -4522,6 +4855,10 @@
     </section>
 
     <section class="section trust-section glow-section" id="creator-trust" data-trust-section aria-label="Trust Stats">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--chart" style="--x: 8%; --y: 21%; --size: 54px; --r: -6deg; --delay: 0.2s;"></span>
+        <span class="motion-icon motion-icon--globe" style="--x: 90%; --y: 75%; --size: 58px; --r: 6deg; --delay: 0.7s;"></span>
+      </div>
       <div class="site-shell">
         <div class="trust-metric-panel trust-reveal">
           <div class="trust-metrics">
@@ -4556,6 +4893,10 @@
     </section>
 
     <section class="section trust-section glow-section" id="workflow-system" data-trust-section>
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--timeline" style="--x: 7%; --y: 24%; --size: 64px; --r: -5deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--send" style="--x: 89%; --y: 77%; --size: 50px; --r: 7deg; --delay: 0.6s;"></span>
+      </div>
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">WORKFLOW SYSTEM</span>
@@ -4597,6 +4938,11 @@
     </section>
 
     <section class="section glow-section" id="tools">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--color" style="--x: 8%; --y: 25%; --size: 54px; --r: -7deg; --delay: 0.15s;"></span>
+        <span class="motion-icon motion-icon--timeline" style="--x: 88%; --y: 28%; --size: 60px; --r: 6deg; --delay: 0.55s;"></span>
+        <span class="motion-icon motion-icon--cursor" style="--x: 82%; --y: 78%; --size: 46px; --r: -4deg; --delay: 0.95s;"></span>
+      </div>
       <div class="site-shell">
         <div class="section-head reveal">
           <span class="label-pill">Studio Toolkit</span>
@@ -4621,6 +4967,10 @@
     </section>
 
     <section class="section glow-section" id="numbers">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--chart" style="--x: 9%; --y: 25%; --size: 62px; --r: -6deg; --delay: 0.2s;"></span>
+        <span class="motion-icon motion-icon--wave" style="--x: 88%; --y: 26%; --size: 58px; --r: 6deg; --delay: 0.65s;"></span>
+      </div>
       <div class="site-shell">
         <div class="section-head reveal">
           <span class="label-pill">Studio Results</span>
@@ -4654,6 +5004,11 @@
     </section>
 
     <section class="section glow-section" id="reviews">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--quote" style="--x: 9%; --y: 20%; --size: 60px; --r: -7deg; --delay: 0.2s;"></span>
+        <span class="motion-icon motion-icon--star" style="--x: 88%; --y: 25%; --size: 46px; --r: 8deg; --delay: 0.6s;"></span>
+        <span class="motion-icon motion-icon--spark" style="--x: 78%; --y: 80%; --size: 42px; --r: -4deg; --delay: 1s;"></span>
+      </div>
       <div class="site-shell">
         <div class="section-head reveal">
           <span class="label-pill">Client Reviews</span>
@@ -4698,6 +5053,10 @@
     </section>
 
     <section class="section trust-section glow-section" id="faq" data-trust-section>
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--message" style="--x: 8%; --y: 22%; --size: 58px; --r: -6deg; --delay: 0.15s;"></span>
+        <span class="motion-icon motion-icon--caption" style="--x: 88%; --y: 76%; --size: 54px; --r: 7deg; --delay: 0.7s;"></span>
+      </div>
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">QUESTIONS</span>
@@ -4710,7 +5069,7 @@
             <div>
               <span class="trust-card__label">Project Help</span>
               <h3>Start with the right editing plan.</h3>
-              <p>Get quick clarity on editors, formats, timelines, investment, and production support before sending your footage.</p>
+              <p>Get quick clarity on editors, formats, timelines, project scope, and production support before sending your footage.</p>
             </div>
             <a class="btn btn--dark" href="#talk">Book Free Consultation</a>
           </aside>
@@ -4758,11 +5117,11 @@
 
             <article class="faq-item" data-faq-item>
               <button class="faq-question" type="button" aria-expanded="false">
-                <span>What are your prices?</span>
+                <span>How do I choose the right project scope?</span>
                 <span class="faq-toggle" aria-hidden="true">+</span>
               </button>
               <div class="faq-answer">
-                <div class="faq-answer-inner">Investment depends on editing style, video length, quantity, and add-ons. You can contact us and we will suggest the best plan.</div>
+                <div class="faq-answer-inner">Tell us your video type, content volume, timeline, and goals. We will recommend the right editing workflow for your project.</div>
               </div>
             </article>
           </div>
@@ -4771,6 +5130,10 @@
     </section>
 
     <section class="section section--compact glow-section" id="cta">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--spark" style="--x: 12%; --y: 34%; --size: 46px; --r: 8deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--send" style="--x: 86%; --y: 60%; --size: 50px; --r: -6deg; --delay: 0.5s;"></span>
+      </div>
       <div class="site-shell">
         <div class="cta-card reveal">
           <div class="center-copy">
@@ -4785,6 +5148,11 @@
     </section>
 
     <section class="section glow-section" id="talk">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--send" style="--x: 7%; --y: 18%; --size: 54px; --r: 8deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--message" style="--x: 87%; --y: 16%; --size: 62px; --r: -5deg; --delay: 0.55s;"></span>
+        <span class="motion-icon motion-icon--camera" style="--x: 11%; --y: 77%; --size: 52px; --r: -8deg; --delay: 1s;"></span>
+      </div>
       <div class="site-shell">
         <div class="talk-layout">
           <div class="talk-info reveal">
@@ -4818,7 +5186,7 @@
               <div class="form-field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
               <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" required /></div>
               <div class="form-field"><label for="service">Service</label><select id="service" name="service" required><option>Short-form Reels &amp; Shorts Editing</option><option>YouTube Video Editing</option><option>Ad Creative Editing</option><option>Podcast Editing</option><option>Thumbnail &amp; Social Media Assets</option><option>Motion Graphics</option></select></div>
-              <div class="form-field"><label for="budget">Budget</label><select id="budget" name="budget" required><option>Creator Kickstart - $999 /-Month</option><option>Growth Pro - $1499 /-Month</option><option>Creator Supreme - $2149 /-Month</option><option>Hire an Editor - $2399</option><option>Custom - Tailored</option></select></div>
+              <div class="form-field"><label for="budget">Project Scope</label><select id="budget" name="project_scope" required><option>Not sure yet</option><option>Single video project</option><option>Short-form content batch</option><option>YouTube editing support</option><option>Ongoing editing partner</option><option>Custom campaign</option></select></div>
               <div class="form-field"><label for="timeline">Timeline</label><select id="timeline" name="timeline" required><option>Urgent</option><option>This Week</option><option>This Month</option><option>Ongoing</option></select></div>
               <div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project, content style, upload schedule, and editing goals." minlength="10" maxlength="1200" required></textarea></div>
               <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
@@ -5512,8 +5880,6 @@
     }
 
     setupCardDots('#work', '.project-card', '[data-card-dots="portfolio"]');
-    setupCardDots('#pricing', '.pricing-card', '[data-card-dots="pricing"]');
-
     function setupStableDepthCards(sectionSelector, cardSelector, dotsSelector) {
       const section = document.querySelector(sectionSelector);
       const cards = section ? Array.from(section.querySelectorAll(cardSelector)) : [];
@@ -5598,44 +5964,6 @@
 
     setupStableDepthCards('#why-us', '.trust-card');
     setupStableDepthCards('#numbers', '.stats-card', '[data-dot-wrap]');
-
-    function setupPricingCardMotion() {
-      const pricingSection = document.querySelector('#pricing');
-      const cards = pricingSection ? Array.from(pricingSection.querySelectorAll('.pricing-card')) : [];
-      const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-      if (!pricingSection || !cards.length || prefersReduced || !canHover) return;
-
-      cards.forEach((card) => {
-        function updateSpotlight(event) {
-          const rect = card.getBoundingClientRect();
-          const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
-          const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
-          const rotateY = (x - 0.5) * 7;
-          const rotateX = (0.5 - y) * 6;
-
-          card.style.setProperty('--pricing-spot-x', `${x * 100}%`);
-          card.style.setProperty('--pricing-spot-y', `${y * 100}%`);
-          card.style.transform = `perspective(900px) translateY(-8px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(1.008)`;
-        }
-
-        card.addEventListener('pointerenter', (event) => {
-          card.classList.add('is-pricing-hovered');
-          updateSpotlight(event);
-        });
-
-        card.addEventListener('pointermove', updateSpotlight);
-
-        card.addEventListener('pointerleave', () => {
-          card.classList.remove('is-pricing-hovered');
-          card.style.setProperty('--pricing-spot-x', '50%');
-          card.style.setProperty('--pricing-spot-y', '42%');
-          card.style.transform = 'perspective(900px) translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
-        });
-      });
-    }
-
-    setupPricingCardMotion();
 
     function setupTrustReveals() {
       const revealItems = Array.from(document.querySelectorAll('.trust-reveal'));
