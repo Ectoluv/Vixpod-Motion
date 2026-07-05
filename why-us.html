@@ -281,6 +281,7 @@
     .quick-menu__item:nth-child(2) { --menu-delay: 0.16s; }
     .quick-menu__item:nth-child(3) { --menu-delay: 0.24s; }
     .quick-menu__item:nth-child(4) { --menu-delay: 0.32s; }
+    .quick-menu__item:nth-child(5) { --menu-delay: 0.40s; }
 
     .quick-menu__mark {
       width: 48px;
@@ -1392,15 +1393,18 @@
     <nav class="top-pill__nav" aria-label="Primary pages">
       <a href="about.html">About Us</a>
       <a href="work.html">Our Work</a>
+      <a href="index.html#case-study">Case Study</a>
       <a href="why-us.html" class="is-active">Why Us</a>
       <a href="services.html">Services</a>
     </nav>
     <div class="top-pill__action">
       <a href="#" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
       <div class="quick-menu" id="quickMenu" aria-label="Quick services menu" aria-hidden="true">
+        <a class="quick-menu__item" href="about.html"><span class="quick-menu__mark">AB</span><span><strong>About Us</strong><span>Creative partner</span></span></a>
+        <a class="quick-menu__item" href="work.html"><span class="quick-menu__mark">WK</span><span><strong>Our Work</strong><span>Featured edits</span></span></a>
+        <a class="quick-menu__item" href="index.html#case-study"><span class="quick-menu__mark">CS</span><span><strong>Case Study</strong><span>Real workflow</span></span></a>
         <a class="quick-menu__item" href="#top"><span class="quick-menu__mark">WU</span><span><strong>Why Us</strong><span>Creator choice</span></span></a>
-        <a class="quick-menu__item" href="index.html#reviews"><span class="quick-menu__mark">RV</span><span><strong>Reviews</strong><span>Client feedback</span></span></a>
-        <a class="quick-menu__item" href="index.html#talk"><span class="quick-menu__mark">GO</span><span><strong>Let's Talk</strong><span>Start your project</span></span></a>
+        <a class="quick-menu__item" href="services.html"><span class="quick-menu__mark">SV</span><span><strong>Services</strong><span>Editing support</span></span></a>
       </div>
     </div>
   </header>
