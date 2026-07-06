@@ -591,11 +591,17 @@
       background: rgba(255,255,255,0.08);
     }
 
-    .project-card__image img {
+    .project-card__image img,
+    .project-card__image video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.9s var(--ease), filter 0.9s var(--ease);
     }
 
-    .project-card:hover img {
+    .project-card:hover img,
+    .project-card:hover video {
       transform: scale(1.08);
       filter: saturate(0.92) contrast(1.06);
     }
@@ -5290,7 +5296,7 @@
             <div class="project-card__body"><div><h3>Cinematic Color Grade</h3><p class="project-card__copy">Color correction, skin tone balance, contrast control, and final polish for a cleaner cinematic finish.</p></div><span class="meta">Color Grading</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Product launch video"><span class="round-arrow">&#8599;</span></div>
+            <div class="project-card__image"><video src="assets/videos/sample-video.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Product launch video sample"></video><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Product Launch Video</h3><p class="project-card__copy">Commercial edit with product callouts, pacing, sound design, and ad-ready delivery for launch visibility.</p></div><span class="meta">Commercial Edit</span></div>
           </article>
         </div>
@@ -5583,7 +5589,7 @@
 
         <div class="tools-cta reveal">
           <h3>Hire professional video editors who understand your creative vision, deadlines, and revision needs.</h3>
-          <a class="contact-disc" href="#talk" aria-label="Lets talk with Vixpod Motion"><span>LETâ€™S TALK</span><span class="contact-disc__arrow" aria-hidden="true">?</span></a>
+          <a class="contact-disc" href="#talk" aria-label="Lets talk with Vixpod Motion"><span>LET&rsquo;S TALK</span><span class="contact-disc__arrow" aria-hidden="true">&#8599;</span></a>
         </div>
       </div>
     </section>
@@ -5644,7 +5650,7 @@
               <span class="review-card__mark">01</span>
               <span><span class="review-card__name">Arjun Mehta</span><span class="review-card__role">YouTube Creator</span></span>
             </div>
-            <p class="review-card__quote">â€œVixpod Motion completely upgraded my long-form videos. The pacing, hooks, and storytelling made my content feel much more premium.â€</p>
+            <p class="review-card__quote">&ldquo;Vixpod Motion completely upgraded my long-form videos. The pacing, hooks, and storytelling made my content feel much more premium.&rdquo;</p>
           </article>
 
           <article class="review-card" style="--review-delay: 0.12s;">
@@ -5652,7 +5658,7 @@
               <span class="review-card__mark">02</span>
               <span><span class="review-card__name">Priya Sharma</span><span class="review-card__role">Brand Founder</span></span>
             </div>
-            <p class="review-card__quote">â€œOur reels started looking cleaner, sharper, and more cinematic. The team understands brand visuals very well.â€</p>
+            <p class="review-card__quote">&ldquo;Our reels started looking cleaner, sharper, and more cinematic. The team understands brand visuals very well.&rdquo;</p>
           </article>
 
           <article class="review-card" style="--review-delay: 0.24s;">
@@ -5660,7 +5666,7 @@
               <span class="review-card__mark">03</span>
               <span><span class="review-card__name">Karan Malhotra</span><span class="review-card__role">Agency Owner</span></span>
             </div>
-            <p class="review-card__quote">â€œThey deliver fast, communicate clearly, and keep the edits polished. Perfect editing partner for client content.â€</p>
+            <p class="review-card__quote">&ldquo;They deliver fast, communicate clearly, and keep the edits polished. Perfect editing partner for client content.&rdquo;</p>
           </article>
 
           <article class="review-card" style="--review-delay: 0.36s;">
@@ -5668,7 +5674,7 @@
               <span class="review-card__mark">04</span>
               <span><span class="review-card__name">Neha Kapoor</span><span class="review-card__role">Content Strategist</span></span>
             </div>
-            <p class="review-card__quote">â€œThe motion graphics and color grading gave our campaign a high-end studio feel. Very professional work.â€</p>
+            <p class="review-card__quote">&ldquo;The motion graphics and color grading gave our campaign a high-end studio feel. Very professional work.&rdquo;</p>
           </article>
         </div>
       </div>
@@ -5779,9 +5785,9 @@
         <div class="talk-layout">
           <div class="talk-info reveal">
             <div>
-              <span class="label-pill">Letâ€™s Talk</span>
-              <h2>Letâ€™s Build Videos That Work.</h2>
-              <p class="lead">Share your project details and weâ€™ll help you choose the best editing plan, workflow, delivery structure, and revision support for your content.</p>
+              <span class="label-pill">Let&rsquo;s Talk</span>
+              <h2>Let&rsquo;s Build Videos That Work.</h2>
+              <p class="lead">Share your project details and we&rsquo;ll help you choose the best editing plan, workflow, delivery structure, and revision support for your content.</p>
             </div>
 
             <div class="contact-stack">
@@ -5844,7 +5850,7 @@
     </section>
   </main>
 
-  <a class="floating-contact" href="#talk" aria-label="Letâ€™s talk"><span>LETâ€™S TALK</span><span class="floating-contact__arrow" aria-hidden="true">?</span></a>
+  <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
   <footer class="footer">
     <div class="site-shell">
@@ -5862,7 +5868,7 @@
             <li><a href="why-us.html">Why Us</a></li>
             <li><a href="about.html#team">Creative Team</a></li>
             <li><a href="work.html">Portfolio</a></li>
-            <li><a href="#talk">Letâ€™s Talk</a></li>
+            <li><a href="#talk">Let&rsquo;s Talk</a></li>
           </ul>
         </div>
 
@@ -6015,7 +6021,7 @@
       value.className = 'custom-select__value';
       arrow.className = 'custom-select__arrow';
       arrow.setAttribute('aria-hidden', 'true');
-      arrow.textContent = '?';
+      arrow.textContent = '\u2304';
       menu.className = 'custom-select__menu';
       menu.id = menuId;
       menu.setAttribute('role', 'listbox');

@@ -577,11 +577,17 @@
       background: rgba(255,255,255,0.08);
     }
 
-    .project-card__image img {
+    .project-card__image img,
+    .project-card__image video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.9s var(--ease), filter 0.9s var(--ease);
     }
 
-    .project-card:hover img {
+    .project-card:hover img,
+    .project-card:hover video {
       transform: scale(1.08);
       filter: saturate(0.92) contrast(1.06);
     }
@@ -3428,27 +3434,27 @@
         </div>
         <div class="project-grid subpage-grid stagger-parent">
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="YouTube documentary edit"><span class="round-arrow">?</span></div>
+            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="YouTube documentary edit"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>YouTube Documentary Edit</h3><p class="project-card__copy">Long-form storytelling, pacing, B-roll, sound polish, and retention-focused structure for a stronger watch-through.</p></div><span class="meta">Long-Form Editing</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury brand reel"><span class="round-arrow">?</span></div>
+            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury brand reel"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Luxury Brand Reel</h3><p class="project-card__copy">Premium short-form edit with clean cuts, visual rhythm, captions, and brand-forward polish for social campaigns.</p></div><span class="meta">Short-Form Content</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Motion graphics campaign"><span class="round-arrow">?</span></div>
+            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Motion graphics campaign"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Motion Graphics Campaign</h3><p class="project-card__copy">Animated titles, kinetic typography, logo motion, and visual accents built to make the campaign feel high-end.</p></div><span class="meta">Brand Video</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1616469829476-1a7e07368a6f?auto=format&fit=crop&w=900&q=80" alt="Creator reel pack"><span class="round-arrow">?</span></div>
+            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1616469829476-1a7e07368a6f?auto=format&fit=crop&w=900&q=80" alt="Creator reel pack"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Creator Reel Pack</h3><p class="project-card__copy">Multiple Reels and Shorts repurposed from creator footage with hooks, captions, pacing, and platform-ready exports.</p></div><span class="meta">Social Media Editing</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Cinematic color grade"><span class="round-arrow">?</span></div>
+            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Cinematic color grade"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Cinematic Color Grade</h3><p class="project-card__copy">Color correction, skin tone balance, contrast control, and final polish for a cleaner cinematic finish.</p></div><span class="meta">Color Grading</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Product launch video"><span class="round-arrow">?</span></div>
+            <div class="project-card__image"><video src="assets/videos/sample-video.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Product launch video sample"></video><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Product Launch Video</h3><p class="project-card__copy">Commercial edit with product callouts, pacing, sound design, and ad-ready delivery for launch visibility.</p></div><span class="meta">Commercial Edit</span></div>
           </article>
         </div>
