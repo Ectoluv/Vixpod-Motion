@@ -577,6 +577,14 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .project-card--vertical .project-card__image {
+      height: auto;
+      min-height: 0;
+      padding: 14px;
+      display: grid;
+      place-items: center;
+    }
+
     .project-card__image img,
     .project-card__image video {
       display: block;
@@ -590,6 +598,20 @@
     .project-card:hover video {
       transform: scale(1.08);
       filter: saturate(0.92) contrast(1.06);
+    }
+
+    .project-card--vertical .project-card__image video {
+      width: min(72%, 280px);
+      height: auto;
+      aspect-ratio: 9 / 16;
+      border-radius: 20px;
+      object-fit: cover;
+      background: rgba(4,18,23,0.84);
+      box-shadow: 0 22px 54px rgba(0,0,0,0.28), 0 0 22px rgba(143,216,232,0.16);
+    }
+
+    .project-card--vertical:hover .project-card__image video {
+      transform: scale(1.035);
     }
 
     .round-arrow {
@@ -3445,6 +3467,10 @@
             <div class="project-card__image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Motion graphics campaign"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Motion Graphics Campaign</h3><p class="project-card__copy">Animated titles, kinetic typography, logo motion, and visual accents built to make the campaign feel high-end.</p></div><span class="meta">Brand Video</span></div>
           </article>
+          <article class="project-card project-card--vertical stagger-item">
+            <div class="project-card__image"><video class="lazy-video" data-video-src="assets/videos/product-ad-edit.mp4" controls muted playsinline preload="none" aria-label="Product ad edit vertical preview"></video></div>
+            <div class="project-card__body"><div><h3>Product Ad Edit</h3><p class="project-card__copy">A vertical product commercial edit designed for social media ads, using clean pacing, soft visuals, product focus, and premium brand presentation.</p></div><span class="meta">Brand Video / Product Ad</span></div>
+          </article>
           <article class="project-card stagger-item">
             <div class="project-card__image"><img src="https://images.unsplash.com/photo-1616469829476-1a7e07368a6f?auto=format&fit=crop&w=900&q=80" alt="Creator reel pack"><span class="round-arrow">&#8599;</span></div>
             <div class="project-card__body"><div><h3>Creator Reel Pack</h3><p class="project-card__copy">Multiple Reels and Shorts repurposed from creator footage with hooks, captions, pacing, and platform-ready exports.</p></div><span class="meta">Social Media Editing</span></div>
@@ -4112,6 +4138,38 @@
     }
 
     document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
+
+    function setupLazyVideos() {
+      const videos = document.querySelectorAll('video[data-video-src]');
+      const loadVideo = (video) => {
+        if (video.dataset.loaded === 'true') return;
+        video.src = video.dataset.videoSrc;
+        video.dataset.loaded = 'true';
+        video.load();
+      };
+
+      if (!('IntersectionObserver' in window)) {
+        videos.forEach(loadVideo);
+        return;
+      }
+
+      const videoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadVideo(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '260px 0px', threshold: 0.01 });
+
+      videos.forEach((video) => {
+        video.addEventListener('pointerenter', () => loadVideo(video), { once: true });
+        video.addEventListener('focus', () => loadVideo(video), { once: true });
+        videoObserver.observe(video);
+      });
+    }
+
+    setupLazyVideos();
 
     function animateCounter(el) {
       const target = Number(el.dataset.target || 0);
