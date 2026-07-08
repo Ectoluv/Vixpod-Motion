@@ -5774,15 +5774,15 @@
             </div>
           </div>
 
-          <form class="talk-form reveal" action="mailto:contact@vixpodmotion.com" method="post" enctype="text/plain" data-secure-form>
+          <form id="contactForm" class="talk-form reveal" method="post" novalidate data-secure-form>
             <div class="form-grid">
               <div class="form-field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
               <div class="form-field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
               <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" required /></div>
-              <div class="form-field"><label for="service">Service</label><select id="service" name="service" required><option>Short-form Reels &amp; Shorts Editing</option><option>YouTube Video Editing</option><option>Ad Creative Editing</option><option>Podcast Editing</option><option>Thumbnail &amp; Social Media Assets</option><option>Motion Graphics</option></select></div>
-              <div class="form-field"><label for="budget">Project Scope</label><select id="budget" name="project_scope" required><option>Not sure yet</option><option>Single video project</option><option>Short-form content batch</option><option>YouTube editing support</option><option>Ongoing editing partner</option><option>Custom campaign</option></select></div>
-              <div class="form-field"><label for="timeline">Timeline</label><select id="timeline" name="timeline" required><option>Urgent</option><option>This Week</option><option>This Month</option><option>Ongoing</option></select></div>
-              <div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project, content style, upload schedule, and editing goals." minlength="10" maxlength="1200" required></textarea></div>
+              <div class="form-field"><label for="service">Service</label><select id="service" name="service" autocomplete="off" required><option>Short-form Reels &amp; Shorts Editing</option><option>YouTube Video Editing</option><option>Ad Creative Editing</option><option>Podcast Editing</option><option>Thumbnail &amp; Social Media Assets</option><option>Motion Graphics</option></select></div>
+              <div class="form-field"><label for="budget">Project Scope</label><select id="budget" name="project_scope" autocomplete="off" required><option>Not sure yet</option><option>Single video project</option><option>Short-form content batch</option><option>YouTube editing support</option><option>Ongoing editing partner</option><option>Custom campaign</option></select></div>
+              <div class="form-field"><label for="timeline">Timeline</label><select id="timeline" name="timeline" autocomplete="off" required><option>Urgent</option><option>This Week</option><option>This Month</option><option>Ongoing</option></select></div>
+              <div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project, content style, upload schedule, and editing goals." autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
               <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
               <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" data-size="normal" hidden aria-hidden="true"></div>
               <p class="form-status" id="talkFormStatus" aria-live="polite"></p>
@@ -6116,6 +6116,7 @@
       };
 
       secureForm.addEventListener('submit', (event) => {
+        event.preventDefault();
         const now = Date.now();
         const honeypot = secureForm.querySelector('[name="company_website"]');
         const name = secureForm.querySelector('#name');
@@ -6124,13 +6125,11 @@
         const message = secureForm.querySelector('#message');
 
         if (honeypot && honeypot.value.trim()) {
-          event.preventDefault();
           setStatus('Thanks. Your request has been received.');
           return;
         }
 
         if (isSubmitting || now - lastSubmitAt < 5000) {
-          event.preventDefault();
           setStatus('Please wait a moment before sending again.');
           return;
         }
@@ -6143,7 +6142,6 @@
         const cleanMessage = cleanText(message ? message.value : '', 1200);
 
         if (cleanName.length < 2 || !emailPattern.test(cleanEmail) || !phonePattern.test(cleanPhone) || cleanMessage.length < 10) {
-          event.preventDefault();
           setStatus('Please enter a valid name, email, phone number, and project message.');
           const firstInvalid = [name, email, phone, message].find((field) => field && !field.checkValidity());
           if (firstInvalid) firstInvalid.focus({ preventScroll: false });
@@ -6158,7 +6156,7 @@
         isSubmitting = true;
         lastSubmitAt = now;
         if (submitButton) submitButton.disabled = true;
-        setStatus('Opening your email app securely.');
+        setStatus('Thank you. We will contact you soon.');
 
         window.setTimeout(() => {
           isSubmitting = false;
