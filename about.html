@@ -4024,48 +4024,6 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="about-reviews">
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--quote" style="--x: 8%; --y: 24%; --size: 58px; --r: -8deg; --delay: 0.1s;"></span>
-        <span class="motion-icon motion-icon--star" style="--x: 88%; --y: 28%; --size: 44px; --r: 8deg; --delay: 0.6s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">Client Reviews</span>
-          <h2>Trusted by Creators, Brands &amp; Businesses</h2>
-          <p class="lead">Real feedback from clients who trusted Vixpod Motion to turn their raw footage into premium, high-performing content.</p>
-        </div>
-
-        <div class="reviews-grid reviews-grid--three" data-review-reveal>
-          <article class="review-card review-card--compact" style="--review-delay: 0s;">
-            <div class="review-stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="review-card__top">
-              <span class="review-card__mark">01</span>
-              <span><span class="review-card__name">Client Name 01</span><span class="review-card__role">Creator / Business Owner</span></span>
-            </div>
-            <p class="review-card__quote">&ldquo;Vixpod Motion understood our vision quickly and turned our footage into content that looked premium and professional.&rdquo;</p>
-          </article>
-
-          <article class="review-card review-card--compact" style="--review-delay: 0.12s;">
-            <div class="review-stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="review-card__top">
-              <span class="review-card__mark">02</span>
-              <span><span class="review-card__name">Client Name 02</span><span class="review-card__role">Brand Team</span></span>
-            </div>
-            <p class="review-card__quote">&ldquo;The communication was smooth, the delivery was fast, and the final video quality felt exactly like a high-end agency.&rdquo;</p>
-          </article>
-
-          <article class="review-card review-card--compact" style="--review-delay: 0.24s;">
-            <div class="review-stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="review-card__top">
-              <span class="review-card__mark">03</span>
-              <span><span class="review-card__name">Client Name 03</span><span class="review-card__role">Founder / Content Lead</span></span>
-            </div>
-            <p class="review-card__quote">&ldquo;They helped us make our content cleaner, sharper, and more engaging without losing our brand style.&rdquo;</p>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <a class="floating-contact" href="index.html#talk" aria-label="Lets talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
@@ -4094,7 +4052,7 @@
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
             <li><a href="index.html#tools">Editing Tools</a></li>
-            <li><a href="index.html#reviews">Content Strategy</a></li>
+            <li><a href="services.html">Content Strategy</a></li>
             <li><a href="index.html#numbers">FAQ</a></li>
             <li><a href="work.html">Blog</a></li>
           </ul>
@@ -4987,10 +4945,16 @@
     document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 
     function animateCounter(el) {
+      if (el.dataset.counted === 'true') return;
+      el.dataset.counted = 'true';
       const target = Number(el.dataset.target || 0);
       const suffix = el.dataset.suffix || '';
       const start = performance.now();
       const duration = 1450;
+
+      if (!Number.isFinite(target)) {
+        return;
+      }
 
       function frame(now) {
         const progress = Math.min(1, (now - start) / duration);
@@ -5008,16 +4972,22 @@
       requestAnimationFrame(frame);
     }
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.45 });
+    const statCounters = Array.from(document.querySelectorAll('.stat-number'));
 
-    document.querySelectorAll('.stat-number').forEach((counter) => counterObserver.observe(counter));
+    if (!('IntersectionObserver' in window)) {
+      statCounters.forEach(animateCounter);
+    } else {
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      statCounters.forEach((counter) => counterObserver.observe(counter));
+    }
 
     const portfolioTabs = document.querySelector('[data-portfolio-tabs]');
     const portfolioGrid = document.querySelector('[data-portfolio-grid]');

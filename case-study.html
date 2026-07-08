@@ -5342,31 +5342,16 @@
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">Launch-stage Stats</span>
           <h2>Built Honestly for Early Growth</h2>
-          <p class="lead">No fake clients, no fake views, and no fake testimonials. These are launch-stage signals while verified client feedback is collected.</p>
+          <p class="lead">No fake clients and no fake views. These are launch-stage signals based on practice edits, platform samples, and focused internal workflows.</p>
         </div>
 
         <div class="case-study-stats trust-reveal" style="--trust-delay: 0.12s;">
           <span class="case-stat">Portfolio Samples: 12+</span>
           <span class="case-stat">Practice Edits: 30+</span>
           <span class="case-stat">Team Members: 5+</span>
-          <span class="case-stat">Response Time: 12h</span>
+          <span class="case-stat">Fast Response: 12h</span>
           <span class="case-stat">Platform Versions: 4+</span>
           <span class="case-stat">Motion Samples: 10+</span>
-          <span class="case-stat">Client Reviews: Coming Soon</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section trust-section glow-section" id="case-feedback" data-trust-section>
-      <div class="site-shell">
-        <div class="case-review-grid">
-          <article class="case-review-card trust-reveal" style="--trust-delay: 0s;">
-            <span>Client Feedback</span>
-            <h3>Client feedback coming soon.</h3>
-            <p>We&rsquo;re currently collecting verified feedback from recent projects. Real client reviews will be added here soon.</p>
-            <p>Want to be one of our first featured clients? Let&rsquo;s build something worth showcasing.</p>
-            <span class="case-review-status">Verified feedback pending</span>
-          </article>
         </div>
       </div>
     </section>
@@ -5412,7 +5397,6 @@
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
             <li><a href="index.html#tools">Editing Tools</a></li>
-            <li><a href="index.html#reviews">Client Reviews</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="work.html">Blog</a></li>
           </ul>
@@ -6248,9 +6232,15 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.38 });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-      document.querySelectorAll('.trust-metric-panel').forEach((panel) => metricObserver.observe(panel));
+      const panels = Array.from(document.querySelectorAll('.trust-metric-panel'));
+      if (!panels.length) {
+        numbers.forEach(animateTrustNumber);
+        return;
+      }
+
+      panels.forEach((panel) => metricObserver.observe(panel));
     }
 
     function setupFaqAccordion() {
@@ -6538,10 +6528,16 @@
     document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 
     function animateCounter(el) {
+      if (el.dataset.counted === 'true') return;
+      el.dataset.counted = 'true';
       const target = Number(el.dataset.target || 0);
       const suffix = el.dataset.suffix || '';
       const start = performance.now();
       const duration = 1450;
+
+      if (!Number.isFinite(target)) {
+        return;
+      }
 
       function frame(now) {
         const progress = Math.min(1, (now - start) / duration);
@@ -6559,16 +6555,22 @@
       requestAnimationFrame(frame);
     }
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.45 });
+    const statCounters = Array.from(document.querySelectorAll('.stat-number'));
 
-    document.querySelectorAll('.stat-number').forEach((counter) => counterObserver.observe(counter));
+    if (!('IntersectionObserver' in window)) {
+      statCounters.forEach(animateCounter);
+    } else {
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      statCounters.forEach((counter) => counterObserver.observe(counter));
+    }
 
     const portfolioTabs = document.querySelector('[data-portfolio-tabs]');
     const portfolioGrid = document.querySelector('[data-portfolio-grid]');

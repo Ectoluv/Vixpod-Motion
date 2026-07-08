@@ -1470,49 +1470,6 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="why-us-reviews" data-trust-section>
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--quote" style="--x: 9%; --y: 24%; --size: 58px; --r: -8deg; --delay: 0.15s;"></span>
-        <span class="motion-icon motion-icon--star" style="--x: 88%; --y: 30%; --size: 44px; --r: 7deg; --delay: 0.6s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">Client Reviews</span>
-          <h2>Why Clients Choose Vixpod Motion</h2>
-          <p class="lead">Clients work with us because we focus on quality, retention, speed, and clean creative execution.</p>
-        </div>
-
-        <div class="reviews-grid">
-          <article class="trust-card review-card trust-reveal" style="--trust-delay: 0s;">
-            <span class="review-stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="trust-card__label">Result</span>
-            <div>
-              <h3>Client Name 01</h3>
-              <p>&ldquo;The edits were clean, fast, and designed to keep viewers watching till the end.&rdquo;</p>
-            </div>
-          </article>
-
-          <article class="trust-card review-card trust-reveal" style="--trust-delay: 0.12s;">
-            <span class="review-stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="trust-card__label">Reliability</span>
-            <div>
-              <h3>Client Name 02</h3>
-              <p>&ldquo;Vixpod Motion gave our videos a more premium feel and helped us improve our online presence.&rdquo;</p>
-            </div>
-          </article>
-
-          <article class="trust-card review-card trust-reveal" style="--trust-delay: 0.24s;">
-            <span class="review-stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="trust-card__label">Quality</span>
-            <div>
-              <h3>Client Name 03</h3>
-              <p>&ldquo;The team delivered exactly what we needed with strong attention to detail and professional finishing.&rdquo;</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section glow-section" id="creator-trust" data-trust-section aria-label="Trust Stats">
       <div class="motion-icon-layer reveal" aria-hidden="true">
         <span class="motion-icon motion-icon--chart" style="--x: 8%; --y: 21%; --size: 54px; --r: -6deg; --delay: 0.2s;"></span>
@@ -1523,23 +1480,23 @@
           <div class="trust-metrics">
             <article class="trust-metric trust-reveal" style="--trust-delay: 0.08s;">
               <strong class="trust-metric-number" data-trust-count="50" data-trust-suffix="+">0</strong>
-              <span class="trust-metric-title">PROJECTS DELIVERED</span>
+              <span class="trust-metric-title">SAMPLE PROJECTS</span>
               <p class="trust-metric-copy">Editing, motion, thumbnails, and brand videos.</p>
             </article>
             <article class="trust-metric trust-reveal" style="--trust-delay: 0.18s;">
-              <strong class="trust-metric-number" data-trust-count-start="5" data-trust-count-end="10">0</strong>
+              <strong class="trust-metric-number" data-trust-count="5" data-trust-suffix="+">0</strong>
               <span class="trust-metric-title">TEAM MEMBERS</span>
               <p class="trust-metric-copy">Creative support for different content styles.</p>
             </article>
             <article class="trust-metric trust-reveal" style="--trust-delay: 0.28s;">
               <strong class="trust-metric-number" data-trust-count="12" data-trust-suffix="h">0</strong>
-              <span class="trust-metric-title">RESPONSE TIME</span>
+              <span class="trust-metric-title">FAST RESPONSE</span>
               <p class="trust-metric-copy">Fast replies so your work keeps moving.</p>
             </article>
             <article class="trust-metric trust-reveal" style="--trust-delay: 0.38s;">
               <strong class="trust-metric-number" data-trust-count="100" data-trust-suffix="%">0</strong>
-              <span class="trust-metric-title">CUSTOM STYLE</span>
-              <p class="trust-metric-copy">Every edit is matched to your brand.</p>
+              <span class="trust-metric-title">EDITING FOCUS</span>
+              <p class="trust-metric-copy">Every edit is matched to your project style.</p>
             </article>
           </div>
 
@@ -1622,7 +1579,6 @@
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
             <li><a href="index.html#tools">Editing Tools</a></li>
-            <li><a href="index.html#reviews">Reviews</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="work.html">Blog</a></li>
           </ul>
@@ -1789,9 +1745,15 @@
           entry.target.querySelectorAll('.trust-metric-number').forEach(animateNumber);
           instance.unobserve(entry.target);
         });
-      }, { threshold: 0.38 });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-      document.querySelectorAll('.trust-metric-panel').forEach((panel) => observer.observe(panel));
+      const panels = Array.from(document.querySelectorAll('.trust-metric-panel'));
+      if (!panels.length) {
+        numbers.forEach(animateNumber);
+        return;
+      }
+
+      panels.forEach((panel) => observer.observe(panel));
     }
 
     function setupPointerGlow() {

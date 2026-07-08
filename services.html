@@ -3942,7 +3942,7 @@
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
             <li><a href="index.html#tools">Editing Tools</a></li>
-            <li><a href="index.html#reviews">Content Strategy</a></li>
+            <li><a href="services.html">Content Strategy</a></li>
             <li><a href="index.html#numbers">FAQ</a></li>
             <li><a href="work.html">Blog</a></li>
           </ul>
@@ -4630,10 +4630,16 @@
     document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 
     function animateCounter(el) {
+      if (el.dataset.counted === 'true') return;
+      el.dataset.counted = 'true';
       const target = Number(el.dataset.target || 0);
       const suffix = el.dataset.suffix || '';
       const start = performance.now();
       const duration = 1450;
+
+      if (!Number.isFinite(target)) {
+        return;
+      }
 
       function frame(now) {
         const progress = Math.min(1, (now - start) / duration);
@@ -4651,16 +4657,22 @@
       requestAnimationFrame(frame);
     }
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.45 });
+    const statCounters = Array.from(document.querySelectorAll('.stat-number'));
 
-    document.querySelectorAll('.stat-number').forEach((counter) => counterObserver.observe(counter));
+    if (!('IntersectionObserver' in window)) {
+      statCounters.forEach(animateCounter);
+    } else {
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      statCounters.forEach((counter) => counterObserver.observe(counter));
+    }
 
     const portfolioTabs = document.querySelector('[data-portfolio-tabs]');
     const portfolioGrid = document.querySelector('[data-portfolio-grid]');

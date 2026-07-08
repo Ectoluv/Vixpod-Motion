@@ -3487,48 +3487,6 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="work-reviews">
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--quote" style="--x: 9%; --y: 24%; --size: 58px; --r: -8deg; --delay: 0.15s;"></span>
-        <span class="motion-icon motion-icon--star" style="--x: 88%; --y: 30%; --size: 44px; --r: 7deg; --delay: 0.6s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">Client Reviews</span>
-          <h2>Client Feedback on Our Work</h2>
-          <p class="lead">Every project is edited with a focus on storytelling, visuals, pacing, and audience attention.</p>
-        </div>
-
-        <div class="reviews-grid reviews-grid--three" data-review-reveal>
-          <article class="review-card review-card--compact" style="--review-delay: 0s;">
-            <span class="review-badge">YouTube Edit</span>
-            <div class="review-card__top">
-              <span class="review-card__mark">01</span>
-              <span><span class="review-card__name">Client Name 01</span><span class="review-card__role">YouTube Video Editing</span></span>
-            </div>
-            <p class="review-card__quote">&ldquo;The final video felt smooth, cinematic, and much more engaging than our previous edits.&rdquo;</p>
-          </article>
-
-          <article class="review-card review-card--compact" style="--review-delay: 0.12s;">
-            <span class="review-badge">Short-Form Edit</span>
-            <div class="review-card__top">
-              <span class="review-card__mark">02</span>
-              <span><span class="review-card__name">Client Name 02</span><span class="review-card__role">Short-Form Editing</span></span>
-            </div>
-            <p class="review-card__quote">&ldquo;The hooks, captions, and pacing made the content feel ready for Instagram Reels and YouTube Shorts.&rdquo;</p>
-          </article>
-
-          <article class="review-card review-card--compact" style="--review-delay: 0.24s;">
-            <span class="review-badge">VFX Work</span>
-            <div class="review-card__top">
-              <span class="review-card__mark">03</span>
-              <span><span class="review-card__name">Client Name 03</span><span class="review-card__role">VFX &amp; Visual Effects</span></span>
-            </div>
-            <p class="review-card__quote">&ldquo;The visual effects were clean, modern, and matched the premium style we wanted.&rdquo;</p>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <a class="floating-contact" href="index.html#talk" aria-label="Lets talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
@@ -3557,7 +3515,7 @@
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
             <li><a href="index.html#tools">Editing Tools</a></li>
-            <li><a href="index.html#reviews">Content Strategy</a></li>
+            <li><a href="services.html">Content Strategy</a></li>
             <li><a href="index.html#numbers">FAQ</a></li>
             <li><a href="work.html">Blog</a></li>
           </ul>
@@ -4172,10 +4130,16 @@
     setupLazyVideos();
 
     function animateCounter(el) {
+      if (el.dataset.counted === 'true') return;
+      el.dataset.counted = 'true';
       const target = Number(el.dataset.target || 0);
       const suffix = el.dataset.suffix || '';
       const start = performance.now();
       const duration = 1450;
+
+      if (!Number.isFinite(target)) {
+        return;
+      }
 
       function frame(now) {
         const progress = Math.min(1, (now - start) / duration);
@@ -4193,16 +4157,22 @@
       requestAnimationFrame(frame);
     }
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.45 });
+    const statCounters = Array.from(document.querySelectorAll('.stat-number'));
 
-    document.querySelectorAll('.stat-number').forEach((counter) => counterObserver.observe(counter));
+    if (!('IntersectionObserver' in window)) {
+      statCounters.forEach(animateCounter);
+    } else {
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      statCounters.forEach((counter) => counterObserver.observe(counter));
+    }
 
     const portfolioTabs = document.querySelector('[data-portfolio-tabs]');
     const portfolioGrid = document.querySelector('[data-portfolio-grid]');
