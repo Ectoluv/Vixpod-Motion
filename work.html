@@ -673,6 +673,69 @@
       box-shadow: 0 22px 54px rgba(0,0,0,0.38), 0 0 30px rgba(143,216,232,0.26);
     }
 
+    .work-category-block {
+      margin-top: 38px;
+    }
+
+    .work-category-block:first-of-type {
+      margin-top: 0;
+    }
+
+    .section-head + .work-category-block {
+      margin-top: 0;
+    }
+
+    .work-category-block[id] {
+      scroll-margin-top: 108px;
+    }
+
+    .work-category-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    .work-category-title {
+      margin: 12px 0 0;
+      font-size: clamp(24px, 3vw, 40px);
+      line-height: 1;
+    }
+
+    .work-category-copy {
+      max-width: 620px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .work-category-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .work-category-grid .project-card__image {
+      height: auto;
+    }
+
+    .project-card--landscape .project-card__image,
+    .project-card--vfx .project-card__image {
+      aspect-ratio: 16 / 9;
+    }
+
+    .work-category-grid .project-card--vertical .project-card__image {
+      aspect-ratio: 9 / 16;
+      padding: 0;
+      min-height: 0;
+    }
+
+    .work-category-grid .project-video-trigger {
+      min-height: 100%;
+    }
+
     .video-modal-open {
       overflow: hidden;
     }
@@ -3302,6 +3365,16 @@
         margin-top: 0;
       }
 
+      .work-category-header {
+        display: grid;
+        align-items: start;
+        text-align: left;
+      }
+
+      .work-category-actions {
+        justify-content: stretch;
+      }
+
       .project-grid,
       .team-grid {
         grid-template-columns: 1fr;
@@ -3595,43 +3668,112 @@
           </div>
           <p class="lead">Handpicked video editing projects showcasing cinematic pacing, scroll-stopping hooks, clean motion design, and premium brand storytelling.</p>
         </div>
-        <div class="project-grid subpage-grid stagger-parent">
-          <article class="project-card project-card--vertical stagger-item">
-            <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Product Ad Edit video"><video class="lazy-video" data-video-src="assets/videos/product-ad-edit.mp4#t=0.1" muted playsinline preload="metadata" aria-label="Product ad edit vertical preview"></video><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-            <div class="project-card__body"><div><h3>Product Ad Edit</h3><p class="project-card__copy">A vertical product commercial edit designed for social media ads, using clean pacing, soft visuals, product focus, and premium brand presentation.</p></div><span class="meta">Brand Video / Product Ad</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Product Launch Video"><video class="lazy-video" data-video-src="assets/videos/sample-video.mp4#t=0.1" muted playsinline preload="metadata" aria-label="Product launch video sample preview"></video><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-            <div class="project-card__body"><div><h3>Product Launch Video</h3><p class="project-card__copy">Commercial edit with product callouts, pacing, sound design, and ad-ready delivery for launch visibility.</p></div><span class="meta">Commercial Edit</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="YouTube documentary edit"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>YouTube Documentary Edit</h3><p class="project-card__copy">Long-form storytelling, pacing, B-roll, sound polish, and retention-focused structure for a stronger watch-through.</p></div><span class="meta">Long-Form Editing</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury brand reel"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>Luxury Brand Reel</h3><p class="project-card__copy">Premium short-form edit with clean cuts, visual rhythm, captions, and brand-forward polish for social campaigns.</p></div><span class="meta">Short-Form Content</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Motion graphics campaign"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>Motion Graphics Campaign</h3><p class="project-card__copy">Animated titles, kinetic typography, logo motion, and visual accents built to make the campaign feel high-end.</p></div><span class="meta">Brand Video</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="assets/images/blender-sports-car-render.png" alt="Blender sports car render by Ashu Rawat"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>Blender Sports Car Render</h3><p class="project-card__copy">A cinematic 3D vehicle render created in Blender with premium lighting, glossy materials, and clean product-style presentation.</p></div><span class="meta">3D Blender Render</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="assets/images/blender-product-render.png" alt="Blender product bottle render by Ashu Rawat"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>Blender Product Visual</h3><p class="project-card__copy">A polished 3D product render created in Blender with soft studio lighting, brand-focused framing, and premium commercial styling.</p></div><span class="meta">3D Product Render</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1616469829476-1a7e07368a6f?auto=format&fit=crop&w=900&q=80" alt="Creator reel pack"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>Creator Reel Pack</h3><p class="project-card__copy">Multiple Reels and Shorts repurposed from creator footage with hooks, captions, pacing, and platform-ready exports.</p></div><span class="meta">Social Media Editing</span></div>
-          </article>
-          <article class="project-card stagger-item">
-            <div class="project-card__image"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Cinematic color grade"><span class="round-arrow">&#8599;</span></div>
-            <div class="project-card__body"><div><h3>Cinematic Color Grade</h3><p class="project-card__copy">Color correction, skin tone balance, contrast control, and final polish for a cleaner cinematic finish.</p></div><span class="meta">Color Grading</span></div>
-          </article>
+        <div class="work-category-block" id="landscape-videos">
+          <div class="work-category-header reveal">
+            <div>
+              <span class="label-pill">16:9 Videos</span>
+              <h2 class="work-category-title">Landscape Video Edits</h2>
+            </div>
+            <p class="work-category-copy">Landscape edits for YouTube, brand films, commercials, cinematic edits, and long-form content.</p>
+          </div>
+          <div class="project-grid work-category-grid stagger-parent">
+            <article class="project-card project-card--landscape stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play YouTube Documentary Edit"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="YouTube documentary edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>YouTube Documentary Edit</h3><p class="project-card__copy">Long-form story edit with pacing, B-roll, sound polish, and cinematic visuals.</p></div><span class="meta">16:9 Video</span></div>
+            </article>
+            <article class="project-card project-card--landscape stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Brand Commercial Edit"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Brand commercial edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Brand Commercial Edit</h3><p class="project-card__copy">Brand-forward commercial edit with clean pacing, premium transitions, and polished sound.</p></div><span class="meta">16:9 Video</span></div>
+            </article>
+            <article class="project-card project-card--landscape stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Cinematic Color Grade"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Cinematic color grade" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Cinematic Color Grade</h3><p class="project-card__copy">Color correction, skin tone balance, contrast control, and final cinematic polish.</p></div><span class="meta">16:9 Video</span></div>
+            </article>
+            <article class="project-card project-card--landscape stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Product Launch Video"><img src="assets/images/blender-product-render.png" alt="Product launch video preview" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Product Launch Video</h3><p class="project-card__copy">Commercial edit with product callouts, pacing, sound design, and ad-ready delivery.</p></div><span class="meta">16:9 Video</span></div>
+            </article>
+            <article class="project-card project-card--landscape stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Corporate Promo Video"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Corporate promo video" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Corporate Promo Video</h3><p class="project-card__copy">Professional brand overview edit with a clean structure and confident studio finish.</p></div><span class="meta">16:9 Video</span></div>
+            </article>
+            <article class="project-card project-card--landscape stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Travel Lifestyle Film"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Travel lifestyle film" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Travel / Lifestyle Film</h3><p class="project-card__copy">Cinematic lifestyle sequence with smooth pacing, mood, music, and visual continuity.</p></div><span class="meta">16:9 Video</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="work-category-block" id="vertical-videos">
+          <div class="work-category-header reveal">
+            <div>
+              <span class="label-pill">9:16 Videos</span>
+              <h2 class="work-category-title">Vertical Short-Form Edits</h2>
+            </div>
+            <p class="work-category-copy">Vertical short-form videos for Instagram Reels, YouTube Shorts, TikTok, creators, product ads, and social media campaigns.</p>
+          </div>
+          <div class="project-grid work-category-grid stagger-parent">
+            <article class="project-card project-card--vertical stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Instagram Reel Edit"><img src="https://images.unsplash.com/photo-1616469829476-1a7e07368a6f?auto=format&fit=crop&w=900&q=80" alt="Instagram reel edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Instagram Reel Edit</h3><p class="project-card__copy">Hook-led reel with captions, sound accents, clean pacing, and mobile-first framing.</p></div><span class="meta">9:16 Video</span></div>
+            </article>
+            <article class="project-card project-card--vertical stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play YouTube Shorts Edit"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=80" alt="YouTube Shorts edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>YouTube Shorts Edit</h3><p class="project-card__copy">Shorts edit with punchy structure, readable captions, rhythm, and retention focus.</p></div><span class="meta">9:16 Video</span></div>
+            </article>
+            <article class="project-card project-card--vertical stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play TikTok Product Ad"><img src="assets/images/blender-product-render.png" alt="TikTok product ad" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>TikTok Product Ad</h3><p class="project-card__copy">Vertical product ad designed for quick attention, simple messaging, and soft premium visuals.</p></div><span class="meta">9:16 Video</span></div>
+            </article>
+            <article class="project-card project-card--vertical stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Fitness Creator Reel"><img src="https://images.unsplash.com/photo-1571019613914-85f342c6a11e?auto=format&fit=crop&w=900&q=80" alt="Fitness creator reel" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Fitness Creator Reel</h3><p class="project-card__copy">Fast creator edit with energetic cuts, movement emphasis, captions, and social polish.</p></div><span class="meta">9:16 Video</span></div>
+            </article>
+            <article class="project-card project-card--vertical stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Luxury Brand Reel"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury brand reel" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Luxury Brand Reel</h3><p class="project-card__copy">Premium short-form edit with visual rhythm, captions, and brand-forward polish.</p></div><span class="meta">9:16 Video</span></div>
+            </article>
+            <article class="project-card project-card--vertical stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Short-Form Hook Edit"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Short-form hook edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Short-Form Hook Edit</h3><p class="project-card__copy">Hook-first edit with captions, quick pattern shifts, sound design, and final export.</p></div><span class="meta">9:16 Video</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="work-category-block" id="vfx">
+          <div class="work-category-header reveal">
+            <div>
+              <span class="label-pill">VFX</span>
+              <h2 class="work-category-title">Visual Effects & Motion Work</h2>
+            </div>
+            <p class="work-category-copy">Visual effects, compositing, motion graphics, CGI elements, cleanups, transitions, and cinematic enhancement.</p>
+          </div>
+          <div class="project-grid work-category-grid stagger-parent">
+            <article class="project-card project-card--vfx stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play VFX Breakdown"><img src="assets/images/blender-sports-car-render.png" alt="VFX breakdown" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>VFX Breakdown</h3><p class="project-card__copy">Visual effects breakdown with compositing, timing, cleanup, and enhancement layers.</p></div><span class="meta">VFX</span></div>
+            </article>
+            <article class="project-card project-card--vfx stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Motion Graphics Campaign"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Motion graphics campaign" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Motion Graphics Campaign</h3><p class="project-card__copy">Animated titles, kinetic typography, logo motion, and visual accents built for premium content.</p></div><span class="meta">VFX</span></div>
+            </article>
+            <article class="project-card project-card--vfx stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play CGI Product Visual"><img src="assets/images/blender-product-render.png" alt="CGI product visual" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>CGI Product Visual</h3><p class="project-card__copy">3D product visual created for brand presentation, motion samples, and premium campaign assets.</p></div><span class="meta">VFX</span></div>
+            </article>
+            <article class="project-card project-card--vfx stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Object Tracking Edit"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=80" alt="Object tracking edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Object Tracking Edit</h3><p class="project-card__copy">Tracked graphics and visual callouts that stay locked into the edit with clean motion.</p></div><span class="meta">VFX</span></div>
+            </article>
+            <article class="project-card project-card--vfx stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Screen Replacement"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Screen replacement" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Screen Replacement</h3><p class="project-card__copy">Clean screen insert, matching perspective, reflections, glow, and final composite polish.</p></div><span class="meta">VFX</span></div>
+            </article>
+            <article class="project-card project-card--vfx stagger-item">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Cinematic Effects Edit"><img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=900&q=80" alt="Cinematic effects edit" loading="lazy"><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><h3>Cinematic Effects Edit</h3><p class="project-card__copy">Atmospheric effects, transitions, and visual accents for a polished cinematic finish.</p></div><span class="meta">VFX</span></div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
