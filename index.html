@@ -628,6 +628,147 @@
       transform: scale(1.035);
     }
 
+    .project-video-trigger {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      border-radius: inherit;
+      overflow: hidden;
+      background: transparent;
+      cursor: pointer;
+      color: var(--text);
+      touch-action: manipulation;
+    }
+
+    .project-video-trigger::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: rgba(2,7,10,0.14);
+      opacity: 0;
+      transition: opacity 0.55s var(--ease);
+      pointer-events: none;
+    }
+
+    .project-card:hover .project-video-trigger::before,
+    .project-video-trigger:focus-visible::before {
+      opacity: 1;
+    }
+
+    .project-play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 2;
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(2,7,10,0.84);
+      color: #fff;
+      font-size: 18px;
+      transform: translate(-50%, -50%) scale(0.92);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.34), 0 0 26px rgba(143,216,232,0.18);
+      transition: transform 0.55s var(--ease), box-shadow 0.55s var(--ease), border-color 0.55s var(--ease);
+      pointer-events: none;
+    }
+
+    .project-card:hover .project-play-btn,
+    .project-video-trigger:focus-visible .project-play-btn {
+      transform: translate(-50%, -50%) scale(1.06);
+      border-color: rgba(143,216,232,0.46);
+      box-shadow: 0 22px 54px rgba(0,0,0,0.38), 0 0 30px rgba(143,216,232,0.26);
+    }
+
+    .video-modal-open {
+      overflow: hidden;
+    }
+
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.45s var(--ease), visibility 0.45s var(--ease);
+    }
+
+    .video-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .video-modal__overlay {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: rgba(2,7,10,0.78);
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+
+    .video-modal__content {
+      position: relative;
+      z-index: 1;
+      width: min(1040px, 100%);
+      border-radius: 26px;
+      border: 1px solid rgba(143,216,232,0.28);
+      background: linear-gradient(145deg, rgba(18,54,66,0.94), rgba(5,20,27,0.96));
+      box-shadow: 0 30px 90px rgba(0,0,0,0.52), 0 0 36px rgba(143,216,232,0.14);
+      padding: 12px;
+      transform: translateY(18px) scale(0.97);
+      transition: transform 0.45s var(--ease);
+    }
+
+    .video-modal.active .video-modal__content {
+      transform: translateY(0) scale(1);
+    }
+
+    .video-modal__content video {
+      width: 100%;
+      max-height: min(76vh, 720px);
+      display: block;
+      border-radius: 18px;
+      background: #02070A;
+    }
+
+    .video-close-btn {
+      position: absolute;
+      right: -12px;
+      top: -12px;
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(2,7,10,0.92);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      touch-action: manipulation;
+      box-shadow: 0 16px 38px rgba(0,0,0,0.35);
+      transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+
+    .video-close-btn:hover,
+    .video-close-btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(143,216,232,0.48);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.4), 0 0 24px rgba(143,216,232,0.2);
+    }
+
     .round-arrow {
       position: absolute;
       left: 50%;
@@ -5318,7 +5459,7 @@
             <div class="project-card__body"><div><h3>Blender Product Visual</h3><p class="project-card__copy">A polished 3D product render created in Blender with soft studio lighting, brand-focused framing, and premium commercial styling.</p></div><span class="meta">3D Product Render</span></div>
           </article>
           <article class="project-card project-card--vertical stagger-item">
-            <div class="project-card__image"><video class="lazy-video" data-video-src="assets/videos/product-ad-edit.mp4" controls muted playsinline preload="none" aria-label="Product ad edit vertical preview"></video></div>
+            <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Product Ad Edit video"><video class="lazy-video" data-video-src="assets/videos/product-ad-edit.mp4#t=0.1" muted playsinline preload="metadata" aria-label="Product ad edit vertical preview"></video><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
             <div class="project-card__body"><div><h3>Product Ad Edit</h3><p class="project-card__copy">A vertical product commercial edit designed for social media ads, using clean pacing, soft visuals, product focus, and premium brand presentation.</p></div><span class="meta">Brand Video / Product Ad</span></div>
           </article>
           <article class="project-card stagger-item">
@@ -5330,7 +5471,7 @@
             <div class="project-card__body"><div><h3>Cinematic Color Grade</h3><p class="project-card__copy">Color correction, skin tone balance, contrast control, and final polish for a cleaner cinematic finish.</p></div><span class="meta">Color Grading</span></div>
           </article>
           <article class="project-card stagger-item">
-            <div class="project-card__image"><video src="assets/videos/sample-video.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Product launch video sample"></video><span class="round-arrow">&#8599;</span></div>
+            <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Product Launch Video"><video class="lazy-video" data-video-src="assets/videos/sample-video.mp4#t=0.1" muted playsinline preload="metadata" aria-label="Product launch video sample preview"></video><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
             <div class="project-card__body"><div><h3>Product Launch Video</h3><p class="project-card__copy">Commercial edit with product callouts, pacing, sound design, and ad-ready delivery for launch visibility.</p></div><span class="meta">Commercial Edit</span></div>
           </article>
         </div>
@@ -5825,6 +5966,16 @@
   </main>
 
   <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Work video player">
+    <button class="video-modal__overlay" type="button" aria-label="Close video"></button>
+    <div class="video-modal__content">
+      <button class="video-close-btn" type="button" aria-label="Close video">&#10005;</button>
+      <video id="modalVideo" controls playsinline preload="metadata">
+        <source src="" type="video/mp4" />
+      </video>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="site-shell">
@@ -7009,6 +7160,61 @@
     }
 
     setupLazyVideos();
+
+    function setupWorkVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const modalSource = modalVideo ? modalVideo.querySelector('source') : null;
+      const triggers = Array.from(document.querySelectorAll('[data-modal-video]'));
+
+      if (!modal || !modalVideo || !modalSource || !triggers.length) return;
+
+      let lastTrigger = null;
+
+      function openVideoModal(trigger) {
+        const videoSrc = trigger.dataset.modalVideo;
+        if (!videoSrc) return;
+
+        lastTrigger = trigger;
+        modalSource.src = videoSrc;
+        modalVideo.muted = false;
+        modalVideo.volume = 1;
+        modalVideo.load();
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('video-modal-open');
+
+        const playPromise = modalVideo.play();
+        if (playPromise) playPromise.catch(() => {});
+      }
+
+      function closeVideoModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('video-modal-open');
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        modalSource.src = '';
+        modalVideo.load();
+        if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+      }
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => openVideoModal(trigger));
+      });
+
+      modal.querySelectorAll('.video-close-btn, .video-modal__overlay').forEach((button) => {
+        button.addEventListener('click', closeVideoModal);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+          closeVideoModal();
+        }
+      });
+    }
+
+    setupWorkVideoModal();
 
     function animateCounter(el) {
       if (el.dataset.counted === 'true') return;
