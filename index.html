@@ -5043,7 +5043,7 @@
     /* Responsive refinement layer: mobile-only stability without changing desktop styling */
     html { scroll-padding-top: 96px; }
 
-    section[id], main[id], #talk, #reviews, #faq, #case-study, #creator-trust, #workflow-system, #tools, #numbers {
+    section[id], main[id], #contact, #talk, #reviews, #faq, #case-study, #creator-trust, #workflow-system, #tools, #numbers {
       scroll-margin-top: 96px;
     }
 
@@ -5106,7 +5106,7 @@
 
     @media (max-width: 768px) {
       html { scroll-padding-top: 88px; }
-      section[id], main[id], #talk, #reviews, #faq, #case-study, #creator-trust, #workflow-system, #tools, #numbers { scroll-margin-top: 88px; }
+      section[id], main[id], #contact, #talk, #reviews, #faq, #case-study, #creator-trust, #workflow-system, #tools, #numbers { scroll-margin-top: 88px; }
       body { overflow-x: hidden; }
       .site-shell { width: min(calc(100% - 28px), var(--container)); }
       .top-pill { top: 12px; width: calc(100% - 24px); min-height: 54px; height: auto; padding: 7px 7px 7px 16px; gap: 8px; }
@@ -5434,11 +5434,11 @@
       <span class="top-pill__wordmark-sub">MOTION</span>
     </a>
     <nav class="top-pill__nav" id="primaryNav" aria-label="Primary pages">
-      <a href="about.html">About Us</a>
-      <a href="work.html">Our Work</a>
-      <a href="case-study.html">Case Study</a>
-      <a href="why-us.html">Why Us</a>
-      <a href="services.html">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#case-study">Case Study</a>
+      <a href="#why-us">Why Us</a>
     </nav>
     <button class="top-pill__hamburger" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-controls="primaryNav" aria-expanded="false">
       <span></span>
@@ -5446,13 +5446,13 @@
       <span></span>
     </button>
     <div class="top-pill__action">
-      <a href="#talk" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
+      <a href="#contact" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
       <div class="quick-menu" id="quickMenu" aria-label="Quick services menu" aria-hidden="true">
-        <a class="quick-menu__item" href="about.html"><span class="quick-menu__mark">AB</span><span><strong>About Us</strong><span>Creative partner</span></span></a>
-        <a class="quick-menu__item" href="work.html"><span class="quick-menu__mark">WK</span><span><strong>Our Work</strong><span>Featured edits</span></span></a>
-        <a class="quick-menu__item" href="case-study.html"><span class="quick-menu__mark">CS</span><span><strong>Case Study</strong><span>Real workflow</span></span></a>
-        <a class="quick-menu__item" href="why-us.html"><span class="quick-menu__mark">WU</span><span><strong>Why Us</strong><span>Creator choice</span></span></a>
-        <a class="quick-menu__item" href="services.html"><span class="quick-menu__mark">SV</span><span><strong>Services</strong><span>Editing support</span></span></a>
+        <a class="quick-menu__item" href="#about"><span class="quick-menu__mark">AB</span><span><strong>About Us</strong><span>Creative partner</span></span></a>
+        <a class="quick-menu__item" href="#services"><span class="quick-menu__mark">SV</span><span><strong>Services</strong><span>Editing support</span></span></a>
+        <a class="quick-menu__item" href="#work"><span class="quick-menu__mark">WK</span><span><strong>Our Work</strong><span>Featured edits</span></span></a>
+        <a class="quick-menu__item" href="#case-study"><span class="quick-menu__mark">CS</span><span><strong>Case Study</strong><span>Real workflow</span></span></a>
+        <a class="quick-menu__item" href="#why-us"><span class="quick-menu__mark">WU</span><span><strong>Why Us</strong><span>Creator choice</span></span></a>
       </div>
     </div>
   </header>
@@ -5483,6 +5483,118 @@
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Premium editing monitor setup</span><img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=700&q=85" alt="Premium editing monitor setup" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Color grading and production setup</span><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=85" alt="Color grading and production setup" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Creator content editing workspace</span><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85" alt="Creator content editing workspace" /></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section glow-section" id="about">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--timeline" style="--x: 7%; --y: 25%; --size: 58px; --r: -6deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--camera" style="--x: 87%; --y: 23%; --size: 62px; --r: 7deg; --delay: 0.5s;"></span>
+        <span class="motion-icon motion-icon--caption" style="--x: 78%; --y: 78%; --size: 52px; --r: -5deg; --delay: 0.9s;"></span>
+      </div>
+      <div class="site-shell">
+        <div class="section-head reveal">
+          <span class="label-pill">About Us</span>
+          <h2>Your Creative Video Editing Partner</h2>
+          <p class="lead">Vixpod Motion is a video editing agency helping creators, brands, startups, and businesses create professional content for social media, YouTube, advertising, and brand growth.</p>
+          <p class="lead">We provide short-form video editing, Instagram Reels editing, YouTube Shorts editing, YouTube video editing, product ad editing, brand commercial editing, motion graphics, captions, colour correction, sound design, and platform-ready exports.</p>
+          <p class="lead">Our editing process focuses on strong hooks, smooth pacing, clean storytelling, premium visuals, readable captions, polished audio, and scroll-stopping motion.</p>
+        </div>
+        <div class="tools-grid subpage-grid stagger-parent">
+          <article class="subpage-card stagger-item">
+            <h3>Short-Form Video Editing</h3>
+            <p>Instagram Reels editing, YouTube Shorts editing, social media video editing, captions and subtitles, strong hooks, smooth pacing, and platform-ready exports.</p>
+          </article>
+          <article class="subpage-card stagger-item">
+            <h3>YouTube Video Editing</h3>
+            <p>YouTube video editing, long-form storytelling, clean cuts, readable captions, sound design, and polished audio for creator growth.</p>
+          </article>
+          <article class="subpage-card stagger-item">
+            <h3>Product Ad Editing</h3>
+            <p>Product ad editing, brand commercial editing, motion graphics, colour correction, premium visuals, and commercial-ready edits for campaigns.</p>
+          </article>
+          <article class="subpage-card stagger-item">
+            <h3>Platform-Ready Exports</h3>
+            <p>Final videos prepared for Instagram, YouTube, TikTok, Facebook, LinkedIn, websites, ads, agencies, startups, online businesses, and lifestyle brands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust-section glow-section" id="services" data-trust-section>
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--play" style="--x: 7%; --y: 22%; --size: 56px; --r: -7deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--wave" style="--x: 90%; --y: 25%; --size: 62px; --r: 7deg; --delay: 0.45s;"></span>
+        <span class="motion-icon motion-icon--target" style="--x: 83%; --y: 80%; --size: 54px; --r: -4deg; --delay: 0.9s;"></span>
+      </div>
+      <div class="site-shell">
+        <div class="section-head trust-title-block trust-reveal">
+          <span class="label-pill">POST-PRODUCTION SOLUTIONS</span>
+          <h2>Our Professional Video Editing Services</h2>
+          <p class="lead">Future-safe premium services for creators, brands, agencies, and businesses who need cinematic video editing, CGI product visuals, VFX, motion graphics, and creative direction.</p>
+        </div>
+
+        <div class="trust-service-grid">
+          <article class="trust-service-card trust-reveal" style="--trust-delay: 0s;">
+            <span class="service-object motion-icon motion-icon--reels" aria-hidden="true"></span>
+            <span class="trust-card__label">Reels / Shorts</span>
+            <div>
+              <h3>Short-Form Video Editing</h3>
+              <p>High-retention edits for Instagram Reels, YouTube Shorts, TikTok, creator clips, ads, and social media campaigns with hooks, captions, pacing, sound design, and platform-ready exports.</p>
+            </div>
+            <a class="btn btn--glass" href="#contact">Book Free Consultation</a>
+          </article>
+
+          <article class="trust-service-card trust-reveal" style="--trust-delay: 0.10s;">
+            <span class="service-object motion-icon motion-icon--screen" aria-hidden="true"></span>
+            <span class="trust-card__label">YouTube</span>
+            <div>
+              <h3>YouTube Video Editing</h3>
+              <p>Professional long-form editing for YouTube videos, documentary edits, talking-head content, podcasts, storytelling videos, b-roll, retention pacing, audio polish, and thumbnails support.</p>
+            </div>
+            <a class="btn btn--dark" href="#contact">Book Free Consultation</a>
+          </article>
+
+          <article class="trust-service-card trust-reveal" style="--trust-delay: 0.20s;">
+            <span class="service-object motion-icon motion-icon--target" aria-hidden="true"></span>
+            <span class="trust-card__label">Product Ads</span>
+            <div>
+              <h3>Product Ads &amp; Brand Commercials</h3>
+              <p>Premium product launch videos, ecommerce ads, brand commercials, social media ads, and sales-focused videos designed to make products look clean, modern, and ready to promote.</p>
+            </div>
+            <a class="btn btn--glass" href="#contact">Book Free Consultation</a>
+          </article>
+
+          <article class="trust-service-card trust-reveal" style="--trust-delay: 0.30s;">
+            <span class="service-object motion-icon motion-icon--globe" aria-hidden="true"></span>
+            <span class="trust-card__label">CGI</span>
+            <div>
+              <h3>CGI Product Visuals</h3>
+              <p>Blender-based 3D product renders, CGI product shots, cinematic product visuals, floating objects, 3D scenes, and premium visuals for brands, ads, and social media campaigns.</p>
+            </div>
+            <a class="btn btn--dark" href="#contact">Book Free Consultation</a>
+          </article>
+
+          <article class="trust-service-card trust-reveal" style="--trust-delay: 0.40s;">
+            <span class="service-object motion-icon motion-icon--spark" aria-hidden="true"></span>
+            <span class="trust-card__label">VFX / Motion</span>
+            <div>
+              <h3>VFX &amp; Motion Graphics</h3>
+              <p>Visual effects, object tracking, screen replacement, logo animation, text animation, motion graphics, compositing, cinematic effects, cleanups, transitions, and animated callouts.</p>
+            </div>
+            <a class="btn btn--glass" href="#contact">Book Free Consultation</a>
+          </article>
+
+          <article class="trust-service-card trust-reveal" style="--trust-delay: 0.50s;">
+            <span class="service-object motion-icon motion-icon--target" aria-hidden="true"></span>
+            <span class="trust-card__label">Strategy</span>
+            <div>
+              <h3>Creative Direction &amp; Content Strategy</h3>
+              <p>Content planning, hook ideas, script direction, video structure, pacing style, platform strategy, brand tone, and creative guidance to make every video look professional and purposeful.</p>
+            </div>
+            <a class="btn btn--dark" href="#contact">Book Free Consultation</a>
+          </article>
         </div>
       </div>
     </section>
@@ -5583,28 +5695,85 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="book-consultation">
+    <section class="section trust-section glow-section" id="case-study" data-trust-section>
       <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--send" style="--x: 8%; --y: 20%; --size: 54px; --r: 8deg; --delay: 0.1s;"></span>
-        <span class="motion-icon motion-icon--message" style="--x: 88%; --y: 22%; --size: 62px; --r: -5deg; --delay: 0.55s;"></span>
+        <span class="motion-icon motion-icon--timeline" style="--x: 7%; --y: 24%; --size: 64px; --r: -6deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--wave" style="--x: 90%; --y: 27%; --size: 58px; --r: 7deg; --delay: 0.5s;"></span>
+        <span class="motion-icon motion-icon--spark" style="--x: 82%; --y: 79%; --size: 48px; --r: -8deg; --delay: 0.9s;"></span>
       </div>
       <div class="site-shell">
-        <div class="calendly-booking reveal">
-          <div class="calendly-booking__head">
-            <h3>Book a Free Consultation</h3>
-            <p>Choose a time that works for you and let&rsquo;s discuss your project.</p>
+        <div class="section-head trust-title-block trust-reveal">
+          <span class="label-pill">Real Editing Workflow</span>
+          <span class="case-section-name">Case Study</span>
+          <h2>How We Turn Raw Footage Into High-Retention Content</h2>
+          <p class="lead">See how Vixpod Motion transforms raw clips into polished videos with strong hooks, clean pacing, motion graphics, colour, sound design, and platform-ready delivery.</p>
+        </div>
+
+        <div class="case-study-layout">
+          <div class="case-study-stack">
+            <div class="case-study-grid">
+              <article class="trust-card case-study-card trust-reveal" style="--trust-delay: 0s;">
+                <span class="trust-card__icon">01</span>
+                <div>
+                  <h3>Client Goal</h3>
+                  <p>The client needed attention-grabbing content for social media with better pacing, stronger visuals, and a premium brand feel.</p>
+                </div>
+              </article>
+              <article class="trust-card case-study-card trust-reveal" style="--trust-delay: 0.08s;">
+                <span class="trust-card__icon">02</span>
+                <div>
+                  <h3>Our Process</h3>
+                  <p>We selected the strongest clips, built a sharp hook, improved pacing, added motion graphics, colour correction, sound design, captions, and final export versions for each platform.</p>
+                </div>
+              </article>
+              <article class="trust-card case-study-card trust-reveal" style="--trust-delay: 0.16s;">
+                <span class="trust-card__icon">03</span>
+                <div>
+                  <h3>Final Result</h3>
+                  <p>A polished video package designed for higher retention, stronger first impression, and better audience engagement.</p>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="calendly-frame">
-            <div class="calendly-inline-widget" data-url="https://calendly.com/ashensvow/30min" title="Book a free consultation with Vixpod Motion"></div>
-          </div>
+
+          <article class="case-motion-card trust-reveal" style="--trust-delay: 0.18s;" aria-label="Motion sample for client">
+            <div class="case-motion-head">
+              <div>
+                <h3>Motion Sample for Client</h3>
+                <p class="lead">A lightweight preview of the edit flow, from hook to final platform-ready delivery.</p>
+              </div>
+              <span>Preview</span>
+            </div>
+
+            <div class="case-video-preview" aria-hidden="true">
+              <span class="case-floating-label case-floating-label--hook">Hook</span>
+              <span class="case-floating-label case-floating-label--cut">Cut</span>
+              <span class="case-floating-label case-floating-label--motion">Motion</span>
+              <span class="case-floating-label case-floating-label--colour">Colour</span>
+              <span class="case-floating-label case-floating-label--sound">Sound</span>
+              <span class="case-play"></span>
+              <div class="case-waveform">
+                <span style="--bar: 18px; --delay: 0s;"></span>
+                <span style="--bar: 36px; --delay: 0.08s;"></span>
+                <span style="--bar: 24px; --delay: 0.16s;"></span>
+                <span style="--bar: 48px; --delay: 0.24s;"></span>
+                <span style="--bar: 30px; --delay: 0.32s;"></span>
+                <span style="--bar: 54px; --delay: 0.40s;"></span>
+                <span style="--bar: 28px; --delay: 0.48s;"></span>
+                <span style="--bar: 44px; --delay: 0.56s;"></span>
+                <span style="--bar: 22px; --delay: 0.64s;"></span>
+                <span style="--bar: 38px; --delay: 0.72s;"></span>
+              </div>
+              <div class="case-timeline"><span></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row trust-reveal" style="justify-content:center; margin-top: 34px; --trust-delay: 0.40s;">
+          <a class="btn btn--glass" href="case-study.html">View Full Case Study</a>
         </div>
       </div>
     </section>
-
-
-
-
-
 
     <section class="section trust-section glow-section" id="why-us" data-trust-section>
       <div class="motion-icon-layer reveal" aria-hidden="true">
@@ -5910,7 +6079,26 @@
       </div>
     </section>
 
+    <section class="section glow-section" id="book-consultation">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--send" style="--x: 8%; --y: 20%; --size: 54px; --r: 8deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--message" style="--x: 88%; --y: 22%; --size: 62px; --r: -5deg; --delay: 0.55s;"></span>
+      </div>
+      <div class="site-shell">
+        <div class="calendly-booking reveal">
+          <div class="calendly-booking__head">
+            <h3>Book a Free Consultation</h3>
+            <p>Choose a time that works for you and let&rsquo;s discuss your project.</p>
+          </div>
+          <div class="calendly-frame">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/ashensvow/30min" title="Book a free consultation with Vixpod Motion"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section glow-section" id="talk">
+      <span id="contact" aria-hidden="true"></span>
       <div class="motion-icon-layer reveal" aria-hidden="true">
         <span class="motion-icon motion-icon--send" style="--x: 7%; --y: 18%; --size: 54px; --r: 8deg; --delay: 0.1s;"></span>
         <span class="motion-icon motion-icon--message" style="--x: 87%; --y: 16%; --size: 62px; --r: -5deg; --delay: 0.55s;"></span>
