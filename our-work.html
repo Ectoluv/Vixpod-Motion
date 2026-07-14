@@ -1720,7 +1720,117 @@
       letter-spacing: 0.02em;
     }
 
+    .trust-service-grid {
+      position: relative;
+      z-index: 1;
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .trust-service-card {
+      --trust-spot-x: 50%;
+      --trust-spot-y: 42%;
+      position: relative;
+      min-height: 292px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(143,216,232,0.22);
+      background:
+        radial-gradient(circle at 84% 0%, rgba(143,216,232,0.12), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      box-shadow:
+        var(--soft-shadow),
+        inset 0 1px 0 rgba(255,255,255,0.13),
+        0 0 30px rgba(143,216,232,0.055);
+      transition:
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .trust-service-card::before,
+    .trust-service-card::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .trust-service-card::before {
+      inset: -120% -70%;
+      background: linear-gradient(115deg, transparent 42%, rgba(244,251,255,0.10), transparent 58%);
+      transform: translateX(-34%) rotate(10deg);
+      opacity: 0;
+      transition: transform 1s var(--ease), opacity 1s var(--ease);
+    }
+
+    .trust-service-card::after {
+      inset: 0;
+      opacity: 0;
+      background:
+        radial-gradient(
+          circle at var(--trust-spot-x) var(--trust-spot-y),
+          rgba(143,216,232,0.18),
+          rgba(143,216,232,0.08) 18%,
+          transparent 48%
+        );
+      transition: opacity 0.65s var(--ease);
+    }
+
+    .trust-service-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .trust-service-card h3 {
+      margin-top: 22px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .trust-service-card p {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.85;
+      font-weight: 650;
+      letter-spacing: 0.03em;
+    }
+
+    .trust-service-card .btn {
+      align-self: flex-start;
+      margin-top: 24px;
+    }
+
+    .trust-service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(143,216,232,0.45);
+      box-shadow:
+        var(--soft-shadow),
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        0 0 42px rgba(143,216,232,0.16);
+    }
+
+    .trust-service-card:hover::before {
+      opacity: 1;
+      transform: translateX(34%) rotate(10deg);
+    }
+
+    .trust-service-card:hover::after {
+      opacity: 1;
+    }
+
     @media (max-width: 1024px) {
+      .trust-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .reviews-grid--three {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -2316,6 +2426,10 @@
     @media (max-width: 768px) {
       .motion-icon-layer {
         display: none;
+      }
+
+      .trust-service-grid {
+        grid-template-columns: 1fr;
       }
 
       .service-object.motion-icon {
