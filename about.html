@@ -3951,20 +3951,91 @@
         animation: none !important;
       }    }
     .clutch-widget-card {
-      max-width: 900px;
+      max-width: min(1100px, 100%);
       margin: 18px auto 0;
-      padding: 24px;
+      padding: clamp(24px, 4vw, 42px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 28px;
       border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 28px;
+      border-radius: 32px;
       background: rgba(255,255,255,0.06);
       box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.12);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       overflow: hidden;
+      transition: border-color 0.55s var(--ease), box-shadow 0.55s var(--ease), transform 0.55s var(--ease);
+    }
+
+    .clutch-widget-card:hover {
+      border-color: rgba(143,216,232,0.30);
+      box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.14), 0 0 34px rgba(143,216,232,0.10);
     }
 
     .clutch-widget-card iframe {
       max-width: 100%;
+    }
+
+    .review-cta-content {
+      min-width: 0;
+    }
+
+    .review-cta-eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: #8FD8E8;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .review-cta-content h3 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .review-cta-content p {
+      max-width: 680px;
+      margin: 0;
+      color: rgba(244,251,255,0.72);
+      font-size: clamp(15px, 1vw, 17px);
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .review-cta-content small {
+      display: inline-block;
+      margin-top: 14px;
+      color: rgba(143,216,232,0.9);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .review-cta-action {
+      display: flex;
+      justify-content: flex-end;
+      min-width: 260px;
+    }
+
+    @media (max-width: 768px) {
+      .clutch-widget-card {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .review-cta-action {
+        width: 100%;
+        min-width: 0;
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 768px) {
@@ -4267,8 +4338,15 @@
           </div>
         </article>
         <article class="clutch-widget-card trust-reveal" style="--trust-delay: 0.08s;">
-          <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
-          <div
+          <div class="review-cta-content">
+            <span class="review-cta-eyebrow">Client Feedback</span>
+            <h3>Help Us Build Trust on Clutch</h3>
+            <p>Your feedback helps future real-estate creators and business brands understand the quality, communication, and delivery experience behind Vixpod Motion.</p>
+            <small>Takes less than 2 minutes.</small>
+          </div>
+          <div class="review-cta-action">
+            <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
+            <div
             class="clutch-widget"
             data-url="https://widget.clutch.co"
             data-widget-type="14"
@@ -4277,6 +4355,7 @@
             data-expandifr="true"
             data-scale="100"
             data-clutchcompany-id="2687073">
+          </div>
           </div>
         </article>
       </div>
