@@ -3754,16 +3754,16 @@
       z-index: 3;
       display: inline-flex;
       align-items: center;
-      min-height: 30px;
+      min-height: 28px;
       padding: 0 12px;
       border: 1px solid rgba(143,216,232,0.35);
       border-radius: 999px;
       color: var(--text);
       background: rgba(11,37,48,0.76);
       box-shadow: 0 14px 34px rgba(143,216,232,0.14), inset 0 1px 0 rgba(255,255,255,0.16);
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       pointer-events: none;
     }
@@ -3772,22 +3772,62 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 14px;
+      margin-top: 12px;
+      max-width: 100%;
     }
 
     .project-detail-badge {
       display: inline-flex;
       align-items: center;
-      min-height: 26px;
+      min-height: 24px;
       padding: 0 10px;
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 999px;
       color: var(--muted);
       background: rgba(255,255,255,0.06);
-      font-size: 8px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      line-height: 1;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .portfolio-lab .project-card {
+      padding: clamp(16px, 1.5vw, 22px);
+    }
+
+    .portfolio-lab .project-card__body {
+      padding: 18px 2px 0;
+      display: block;
+    }
+
+    .portfolio-lab .project-card__body > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .portfolio-lab .project-card h3 {
+      font-size: clamp(22px, 1.5vw, 28px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin: 0;
+    }
+
+    .portfolio-lab .project-card__copy {
+      margin: 0;
+      max-width: 95%;
+      color: var(--muted);
+      font-size: clamp(14px, 0.95vw, 16px);
+      line-height: 1.45;
+      font-weight: 600;
+      letter-spacing: 0.015em;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .portfolio-support-stack {
@@ -3797,11 +3837,14 @@
     }
 
     .portfolio-info-card {
+      max-width: 1100px;
+      margin-inline: auto;
       border: 1px solid var(--border);
       border-radius: var(--radius-xl);
-      padding: 28px;
+      padding: clamp(22px, 3vw, 42px);
       background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.045));
       box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.12);
+      overflow: hidden;
     }
 
     .portfolio-info-card h3 {
@@ -3813,8 +3856,10 @@
     .portfolio-info-card p {
       margin: 12px 0 0;
       color: var(--muted);
-      line-height: 1.8;
-      max-width: 980px;
+      line-height: 1.65;
+      max-width: 850px;
+      font-size: clamp(15px, 1vw, 17px);
+      overflow-wrap: break-word;
     }
 
     .portfolio-standard-grid {
@@ -3849,10 +3894,22 @@
     @media (max-width: 680px) {
       .portfolio-info-card {
         padding: 22px;
+        max-width: 100%;
       }
 
       .portfolio-standard-grid {
         grid-template-columns: 1fr;
+      }
+
+      .portfolio-lab .project-card__copy {
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.5;
+        -webkit-line-clamp: 3;
+      }
+
+      .portfolio-lab .project-card h3 {
+        font-size: clamp(22px, 6vw, 28px);
       }
     }
 
@@ -5916,27 +5973,27 @@
           <div class="project-grid work-category-grid stagger-parent" data-portfolio-grid>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits podcasts youtube motion-graphics">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Real-Estate Podcast Transformation"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Real-estate podcast editing concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Real-Estate Podcast Transformation</h3><p class="project-card__copy">A real-estate podcast editing concept showing how long-form conversations can be shaped into a sharper YouTube episode with tighter pacing, motion graphics, captions, and sound design.</p><div class="project-detail-badges"><span class="project-detail-badge">Podcast Editing</span><span class="project-detail-badge">Motion Graphics</span><span class="project-detail-badge">Sound Design</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Real Estate</span></div></div></div>
+              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Real-Estate Podcast Transformation</h3><p class="project-card__copy">A premium podcast concept edit with sharper pacing, captions, motion graphics, and sound design for YouTube.</p><div class="project-detail-badges"><span class="project-detail-badge">Podcast Editing</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Motion Graphics</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits youtube motion-graphics">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Property Investment YouTube Edit"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Property investment YouTube editing concept preview" loading="lazy"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Property Investment YouTube Edit</h3><p class="project-card__copy">A property investment video editing sample built for real-estate coaches, with a stronger hook, structured storytelling, animated stats, and viewer-retention pacing.</p><div class="project-detail-badges"><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Storytelling</span><span class="project-detail-badge">Animated Stats</span><span class="project-detail-badge">Retention Edit</span><span class="project-detail-badge">Real Estate</span></div></div></div>
+              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Property Investment YouTube Edit</h3><p class="project-card__copy">A structured YouTube edit using stronger storytelling, animated stats, and clean viewer-retention pacing.</p><div class="project-detail-badges"><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Storytelling</span><span class="project-detail-badge">Animated Stats</span><span class="project-detail-badge">Real Estate</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits short-form motion-graphics">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Luxury Realtor Brand Content"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury realtor brand content concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Luxury Realtor Brand Content</h3><p class="project-card__copy">A premium realtor brand content sample focused on authority, visual consistency, social media polish, premium typography, and clean motion graphics for a stronger personal brand.</p><div class="project-detail-badges"><span class="project-detail-badge">Personal Brand</span><span class="project-detail-badge">Motion Graphics</span><span class="project-detail-badge">Premium Typography</span><span class="project-detail-badge">Sound Design</span><span class="project-detail-badge">Realtor Content</span></div></div></div>
+              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Luxury Realtor Brand Content</h3><p class="project-card__copy">A clean personal-brand edit with premium typography, polished audio, and motion graphics for realtor content.</p><div class="project-detail-badges"><span class="project-detail-badge">Personal Brand</span><span class="project-detail-badge">Realtor Content</span><span class="project-detail-badge">Motion Graphics</span><span class="project-detail-badge">Sound Design</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits podcasts youtube motion-graphics">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Real-Estate Interview"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Commercial real-estate interview editing concept preview" loading="lazy"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Commercial Real-Estate Interview</h3><p class="project-card__copy">A commercial real-estate interview editing concept with multi-camera pacing, lower thirds, market data callouts, audio cleanup, and polished delivery for investors and agencies.</p><div class="project-detail-badges"><span class="project-detail-badge">Interview Editing</span><span class="project-detail-badge">Lower Thirds</span><span class="project-detail-badge">Market Data</span><span class="project-detail-badge">Multi-Camera</span><span class="project-detail-badge">Motion Graphics</span></div></div></div>
+              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Commercial Real-Estate Interview</h3><p class="project-card__copy">A multi-camera interview concept with lower thirds, market data callouts, audio cleanup, and polished pacing.</p><div class="project-detail-badges"><span class="project-detail-badge">Interview Editing</span><span class="project-detail-badge">Lower Thirds</span><span class="project-detail-badge">Market Data</span><span class="project-detail-badge">Multi-Camera</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits youtube motion-graphics">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Market Update Video"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Real-estate market update video concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Market Update Video</h3><p class="project-card__copy">A market update video editing sample designed for real-estate coaches and investment brands, using animated charts, captions, clean pacing, and platform-ready YouTube delivery.</p><div class="project-detail-badges"><span class="project-detail-badge">Market Update</span><span class="project-detail-badge">Animated Charts</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Real Estate</span></div></div></div>
+              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Market Update Video</h3><p class="project-card__copy">A real-estate market update sample with animated charts, captions, clean pacing, and YouTube-ready delivery.</p><div class="project-detail-badges"><span class="project-detail-badge">Market Update</span><span class="project-detail-badge">Animated Charts</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Captions</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits short-form">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Mortgage Education Shorts"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Mortgage education shorts editing concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Mortgage Education Shorts</h3><p class="project-card__copy">Short-form real-estate videos for mortgage educators and property brands, built with hook-first pacing, readable captions, sound effects, and vertical social media delivery.</p><div class="project-detail-badges"><span class="project-detail-badge">Short Form</span><span class="project-detail-badge">Reels</span><span class="project-detail-badge">YouTube Shorts</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Sound Effects</span><span class="project-detail-badge">Mortgage Content</span></div></div></div>
+              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Mortgage Education Shorts</h3><p class="project-card__copy">Short-form mortgage education videos built with hooks, captions, sound effects, and pattern interrupts.</p><div class="project-detail-badges"><span class="project-detail-badge">Short Form</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Sound Effects</span><span class="project-detail-badge">Mortgage Content</span></div></div></div>
             </article>
           </div>
 
@@ -5944,18 +6001,18 @@
             <article class="portfolio-info-card reveal">
               <span class="label-pill">Portfolio Transparency</span>
               <h3>Portfolio Transparency</h3>
-              <p>Some portfolio pieces are creative concept edits created using publicly available content or permission-based source material to demonstrate Vixpod Motion&rsquo;s editing quality and creative direction.</p>
-              <p>Concept projects are clearly labelled and do not imply a commercial relationship with the original creator unless explicitly stated.</p>
+              <p>Some portfolio pieces are creative concept edits created to demonstrate Vixpod Motion&rsquo;s editing quality and creative direction.</p>
+              <p>Concept projects are clearly labelled and do not imply a commercial relationship unless explicitly stated.</p>
             </article>
 
             <article class="portfolio-info-card reveal">
               <span class="label-pill">Production Standard</span>
               <h3>Every Sample Represents Our Production Standard</h3>
-              <p>Whether it is a concept edit or a client project, every video follows the same production workflow:</p>
+              <p>Every concept edit follows a premium workflow designed for real-estate creators and business brands.</p>
               <div class="portfolio-standard-grid">
                 <span>Storytelling First</span>
-                <span>Professional Motion Graphics</span>
-                <span>Advanced Sound Design</span>
+                <span>Motion Graphics</span>
+                <span>Sound Design</span>
                 <span>Dynamic Captions</span>
                 <span>Platform Optimisation</span>
                 <span>Quality Assurance</span>
@@ -5967,7 +6024,7 @@
         <div class="cta-card reveal portfolio-bottom-cta">
           <span class="label-pill">Real-Estate Content System</span>
           <h2>Imagine Your Content Looking Like This</h2>
-          <p class="lead">If these creative samples reflect the quality you are looking for, let&rsquo;s build a complete content system for your real-estate brand.</p>
+          <p class="lead">Let&rsquo;s build a premium content system for your real-estate brand.</p>
           <div class="button-row" style="justify-content:center; margin-top: 26px;">
             <a class="btn btn--dark" href="#book-consultation">Book a Strategy Call</a>
             <a class="btn btn--glass" href="#talk">Request a Custom Proposal</a>
