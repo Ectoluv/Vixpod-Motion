@@ -3950,6 +3950,29 @@
       .motion-icon {
         animation: none !important;
       }    }
+    .clutch-widget-card {
+      max-width: 900px;
+      margin: 18px auto 0;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .clutch-widget-card iframe {
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .clutch-widget-card {
+        padding: 18px;
+        border-radius: 22px;
+      }
+    }
   </style>
 </head>
 
@@ -4122,7 +4145,7 @@
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">Client Feedback</span>
           <h2>Client Feedback</h2>
-          <p class="lead">Verified client feedback will be added here after completed projects.</p>
+          <p class="lead">See verified feedback and profile details from Vixpod Motion on Clutch.</p>
         </div>
 
         <article class="trust-card trust-reveal" style="--trust-delay: 0s;">
@@ -4130,6 +4153,19 @@
           <div>
             <h3>Feedback Coming Soon</h3>
             <p>Every project is focused on clean communication, premium editing quality, and platform-ready delivery.</p>
+          </div>
+        </article>
+        <article class="clutch-widget-card trust-reveal" style="--trust-delay: 0.08s;">
+          <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
+          <div
+            class="clutch-widget"
+            data-url="https://widget.clutch.co"
+            data-widget-type="14"
+            data-height="50"
+            data-nofollow="false"
+            data-expandifr="true"
+            data-scale="100"
+            data-clutchcompany-id="2687073">
           </div>
         </article>
       </div>
