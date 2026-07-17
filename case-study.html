@@ -5201,6 +5201,221 @@
         border-radius: 22px;
       }
     }
+
+    .case-study-library {
+      display: grid;
+      gap: 26px;
+    }
+
+    .case-study-detail-card {
+      min-height: auto;
+      display: grid;
+      gap: 24px;
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    .case-study-detail-card__top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 18px;
+    }
+
+    .case-study-detail-card__top h3 {
+      margin: 12px 0 0;
+      font-size: clamp(26px, 3vw, 44px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .case-study-detail-card__top p {
+      max-width: 820px;
+      margin-top: 12px;
+    }
+
+    .case-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .case-detail-block {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.055);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .case-detail-block h4 {
+      margin: 0 0 10px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .case-detail-block p,
+    .case-detail-block li {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+
+    .case-detail-block ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .case-study-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .case-study-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid rgba(143,216,232,0.24);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(143,216,232,0.08);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .case-study-transparency {
+      margin-top: 28px;
+    }
+
+    .hero h1,
+    .hero-copy h1,
+    .section-head h1,
+    .section-head h2,
+    .subpage-intro h1,
+    .subpage-intro h2,
+    .trust-title-block h1,
+    .trust-title-block h2,
+    .cta-card h2,
+    .final-brand-title {
+      max-width: min(1100px, 100%);
+      width: 100%;
+      overflow: visible;
+      word-break: normal;
+      overflow-wrap: normal;
+      text-wrap: balance;
+    }
+
+    .hero h1,
+    .hero-copy h1,
+    .subpage-intro h1,
+    .section-head h1 {
+      font-size: clamp(46px, 6vw, 86px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .section-head h2,
+    .trust-title-block h2,
+    .subpage-intro h2 {
+      font-size: clamp(40px, 4.8vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .cta-card h2 {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(38px, 4.6vw, 68px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head,
+    .trust-title-block,
+    .hero-copy,
+    .subpage-intro .site-shell,
+    .cta-card {
+      overflow: visible;
+    }
+
+    .section-head .label-pill,
+    .trust-title-block .label-pill,
+    .cta-card > .label-pill {
+      margin-bottom: clamp(12px, 2vw, 20px);
+      font-size: clamp(10px, 0.95vw, 12px);
+      line-height: 1.25;
+      max-width: fit-content;
+      white-space: normal;
+    }
+
+    @media (max-width: 900px) {
+      .case-detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .case-study-detail-card__top {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1,
+      .hero-copy h1,
+      .section-head h1,
+      .section-head h2,
+      .subpage-intro h1,
+      .subpage-intro h2,
+      .trust-title-block h1,
+      .trust-title-block h2,
+      .cta-card h2,
+      .final-brand-title {
+        font-size: clamp(34px, 10.6vw, 56px);
+        line-height: 1.06;
+        letter-spacing: -0.045em;
+        max-width: 100%;
+        width: 100%;
+        overflow: visible;
+        word-break: normal;
+        overflow-wrap: normal;
+        text-wrap: balance;
+      }
+
+      .section-head,
+      .trust-title-block,
+      .hero-copy,
+      .subpage-intro .site-shell,
+      .cta-card {
+        padding-inline: 16px;
+        overflow: visible;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1,
+      .hero-copy h1,
+      .section-head h1,
+      .section-head h2,
+      .subpage-intro h1,
+      .subpage-intro h2,
+      .trust-title-block h1,
+      .trust-title-block h2,
+      .cta-card h2,
+      .final-brand-title {
+        font-size: clamp(31px, 10.8vw, 46px);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+      }
+    }
   </style>
 </head>
 
@@ -5260,6 +5475,223 @@
           <h1>From Raw Property Footage to Authority-Building Content</h1>
           <p class="lead">A practical breakdown of how Vixpod Motion turns real-estate podcasts, market updates, property clips, and educational footage into organised platform-ready content.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section trust-section glow-section" id="case-studies" data-trust-section>
+      <div class="site-shell">
+        <div class="section-head trust-title-block trust-reveal">
+          <span class="label-pill">Case Studies</span>
+          <h2>Real-Estate Content Editing Case Studies</h2>
+          <p class="lead">Explore creative concept edits built to demonstrate Vixpod Motion&rsquo;s production standard for real-estate podcasts, coaches, realtor personal brands, and property-investment content.</p>
+        </div>
+
+        <div class="case-study-library">
+          <article class="trust-card case-study-detail-card trust-reveal" id="case-study-podcast" style="--trust-delay: 0s;">
+            <div class="case-study-detail-card__top">
+              <div>
+                <span class="trust-card__label">Concept Edit</span>
+                <h3>Real-Estate Podcast Transformation</h3>
+                <p>A concept edit showing how a standard real-estate podcast episode can be transformed into a cinematic, high-retention YouTube experience.</p>
+              </div>
+              <a class="btn btn--glass" href="#case-study-podcast">View Case Study</a>
+            </div>
+            <div class="case-study-badges" aria-label="Deliverables">
+              <span class="case-study-badge">Podcast Editing</span>
+              <span class="case-study-badge">YouTube</span>
+              <span class="case-study-badge">Motion Graphics</span>
+              <span class="case-study-badge">Sound Design</span>
+              <span class="case-study-badge">Captions</span>
+            </div>
+            <div class="case-detail-grid">
+              <div class="case-detail-block">
+                <h4>Project Goal</h4>
+                <p>Transform a simple talking-head podcast into a more engaging YouTube video with stronger pacing, clear structure, dynamic captions, motion graphics, and improved audio presentation.</p>
+              </div>
+              <div class="case-detail-block">
+                <h4>Editing Challenge</h4>
+                <p>The content needed to feel more premium without losing the natural podcast conversation. The challenge was to keep the educational value while making the video more visually engaging for modern YouTube viewers.</p>
+              </div>
+              <div class="case-detail-block">
+                <h4>What We Improved</h4>
+                <ul>
+                  <li>Added stronger hook structure</li>
+                  <li>Improved pacing and jump cuts</li>
+                  <li>Added branded motion graphics</li>
+                  <li>Added dynamic captions</li>
+                  <li>Cleaned and balanced audio</li>
+                  <li>Added lower thirds and topic labels</li>
+                  <li>Improved visual rhythm with b-roll moments</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Final Deliverables</h4>
+                <ul>
+                  <li>1 long-form YouTube podcast edit</li>
+                  <li>3 short-form clips</li>
+                  <li>Motion graphics package</li>
+                  <li>Captions and subtitles</li>
+                  <li>Platform-ready exports</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Tools / Skills Used</h4>
+                <ul>
+                  <li>Video editing</li>
+                  <li>Podcast editing</li>
+                  <li>Motion graphics</li>
+                  <li>Sound design</li>
+                  <li>Captions</li>
+                  <li>YouTube retention editing</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Result / Creative Outcome</h4>
+                <p>The final concept demonstrates how real-estate podcasts can feel more polished, premium, and easier to watch while keeping the message clear and professional.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="trust-card case-study-detail-card trust-reveal" id="case-study-investment" style="--trust-delay: 0.08s;">
+            <div class="case-study-detail-card__top">
+              <div>
+                <span class="trust-card__label">Concept Edit</span>
+                <h3>Property Investment YouTube Edit</h3>
+                <p>A concept YouTube edit designed for property-investment educators who want to explain market topics with better storytelling and visual clarity.</p>
+              </div>
+              <a class="btn btn--glass" href="#case-study-investment">View Case Study</a>
+            </div>
+            <div class="case-study-badges" aria-label="Deliverables">
+              <span class="case-study-badge">Real Estate</span>
+              <span class="case-study-badge">Animated Stats</span>
+              <span class="case-study-badge">YouTube</span>
+              <span class="case-study-badge">Captions</span>
+              <span class="case-study-badge">Platform Exports</span>
+            </div>
+            <div class="case-detail-grid">
+              <div class="case-detail-block">
+                <h4>Project Goal</h4>
+                <p>Turn educational property-investment content into a clean YouTube video with better structure, animated statistics, chapter transitions, and stronger viewer retention.</p>
+              </div>
+              <div class="case-detail-block">
+                <h4>Editing Challenge</h4>
+                <p>Investment content can feel dense and difficult to follow. The challenge was to make the information easier to understand using pacing, graphics, captions, and visual hierarchy.</p>
+              </div>
+              <div class="case-detail-block">
+                <h4>What We Improved</h4>
+                <ul>
+                  <li>Added chapter transitions</li>
+                  <li>Added animated statistics</li>
+                  <li>Added clean title cards</li>
+                  <li>Added visual emphasis for key points</li>
+                  <li>Improved pacing and cut timing</li>
+                  <li>Added sound design and music balance</li>
+                  <li>Created platform-ready YouTube structure</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Final Deliverables</h4>
+                <ul>
+                  <li>1 YouTube educational edit</li>
+                  <li>4 short-form clips</li>
+                  <li>Animated charts and statistics</li>
+                  <li>Captions</li>
+                  <li>Thumbnail direction support</li>
+                  <li>Social media export versions</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Tools / Skills Used</h4>
+                <ul>
+                  <li>YouTube editing</li>
+                  <li>Storytelling</li>
+                  <li>Animated statistics</li>
+                  <li>Motion graphics</li>
+                  <li>Captions</li>
+                  <li>Color correction</li>
+                  <li>Sound design</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Result / Creative Outcome</h4>
+                <p>The final concept shows how property-investment videos can become more professional, easier to follow, and more engaging for viewers who want clear educational content.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="trust-card case-study-detail-card trust-reveal" id="case-study-mortgage" style="--trust-delay: 0.16s;">
+            <div class="case-study-detail-card__top">
+              <div>
+                <span class="trust-card__label">Concept Edit</span>
+                <h3>Mortgage Education Shorts</h3>
+                <p>A short-form concept project built for mortgage educators, real-estate coaches, and finance-focused creators who need consistent vertical content.</p>
+              </div>
+              <a class="btn btn--glass" href="#case-study-mortgage">View Case Study</a>
+            </div>
+            <div class="case-study-badges" aria-label="Deliverables">
+              <span class="case-study-badge">Short Form</span>
+              <span class="case-study-badge">9:16 Exports</span>
+              <span class="case-study-badge">Captions</span>
+              <span class="case-study-badge">Sound Design</span>
+              <span class="case-study-badge">Platform Exports</span>
+            </div>
+            <div class="case-detail-grid">
+              <div class="case-detail-block">
+                <h4>Project Goal</h4>
+                <p>Create high-retention vertical videos for Instagram Reels, YouTube Shorts, TikTok, and LinkedIn using captions, quick pacing, sound effects, and pattern interrupts.</p>
+              </div>
+              <div class="case-detail-block">
+                <h4>Editing Challenge</h4>
+                <p>Mortgage and finance content can feel technical. The challenge was to make the content simple, clear, and attention-grabbing without making it look over-edited or unprofessional.</p>
+              </div>
+              <div class="case-detail-block">
+                <h4>What We Improved</h4>
+                <ul>
+                  <li>Added hook-focused openings</li>
+                  <li>Added bold captions</li>
+                  <li>Added sound effects</li>
+                  <li>Added zooms and pattern interrupts</li>
+                  <li>Added clean visual pacing</li>
+                  <li>Added platform-specific formatting</li>
+                  <li>Created short-form export versions</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Final Deliverables</h4>
+                <ul>
+                  <li>6 vertical short-form videos</li>
+                  <li>Caption style system</li>
+                  <li>Sound design</li>
+                  <li>Platform-ready 9:16 exports</li>
+                  <li>LinkedIn and Reels-ready versions</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Tools / Skills Used</h4>
+                <ul>
+                  <li>Short-form editing</li>
+                  <li>Captions</li>
+                  <li>Sound design</li>
+                  <li>Pattern interrupts</li>
+                  <li>Social media formatting</li>
+                  <li>Platform optimization</li>
+                </ul>
+              </div>
+              <div class="case-detail-block">
+                <h4>Result / Creative Outcome</h4>
+                <p>The final concept shows how educational mortgage content can become clearer, faster, and more engaging while keeping a premium and trustworthy brand feel.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="trust-card case-study-transparency trust-reveal" style="--trust-delay: 0.24s;">
+          <span class="trust-card__icon">VM</span>
+          <div>
+            <h3>Case Study Transparency</h3>
+            <p>Some case studies are creative concept projects created to demonstrate Vixpod Motion&rsquo;s editing quality, storytelling, motion graphics, and post-production workflow. Concept projects are clearly labelled and do not imply a commercial relationship unless explicitly stated.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -5364,7 +5796,7 @@
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
           <span class="label-pill">Client Feedback</span>
-          <h2>Client Feedback</h2>
+          <h2>Verified Reviews &amp; Trust Signals</h2>
           <p class="lead">See verified feedback and profile details from Vixpod Motion on Clutch.</p>
         </div>
 
@@ -5394,12 +5826,12 @@
     <section class="section section--compact glow-section" id="case-cta">
       <div class="site-shell">
         <div class="cta-card reveal">
-          <span class="label-pill">Build Authority</span>
-          <h2>Want your real-estate content handled like this?</h2>
-          <p class="lead">Send your footage and we&rsquo;ll help map the right strategy, editing workflow, repurposing plan, and delivery system.</p>
+          <span class="label-pill">Real-Estate Content System</span>
+          <h2>Want Your Content to Look Like This?</h2>
+          <p class="lead">If these creative samples reflect the quality you are looking for, let&rsquo;s build a complete content system for your real-estate brand.</p>
           <div class="button-row" style="justify-content:center; margin-top: 26px;">
-            <a class="btn btn--dark" href="index.html#book-consultation">Book Strategy Call</a>
-            <a class="btn btn--glass" href="our-work.html">View Property Work</a>
+            <a class="btn btn--dark" href="index.html#book-consultation">Book a Strategy Call</a>
+            <a class="btn btn--glass" href="index.html#talk">Request a Custom Proposal</a>
           </div>
         </div>
       </div>
