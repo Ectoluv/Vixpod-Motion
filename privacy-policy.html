@@ -736,13 +736,17 @@
         filter: none;
       }
     }
+    /* Transparent navbar brand logo */
+    .top-pill__brand { display: flex; align-items: center; width: clamp(142px, 13vw, 170px); min-width: clamp(142px, 13vw, 170px); height: 42px; line-height: normal; }
+    .top-pill__brand-logo { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left center; filter: drop-shadow(0 0 14px rgba(143,216,232,0.24)); }
+    @media (max-width: 768px) { .top-pill__brand { width: 136px; min-width: 136px; height: 36px; } }
+    @media (max-width: 380px) { .top-pill__brand { width: 116px; min-width: 116px; height: 32px; } }
   </style>
 </head>
 <body>
   <header class="top-pill" aria-label="Floating header">
     <a href="index.html#top" class="top-pill__brand" aria-label="Vixpod Motion home">
-      <span class="top-pill__wordmark-main">VIXPOD</span>
-      <span class="top-pill__wordmark-sub">MOTION</span>
+      <img class="top-pill__brand-logo" src="assets/images/vixpod-motion-navbar-logo.png" alt="Vixpod Motion" width="958" height="250" />
     </a>
     <nav class="top-pill__nav" aria-label="Primary pages">
       <a href="about.html">About Us</a>
