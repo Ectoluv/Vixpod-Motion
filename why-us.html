@@ -2030,12 +2030,19 @@
     .top-pill__brand-logo { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left center; filter: drop-shadow(0 0 14px rgba(143,216,232,0.24)); }
     @media (max-width: 768px) { .top-pill__brand { width: 136px; min-width: 136px; height: 36px; } }
     @media (max-width: 380px) { .top-pill__brand { width: 116px; min-width: 116px; height: 32px; } }
+    /* Keep framed decorative effects from widening the mobile document. */
+    @media (max-width: 768px) {
+      .talk-info,
+      .final-brand-card {
+        overflow: hidden;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="top-pill" aria-label="Floating header">
     <a href="index.html#top" class="top-pill__brand" aria-label="Vixpod Motion home">
-      <img class="top-pill__brand-logo" src="assets/images/vixpod-motion-navbar-logo.png" alt="Vixpod Motion" width="958" height="250" />
+      <img decoding="async" class="top-pill__brand-logo" src="assets/images/vixpod-motion-navbar-logo.png" alt="Vixpod Motion" width="958" height="250" />
     </a>
     <nav class="top-pill__nav" aria-label="Primary pages">
       <a href="about.html">About Us</a>
@@ -2222,8 +2229,7 @@
             <small>Takes less than 2 minutes.</small>
           </div>
           <div class="review-cta-action">
-            <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
-            <div
+<div
             class="clutch-widget"
             data-url="https://widget.clutch.co"
             data-widget-type="14"
@@ -2492,5 +2498,6 @@
     setupTrustCounters();
     setupPointerGlow();
   </script>
+  <script src="assets/performance.js" defer></script>
 </body>
 </html>

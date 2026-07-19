@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-07-05-home-lineup" />
+  <meta name="vixpod-build" content="2026-07-19-mobile-performance" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
   <style>
     :root {
@@ -6335,6 +6334,90 @@
     @media (max-width: 380px) {
       .top-pill__brand { width: 116px; min-width: 116px; height: 32px; }
     }
+
+    /* Mobile fit and performance: keep framed effects inside their real boxes. */
+    @media (max-width: 768px) {
+      .talk-info,
+      .final-brand-card {
+        overflow: hidden;
+      }
+
+      html,
+      body,
+      main {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .hero > .site-shell {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: max(14px, env(safe-area-inset-left));
+      }
+
+      .hero .center-copy,
+      .hero h1,
+      .hero .lead,
+      .hero .hero-trust-line {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 10.5vw, 58px);
+        line-height: 0.98;
+      }
+
+      .hero .button-row {
+        width: min(100%, 360px);
+        max-width: 100%;
+      }
+
+      .hero-cards {
+        width: min(88vw, 520px);
+        max-width: 88vw;
+        margin-inline: auto;
+        transform: none !important;
+      }
+
+      .hero-card {
+        width: clamp(104px, 32vw, 136px);
+        height: clamp(154px, 47vw, 194px);
+        max-width: 36vw;
+      }
+
+      .hero-card__float,
+      .hero-card img {
+        max-width: 100%;
+      }
+
+      .floating-contact {
+        right: max(12px, env(safe-area-inset-right));
+        max-width: calc(100% - 24px);
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero > .site-shell {
+        padding-inline: max(12px, env(safe-area-inset-left));
+      }
+
+      .hero h1 {
+        font-size: clamp(32px, 10.8vw, 44px);
+      }
+
+      .hero-cards {
+        width: 88vw;
+        max-width: 88vw;
+      }
+    }
   </style>
 </head>
 
@@ -6353,7 +6436,7 @@
   </svg>
   <header class="top-pill" aria-label="Floating header">
     <a href="#top" class="top-pill__brand" aria-label="Vixpod Motion home">
-      <img class="top-pill__brand-logo" src="assets/images/vixpod-motion-navbar-logo.png" alt="Vixpod Motion" width="958" height="250" />
+      <img decoding="async" class="top-pill__brand-logo" src="assets/images/vixpod-motion-navbar-logo.png" alt="Vixpod Motion" width="958" height="250" />
     </a>
     <nav class="top-pill__nav" id="primaryNav" aria-label="Primary pages">
       <a href="about.html">About Us</a>
@@ -6400,11 +6483,11 @@
         </div>
 
         <div class="hero-cards" data-parallax="hero-cards" aria-label="Vixpod Motion creative production workflow">
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Platform-ready video export workflow</span><img src="assets/images/hero-platform-exports.jpg" alt="Platform-ready video export workflow" loading="lazy" decoding="async" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Real-estate short-form content workflow</span><img src="assets/images/hero-real-estate-content.jpg" alt="Real-estate short-form content workflow" loading="lazy" decoding="async" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Vixpod Motion premium video editing workstation</span><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="Vixpod Motion premium video editing workstation" decoding="async" fetchpriority="high" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" loading="lazy" decoding="async" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" loading="lazy" decoding="async" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Platform-ready video export workflow</span><img src="assets/images/hero-platform-exports.jpg" alt="Platform-ready video export workflow" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Real-estate short-form content workflow</span><img src="assets/images/hero-real-estate-content.jpg" alt="Real-estate short-form content workflow" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Vixpod Motion premium video editing workstation</span><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="Vixpod Motion premium video editing workstation" width="720" height="1279" loading="eager" decoding="async" fetchpriority="high" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
         </div>
       </div>
     </section>
@@ -6514,27 +6597,27 @@
 
           <div class="project-grid work-category-grid stagger-parent" data-portfolio-grid>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits podcasts youtube motion-graphics">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Real-Estate Podcast Transformation"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Real-estate podcast editing concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Real-Estate Podcast Transformation"><img decoding="async" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Real-estate podcast editing concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
               <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Real-Estate Podcast Transformation</h3><p class="project-card__copy">A premium podcast concept edit with sharper pacing, captions, motion graphics, and sound design for YouTube.</p><div class="project-detail-badges"><span class="project-detail-badge">Podcast Editing</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Motion Graphics</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits youtube motion-graphics">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Property Investment YouTube Edit"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Property investment YouTube editing concept preview" loading="lazy"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Property Investment YouTube Edit"><img decoding="async" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Property investment YouTube editing concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
               <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Property Investment YouTube Edit</h3><p class="project-card__copy">A structured YouTube edit using stronger storytelling, animated stats, and clean viewer-retention pacing.</p><div class="project-detail-badges"><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Storytelling</span><span class="project-detail-badge">Animated Stats</span><span class="project-detail-badge">Real Estate</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits short-form motion-graphics">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Luxury Realtor Brand Content"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury realtor brand content concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Luxury Realtor Brand Content"><img decoding="async" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Luxury realtor brand content concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
               <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Luxury Realtor Brand Content</h3><p class="project-card__copy">A clean personal-brand edit with premium typography, polished audio, and motion graphics for realtor content.</p><div class="project-detail-badges"><span class="project-detail-badge">Personal Brand</span><span class="project-detail-badge">Realtor Content</span><span class="project-detail-badge">Motion Graphics</span><span class="project-detail-badge">Sound Design</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits podcasts youtube motion-graphics">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Real-Estate Interview"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Commercial real-estate interview editing concept preview" loading="lazy"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Real-Estate Interview"><img decoding="async" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Commercial real-estate interview editing concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
               <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Commercial Real-Estate Interview</h3><p class="project-card__copy">A multi-camera interview concept with lower thirds, market data callouts, audio cleanup, and polished pacing.</p><div class="project-detail-badges"><span class="project-detail-badge">Interview Editing</span><span class="project-detail-badge">Lower Thirds</span><span class="project-detail-badge">Market Data</span><span class="project-detail-badge">Multi-Camera</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits youtube motion-graphics">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Market Update Video"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Real-estate market update video concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Market Update Video"><img decoding="async" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Real-estate market update video concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
               <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Market Update Video</h3><p class="project-card__copy">A real-estate market update sample with animated charts, captions, clean pacing, and YouTube-ready delivery.</p><div class="project-detail-badges"><span class="project-detail-badge">Market Update</span><span class="project-detail-badge">Animated Charts</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Captions</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits short-form">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Mortgage Education Shorts"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Mortgage education shorts editing concept preview" loading="lazy"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Mortgage Education Shorts"><img decoding="async" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Mortgage education shorts editing concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
               <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Mortgage Education Shorts</h3><p class="project-card__copy">Short-form mortgage education videos built with hooks, captions, sound effects, and pattern interrupts.</p><div class="project-detail-badges"><span class="project-detail-badge">Short Form</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Sound Effects</span><span class="project-detail-badge">Mortgage Content</span></div></div></div>
             </article>
           </div>
@@ -6609,8 +6692,7 @@
             <small>Takes less than 2 minutes.</small>
           </div>
           <div class="review-cta-action">
-            <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
-            <div
+<div
             class="clutch-widget"
             data-url="https://widget.clutch.co"
             data-widget-type="14"
@@ -7080,7 +7162,9 @@
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let lenisInstance = null;
 
-    if (!prefersReduced && window.Lenis) {
+    const mobilePerformanceMode = window.matchMedia('(max-width: 768px)').matches;
+
+    if (!prefersReduced && !mobilePerformanceMode && window.Lenis) {
       lenisInstance = new Lenis({
         duration: 1.18,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -7385,22 +7469,34 @@
       image.addEventListener('error', showFallback, { once: true });
     });
 
-    function handleScrollMotion() {
+    let scrollMotionFrame = 0;
+
+    function renderScrollMotion() {
       const y = window.scrollY || window.pageYOffset;
 
-      if (heroCards) {
+      if (heroCards && !mobilePerformanceMode) {
         const move = Math.min(120, y * 0.12);
         heroCards.style.transform = `translate3d(0, ${-move}px, 0)`;
+      } else if (heroCards) {
+        heroCards.style.removeProperty('transform');
       }
 
-      if (header) {
+      if (header && !mobilePerformanceMode) {
         const lift = Math.min(4, y * 0.01);
         header.style.boxShadow = `0 ${22 + lift}px ${80 + lift * 4}px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.22)`;
       }
     }
 
+    function handleScrollMotion() {
+      if (mobilePerformanceMode || scrollMotionFrame) return;
+      scrollMotionFrame = window.requestAnimationFrame(() => {
+        scrollMotionFrame = 0;
+        renderScrollMotion();
+      });
+    }
+
     window.addEventListener('scroll', handleScrollMotion, { passive: true });
-    handleScrollMotion();
+    renderScrollMotion();
 
     const finalBrandCards = document.querySelectorAll('[data-final-brand]');
     if (finalBrandCards.length) {
@@ -8339,6 +8435,6 @@
       });
     }
   </script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="assets/performance.js" defer></script>
 </body>
 </html>
