@@ -6398,8 +6398,13 @@
       }
 
       .floating-contact {
+        position: relative;
+        display: flex;
+        inset: auto;
         right: max(12px, env(safe-area-inset-right));
         max-width: calc(100% - 24px);
+        width: max-content;
+        margin: 14px 0 0 auto;
         white-space: nowrap;
       }
     }
@@ -6489,6 +6494,7 @@
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
         </div>
+        <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
       </div>
     </section>
 
@@ -7095,8 +7101,6 @@
       </div>
     </section>
   </main>
-
-  <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
   <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Work video player">
     <button class="video-modal__overlay" type="button" aria-label="Close video"></button>
