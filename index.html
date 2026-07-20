@@ -4677,6 +4677,10 @@
       text-transform: uppercase;
     }
 
+    .form-required {
+      color: var(--glow);
+    }
+
     .form-field input,
     .form-field select,
     .form-field textarea {
@@ -4716,6 +4720,27 @@
     .form-field select option {
       color: #0B2530;
       background: #F4FBFF;
+    }
+
+    .form-captcha {
+      align-items: start;
+    }
+
+    .captcha-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .form-field .captcha-answer {
+      width: 92px;
+      min-height: 52px;
+      padding: 0 14px;
+      text-align: center;
     }
 
     .form-field--custom-select {
@@ -7062,13 +7087,12 @@
 
           <form id="contactForm" class="talk-form reveal" method="post" novalidate data-secure-form>
             <div class="form-grid">
-              <div class="form-field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
-              <div class="form-field"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
-              <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" required /></div>
-              <div class="form-field"><label for="service">Service</label><select id="service" name="service" autocomplete="off" required><option>Real-Estate Podcast Production</option><option>Real-Estate YouTube Editing</option><option>Property Marketing Videos</option><option>Market Update Editing</option><option>Investment Content Repurposing</option><option>Property Motion Graphics</option></select></div>
-              <div class="form-field"><label for="budget">Project Scope</label><select id="budget" name="project_scope" autocomplete="off" required><option>Not sure yet</option><option>Single property video</option><option>Short-form content batch</option><option>YouTube or podcast support</option><option>Ongoing content system</option><option>Custom real-estate campaign</option></select></div>
-              <div class="form-field"><label for="timeline">Timeline</label><select id="timeline" name="timeline" autocomplete="off" required><option>Urgent</option><option>This Week</option><option>This Month</option><option>Ongoing</option></select></div>
-              <div class="form-field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your real-estate niche, current content, upload schedule, and growth goals." autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
+              <div class="form-field"><label for="name">Your Name <span class="form-required" aria-hidden="true">*</span></label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
+              <div class="form-field"><label for="email">Email Address <span class="form-required" aria-hidden="true">*</span></label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
+              <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+1 555-123-4567" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" /></div>
+              <div class="form-field"><label for="country">Country <span class="form-required" aria-hidden="true">*</span></label><select id="country" name="country" autocomplete="country-name" required><option selected>United States</option><option>India</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>United Arab Emirates</option><option>Singapore</option><option>Germany</option><option>France</option><option>Netherlands</option><option>New Zealand</option><option>Ireland</option><option>Spain</option><option>Italy</option><option>Portugal</option><option>Switzerland</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Norway</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>South Africa</option><option>Nigeria</option><option>Kenya</option><option>Saudi Arabia</option><option>Qatar</option><option>Japan</option><option>South Korea</option><option>China</option><option>Hong Kong</option><option>Malaysia</option><option>Indonesia</option><option>Philippines</option><option>Thailand</option><option>Brazil</option><option>Mexico</option><option>Argentina</option><option>Other</option></select></div>
+              <div class="form-field full"><label for="message">Message <span class="form-required" aria-hidden="true">*</span></label><textarea id="message" name="message" placeholder="Please share details about your project" autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
+              <div class="form-field full form-captcha"><label for="captchaAnswer">Captcha <span class="form-required" aria-hidden="true">*</span></label><div class="captcha-line"><span aria-hidden="true">2 + 4 =</span><input class="captcha-answer" id="captchaAnswer" name="captcha_answer" type="text" inputmode="numeric" pattern="6" maxlength="1" autocomplete="off" aria-label="What is 2 plus 4?" required /></div></div>
               <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
               <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" data-size="normal" hidden aria-hidden="true"></div>
               <p class="form-status" id="talkFormStatus" aria-live="polite"></p>
@@ -7418,7 +7442,9 @@
         const name = secureForm.querySelector('#name');
         const email = secureForm.querySelector('#email');
         const phone = secureForm.querySelector('#phone');
+        const country = secureForm.querySelector('#country');
         const message = secureForm.querySelector('#message');
+        const captcha = secureForm.querySelector('#captchaAnswer');
 
         if (honeypot && honeypot.value.trim()) {
           setStatus('Thanks. Your request has been received.');
@@ -7435,29 +7461,63 @@
         const cleanName = cleanText(name ? name.value : '', 80);
         const cleanEmail = cleanText(email ? email.value : '', 120);
         const cleanPhone = cleanText(phone ? phone.value : '', 24);
+        const cleanCountry = cleanText(country ? country.value : '', 60);
         const cleanMessage = cleanText(message ? message.value : '', 1200);
+        const cleanCaptcha = cleanText(captcha ? captcha.value : '', 1);
 
-        if (cleanName.length < 2 || !emailPattern.test(cleanEmail) || !phonePattern.test(cleanPhone) || cleanMessage.length < 10) {
-          setStatus('Please enter a valid name, email, phone number, and project message.');
+        if (!cleanName || !cleanEmail || !cleanCountry || !cleanMessage) {
+          setStatus('Please fill all required fields.');
+          const firstEmpty = [name, email, country, message].find((field) => field && !String(field.value || '').trim());
+          if (firstEmpty) firstEmpty.focus({ preventScroll: false });
+          return;
+        }
+
+        if (cleanName.length < 2 || !emailPattern.test(cleanEmail) || (cleanPhone && !phonePattern.test(cleanPhone)) || cleanMessage.length < 10) {
+          setStatus('Please check your contact details and add a complete project message.');
           const firstInvalid = [name, email, phone, message].find((field) => field && !field.checkValidity());
           if (firstInvalid) firstInvalid.focus({ preventScroll: false });
+          return;
+        }
+
+        if (cleanCaptcha !== '6') {
+          setStatus('Please solve the captcha correctly.');
+          if (captcha) captcha.focus({ preventScroll: false });
           return;
         }
 
         if (name) name.value = cleanName;
         if (email) email.value = cleanEmail;
         if (phone) phone.value = cleanPhone;
+        if (country) country.value = cleanCountry;
         if (message) message.value = cleanMessage;
 
         isSubmitting = true;
         lastSubmitAt = now;
         if (submitButton) submitButton.disabled = true;
-        setStatus('Thank you. We will contact you soon.');
+        setStatus('Opening WhatsApp. Tap Send there to deliver your message.');
+
+        const whatsappMessage = [
+          'Hello Vixpod Motion, I want to discuss a project.',
+          '',
+          `Name: ${cleanName}`,
+          `Email: ${cleanEmail}`,
+          `Phone Number: ${cleanPhone || 'Not provided'}`,
+          `Country: ${cleanCountry}`,
+          `Message: ${cleanMessage}`
+        ].join('\n');
+
+        const whatsappLink = document.createElement('a');
+        whatsappLink.href = `https://wa.me/917087457425?text=${encodeURIComponent(whatsappMessage)}`;
+        whatsappLink.target = '_blank';
+        whatsappLink.rel = 'noopener noreferrer';
+        document.body.appendChild(whatsappLink);
+        whatsappLink.click();
+        whatsappLink.remove();
 
         window.setTimeout(() => {
           isSubmitting = false;
           if (submitButton) submitButton.disabled = false;
-        }, 5000);
+        }, 1500);
       });
     }
     const heroCards = document.querySelector('[data-parallax="hero-cards"]');
