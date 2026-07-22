@@ -649,21 +649,19 @@
     }
 
     .project-card--portrait-preview .project-video-trigger {
-      padding: 12px;
-      background:
-        radial-gradient(circle at 50% 48%, rgba(143,216,232,0.13), transparent 46%),
-        rgba(4,18,23,0.78);
+      padding: 0;
+      background: rgba(4,18,23,0.78);
     }
 
     .project-card--portrait-preview .project-card__image img {
-      width: auto;
-      max-width: 48%;
-      height: calc(100% - 24px);
-      aspect-ratio: 9 / 16;
-      border: 1px solid rgba(143,216,232,0.24);
-      border-radius: 18px;
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      aspect-ratio: auto;
+      border: 0;
+      border-radius: 0;
       object-fit: cover;
-      box-shadow: 0 22px 54px rgba(0,0,0,0.34), 0 0 24px rgba(143,216,232,0.14);
+      box-shadow: none;
     }
 
     .project-card--portrait-preview:hover .project-card__image img {
