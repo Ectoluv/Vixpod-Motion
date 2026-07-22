@@ -6008,6 +6008,36 @@
       background: rgba(255,255,255,0.045);
     }
 
+    .case-study-media {
+      width: min(100%, 360px);
+      margin: 26px auto 0;
+      padding: 12px;
+      border-radius: 28px;
+      border: 1px solid rgba(143,216,232,0.24);
+      background: rgba(4,18,23,0.72);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3), 0 0 28px rgba(143,216,232,0.11);
+    }
+
+    .case-study-media video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 19px;
+      background: #041217;
+      object-fit: cover;
+    }
+
+    .case-study-media figcaption {
+      padding: 12px 4px 2px;
+      color: rgba(244,251,255,0.66);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      line-height: 1.45;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
     .case-study-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -6222,16 +6252,21 @@
 
         <article class="trust-card trust-reveal mini-case-study-card" style="--trust-delay: 0.08s;">
           <div class="case-study-meta">
-            <span class="case-study-badge">Concept Edit</span>
-            <span class="case-study-badge">[Project Category Here]</span>
+            <span class="case-study-badge">Creative Demonstration</span>
+            <span class="case-study-badge">Real-Estate Podcasts</span>
           </div>
 
           <div class="case-study-title-row">
-            <h2>[Project Name Here]</h2>
-            <p>[Short project description here]</p>
+            <h2>Real-Estate Podcast Transformation</h2>
+            <p>A practical before-and-after showcase of how raw real-estate podcast footage can be shaped into concise, polished, platform-ready short-form content.</p>
           </div>
 
-          <p class="case-study-note">This is a placeholder case study structure. Replace this text with your actual project details.</p>
+          <p class="case-study-note">This is a creative demonstration of Vixpod Motion&rsquo;s editing process. It is not presented as commissioned client work and includes no performance claims.</p>
+
+          <figure class="case-study-media">
+            <video controls playsinline preload="metadata" poster="assets/images/real-estate-podcast-transformation-poster.jpg" data-video-src="assets/videos/real-estate-podcast-transformation.mp4" aria-label="Creative demonstration showing raw real-estate podcast footage transformed into edited short-form content."></video>
+            <figcaption>Raw footage to polished short-form edit</figcaption>
+          </figure>
 
           <div class="case-study-tabs" role="tablist" aria-label="Case study project breakdown">
             <button class="case-tab active" id="case-tab-problem" data-tab="case-problem" type="button" role="tab" aria-controls="case-problem" aria-selected="true">Problem</button>
@@ -6243,33 +6278,33 @@
           <div class="case-tab-content active" id="case-problem" role="tabpanel" aria-labelledby="case-tab-problem">
             <h3>Problem</h3>
             <ul>
-              <li>[Describe the original content problem here]</li>
-              <li>[Example: Slow opening]</li>
-              <li>[Example: Minimal visual movement]</li>
-              <li>[Example: No pattern interruptions]</li>
-              <li>[Example: Weak call to action]</li>
+              <li>The raw real-estate podcast content contained valuable investment insights but needed a clearer short-form structure.</li>
+              <li>The opening required a faster, more focused hook.</li>
+              <li>Long pauses and limited visual movement reduced momentum.</li>
+              <li>Key terms needed stronger visual emphasis and readable captions.</li>
+              <li>The original audio needed polish for a more professional presentation.</li>
             </ul>
           </div>
 
           <div class="case-tab-content" id="case-changes" role="tabpanel" aria-labelledby="case-tab-changes" hidden>
             <h3>What Vixpod Changed</h3>
             <ul>
-              <li>[Stronger first-three-second hook]</li>
-              <li>[Animated keywords]</li>
-              <li>[Relevant property visuals]</li>
-              <li>[Sound design]</li>
-              <li>[Faster pacing]</li>
-              <li>[Clear call to action]</li>
+              <li>Rebuilt the opening with tighter cuts and a stronger first-three-second hook.</li>
+              <li>Removed unnecessary pauses and added pattern interruptions to improve pacing.</li>
+              <li>Added dynamic captions, text highlights, charts, and investment-related motion graphics.</li>
+              <li>Used relevant property B-roll to support the spoken ideas.</li>
+              <li>Cleaned and balanced the audio with purposeful sound design.</li>
+              <li>Structured the edit for mobile-first viewing and platform-ready delivery.</li>
             </ul>
           </div>
 
           <div class="case-tab-content" id="case-outcome" role="tabpanel" aria-labelledby="case-tab-outcome" hidden>
             <h3>Expected Outcome</h3>
             <ul>
-              <li>[Higher viewer retention]</li>
-              <li>[Stronger perceived quality]</li>
-              <li>[More opportunities for viewers to engage]</li>
-              <li>[Better platform-ready presentation]</li>
+              <li>A more professional first impression for property and investment content.</li>
+              <li>Clearer visual communication of key ideas and terminology.</li>
+              <li>A faster, easier-to-watch experience for short-form audiences.</li>
+              <li>A consistent presentation prepared for multiple social platforms.</li>
             </ul>
             <p class="case-disclaimer">Expected outcomes are based on creative direction and editing improvements, not guaranteed performance results.</p>
           </div>
@@ -6277,11 +6312,11 @@
           <div class="case-tab-content" id="case-deliverables" role="tabpanel" aria-labelledby="case-tab-deliverables" hidden>
             <h3>Final Deliverables</h3>
             <ul>
-              <li>[1 edited short-form video]</li>
-              <li>[Caption version]</li>
-              <li>[Platform-ready export]</li>
-              <li>[Thumbnail / cover frame]</li>
-              <li>[Revision notes]</li>
+              <li>One edited short-form creative demonstration.</li>
+              <li>Dynamic caption treatment with animated key terms.</li>
+              <li>Property B-roll, charts, motion graphics, and polished sound design.</li>
+              <li>Platform-ready 9:16 delivery for Instagram, YouTube Shorts, TikTok, and LinkedIn.</li>
+              <li>A polished demonstration of Vixpod Motion&rsquo;s real-estate podcast editing workflow.</li>
             </ul>
           </div>
         </article>
@@ -7575,6 +7610,30 @@
     (() => {
       const caseStudy = document.querySelector('.mini-case-study-section');
       if (!caseStudy) return;
+
+      const caseVideo = caseStudy.querySelector('video[data-video-src]');
+      if (caseVideo) {
+        const loadCaseVideo = () => {
+          if (caseVideo.dataset.loaded === 'true') return;
+          caseVideo.src = caseVideo.dataset.videoSrc;
+          caseVideo.dataset.loaded = 'true';
+          caseVideo.load();
+        };
+
+        if ('IntersectionObserver' in window) {
+          const caseVideoObserver = new IntersectionObserver((entries, observer) => {
+            if (!entries.some((entry) => entry.isIntersecting)) return;
+            loadCaseVideo();
+            observer.disconnect();
+          }, { rootMargin: '260px 0px', threshold: 0.01 });
+          caseVideoObserver.observe(caseVideo);
+        } else {
+          loadCaseVideo();
+        }
+
+        caseVideo.addEventListener('pointerenter', loadCaseVideo, { once: true });
+        caseVideo.addEventListener('focus', loadCaseVideo, { once: true });
+      }
 
       const caseTabs = Array.from(caseStudy.querySelectorAll('.case-tab'));
       const caseContents = Array.from(caseStudy.querySelectorAll('.case-tab-content'));

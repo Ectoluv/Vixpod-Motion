@@ -648,6 +648,28 @@
       transform: scale(1.035);
     }
 
+    .project-card--portrait-preview .project-video-trigger {
+      padding: 12px;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(143,216,232,0.13), transparent 46%),
+        rgba(4,18,23,0.78);
+    }
+
+    .project-card--portrait-preview .project-card__image img {
+      width: auto;
+      max-width: 48%;
+      height: calc(100% - 24px);
+      aspect-ratio: 9 / 16;
+      border: 1px solid rgba(143,216,232,0.24);
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 22px 54px rgba(0,0,0,0.34), 0 0 24px rgba(143,216,232,0.14);
+    }
+
+    .project-card--portrait-preview:hover .project-card__image img {
+      transform: scale(1.035);
+    }
+
     .project-video-trigger {
       position: relative;
       width: 100%;
@@ -6627,9 +6649,9 @@
           </div>
 
           <div class="project-grid work-category-grid stagger-parent" data-portfolio-grid>
-            <article class="project-card project-card--landscape stagger-item" data-category="concept-edits podcasts youtube motion-graphics">
-              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Real-Estate Podcast Transformation"><img decoding="async" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=80" alt="Real-estate podcast editing concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">30 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
-              <div class="project-card__body"><div><span class="meta">Concept Edit</span><h3>Real-Estate Podcast Transformation</h3><p class="project-card__copy">A premium podcast concept edit with sharper pacing, captions, motion graphics, and sound design for YouTube.</p><div class="project-detail-badges"><span class="project-detail-badge">Podcast Editing</span><span class="project-detail-badge">YouTube</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Motion Graphics</span></div></div></div>
+            <article class="project-card project-card--landscape project-card--portrait-preview stagger-item" data-category="concept-edits podcasts youtube short-form motion-graphics">
+              <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/real-estate-podcast-transformation.mp4" aria-label="Creative demonstration showing raw real-estate podcast footage transformed into edited short-form content."><img decoding="async" src="assets/images/real-estate-podcast-transformation-poster.jpg" alt="Before-and-after real-estate podcast editing creative demonstration" loading="lazy" width="720" height="1280"><span class="project-sample-badge">49 sec Creative Demo</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
+              <div class="project-card__body"><div><span class="meta">Creative Demonstration</span><h3>Real-Estate Podcast Transformation</h3><p class="project-card__copy">A before-and-after editing showcase demonstrating how raw real-estate podcast and investment-style content can be transformed into polished short-form videos using tighter pacing, captions, motion graphics, sound design, B-roll, charts, and platform-ready formatting.</p><div class="project-detail-badges"><span class="project-detail-badge">Real-Estate Podcasts</span><span class="project-detail-badge">Short Form</span><span class="project-detail-badge">Captions</span><span class="project-detail-badge">Motion Graphics</span></div></div></div>
             </article>
             <article class="project-card project-card--landscape stagger-item" data-category="concept-edits youtube motion-graphics">
               <div class="project-card__image"><button class="project-video-trigger" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Property Investment YouTube Edit"><img decoding="async" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Property investment YouTube editing concept preview" loading="lazy" width="900" height="600"><span class="project-sample-badge">45 sec Sample</span><span class="project-play-btn" aria-hidden="true">&#9658;</span></button></div>
