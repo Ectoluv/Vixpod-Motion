@@ -4408,6 +4408,82 @@
       max-width: 100% !important;
     }
 
+    #client-feedback .clutch-review-link {
+      display: inline-flex;
+      align-items: stretch;
+      min-height: 64px;
+      max-width: 100%;
+      overflow: hidden;
+      color: #0B2530;
+      background: #F4FBFF;
+      border: 1px solid rgba(244,251,255,0.82);
+      border-radius: 18px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
+      text-decoration: none;
+      cursor: pointer;
+      touch-action: manipulation;
+      pointer-events: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #client-feedback .clutch-review-mark {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 64px;
+      flex: 0 0 64px;
+      overflow: hidden;
+      color: #F4FBFF;
+      background: #123642;
+      font-family: Arial, sans-serif;
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    #client-feedback .clutch-review-mark i {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ff5a4f;
+      transform: translate(3px, 0);
+      pointer-events: none;
+    }
+
+    #client-feedback .clutch-review-label {
+      display: grid;
+      place-items: center;
+      min-width: 150px;
+      padding: 0 24px;
+      font-size: 19px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #client-feedback .clutch-review-arrow {
+      display: grid;
+      place-items: center;
+      padding: 0 20px 0 0;
+      font-size: 28px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    #client-feedback .clutch-review-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(143,216,232,0.22);
+    }
+
+    #client-feedback .clutch-review-link:hover .clutch-review-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    #client-feedback .clutch-review-link:focus-visible {
+      outline: 3px solid rgba(143,216,232,0.72);
+      outline-offset: 4px;
+    }
+
     @media (max-width: 768px) {
       #client-feedback .trust-card,
       #client-feedback .clutch-widget-card {
@@ -4424,6 +4500,16 @@
         width: 100% !important;
         justify-content: flex-start !important;
         justify-self: stretch !important;
+      }
+
+      #client-feedback .clutch-review-link {
+        width: 100%;
+        min-height: 58px;
+      }
+
+      #client-feedback .clutch-review-label {
+        min-width: 0;
+        flex: 1;
       }
     }
     /* End client feedback layout repair */
@@ -4614,16 +4700,11 @@
             <small>Takes less than 2 minutes.</small>
           </div>
           <div class="review-cta-action">
-<div
-            class="clutch-widget"
-            data-url="https://widget.clutch.co"
-            data-widget-type="14"
-            data-height="50"
-            data-nofollow="false"
-            data-expandifr="true"
-            data-scale="100"
-            data-clutchcompany-id="2687073">
-          </div>
+            <a class="clutch-review-link" href="https://review.clutch.co/review?provider_id=0a2630ec-af69-49a4-a386-653f5c769ab3" target="_blank" rel="noopener noreferrer" aria-label="Review Vixpod Motion on Clutch">
+              <span class="clutch-review-mark" aria-hidden="true"><span>C</span><i></i></span>
+              <span class="clutch-review-label">Review us</span>
+              <span class="clutch-review-arrow" aria-hidden="true">&rsaquo;</span>
+            </a>
           </div>
         </article>
       </div>
