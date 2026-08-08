@@ -6693,6 +6693,57 @@
     @media (prefers-reduced-motion: reduce) {
       .hero-typing-cursor { animation: none; }
     }
+
+    /* Targeted section image textures */
+    #numbers,
+    #tools,
+    #faq {
+      position: relative;
+      overflow: hidden;
+      background-color: #061c24;
+    }
+
+    #numbers::after,
+    #tools::after,
+    #faq::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #numbers::after {
+      opacity: 0.34;
+      background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.50), rgba(0,0,0,0.70)),
+        url("assets/images/hero-luxury-villa-sunset.webp");
+    }
+
+    #tools::after {
+      opacity: 0.18;
+      background-image:
+        linear-gradient(180deg, rgba(6,28,36,0.72), rgba(6,28,36,0.86)),
+        url("assets/images/flatlay-editing-timeline.webp");
+    }
+
+    #faq::after {
+      opacity: 0.14;
+      background-image:
+        linear-gradient(180deg, rgba(6,28,36,0.76), rgba(6,28,36,0.90)),
+        url("assets/images/dark-dashboard-waveform.webp");
+    }
+
+    #numbers > *,
+    #tools > *,
+    #faq > * {
+      position: relative;
+      z-index: 1;
+    }
+
   </style>
 </head>
 
@@ -6929,8 +6980,8 @@
           <span class="why-client-review__mark">VM</span>
           <div>
             <span class="why-client-review__eyebrow">Client Review</span>
-            <h3>Feedback Coming Soon</h3>
-            <p>Verified property-brand reviews will appear here after approved projects. Vixpod Motion is built around clear communication, polished edits, and platform-ready delivery.</p>
+            <h3>Verified Testimonial Slot</h3>
+            <p>Add a verified client quote, client name, company or channel, and optional photo/logo here when your approved review is ready.</p>
           </div>
         </article>
 
@@ -6990,22 +7041,22 @@
         <div class="trust-metric-panel trust-reveal">
           <div class="trust-metrics">
             <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="50" data-trust-suffix="+">0</strong>
+              <strong class="trust-metric-number" data-trust-count="50" data-trust-suffix="+">50+</strong>
               <span class="trust-metric-title">Content Systems</span>
               <p class="trust-metric-copy">Podcast, shorts, market updates, and property content workflows.</p>
             </article>
             <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="5" data-trust-suffix="+">0</strong>
+              <strong class="trust-metric-number" data-trust-count="5" data-trust-suffix="+">5+</strong>
               <span class="trust-metric-title">Client Workflow</span>
               <p class="trust-metric-copy">Dedicated editor, project manager, and organised communication.</p>
             </article>
             <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="12" data-trust-suffix="h">0</strong>
+              <strong class="trust-metric-number" data-trust-count="12" data-trust-suffix="h">12h</strong>
               <span class="trust-metric-title">Response Time</span>
               <p class="trust-metric-copy">Priority support so real-estate content keeps moving.</p>
             </article>
             <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="100" data-trust-suffix="%">0</strong>
+              <strong class="trust-metric-number" data-trust-count="100" data-trust-suffix="%">100%</strong>
               <span class="trust-metric-title">Brand Consistency</span>
               <p class="trust-metric-copy">Every edit is matched to your property brand system.</p>
             </article>
@@ -7110,19 +7161,19 @@
             <div class="carousel__track" data-track>
               <article class="stats-card">
                 <div class="stat-top"><span class="mini-dot"></span><span>Content Systems</span></div>
-                <strong class="stat-number" data-target="120" data-suffix="+">0</strong>
+                <strong class="stat-number" data-target="120" data-suffix="+">120+</strong>
               </article>
               <article class="stats-card">
                 <div class="stat-top"><span class="mini-dot"></span><span>Workflow Samples</span></div>
-                <strong class="stat-number" data-target="50" data-suffix="+">0</strong>
+                <strong class="stat-number" data-target="50" data-suffix="+">50+</strong>
               </article>
               <article class="stats-card">
                 <div class="stat-top"><span class="mini-dot"></span><span>Motion Callouts</span></div>
-                <strong class="stat-number" data-target="10" data-suffix="+">0</strong>
+                <strong class="stat-number" data-target="10" data-suffix="+">10+</strong>
               </article>
               <article class="stats-card">
                 <div class="stat-top"><span class="mini-dot"></span><span>Response Time</span></div>
-                <strong class="stat-number" data-target="12" data-suffix="h">0</strong>
+                <strong class="stat-number" data-target="12" data-suffix="h">12h</strong>
               </article>
             </div>
           </div>
@@ -7264,7 +7315,7 @@
               <div class="form-field"><label for="name">Your Name <span class="form-required" aria-hidden="true">*</span></label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
               <div class="form-field"><label for="email">Email Address <span class="form-required" aria-hidden="true">*</span></label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
               <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+1 555-123-4567" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" /></div>
-              <div class="form-field"><label for="country">Country <span class="form-required" aria-hidden="true">*</span></label><select id="country" name="country" autocomplete="country-name" required><option selected>United States</option><option>India</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>United Arab Emirates</option><option>Singapore</option><option>Germany</option><option>France</option><option>Netherlands</option><option>New Zealand</option><option>Ireland</option><option>Spain</option><option>Italy</option><option>Portugal</option><option>Switzerland</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Norway</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>South Africa</option><option>Nigeria</option><option>Kenya</option><option>Saudi Arabia</option><option>Qatar</option><option>Japan</option><option>South Korea</option><option>China</option><option>Hong Kong</option><option>Malaysia</option><option>Indonesia</option><option>Philippines</option><option>Thailand</option><option>Brazil</option><option>Mexico</option><option>Argentina</option><option>Other</option></select></div>
+              <div class="form-field"><label for="country">Country <span class="form-required" aria-hidden="true">*</span></label><select id="country" name="country" autocomplete="country-name" required><option>United States</option><option selected>India</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>United Arab Emirates</option><option>Singapore</option><option>Germany</option><option>France</option><option>Netherlands</option><option>New Zealand</option><option>Ireland</option><option>Spain</option><option>Italy</option><option>Portugal</option><option>Switzerland</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Norway</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>South Africa</option><option>Nigeria</option><option>Kenya</option><option>Saudi Arabia</option><option>Qatar</option><option>Japan</option><option>South Korea</option><option>China</option><option>Hong Kong</option><option>Malaysia</option><option>Indonesia</option><option>Philippines</option><option>Thailand</option><option>Brazil</option><option>Mexico</option><option>Argentina</option><option>Other</option></select></div>
               <div class="form-field full"><label for="message">Message <span class="form-required" aria-hidden="true">*</span></label><textarea id="message" name="message" placeholder="Please share details about your project" autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
               <div class="form-field full form-captcha"><label for="captchaAnswer">Captcha <span class="form-required" aria-hidden="true">*</span></label><div class="captcha-line"><span aria-hidden="true">2 + 4 =</span><input class="captcha-answer" id="captchaAnswer" name="captcha_answer" type="text" inputmode="numeric" pattern="6" maxlength="1" autocomplete="off" aria-label="What is 2 plus 4?" required /></div></div>
               <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
@@ -7335,7 +7386,6 @@
           <ul class="footer-list">
             <li><a href="#tools">Editing Tools</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="our-work.html">Blog</a></li>
           </ul>
         </div>
 
@@ -8695,6 +8745,6 @@
     })();
   </script>
 
-  <script src="assets/performance.js" defer></script>
+  <script src="assets/performance.js?v=kinetic-20260808" defer></script>
 </body>
 </html>

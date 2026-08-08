@@ -4961,6 +4961,49 @@
       .top-pill__brand-logo--full { display: none; }
       .top-pill__brand-logo--icon { display: block; }
     }
+
+    /* Targeted about page image treatments */
+    #about.subpage-intro,
+    #real-estate-content-system {
+      position: relative;
+      overflow: hidden;
+      background-color: #061c24;
+    }
+
+    #about.subpage-intro::after,
+    #real-estate-content-system::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #about.subpage-intro::after {
+      opacity: 0.36;
+      background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.50), rgba(0,0,0,0.72)),
+        url("assets/images/hero-glass-house-pool.webp");
+    }
+
+    #real-estate-content-system::after {
+      opacity: 0.18;
+      background-image:
+        linear-gradient(90deg, rgba(6,28,36,0.95), rgba(6,28,36,0.72), rgba(6,28,36,0.86)),
+        url("assets/images/designer-desk-swatches.webp");
+      background-size: min(560px, 46vw) auto;
+      background-position: right 8% center;
+    }
+
+    #about.subpage-intro > *,
+    #real-estate-content-system > * {
+      position: relative;
+      z-index: 1;
+    }
+
   </style>
 </head>
 
@@ -5155,8 +5198,8 @@
         <article class="trust-card trust-reveal" style="--trust-delay: 0s;">
           <span class="trust-card__icon">VM</span>
           <div>
-            <h3>Feedback Coming Soon</h3>
-            <p>Every project is focused on clean communication, premium editing quality, and platform-ready delivery.</p>
+            <h3>Verified Testimonial Slot</h3>
+            <p>Add a verified client quote, client name, company or channel, and optional photo/logo here when your approved review is ready.</p>
           </div>
         </article>
         <article class="clutch-widget-card trust-reveal" style="--trust-delay: 0.08s;">
@@ -5220,7 +5263,6 @@
             <li><a href="index.html#tools">Editing Tools</a></li>
             <li><a href="services.html">Content Strategy</a></li>
             <li><a href="index.html#numbers">FAQ</a></li>
-            <li><a href="our-work.html">Blog</a></li>
           </ul>
         </div>
 
@@ -5876,6 +5918,6 @@
       });
     }
   </script>
-  <script src="assets/performance.js" defer></script>
+  <script src="assets/performance.js?v=kinetic-20260808" defer></script>
 </body>
 </html>

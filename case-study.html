@@ -6312,6 +6312,34 @@
       .top-pill__brand-logo--full { display: none; }
       .top-pill__brand-logo--icon { display: block; }
     }
+
+    /* Targeted case study process texture */
+    .mini-case-study-section {
+      position: relative;
+      overflow: hidden;
+      background-color: #061c24;
+    }
+
+    .mini-case-study-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image:
+        linear-gradient(180deg, rgba(6,28,36,0.78), rgba(6,28,36,0.92)),
+        url("assets/images/notebook-sketches-flatlay.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mini-case-study-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
   </style>
 </head>
 
@@ -6449,8 +6477,8 @@
         <article class="trust-card trust-reveal" style="--trust-delay: 0s;">
           <span class="trust-card__icon">VM</span>
           <div>
-            <h3>Feedback Coming Soon</h3>
-            <p>Every project is focused on organised communication, premium editing quality, secure file handling, and platform-ready delivery.</p>
+            <h3>Verified Testimonial Slot</h3>
+            <p>Add a verified client quote, client name, company or channel, and optional photo/logo here when your approved review is ready.</p>
           </div>
         </article>
         <article class="clutch-widget-card trust-reveal" style="--trust-delay: 0.08s;">
@@ -6513,7 +6541,6 @@
           <ul class="footer-list">
             <li><a href="index.html#tools">Editing Tools</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
-            <li><a href="our-work.html">Blog</a></li>
           </ul>
         </div>
 
@@ -7785,6 +7812,6 @@
       });
     })();
   </script>
-  <script src="assets/performance.js" defer></script>
+  <script src="assets/performance.js?v=kinetic-20260808" defer></script>
 </body>
 </html>
