@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="vixpodLogoTitle">
+  <title id="vixpodLogoTitle">Vixpod Motion</title>
+  <defs>
+    <linearGradient id="vixpod-motion-mark" x1="30" y1="20" x2="160" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13E6F3"/>
+      <stop offset="1" stop-color="#0788F2"/>
+    </linearGradient>
+    <linearGradient id="vixpod-motion-fade" x1="105" y1="22" x2="195" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13E6F3" stop-opacity="0.72"/>
+      <stop offset="0.7" stop-color="#13E6F3" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#13E6F3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(8 12)">
+      <path d="M34 24h40l31 102H65z" fill="url(#vixpod-motion-mark)"/>
+      <path d="M136 24h15L89 126H74z" fill="url(#vixpod-motion-fade)" opacity=".98"/>
+      <path d="M156 34h12l-57 92H99z" fill="url(#vixpod-motion-fade)" opacity=".72"/>
+      <path d="M176 44h9l-52 82h-9z" fill="url(#vixpod-motion-fade)" opacity=".46"/>
+      <path d="M194 54h7l-47 72h-7z" fill="url(#vixpod-motion-fade)" opacity=".28"/>
+    </g>
+    <g fill="#F4FBFF" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" text-rendering="geometricPrecision">
+      <text x="202" y="72" font-size="48" font-weight="800" letter-spacing="5">VIXPOD</text>
+      <text x="205" y="117" fill="#13E6F3" font-size="26" font-weight="600" letter-spacing="18">MOTION</text>
+    </g>
+  </g>
+</svg>

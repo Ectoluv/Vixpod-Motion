@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="vixpodIconTitle">
+  <title id="vixpodIconTitle">Vixpod Motion</title>
+  <defs>
+    <linearGradient id="vixpod-icon-mark" x1="32" y1="26" x2="126" y2="154" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13E6F3"/>
+      <stop offset="1" stop-color="#0788F2"/>
+    </linearGradient>
+    <linearGradient id="vixpod-icon-fade" x1="92" y1="28" x2="164" y2="152" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13E6F3" stop-opacity="0.82"/>
+      <stop offset="0.72" stop-color="#13E6F3" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#13E6F3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="164" height="164" rx="34" fill="#0A0A0F"/>
+  <path d="M45 42h34l27 96H72z" fill="url(#vixpod-icon-mark)"/>
+  <path d="M119 42h13L77 138H64z" fill="url(#vixpod-icon-fade)" opacity=".98"/>
+  <path d="M136 52h10l-51 86H85z" fill="url(#vixpod-icon-fade)" opacity=".7"/>
+  <path d="M152 62h8l-47 76h-8z" fill="url(#vixpod-icon-fade)" opacity=".45"/>
+  <path d="M166 72h6l-42 66h-6z" fill="url(#vixpod-icon-fade)" opacity=".25"/>
+</svg>
