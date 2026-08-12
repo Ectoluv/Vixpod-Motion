@@ -144,37 +144,10 @@
     window.setTimeout(step, 90);
   };
 
+  // Heading typewriter disabled site-wide.
+  // Keep only the hero line: "Start Publishing Videos That Sell."
   const setupKineticHeadings = () => {
     addKineticTheme();
-
-    const headings = Array.from(document.querySelectorAll([
-      '.hero h1',
-      '.section-head h1',
-      '.section-head h2',
-      '.subpage-intro h1',
-      '.policy-hero h1',
-      '.case-study-shell h1',
-      '.case-study-shell h2',
-      '.talk-info h2',
-      '.final-brand-title'
-    ].join(','))).filter((heading) => !heading.closest('.top-pill') && !heading.closest('footer'));
-
-    if (!headings.length) return;
-
-    if (!('IntersectionObserver' in window)) {
-      headings.forEach(runKineticHeading);
-      return;
-    }
-
-    const headingObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        runKineticHeading(entry.target);
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.22, rootMargin: '0px 0px -10% 0px' });
-
-    headings.forEach((heading) => headingObserver.observe(heading));
   };
 
   loadWhenNear('.calendly-inline-widget', () => {
