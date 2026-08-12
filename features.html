@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-clutch-cta-horizontal" />
+  <meta name="vixpod-build" content="2026-08-12-clutch-cta-fullwidth" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2162,9 +2162,19 @@
     }
 
     .trust-grid--review-cta {
-      grid-template-columns: 1fr;
-      max-width: 920px;
-      margin-inline: auto;
+      grid-template-columns: 1fr !important;
+      max-width: min(1100px, 100%) !important;
+      width: 100% !important;
+      margin-inline: auto !important;
+    }
+
+    #client-feedback .trust-grid--review-cta {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      max-width: min(1100px, 100%) !important;
+      width: 100% !important;
+      margin: clamp(24px, 3vw, 34px) auto 0 !important;
+      gap: 0 !important;
     }
 
     @keyframes reviewMarqueeLeft {
@@ -6423,14 +6433,15 @@
 
     #client-feedback .clutch-widget-card {
       position: relative !important;
-      max-width: min(1100px, 100%) !important;
+      max-width: none !important;
       width: 100% !important;
-      margin: clamp(20px, 3vw, 30px) auto 0 !important;
-      padding: clamp(24px, 4vw, 42px) !important;
+      grid-column: 1 / -1 !important;
+      margin: 0 !important;
+      padding: clamp(28px, 3.5vw, 42px) clamp(28px, 4vw, 48px) !important;
       display: grid !important;
       grid-template-columns: minmax(0, 1fr) auto !important;
       align-items: center !important;
-      gap: clamp(24px, 3vw, 40px) !important;
+      gap: clamp(28px, 4vw, 56px) !important;
       border-radius: 32px !important;
       border: 1px solid rgba(143,216,232,0.24) !important;
       background:
