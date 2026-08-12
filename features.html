@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="shortcut icon" href="assets/favicon.svg" />
-<title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
-  <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-bugfix" />
+<title>Features | Vixpod Motion Real-Estate Content System</title>
+  <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
+  <meta name="vixpod-build" content="2026-08-12-features-page" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7582,10 +7582,23 @@
       }
     }
 
+  
+    /* Features page layout */
+    body.features-page #features {
+      padding-top: clamp(120px, 16vh, 160px);
+    }
+    body.features-page #why-us::before {
+      background-image: url("assets/images/bg-spiral-staircase.png");
+      inset: -14% -10% -16% -10%;
+      background-size: cover;
+      background-position: center 35%;
+      opacity: 0.68;
+      transform: perspective(1400px) translate3d(0, 0, 0) scale(1.16);
+    }
   </style>
 </head>
 
-<body>
+<body class="features-page">
   <svg class="site-icon-defs" aria-hidden="true" focusable="false" style="display:none">
     <symbol id="logo-premiere-pro" viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="13" fill="#16133F" stroke="#9999FF" stroke-width="2.4"/><text x="15" y="40.5" fill="#9999FF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="-1">Pr</text></symbol>
     <symbol id="logo-davinci-resolve" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="#101A20" stroke="rgba(244,251,255,0.34)" stroke-width="2"/><circle cx="32" cy="22" r="11" fill="#F45D5D"/><circle cx="22" cy="40" r="11" fill="#3D9BFF"/><circle cx="42" cy="40" r="11" fill="#67D17D"/><circle cx="32" cy="32.5" r="7" fill="#091217"/><circle cx="32" cy="32.5" r="3" fill="#F4FBFF" opacity="0.72"/></symbol>
@@ -7599,14 +7612,14 @@
     <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M12.1 3.5C7.3 3.5 3.5 7.3 3.5 12C3.5 13.6 3.9 15.2 4.8 16.6L3.6 20.6L7.7 19.5C9 20.2 10.5 20.6 12.1 20.6C16.8 20.6 20.6 16.8 20.6 12C20.6 7.3 16.8 3.5 12.1 3.5ZM12.1 19.1C10.7 19.1 9.4 18.7 8.2 18L8 17.9L5.6 18.5L6.2 16.2L6 15.9C5.3 14.7 4.9 13.4 4.9 12C4.9 8.1 8.1 4.9 12.1 4.9C16 4.9 19.2 8.1 19.2 12C19.2 15.9 16 19.1 12.1 19.1Z" fill="currentColor"/><path d="M16 13.6C15.8 13.5 14.8 13 14.6 12.9C14.4 12.8 14.2 12.8 14 13.1C13.8 13.3 13.5 13.7 13.3 13.9C13.2 14.1 13 14.1 12.8 14C12.5 13.9 11.7 13.6 10.8 12.8C10.1 12.1 9.6 11.3 9.5 11C9.3 10.8 9.5 10.7 9.6 10.5C9.7 10.4 9.9 10.2 10 10C10.1 9.9 10.2 9.7 10.3 9.6C10.4 9.4 10.3 9.2 10.3 9.1C10.2 9 9.7 7.9 9.5 7.4C9.3 6.9 9.1 7 8.9 7H8.4C8.2 7 7.9 7.1 7.7 7.3C7.4 7.6 6.8 8.2 6.8 9.4C6.8 10.6 7.7 11.8 7.8 12C7.9 12.2 9.5 14.8 12.1 15.9C12.7 16.2 13.2 16.3 13.6 16.5C14.2 16.7 14.8 16.7 15.2 16.6C15.7 16.5 16.8 16 17 15.4C17.2 14.8 17.2 14.3 17.1 14.2C17 14 16.8 13.9 16.6 13.8L16 13.6Z" fill="currentColor"/></symbol>
   </svg>
   <header class="top-pill" aria-label="Floating header">
-    <a href="#top" class="top-pill__brand" aria-label="Vixpod Motion home">
+    <a href="index.html#top" class="top-pill__brand" aria-label="Vixpod Motion home">
       <img decoding="async" class="top-pill__brand-logo top-pill__brand-logo--full" src="assets/logo.svg" alt="Vixpod Motion" width="520" height="150" />
       <img decoding="async" class="top-pill__brand-logo top-pill__brand-logo--icon" src="assets/favicon.svg" alt="Vixpod Motion" width="180" height="180" />
     </a>
     <nav class="top-pill__nav" id="primaryNav" aria-label="Primary pages">
-      <a href="#work">Work</a>
-      <a href="features.html">Features</a>
-      <a href="#talk">Letâ€™s Talk</a>
+      <a href="index.html#work">Work</a>
+      <a href="features.html" class="is-active">Features</a>
+      <a href="index.html#talk">Letâ€™s Talk</a>
     </nav>
     <button class="top-pill__hamburger" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-controls="primaryNav" aria-expanded="false">
       <span></span>
@@ -7614,157 +7627,75 @@
       <span></span>
     </button>
     <div class="top-pill__action">
-      <a href="#talk" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
+      <a href="index.html#talk" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
       <div class="quick-menu" id="quickMenu" aria-label="Quick services menu" aria-hidden="true">
-        <a class="quick-menu__item" href="#work"><span class="quick-menu__mark">WK</span><span><strong>Work</strong><span>Featured edits</span></span></a>
+        <a class="quick-menu__item" href="index.html#work"><span class="quick-menu__mark">WK</span><span><strong>Work</strong><span>Featured edits</span></span></a>
         <a class="quick-menu__item" href="features.html"><span class="quick-menu__mark">FT</span><span><strong>Features</strong><span>Editing system</span></span></a>
-        <a class="quick-menu__item" href="#talk"><span class="quick-menu__mark">LT</span><span><strong>Letâ€™s Talk</strong><span>Book a call</span></span></a>
+        <a class="quick-menu__item" href="index.html#talk"><span class="quick-menu__mark">LT</span><span><strong>Letâ€™s Talk</strong><span>Book a call</span></span></a>
       </div>
     </div>
   </header>
 
     <main id="top">
-<section class="hero glow-section hero-video-section">
-      <video class="hero-bg-video" data-hero-video muted loop playsinline preload="none" poster="assets/images/bg-luxury-villa-sunset.png" aria-hidden="true">
-        <source data-src="https://cdn.coverr.co/videos/coverr-modern-house-interior-5244/1080p.mp4" type="video/mp4" />
-      </video>
-      <div class="hero-video-overlay" aria-hidden="true"></div>
-      <div class="hero-video-vignette" aria-hidden="true"></div>
-      <div class="motion-icon-layer motion-icon-layer--hero reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--play" style="--x: 8%; --y: 27%; --size: 52px; --r: -8deg; --delay: 0s;"></span>
-        <span class="motion-icon motion-icon--timeline" style="--x: 84%; --y: 24%; --size: 72px; --r: 7deg; --delay: 0.5s;"></span>
-        <span class="motion-icon motion-icon--camera" style="--x: 12%; --y: 67%; --size: 64px; --r: 6deg; --delay: 0.9s;"></span>
-        <span class="motion-icon motion-icon--wave" style="--x: 78%; --y: 70%; --size: 58px; --r: -6deg; --delay: 1.2s;"></span>
+<section class="section glow-section" id="features">
+      <div class="motion-icon-layer reveal" aria-hidden="true">
+        <span class="motion-icon motion-icon--timeline" style="--x: 7%; --y: 24%; --size: 64px; --r: -5deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--spark" style="--x: 88%; --y: 28%; --size: 50px; --r: 7deg; --delay: 0.6s;"></span>
+        <span class="motion-icon motion-icon--caption" style="--x: 82%; --y: 78%; --size: 46px; --r: -4deg; --delay: 1s;"></span>
       </div>
       <div class="site-shell">
-        <div class="center-copy reveal">
-          <span class="label-pill">Vixpod Motion Studio</span>
-          <h1>Stop Paying for Property Tours No One Finishes.</h1>
-          <p class="hero-typing-line" aria-live="polite"><span class="hero-typed-text" data-hero-text="Start Publishing Videos That Sell."></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
-          <p class="lead">Cinematic real-estate editing, short-form reels, podcast clips, and property brand videos built for attention, trust, and conversion.</p>
-          <div class="button-row">
-            <a class="btn btn--dark btn--hero-primary" href="#book-consultation">Book Strategy Call <span aria-hidden="true">&#8599;</span></a>
-            <a class="btn btn--glass" href="#work">View Our Work</a>
-          </div>
-          <p class="hero-trust-line hero-rating-line"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Trusted by Top Real Estate Brands</p>
+        <div class="section-head reveal">
+          <span class="label-pill">Why Vixpod Motion</span>
+          <h2 class="section-heading">Built for Real-Estate Creators Who Need Consistent Premium Content</h2>
+          <p class="section-copy">A streamlined editing system designed for podcasts, YouTube channels, realtor brands, and property-investment content pipelines.</p>
         </div>
 
-        <div class="hero-cards" data-parallax="hero-cards" aria-label="Vixpod Motion creative production workflow">
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Platform-ready video export workflow</span><img src="assets/images/hero-platform-exports.jpg" alt="Platform-ready video export workflow" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Real-estate short-form content workflow</span><img src="assets/images/hero-real-estate-content.jpg" alt="Real-estate short-form content workflow" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Vixpod Motion premium video editing workstation</span><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="Vixpod Motion premium video editing workstation" width="720" height="1279" loading="eager" decoding="async" fetchpriority="high" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
+        <div class="features-grid stagger-parent">
+          <article class="feature-card stagger-item">
+            <span class="feature-card__num">01</span>
+            <h3>Long-Form Editing</h3>
+            <p>Podcast, interview, market update, or YouTube episode with tighter pacing and stronger storytelling.</p>
+            <div class="feature-tags">
+              <span>YouTube</span>
+              <span>Podcasts</span>
+              <span>Real Estate</span>
+            </div>
+          </article>
+          <article class="feature-card stagger-item">
+            <span class="feature-card__num">02</span>
+            <h3>Short-Form Repurposing</h3>
+            <p>Reels, Shorts, TikTok, and LinkedIn-ready clips optimized for attention and retention.</p>
+            <div class="feature-tags">
+              <span>Reels</span>
+              <span>YouTube</span>
+              <span>Real Estate</span>
+            </div>
+          </article>
+          <article class="feature-card stagger-item">
+            <span class="feature-card__num">03</span>
+            <h3>Motion Graphics</h3>
+            <p>Captions, lower thirds, charts, data callouts, branded overlays, and premium visual polish.</p>
+            <div class="feature-tags">
+              <span>Captions</span>
+              <span>Motion</span>
+              <span>Real Estate</span>
+            </div>
+          </article>
+          <article class="feature-card stagger-item">
+            <span class="feature-card__num">04</span>
+            <h3>Platform Delivery</h3>
+            <p>Clean exports for YouTube, Instagram, LinkedIn, TikTok, and content management systems.</p>
+            <div class="feature-tags">
+              <span>YouTube</span>
+              <span>Reels</span>
+              <span>Podcasts</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     
-<section class="section glow-section" id="work">
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--film" style="--x: 6%; --y: 25%; --size: 62px; --r: -7deg; --delay: 0.1s;"></span>
-        <span class="motion-icon motion-icon--cursor" style="--x: 91%; --y: 30%; --size: 52px; --r: 8deg; --delay: 0.5s;"></span>
-        <span class="motion-icon motion-icon--play" style="--x: 84%; --y: 81%; --size: 48px; --r: -5deg; --delay: 0.9s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">Work</span>
-          <h2 class="section-heading">Work That Makes Real-Estate Content Look Premium Before It Gets Clicked</h2>
-          <p class="section-copy">Cinematic YouTube edits, podcast transformations, realtor brand reels, market updates, and motion-graphics-driven property content built for engagement and authority.</p>
-        </div>
-
-        <div class="work-masonry stagger-parent">
-          <button class="work-card work-card--tall stagger-item" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Luxury Realtor Brand Reel">
-            <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Luxury Realtor Brand Reel" loading="lazy" width="900" height="1200" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Luxury Realtor Brand Reel</h3>
-              <p>Premium personal-brand reel with polished pacing and motion polish.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--mid stagger-item" type="button" data-modal-video="assets/videos/real-estate-podcast-transformation.mp4" aria-label="Play Property Investment Podcast">
-            <div class="work-card__media">
-              <img decoding="async" src="assets/images/real-estate-podcast-transformation-poster.jpg" alt="Property Investment Podcast" loading="lazy" width="720" height="900" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Property Investment Podcast</h3>
-              <p>Long-form podcast transformed into a cinematic YouTube episode.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--portrait stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Property Interview">
-            <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Commercial Property Interview" loading="lazy" width="900" height="1200" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Commercial Property Interview</h3>
-              <p>Multi-camera interview with lower thirds and market callouts.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--short stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Market Update Video">
-            <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Market Update Video" loading="lazy" width="900" height="700" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Market Update Video</h3>
-              <p>Animated charts and clean retention pacing for authority content.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--mid stagger-item" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Mortgage Education Short">
-            <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Mortgage Education Short" loading="lazy" width="900" height="900" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Mortgage Education Short</h3>
-              <p>High-retention short with hooks, captions, and pattern interrupts.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--tall stagger-item" type="button" data-modal-video="assets/videos/luxury-property-tour-promo.mp4" aria-label="Play Luxury Home Walkthrough">
-            <div class="work-card__media">
-              <img decoding="async" src="assets/images/luxury-property-tour-promo-poster.jpg" alt="Luxury Home Walkthrough" loading="lazy" width="720" height="1280" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Luxury Home Walkthrough</h3>
-              <p>Cinematic property tour edit built for luxury brand presentation.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--short stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Realtor YouTube Edit">
-            <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Realtor YouTube Edit" loading="lazy" width="900" height="700" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Realtor YouTube Edit</h3>
-              <p>Story-led YouTube episode with stronger pacing and visual polish.</p>
-            </div>
-          </button>
-
-          <button class="work-card work-card--portrait stagger-item" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Vertical Property Reel">
-            <div class="work-card__media">
-              <img decoding="async" src="assets/images/hero-real-estate-content.jpg" alt="Vertical Property Reel" loading="lazy" width="720" height="1280" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Vertical Property Reel</h3>
-              <p>Platform-ready vertical reel optimized for Reels, Shorts, and TikTok.</p>
-            </div>
-          </button>
-        </div>
-      </div>
-    </section>
-
 <section class="section glow-section" id="book-consultation">
       <div class="motion-icon-layer reveal" aria-hidden="true">
         <span class="motion-icon motion-icon--send" style="--x: 8%; --y: 20%; --size: 54px; --r: 8deg; --delay: 0.1s;"></span>
@@ -7810,326 +7741,89 @@
       </div>
     </section>
 
-<section class="section trust-section glow-section" id="creator-trust" data-trust-section aria-label="Trust Stats">
+    <section class="section trust-section glow-section" id="why-us" data-trust-section>
       <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--chart" style="--x: 8%; --y: 21%; --size: 54px; --r: -6deg; --delay: 0.2s;"></span>
-        <span class="motion-icon motion-icon--globe" style="--x: 90%; --y: 75%; --size: 58px; --r: 6deg; --delay: 0.7s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="trust-metric-panel trust-reveal">
-          <div class="trust-metrics">
-            <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="50" data-trust-suffix="+">50+</strong>
-              <span class="trust-metric-title">Content Systems</span>
-              <p class="trust-metric-copy">Podcast, shorts, market updates, and property content workflows.</p>
-            </article>
-            <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="5" data-trust-suffix="+">5+</strong>
-              <span class="trust-metric-title">Client Workflow</span>
-              <p class="trust-metric-copy">Dedicated editor, project manager, and organised communication.</p>
-            </article>
-            <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="12" data-trust-suffix="h">12h</strong>
-              <span class="trust-metric-title">Response Time</span>
-              <p class="trust-metric-copy">Priority support so real-estate content keeps moving.</p>
-            </article>
-            <article class="trust-metric">
-              <strong class="trust-metric-number" data-trust-count="100" data-trust-suffix="%">100%</strong>
-              <span class="trust-metric-title">Brand Consistency</span>
-              <p class="trust-metric-copy">Every edit is matched to your property brand system.</p>
-            </article>
-          </div>
-
-          <article class="trust-metric-highlight">
-            <h3>Your Market Knowledge, Our Production System</h3>
-            <p>We understand how important it is for real-estate businesses to publish with authority. From podcast episodes to market updates and property marketing videos, our process keeps every edit clean, intentional, secure, and ready for long-term growth.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section trust-section glow-section" id="workflow-system" data-trust-section>
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--timeline" style="--x: 7%; --y: 24%; --size: 64px; --r: -5deg; --delay: 0.1s;"></span>
-        <span class="motion-icon motion-icon--send" style="--x: 89%; --y: 77%; --size: 50px; --r: 7deg; --delay: 0.6s;"></span>
+        <span class="motion-icon motion-icon--globe" style="--x: 7%; --y: 22%; --size: 62px; --r: -5deg; --delay: 0.1s;"></span>
+        <span class="motion-icon motion-icon--chart" style="--x: 88%; --y: 26%; --size: 68px; --r: 5deg; --delay: 0.5s;"></span>
+        <span class="motion-icon motion-icon--spark" style="--x: 81%; --y: 77%; --size: 48px; --r: 10deg; --delay: 1s;"></span>
       </div>
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
-          <span class="label-pill">PRIVATE CLIENT WORKFLOW</span>
-          <h2>Our 4-Step Real-Estate Content Process</h2>
-          <p class="lead">A structured workflow built around content calendar alignment, secure cloud file management, weekly delivery, revision support, and final exports in the right format.</p>
+          <span class="label-pill">WHY PROPERTY BRANDS CHOOSE US</span>
+          <h1>Why Real-Estate Teams Choose Vixpod Motion</h1>
+          <p class="lead">We help real-estate businesses replace scattered editing with a consistent content system built for trust, authority, and long-term visibility.</p>
         </div>
 
-        <div class="workflow-grid">
+        <article class="why-client-review trust-reveal" style="--trust-delay: 0s;" aria-label="Client review">
+          <span class="why-client-review__mark">VM</span>
+          <div>
+            <span class="why-client-review__eyebrow">Client Review</span>
+            <h3>Verified Testimonial Slot</h3>
+            <p>Add a verified client quote, client name, company or channel, and optional photo/logo here when your approved review is ready.</p>
+          </div>
+        </article>
+
+        <div class="trust-grid">
           <article class="trust-card trust-reveal" style="--trust-delay: 0s;">
             <span class="trust-card__icon">01</span>
             <div>
-              <h3>Strategy Brief</h3>
-              <p>We confirm your real-estate niche, audience, content goals, brand style, references, upload formats, timeline, and revision expectations.</p>
+              <h3>Consistent Monthly Content System</h3>
+              <p>Reliable weekly delivery, organised assets, clear briefs, and a repeatable workflow for podcasts, shorts, market updates, and property videos.</p>
             </div>
           </article>
-          <article class="trust-card trust-reveal" style="--trust-delay: 0.10s;">
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.08s;">
             <span class="trust-card__icon">02</span>
             <div>
-              <h3>Assets &amp; Content Calendar</h3>
-              <p>Your footage, brand assets, topics, and posting schedule are organised into a clean editing plan for pacing, hooks, captions, graphics, and platform delivery.</p>
+              <h3>Dedicated Editor &amp; Project Manager</h3>
+              <p>Your production stays organised through one creative owner, one workflow manager, and clear communication from brief to delivery.</p>
             </div>
           </article>
-          <article class="trust-card trust-reveal" style="--trust-delay: 0.20s;">
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.16s;">
             <span class="trust-card__icon">03</span>
             <div>
-              <h3>Edit + Structured Review</h3>
-              <p>We send polished versions for feedback, keep communication organised, and refine each cut through focused revision rounds.</p>
+              <h3>Clear Property Data Communication</h3>
+              <p>Market stats, location details, financing points, and investment takeaways are turned into clean visual callouts that viewers can follow.</p>
             </div>
           </article>
-          <article class="trust-card trust-reveal" style="--trust-delay: 0.30s;">
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.24s;">
             <span class="trust-card__icon">04</span>
             <div>
-              <h3>Publishing-Ready Delivery</h3>
-              <p>Final files are exported cleanly for YouTube, Instagram, TikTok, LinkedIn, websites, ads, CRM follow-up, and campaign launches.</p>
+              <h3>Brand Consistency Across Platforms</h3>
+              <p>Every edit follows your voice, audience, property niche, caption style, visual language, and platform requirements.</p>
+            </div>
+          </article>
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.32s;">
+            <span class="trust-card__icon">05</span>
+            <div>
+              <h3>Structured Revision Process</h3>
+              <p>Feedback is handled through a private client workflow so revisions stay clear, controlled, and aligned with your brand asset library.</p>
+            </div>
+          </article>
+          <article class="trust-card trust-reveal" style="--trust-delay: 0.40s;">
+            <span class="trust-card__icon">06</span>
+            <div>
+              <h3>Ready for Real-Estate Distribution</h3>
+              <p>Final videos are packaged for YouTube, Instagram, TikTok, LinkedIn, websites, newsletters, ads, and sales conversations.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section glow-section" id="tools">
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--color" style="--x: 8%; --y: 25%; --size: 54px; --r: -7deg; --delay: 0.15s;"></span>
-        <span class="motion-icon motion-icon--timeline" style="--x: 88%; --y: 28%; --size: 60px; --r: 6deg; --delay: 0.55s;"></span>
-        <span class="motion-icon motion-icon--cursor" style="--x: 82%; --y: 78%; --size: 46px; --r: -4deg; --delay: 0.95s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">Studio Toolkit</span>
-          <h2>The Production Tools We Work With</h2>
-          <p class="lead">Industry-standard editing, color, effects, and compositing workflows used to keep real-estate content clean, organised, and premium.</p>
-        </div>
-
-        <div class="tools-grid stagger-parent">
-          <article class="tool-card stagger-item"><span class="tool-badge"><svg class="tool-logo" role="img" aria-label="Adobe Premiere Pro logo" focusable="false"><use href="#logo-premiere-pro"></use></svg></span><div><h3>Premiere Pro</h3><p>Clean podcast timelines, long-form property workflows, subtitles, pacing, and production-ready exports.</p></div></article>
-          <article class="tool-card stagger-item"><span class="tool-badge"><svg class="tool-logo" role="img" aria-label="DaVinci Resolve logo" focusable="false"><use href="#logo-davinci-resolve"></use></svg></span><div><h3>DaVinci Resolve</h3><p>Professional colour grading, clean interiors, natural skin tone, contrast control, and polished finishing.</p></div></article>
-          <article class="tool-card stagger-item"><span class="tool-badge"><svg class="tool-logo" role="img" aria-label="Final Cut Pro logo" focusable="false"><use href="#logo-final-cut-pro"></use></svg></span><div><h3>Final Cut Pro</h3><p>Fast real-estate creator workflows, social content delivery, and efficient campaign editing.</p></div></article>
-          <article class="tool-card stagger-item"><span class="tool-badge"><svg class="tool-logo" role="img" aria-label="Adobe After Effects logo" focusable="false"><use href="#logo-after-effects"></use></svg></span><div><h3>After Effects</h3><p>Market data callouts, animated maps, captions, lower thirds, and clear visual explanations.</p></div></article>
-          <article class="tool-card stagger-item"><span class="tool-badge"><svg class="tool-logo" role="img" aria-label="Blender logo" focusable="false"><use href="#logo-blender"></use></svg></span><div><h3>Blender</h3><p>3D visual support, premium concept assets, cinematic objects, and property presentation elements.</p></div></article>
-          <article class="tool-card stagger-item"><span class="tool-badge"><svg class="tool-logo" role="img" aria-label="Adobe Photoshop logo" focusable="false"><use href="#logo-photoshop"></use></svg></span><div><h3>Design Suite</h3><p>Thumbnail polish, brand assets, visual layouts, and content packaging for property channels.</p></div></article>
-        </div>
-
-        <div class="tools-cta reveal">
-          <h3>Work with a post-production team that understands real-estate authority, deadlines, and revision needs.</h3>
-          <a class="contact-disc" href="#talk" aria-label="Lets talk with Vixpod Motion"><span>LET&rsquo;S TALK</span><span class="contact-disc__arrow" aria-hidden="true">&#8599;</span></a>
+<section class="section section--compact glow-section" id="features-cta">
+  <div class="site-shell">
+    <div class="cta-card reveal">
+      <div class="center-copy">
+        <span class="label-pill">Next Step</span>
+        <h2>Ready to Build Your Content System?</h2>
+        <div class="button-row">
+          <a class="btn btn--dark" href="index.html#talk">Let&rsquo;s Talk</a>
+          <a class="btn btn--glass" href="index.html#work">View Our Work</a>
         </div>
       </div>
-    </section>
-
-    <section class="section glow-section" id="numbers">
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--chart" style="--x: 9%; --y: 25%; --size: 62px; --r: -6deg; --delay: 0.2s;"></span>
-        <span class="motion-icon motion-icon--wave" style="--x: 88%; --y: 26%; --size: 58px; --r: 6deg; --delay: 0.65s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head reveal">
-          <span class="label-pill">Studio Results</span>
-          <h2>Built for Consistent Real-Estate Publishing</h2>
-          <p class="lead">Our work is built around trust, authority, reliable turnaround, and premium visual delivery for property-focused brands.</p>
-        </div>
-
-        <div class="carousel reveal" data-static-depth-cards>
-          <div class="carousel__viewport">
-            <div class="carousel__track" data-track>
-              <article class="stats-card">
-                <div class="stat-top"><span class="mini-dot"></span><span>Content Systems</span></div>
-                <strong class="stat-number" data-target="120" data-suffix="+">120+</strong>
-              </article>
-              <article class="stats-card">
-                <div class="stat-top"><span class="mini-dot"></span><span>Workflow Samples</span></div>
-                <strong class="stat-number" data-target="50" data-suffix="+">50+</strong>
-              </article>
-              <article class="stats-card">
-                <div class="stat-top"><span class="mini-dot"></span><span>Motion Callouts</span></div>
-                <strong class="stat-number" data-target="10" data-suffix="+">10+</strong>
-              </article>
-              <article class="stats-card">
-                <div class="stat-top"><span class="mini-dot"></span><span>Response Time</span></div>
-                <strong class="stat-number" data-target="12" data-suffix="h">12h</strong>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section trust-section glow-section" id="faq" data-trust-section>
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--message" style="--x: 8%; --y: 22%; --size: 58px; --r: -6deg; --delay: 0.15s;"></span>
-        <span class="motion-icon motion-icon--caption" style="--x: 88%; --y: 76%; --size: 54px; --r: 7deg; --delay: 0.7s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="section-head trust-title-block trust-reveal">
-          <span class="label-pill">QUESTIONS</span>
-          <h2>FAQ Section</h2>
-          <p class="lead">Quick answers for real-estate teams before starting a content system with Vixpod Motion.</p>
-        </div>
-
-        <div class="faq-layout">
-          <aside class="faq-panel trust-reveal">
-            <div>
-              <span class="trust-card__label">Project Help</span>
-              <h3>Start with the right content system.</h3>
-              <p>Get clarity on editors, formats, timelines, project scope, secure files, and production support before sending your footage.</p>
-            </div>
-            <a class="btn btn--dark" href="#book-consultation">Book Strategy Call</a>
-          </aside>
-
-          <div class="faq-list trust-reveal" style="--trust-delay: 0.12s;" data-faq-list>
-            <article class="faq-item is-open" data-faq-item>
-              <button class="faq-question" type="button" aria-expanded="true">
-                <span>Do I get a dedicated editor and project manager?</span>
-                <span class="faq-toggle" aria-hidden="true">-</span>
-              </button>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">Yes. For ongoing real-estate content, we keep the workflow organised with dedicated editing support, project management, brand assets, and a structured revision process.</div>
-              </div>
-            </article>
-
-            <article class="faq-item" data-faq-item>
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>Do you edit real-estate podcasts and short-form clips?</span>
-                <span class="faq-toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">Yes. We edit real-estate podcasts, YouTube videos, market updates, property walkthroughs, Reels, Shorts, mortgage content, and investment education clips.</div>
-              </div>
-            </article>
-
-            <article class="faq-item" data-faq-item>
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>Can you add captions, thumbnails, and property graphics?</span>
-                <span class="faq-toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">Yes. We can add captions, thumbnails, lower thirds, market data callouts, animated titles, maps, music, audio polish, and colour grading.</div>
-              </div>
-            </article>
-
-            <article class="faq-item" data-faq-item>
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>How does the weekly delivery schedule work?</span>
-                <span class="faq-toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">Delivery depends on content volume and complexity. We align each client around a clear weekly schedule so podcasts, shorts, and property videos move consistently.</div>
-              </div>
-            </article>
-
-            <article class="faq-item" data-faq-item>
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>What happens after I book a strategy call?</span>
-                <span class="faq-toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer">
-                <div class="faq-answer-inner">We review your goals, current content, platforms, turnaround needs, and production volume, then suggest a workflow that fits your real-estate content system.</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-    <section class="section glow-section" id="talk">
-      <span id="contact" aria-hidden="true"></span>
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--send" style="--x: 7%; --y: 18%; --size: 54px; --r: 8deg; --delay: 0.1s;"></span>
-        <span class="motion-icon motion-icon--message" style="--x: 87%; --y: 16%; --size: 62px; --r: -5deg; --delay: 0.55s;"></span>
-        <span class="motion-icon motion-icon--camera" style="--x: 11%; --y: 77%; --size: 52px; --r: -8deg; --delay: 1s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="talk-shell">
-          <div class="cta-panel reveal">
-            <span class="label-pill">Let&rsquo;s Talk</span>
-            <h2 class="cta-heading">Ready to Build a Premium Real-Estate Content System?</h2>
-            <p class="cta-description">Whether you need YouTube editing, podcast repurposing, vertical content, or a complete real-estate content workflow, Vixpod Motion can help you publish consistently and look more professional across every platform.</p>
-            <div class="cta-actions">
-              <a class="btn btn--dark" href="#book-consultation">Book Free Strategy Call <span aria-hidden="true">&#8599;</span></a>
-              <a class="btn btn--glass" href="mailto:contact@vixpodmotion.com?subject=Custom%20Proposal%20Request">Request Custom Proposal</a>
-            </div>
-            <div class="cta-trust-row" aria-label="Trust indicators">
-              <span>24h Response</span>
-              <span>Worldwide Delivery</span>
-              <span>YouTube + Shorts + Podcast Workflow</span>
-              <span>Real-Estate Content Focus</span>
-            </div>
-          </div>
-
-          <div class="talk-layout">
-            <div class="talk-info reveal">
-              <div>
-                <span class="label-pill">Let&rsquo;s Talk</span>
-                <h2>Let&rsquo;s Build a Real-Estate Content System.</h2>
-                <p class="lead">Share your property niche, platforms, content volume, and goals. We&rsquo;ll help you choose the right workflow, delivery structure, and revision process.</p>
-              </div>
-
-              <div class="contact-stack">
-                <div><span class="contact-kicker">Company</span><p class="contact-value">Vixpod Motion</p></div>
-                <div><span class="contact-kicker">Founder</span><p class="contact-value">Ashu Rawat</p></div>
-                <div><span class="contact-kicker">Email</span><p class="contact-value">contact@vixpodmotion.com</p></div>
-                <div><span class="contact-kicker">Studio</span><p class="contact-value">Remote Real-Estate Post-Production Studio<br />Serving property brands worldwide</p></div>
-                <div><span class="contact-kicker">Response Time</span><p class="contact-value">Usually within 12 hours</p></div>
-                <div>
-                  <span class="contact-kicker">Social</span>
-                  <div class="social-row">
-                    <a class="social-dot" href="https://www.instagram.com/vixpodmotion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></a>
-                    <a class="social-dot" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
-                    <a class="social-dot" href="https://www.youtube.com/@ashensvow" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></a>
-                    <a class="social-dot" href="https://wa.me/917087457425" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <form id="contactForm" class="talk-form reveal" method="post" novalidate data-secure-form>
-              <div class="form-grid">
-                <div class="form-field"><label for="name">Your Name <span class="form-required" aria-hidden="true">*</span></label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
-                <div class="form-field"><label for="email">Email Address <span class="form-required" aria-hidden="true">*</span></label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
-                <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+1 555-123-4567" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" /></div>
-                <div class="form-field"><label for="country">Country <span class="form-required" aria-hidden="true">*</span></label><select id="country" name="country" autocomplete="country-name" required><option>United States</option><option selected>India</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>United Arab Emirates</option><option>Singapore</option><option>Germany</option><option>France</option><option>Netherlands</option><option>New Zealand</option><option>Ireland</option><option>Spain</option><option>Italy</option><option>Portugal</option><option>Switzerland</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Norway</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>South Africa</option><option>Nigeria</option><option>Kenya</option><option>Saudi Arabia</option><option>Qatar</option><option>Japan</option><option>South Korea</option><option>China</option><option>Hong Kong</option><option>Malaysia</option><option>Indonesia</option><option>Philippines</option><option>Thailand</option><option>Brazil</option><option>Mexico</option><option>Argentina</option><option>Other</option></select></div>
-                <div class="form-field full"><label for="message">Message <span class="form-required" aria-hidden="true">*</span></label><textarea id="message" name="message" placeholder="Please share details about your project" autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
-                <div class="form-field full form-captcha"><label for="captchaAnswer">Captcha <span class="form-required" aria-hidden="true">*</span></label><div class="captcha-line"><span aria-hidden="true">2 + 4 =</span><input class="captcha-answer" id="captchaAnswer" name="captcha_answer" type="text" inputmode="numeric" pattern="6" maxlength="1" autocomplete="off" aria-label="What is 2 plus 4?" required /></div></div>
-                <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
-                <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" data-size="normal" hidden aria-hidden="true"></div>
-                <p class="form-status" id="talkFormStatus" aria-live="polite"></p>
-                <div class="form-field full"><button class="btn btn--dark" type="submit">CONTACT US</button></div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-<section class="final-brand-section glow-section" id="vixpod-motion" aria-label="Vixpod Motion brand reveal">
-      <div class="site-shell">
-        <div class="final-brand-card" data-final-brand>
-          <div class="final-brand-inner">
-            <span class="label-pill">Company</span>
-            <h2 class="final-brand-title" aria-label="Vixpod Motion">
-              <span class="final-brand-word"><span style="--word-delay: 0s;">Vixpod</span></span>
-              <span class="final-brand-word"><span style="--word-delay: 0.18s;">Motion</span></span>
-            </h2>
-            <p class="final-brand-copy">Premium real-estate post-production, podcast editing, property content systems, and authority-building video support by Ashu Rawat.</p>
-            <div class="final-brand-actions">
-              <a class="btn btn--dark" href="#book-consultation">Book Strategy Call</a>
-              <a class="social-dot" href="https://www.instagram.com/vixpodmotion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></a>
-              <a class="social-dot" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
-              <a class="social-dot" href="https://www.youtube.com/@ashensvow" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></a>
-              <a class="social-dot" href="https://wa.me/917087457425" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
+    </div>
+  </div>
+</section>
   </main>
 
 
@@ -8159,15 +7853,15 @@
             <li><a href="features.html">Features</a></li>
             <li><a href="about.html#team">Creative Team</a></li>
             <li><a href="our-work.html">Portfolio</a></li>
-            <li><a href="#talk">Let&rsquo;s Talk</a></li>
+            <li><a href="index.html#talk">Let&rsquo;s Talk</a></li>
           </ul>
         </div>
 
         <div>
           <h3 class="footer-title">Resources</h3>
           <ul class="footer-list">
-            <li><a href="#tools">Editing Tools</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="index.html#tools">Editing Tools</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
           </ul>
         </div>
 
@@ -8188,7 +7882,7 @@
     </div>
   </footer>
 
-  <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
+  <a class="floating-contact" href="index.html#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
   <script>
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
