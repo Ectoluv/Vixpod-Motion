@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-smooth-fast" />
+  <meta name="vixpod-build" content="2026-08-12-scroll-snappy" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -49,9 +49,20 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       scrollbar-width: none;
       -ms-overflow-style: none;
+    }
+
+    html.lenis,
+    html.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      html:not(.lenis):not(.js-await-motion) {
+        scroll-behavior: smooth;
+      }
     }
 
     body {
@@ -8178,21 +8189,39 @@
     function setupDesktopMotion() {
       document.documentElement.classList.remove('js-await-motion');
       document.documentElement.classList.add('js-motion-ready');
+
       if (!prefersReduced && !mobilePerformanceMode && window.Lenis) {
         lenisInstance = new Lenis({
-          duration: 1.05,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          duration: 0.68,
+          easing: (t) => 1 - Math.pow(1 - t, 3),
           smoothWheel: true,
-          wheelMultiplier: 0.9,
-          touchMultiplier: 1.4
+          syncTouch: false,
+          wheelMultiplier: 1.22,
+          touchMultiplier: 1.5,
+          normalizeWheel: true
         });
 
-        function raf(time) {
-          lenisInstance.raf(time);
-          requestAnimationFrame(raf);
+        document.documentElement.classList.add('lenis', 'lenis-smooth');
+        if (typeof window.__vixpodOnLenisScroll === 'function') {
+          lenisInstance.on('scroll', window.__vixpodOnLenisScroll);
         }
 
-        requestAnimationFrame(raf);
+        // Drive Lenis from GSAP ticker when available for one smooth clock.
+        if (window.gsap) {
+          lenisInstance.on('scroll', () => {
+            if (window.ScrollTrigger) ScrollTrigger.update();
+          });
+          gsap.ticker.add((time) => {
+            lenisInstance.raf(time * 1000);
+          });
+          gsap.ticker.lagSmoothing(0);
+        } else {
+          function raf(time) {
+            lenisInstance.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+        }
       }
 
       if (!prefersReduced && window.gsap && window.ScrollTrigger) {
@@ -8200,17 +8229,18 @@
 
         gsap.utils.toArray('.reveal').forEach((element) => {
           gsap.fromTo(element,
-            { opacity: 0, y: 40, scale: 0.98 },
+            { opacity: 0, y: 28, scale: 0.99 },
             {
               opacity: 1,
               y: 0,
               scale: 1,
-              duration: 0.85,
-              ease: 'power3.out',
+              duration: 0.62,
+              ease: 'power2.out',
               scrollTrigger: {
                 trigger: element,
-                start: 'top 88%',
-                once: true
+                start: 'top 90%',
+                once: true,
+                fastScrollEnd: true
               }
             }
           );
@@ -8219,39 +8249,25 @@
         gsap.utils.toArray('.stagger-parent').forEach((parent) => {
           const children = parent.querySelectorAll('.stagger-item');
           gsap.fromTo(children,
-            { opacity: 0, y: 36, scale: 0.98 },
+            { opacity: 0, y: 24, scale: 0.99 },
             {
               opacity: 1,
               y: 0,
               scale: 1,
-              duration: 0.75,
-              stagger: 0.08,
-              ease: 'power3.out',
+              duration: 0.55,
+              stagger: 0.05,
+              ease: 'power2.out',
               scrollTrigger: {
                 trigger: parent,
-                start: 'top 88%',
-                once: true
+                start: 'top 90%',
+                once: true,
+                fastScrollEnd: true
               }
             }
           );
         });
 
-        gsap.utils.toArray('.parallax-img').forEach((image) => {
-          gsap.fromTo(image,
-            { yPercent: -4, scale: 1.06 },
-            {
-              yPercent: 5,
-              scale: 1.12,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: image.closest('.image-banner'),
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-              }
-            }
-          );
-        });
+        // Skip heavy scrub parallax while scrolling for a cleaner feel.
       } else {
         setupLiteReveals();
       }
@@ -8536,19 +8552,15 @@
     let scrollMotionFrame = 0;
 
     function renderScrollMotion() {
-      const y = window.scrollY || window.pageYOffset;
-
-      if (heroCards && !mobilePerformanceMode) {
-        const move = Math.min(120, y * 0.12);
-        heroCards.style.transform = `translate3d(0, ${-move}px, 0)`;
-      } else if (heroCards) {
-        heroCards.style.removeProperty('transform');
+      if (!heroCards || mobilePerformanceMode) return;
+      const y = lenisInstance ? lenisInstance.scroll : (window.scrollY || window.pageYOffset);
+      // Stop hero parallax after leaving the first screen to keep long scrolls light.
+      if (y > window.innerHeight * 1.15) {
+        heroCards.style.transform = 'translate3d(0, 0, 0)';
+        return;
       }
-
-      if (header && !mobilePerformanceMode) {
-        const lift = Math.min(4, y * 0.01);
-        header.style.boxShadow = `0 ${22 + lift}px ${80 + lift * 4}px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.22)`;
-      }
+      const move = Math.min(56, y * 0.06);
+      heroCards.style.transform = `translate3d(0, ${-move}px, 0)`;
     }
 
     function handleScrollMotion() {
@@ -8559,6 +8571,10 @@
       });
     }
 
+    window.__vixpodOnLenisScroll = handleScrollMotion;
+    if (lenisInstance && typeof lenisInstance.on === 'function') {
+      lenisInstance.on('scroll', handleScrollMotion);
+    }
     window.addEventListener('scroll', handleScrollMotion, { passive: true });
     renderScrollMotion();
 
@@ -9138,7 +9154,7 @@
       if (!target) return;
 
       if (lenisInstance && typeof lenisInstance.scrollTo === 'function') {
-        lenisInstance.scrollTo(target, { duration: prefersReduced ? 0 : 1.15, offset: -getFixedHeaderOffset() });
+        lenisInstance.scrollTo(target, { duration: prefersReduced ? 0 : 0.7, offset: -getFixedHeaderOffset() });
       } else {
         const top = target.getBoundingClientRect().top + window.pageYOffset - getFixedHeaderOffset();
         window.scrollTo({ top, behavior: prefersReduced ? 'auto' : 'smooth' });
