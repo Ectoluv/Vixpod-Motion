@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-bg-3d" />
+  <meta name="vixpod-build" content="2026-08-12-bugfix" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -6722,8 +6722,21 @@
     #faq,
     #talk {
       position: relative;
-      overflow: hidden;
       isolation: isolate;
+    }
+
+    #work,
+    #features,
+    #why-us,
+    #tools,
+    #numbers,
+    #faq,
+    #talk {
+      overflow: hidden;
+    }
+
+    .hero.hero-video-section {
+      overflow: visible;
     }
 
     .hero.hero-video-section::before,
@@ -6836,7 +6849,6 @@
       }
     }
 
-    .hero.hero-video-section > *,
     #work > *,
     #features > *,
     #why-us > *,
@@ -6847,6 +6859,13 @@
       position: relative;
       z-index: 2;
     }
+
+    .hero.hero-video-section .hero-bg-video { z-index: 0; }
+    .hero.hero-video-section .hero-video-overlay,
+    .hero.hero-video-section .hero-video-vignette { z-index: 1; }
+    .hero.hero-video-section .motion-icon-layer,
+    .hero.hero-video-section .site-shell { position: relative; z-index: 3; }
+    a.floating-contact { position: fixed !important; z-index: 1200 !important; }
 
     @media (max-width: 768px) {
       .hero.hero-video-section::before,
@@ -7450,14 +7469,9 @@
 
     @media (max-width: 768px) {
       #client-feedback,
-      #why-us,
       #creator-trust,
       #workflow-system,
-      #tools,
-      #numbers,
-      #faq,
       #cta,
-      #talk,
       #vixpod-motion {
         content-visibility: auto;
         contain-intrinsic-size: 1px 720px;
@@ -7528,7 +7542,7 @@
     <nav class="top-pill__nav" id="primaryNav" aria-label="Primary pages">
       <a href="#work">Work</a>
       <a href="#features">Features</a>
-      <a href="#contact">Let’s Talk</a>
+      <a href="#talk">Let’s Talk</a>
     </nav>
     <button class="top-pill__hamburger" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-controls="primaryNav" aria-expanded="false">
       <span></span>
@@ -7536,11 +7550,11 @@
       <span></span>
     </button>
     <div class="top-pill__action">
-      <a href="#contact" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
+      <a href="#talk" class="top-pill__plus" id="quickMenuToggle" role="button" aria-label="Open quick menu" aria-controls="quickMenu" aria-expanded="false">+</a>
       <div class="quick-menu" id="quickMenu" aria-label="Quick services menu" aria-hidden="true">
         <a class="quick-menu__item" href="#work"><span class="quick-menu__mark">WK</span><span><strong>Work</strong><span>Featured edits</span></span></a>
         <a class="quick-menu__item" href="#features"><span class="quick-menu__mark">FT</span><span><strong>Features</strong><span>Editing system</span></span></a>
-        <a class="quick-menu__item" href="#contact"><span class="quick-menu__mark">LT</span><span><strong>Let’s Talk</strong><span>Book a call</span></span></a>
+        <a class="quick-menu__item" href="#talk"><span class="quick-menu__mark">LT</span><span><strong>Let’s Talk</strong><span>Book a call</span></span></a>
       </div>
     </div>
   </header>
@@ -7578,9 +7592,10 @@
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
         </div>
-        <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
       </div>
     </section>
+
+    <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
     
 <section class="section glow-section" id="work">
@@ -8263,6 +8278,21 @@
     const mobilePerformanceMode = window.matchMedia('(max-width: 768px)').matches;
     if (!mobilePerformanceMode && !prefersReduced) document.documentElement.classList.add('js-await-motion');
 
+    window.setTimeout(function () {
+      if (!document.documentElement.classList.contains('js-await-motion')) return;
+      document.documentElement.classList.remove('js-await-motion');
+      if (!document.documentElement.classList.contains('js-motion-ready') &&
+          !document.documentElement.classList.contains('js-lite-reveal')) {
+        if (typeof setupLiteReveals === 'function') setupLiteReveals();
+        else {
+          document.querySelectorAll('.reveal, .stagger-item').forEach(function (node) {
+            node.style.opacity = '1';
+            node.style.transform = 'none';
+          });
+        }
+      }
+    }, 2200);
+
     function loadExternalScript(src) {
       return new Promise((resolve, reject) => {
         const existing = document.querySelector(`script[src="${src}"]`);
@@ -8313,10 +8343,8 @@
           duration: 0.68,
           easing: (t) => 1 - Math.pow(1 - t, 3),
           smoothWheel: true,
-          syncTouch: false,
           wheelMultiplier: 1.22,
-          touchMultiplier: 1.5,
-          normalizeWheel: true
+          touchMultiplier: 1.5
         });
 
         document.documentElement.classList.add('lenis', 'lenis-smooth');
