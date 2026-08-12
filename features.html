@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-why-before-reviews" />
+  <meta name="vixpod-build" content="2026-08-12-social-float-bg" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7818,6 +7818,100 @@
       opacity: 0.68;
       transform: perspective(1400px) translate3d(0, 0, 0) scale(1.16);
     }
+  
+    /* Decorative floating social icons in site background */
+    .social-float-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      contain: paint;
+    }
+
+    .social-float-bg__icon {
+      --size: 44px;
+      --x: 50%;
+      --y: 50%;
+      --r: 0deg;
+      --float: 9s;
+      --op: 0.15;
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--size);
+      height: var(--size);
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: rgba(205, 247, 255, 0.94);
+      background:
+        linear-gradient(145deg, rgba(244,251,255,0.11), rgba(143,216,232,0.045)),
+        rgba(8, 28, 36, 0.38);
+      border: 1px solid rgba(143,216,232,0.24);
+      box-shadow:
+        0 16px 40px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 0 22px rgba(143,216,232,0.08);
+      opacity: var(--op);
+      transform: translate3d(-50%, -50%, 0) rotate(var(--r));
+      animation: socialFloatDrift var(--float) ease-in-out infinite alternate;
+      animation-delay: var(--delay, 0s);
+      will-change: transform;
+    }
+
+    .social-float-bg__icon svg {
+      width: 52%;
+      height: 52%;
+      display: block;
+      fill: currentColor;
+      stroke: currentColor;
+      color: inherit;
+      overflow: visible;
+    }
+
+    .social-float-bg__icon svg use {
+      fill: currentColor;
+    }
+
+    @keyframes socialFloatDrift {
+      0% {
+        transform: translate3d(-50%, -50%, 0) rotate(var(--r)) translateY(0) scale(1);
+      }
+      100% {
+        transform: translate3d(-50%, -50%, 0) rotate(calc(var(--r) + 10deg)) translateY(-20px) scale(1.04);
+      }
+    }
+
+    main,
+    .footer,
+    .final-brand-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 900px) {
+      .social-float-bg__icon {
+        --op: 0.11;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .social-float-bg__icon:nth-child(n+7) {
+        display: none;
+      }
+      .social-float-bg__icon {
+        --size: 34px !important;
+        --op: 0.09;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .social-float-bg__icon {
+        animation: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -7833,7 +7927,22 @@
     <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M5.2 8.8H9V20H5.2V8.8ZM7.1 4C8.3 4 9.2 4.8 9.2 5.9C9.2 7 8.3 7.8 7.1 7.8C5.9 7.8 5 7 5 5.9C5 4.8 5.9 4 7.1 4ZM10.8 8.8H14.4V10.4H14.5C15 9.5 16.2 8.5 18 8.5C21.7 8.5 22.4 10.9 22.4 14V20H18.6V14.7C18.6 13.4 18.6 11.8 16.8 11.8C15 11.8 14.7 13.2 14.7 14.6V20H10.8V8.8Z" fill="currentColor"/></symbol>
     <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M21.5 7.2C21.3 6.3 20.6 5.7 19.8 5.5C18.3 5.1 12 5.1 12 5.1C12 5.1 5.7 5.1 4.2 5.5C3.4 5.7 2.7 6.3 2.5 7.2C2.1 8.7 2.1 12 2.1 12C2.1 12 2.1 15.3 2.5 16.8C2.7 17.7 3.4 18.3 4.2 18.5C5.7 18.9 12 18.9 12 18.9C12 18.9 18.3 18.9 19.8 18.5C20.6 18.3 21.3 17.7 21.5 16.8C21.9 15.3 21.9 12 21.9 12C21.9 12 21.9 8.7 21.5 7.2ZM10 15V9L15.2 12L10 15Z" fill="currentColor"/></symbol>
     <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M12.1 3.5C7.3 3.5 3.5 7.3 3.5 12C3.5 13.6 3.9 15.2 4.8 16.6L3.6 20.6L7.7 19.5C9 20.2 10.5 20.6 12.1 20.6C16.8 20.6 20.6 16.8 20.6 12C20.6 7.3 16.8 3.5 12.1 3.5ZM12.1 19.1C10.7 19.1 9.4 18.7 8.2 18L8 17.9L5.6 18.5L6.2 16.2L6 15.9C5.3 14.7 4.9 13.4 4.9 12C4.9 8.1 8.1 4.9 12.1 4.9C16 4.9 19.2 8.1 19.2 12C19.2 15.9 16 19.1 12.1 19.1Z" fill="currentColor"/><path d="M16 13.6C15.8 13.5 14.8 13 14.6 12.9C14.4 12.8 14.2 12.8 14 13.1C13.8 13.3 13.5 13.7 13.3 13.9C13.2 14.1 13 14.1 12.8 14C12.5 13.9 11.7 13.6 10.8 12.8C10.1 12.1 9.6 11.3 9.5 11C9.3 10.8 9.5 10.7 9.6 10.5C9.7 10.4 9.9 10.2 10 10C10.1 9.9 10.2 9.7 10.3 9.6C10.4 9.4 10.3 9.2 10.3 9.1C10.2 9 9.7 7.9 9.5 7.4C9.3 6.9 9.1 7 8.9 7H8.4C8.2 7 7.9 7.1 7.7 7.3C7.4 7.6 6.8 8.2 6.8 9.4C6.8 10.6 7.7 11.8 7.8 12C7.9 12.2 9.5 14.8 12.1 15.9C12.7 16.2 13.2 16.3 13.6 16.5C14.2 16.7 14.8 16.7 15.2 16.6C15.7 16.5 16.8 16 17 15.4C17.2 14.8 17.2 14.3 17.1 14.2C17 14 16.8 13.9 16.6 13.8L16 13.6Z" fill="currentColor"/></symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M14.2 8.8H16.5V6H14.1C11.7 6 10 7.7 10 10.2V12H8V15H10V22H13.2V15H15.7L16.2 12H13.2V10.4C13.2 9.4 13.6 8.8 14.2 8.8Z" fill="currentColor"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="M17.4 4H19.8L13.4 11.3L21 20H15.5L10.9 14.1L5.7 20H3.2L10 12.1L2.8 4H8.4L12.6 9.4L17.4 4ZM16.5 18.4H17.8L7.4 5.5H6L16.5 18.4Z" fill="currentColor"/></symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M19.1 8.2C17.6 8.1 16.2 7.5 15.1 6.6V13.8C15.1 16.9 12.6 19.4 9.5 19.4C6.4 19.4 3.9 16.9 3.9 13.8C3.9 10.7 6.4 8.2 9.5 8.2C9.8 8.2 10.1 8.2 10.4 8.3V11C10.1 10.9 9.8 10.8 9.5 10.8C7.9 10.8 6.6 12.1 6.6 13.7C6.6 15.3 7.9 16.6 9.5 16.6C11.1 16.6 12.4 15.3 12.4 13.7V3.5H15.1C15.3 5.2 16.5 6.7 18.1 7.3V8.2H19.1Z" fill="currentColor"/></symbol>
   </svg>
+  <div class="social-float-bg" aria-hidden="true">
+    <span class="social-float-bg__icon" style="--x:5.5%; --y:16%; --size:48px; --r:-14deg; --float:8.2s; --delay:0s; --op:0.16"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:93.5%; --y:20%; --size:44px; --r:11deg; --float:9.1s; --delay:0.4s; --op:0.15"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:7%; --y:42%; --size:40px; --r:8deg; --float:7.6s; --delay:0.8s; --op:0.13"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-facebook"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:94%; --y:46%; --size:42px; --r:-9deg; --float:8.8s; --delay:1.1s; --op:0.14"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:4.8%; --y:68%; --size:46px; --r:12deg; --float:9.4s; --delay:0.2s; --op:0.15"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:92.5%; --y:72%; --size:40px; --r:-7deg; --float:7.9s; --delay:1.5s; --op:0.13"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-tiktok"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:11%; --y:88%; --size:38px; --r:-10deg; --float:8.5s; --delay:0.6s; --op:0.12"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:88%; --y:12%; --size:36px; --r:6deg; --float:10s; --delay:1.8s; --op:0.11"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:15%; --y:28%; --size:34px; --r:15deg; --float:9.7s; --delay:1.3s; --op:0.10"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></span>
+    <span class="social-float-bg__icon" style="--x:84%; --y:58%; --size:36px; --r:-16deg; --float:8s; --delay:0.9s; --op:0.11"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg></span>
+  </div>
   <header class="top-pill" aria-label="Floating header">
     <a href="index.html#top" class="top-pill__brand" aria-label="Vixpod Motion home">
       <img decoding="async" class="top-pill__brand-logo top-pill__brand-logo--full" src="assets/logo.svg" alt="Vixpod Motion" width="520" height="150" />
