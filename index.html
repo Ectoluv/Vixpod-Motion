@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-ticker-loop" />
+  <meta name="vixpod-build" content="2026-08-12-review-loop" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2088,8 +2088,8 @@
       animation: reviewMarqueeRight 52s linear infinite;
     }
 
-    .review-marquee:hover .review-marquee__track {
-      animation-play-state: paused;
+    .review-marquee__track {
+      animation-play-state: running !important;
     }
 
     .review-float-card {
@@ -2201,10 +2201,23 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .review-marquee__track,
       .review-float-card {
         animation: none !important;
         transform: none !important;
+      }
+
+      .review-marquee__row[data-direction="left"] .review-marquee__track {
+        animation: reviewMarqueeLeft 56s linear infinite !important;
+        animation-duration: 56s !important;
+        animation-iteration-count: infinite !important;
+        animation-play-state: running !important;
+      }
+
+      .review-marquee__row[data-direction="right"] .review-marquee__track {
+        animation: reviewMarqueeRight 60s linear infinite !important;
+        animation-duration: 60s !important;
+        animation-iteration-count: infinite !important;
+        animation-play-state: running !important;
       }
     }
 
@@ -8584,6 +8597,27 @@
       }, { passive: true });
       document.addEventListener('visibilitychange', () => {
         if (!document.hidden) rebuild();
+      });
+    })();
+    (function setupReviewMarqueeLoop() {
+      const tracks = Array.from(document.querySelectorAll('.review-marquee__track'));
+      if (!tracks.length) return;
+
+      const restart = () => {
+        tracks.forEach((track) => {
+          track.style.animationPlayState = 'running';
+          const name = getComputedStyle(track).animationName;
+          track.style.animation = 'none';
+          void track.offsetWidth;
+          track.style.animation = '';
+          if (name && name !== 'none') track.style.animationName = name;
+          track.style.animationPlayState = 'running';
+        });
+      };
+
+      restart();
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) restart();
       });
     })();
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

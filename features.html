@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-select-scrollbar" />
+  <meta name="vixpod-build" content="2026-08-12-review-loop" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2083,8 +2083,8 @@
       animation: reviewMarqueeRight 52s linear infinite;
     }
 
-    .review-marquee:hover .review-marquee__track {
-      animation-play-state: paused;
+    .review-marquee__track {
+      animation-play-state: running !important;
     }
 
     .review-float-card {
@@ -2206,10 +2206,23 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .review-marquee__track,
       .review-float-card {
         animation: none !important;
         transform: none !important;
+      }
+
+      .review-marquee__row[data-direction="left"] .review-marquee__track {
+        animation: reviewMarqueeLeft 56s linear infinite !important;
+        animation-duration: 56s !important;
+        animation-iteration-count: infinite !important;
+        animation-play-state: running !important;
+      }
+
+      .review-marquee__row[data-direction="right"] .review-marquee__track {
+        animation: reviewMarqueeRight 60s linear infinite !important;
+        animation-duration: 60s !important;
+        animation-iteration-count: infinite !important;
+        animation-play-state: running !important;
       }
     }
 
@@ -8228,7 +8241,28 @@
   <a class="floating-contact" href="index.html#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
   <script>
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        (function setupReviewMarqueeLoop() {
+      const tracks = Array.from(document.querySelectorAll('.review-marquee__track'));
+      if (!tracks.length) return;
+
+      const restart = () => {
+        tracks.forEach((track) => {
+          track.style.animationPlayState = 'running';
+          const name = getComputedStyle(track).animationName;
+          track.style.animation = 'none';
+          void track.offsetWidth;
+          track.style.animation = '';
+          if (name && name !== 'none') track.style.animationName = name;
+          track.style.animationPlayState = 'running';
+        });
+      };
+
+      restart();
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) restart();
+      });
+    })();
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let lenisInstance = null;
     const mobilePerformanceMode = window.matchMedia('(max-width: 768px)').matches;
     if (!mobilePerformanceMode && !prefersReduced) document.documentElement.classList.add('js-await-motion');
