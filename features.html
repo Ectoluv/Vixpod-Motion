@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-review-popup-static" />
+  <meta name="vixpod-build" content="2026-08-12-no-review-popup" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2114,114 +2114,6 @@
       animation: reviewFloat 5.2s ease-in-out infinite;
       animation-delay: var(--float-delay);
       transition: border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
-    }
-
-
-    .review-float-card {
-      cursor: pointer;
-      pointer-events: auto;
-    }
-
-    body.review-popup-open .review-marquee__track {
-      animation-play-state: paused !important;
-    }
-
-    .review-popup {
-      position: fixed;
-      inset: 0;
-      z-index: 1400;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .review-popup.is-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .review-popup__backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(2, 10, 14, 0.72);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .review-popup__card {
-      position: relative;
-      z-index: 1;
-      width: min(420px, calc(100vw - 32px));
-      padding: 36px 28px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 10px;
-      border-radius: 28px;
-      border: 1px solid rgba(143,216,232,0.38);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
-        rgba(8, 26, 34, 0.96);
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.5),
-        0 0 40px rgba(143,216,232,0.16),
-        inset 0 1px 0 rgba(255,255,255,0.18);
-    }
-
-    .review-popup__close {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 36px;
-      height: 36px;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      color: #F4FBFF;
-      font-size: 22px;
-      line-height: 1;
-      cursor: pointer;
-    }
-
-    .review-popup__close:hover {
-      background: rgba(143,216,232,0.22);
-    }
-
-    .review-popup__avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 999px;
-      object-fit: cover;
-      border: 1px solid rgba(143,216,232,0.5);
-      box-shadow: 0 0 0 4px rgba(8,24,31,0.55), 0 12px 28px rgba(0,0,0,0.35);
-    }
-
-    .review-popup__name {
-      color: var(--text);
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 0.01em;
-    }
-
-    .review-popup__role {
-      color: rgba(143,216,232,0.88);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .review-popup__quote {
-      margin-top: 8px;
-      color: rgba(232,244,250,0.92);
-      font-size: 16px;
-      line-height: 1.7;
-      font-weight: 600;
     }
     .review-float-card:hover {
       border-color: rgba(143,216,232,0.5);
@@ -8344,84 +8236,14 @@
       </div>
     </div>
   </footer>
-
-  <div class="review-popup" id="reviewPopup" aria-hidden="true">
-    <div class="review-popup__backdrop" data-review-popup-close></div>
-    <div class="review-popup__card" role="dialog" aria-modal="true" aria-labelledby="reviewPopupName">
-      <button class="review-popup__close" type="button" data-review-popup-close aria-label="Close review">&times;</button>
-      <img class="review-popup__avatar" id="reviewPopupAvatar" alt="" width="84" height="84" />
-      <strong class="review-popup__name" id="reviewPopupName"></strong>
-      <span class="review-popup__role" id="reviewPopupRole"></span>
-      <p class="review-popup__quote" id="reviewPopupQuote"></p>
-    </div>
-  </div>
   <a class="floating-contact" href="index.html#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
   <script>
-        (function setupReviewMarqueeLoop() {
+    (function setupReviewMarqueeLoop() {
       const tracks = Array.from(document.querySelectorAll('.review-marquee__track'));
-      const popup = document.getElementById('reviewPopup');
-      const avatar = document.getElementById('reviewPopupAvatar');
-      const nameEl = document.getElementById('reviewPopupName');
-      const roleEl = document.getElementById('reviewPopupRole');
-      const quoteEl = document.getElementById('reviewPopupQuote');
       if (!tracks.length) return;
 
-      const setPaused = (paused) => {
-        document.body.classList.toggle('review-popup-open', paused);
-        tracks.forEach((track) => {
-          track.style.animationPlayState = paused ? 'paused' : 'running';
-        });
-      };
-
-      const closePopup = () => {
-        if (!popup) return;
-        popup.classList.remove('is-open');
-        popup.setAttribute('aria-hidden', 'true');
-        setPaused(false);
-      };
-
-      const openPopup = (card) => {
-        if (!popup || !card) return;
-        const img = card.querySelector('.review-float-card__avatar');
-        const name = card.querySelector('.review-float-card__name');
-        const role = card.querySelector('.review-float-card__role');
-        const quote = card.querySelector('.review-float-card__quote');
-        if (avatar && img) {
-          avatar.src = img.currentSrc || img.src;
-          avatar.alt = name ? name.textContent : '';
-        }
-        if (nameEl) nameEl.textContent = name ? name.textContent : '';
-        if (roleEl) roleEl.textContent = role ? role.textContent : '';
-        if (quoteEl) quoteEl.textContent = quote ? quote.textContent : '';
-        popup.classList.add('is-open');
-        popup.setAttribute('aria-hidden', 'false');
-        setPaused(true);
-      };
-
-      document.querySelectorAll('.review-float-card').forEach((card) => {
-        card.setAttribute('role', 'button');
-        card.setAttribute('tabindex', '0');
-        card.addEventListener('click', () => openPopup(card));
-        card.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openPopup(card);
-          }
-        });
-      });
-
-      if (popup) {
-        popup.querySelectorAll('[data-review-popup-close]').forEach((el) => {
-          el.addEventListener('click', closePopup);
-        });
-      }
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closePopup();
-      });
-
       const restart = () => {
-        if (document.body.classList.contains('review-popup-open')) return;
         tracks.forEach((track) => {
           track.style.animationPlayState = 'running';
           const name = getComputedStyle(track).animationName;
