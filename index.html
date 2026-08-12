@@ -9365,26 +9365,33 @@
   </script>
   <script>
     (() => {
-      const typeTargets = document.querySelectorAll('.hero-typed-text[data-hero-text]');
-      if (!typeTargets.length) return;
+      // Only this exact hero line may use the typing animation.
+      const ALLOWED = 'Start Publishing Videos That Sell.';
+      const target = document.querySelector('.hero-typing-line .hero-typed-text[data-hero-text]');
+      if (!target) return;
+
+      const text = (target.dataset.heroText || '').trim();
+      if (text !== ALLOWED) {
+        target.textContent = text;
+        return;
+      }
+
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      typeTargets.forEach((target) => {
-        const text = target.dataset.heroText || '';
-        if (reduceMotion) {
-          target.textContent = text;
-          return;
-        }
-        let index = 0;
-        const tick = () => {
-          target.textContent = text.slice(0, index);
-          index += 1;
-          if (index <= text.length + 1) window.setTimeout(tick, 48);
-        };
-        window.setTimeout(tick, 260);
-      });
+      if (reduceMotion) {
+        target.textContent = text;
+        return;
+      }
+
+      let index = 0;
+      const tick = () => {
+        target.textContent = text.slice(0, index);
+        index += 1;
+        if (index <= text.length + 1) window.setTimeout(tick, 48);
+      };
+      window.setTimeout(tick, 260);
     })();
   </script>
 
-  <script src="assets/performance.js?v=no-heading-type-20260812" defer></script>
+  <script src="assets/performance.js?v=hero-type-only-20260812" defer></script>
 </body>
 </html>
