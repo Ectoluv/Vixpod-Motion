@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-no-review-popup" />
+  <meta name="vixpod-build" content="2026-08-12-no-review-float" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2111,8 +2111,6 @@
         0 0 28px rgba(143,216,232,0.08);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      animation: reviewFloat 5.2s ease-in-out infinite;
-      animation-delay: var(--float-delay);
       transition: border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
     }
     .review-float-card:hover {
@@ -2186,11 +2184,6 @@
       to { transform: translate3d(0, 0, 0); }
     }
 
-    @keyframes reviewFloat {
-      0%, 100% { transform: translate3d(0, 0, 0); }
-      50% { transform: translate3d(0, -10px, 0); }
-    }
-
     @media (max-width: 768px) {
       .review-marquee { gap: 14px; margin: 18px 0 28px; }
       .review-marquee__track { gap: 14px; }
@@ -2205,11 +2198,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .review-float-card {
-        animation: none !important;
-        transform: none !important;
-      }
-
       .review-marquee__row[data-direction="left"] .review-marquee__track {
         animation: reviewMarqueeLeft 56s linear infinite !important;
         animation-duration: 56s !important;
