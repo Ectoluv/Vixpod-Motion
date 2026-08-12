@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-clutch-cta-fullwidth" />
+  <meta name="vixpod-build" content="2026-08-12-features-review-hud-bg" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -6884,11 +6884,12 @@
       .hero-typing-cursor { animation: none; }
     }
 
-    /* 3D animated section backgrounds (60Ã¢â‚¬â€œ70% image opacity) */
+    /* 3D animated section backgrounds (60–70% image opacity) */
     .hero.hero-video-section,
     #work,
     #features,
     #why-us,
+    #client-feedback,
     #tools,
     #numbers,
     #faq,
@@ -6900,6 +6901,7 @@
     #work,
     #features,
     #why-us,
+    #client-feedback,
     #tools,
     #numbers,
     #faq,
@@ -6919,6 +6921,7 @@
     #work::before,
     #features::before,
     #why-us::before,
+    #client-feedback::before,
     #tools::before,
     #numbers::before,
     #faq::before,
@@ -6945,6 +6948,7 @@
     #work::after,
     #features::after,
     #why-us::after,
+    #client-feedback::after,
     #tools::after,
     #numbers::after,
     #faq::after,
@@ -6991,6 +6995,24 @@
       opacity: 0.68;
       animation-duration: 34s;
       animation-delay: -2s;
+    }
+
+    #client-feedback::before {
+      background-image: url("assets/images/bg-review-hud.png");
+      inset: -12% -10% -14% -10%;
+      background-size: cover;
+      background-position: center 45%;
+      opacity: 0.62;
+      animation-duration: 29s;
+      animation-delay: -7s;
+      transform: perspective(1400px) translate3d(0, 0, 0) scale(1.14);
+      filter: saturate(1.05) contrast(1.06) brightness(0.85);
+    }
+
+    #client-feedback::after {
+      background:
+        radial-gradient(circle at 50% 18%, rgba(143,216,232,0.14), transparent 44%),
+        linear-gradient(180deg, rgba(4,18,24,0.38), rgba(4,18,24,0.52) 48%, rgba(4,18,24,0.8));
     }
 
     #tools::before {
@@ -7056,6 +7078,7 @@
     #work > *,
     #features > *,
     #why-us > *,
+    #client-feedback > *,
     #tools > *,
     #numbers > *,
     #faq > *,
@@ -7095,6 +7118,7 @@
       #work::before,
       #features::before,
       #why-us::before,
+      #client-feedback::before,
       #tools::before,
       #numbers::before,
       #faq::before,
@@ -7113,6 +7137,7 @@
       #work::before,
       #features::before,
       #why-us::before,
+      #client-feedback::before,
       #tools::before,
       #numbers::before,
       #faq::before,
