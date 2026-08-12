@@ -6749,6 +6749,8 @@
       content: "";
       position: absolute;
       inset: -8%;
+      width: auto;
+      height: auto;
       z-index: 0;
       pointer-events: none;
       background-repeat: no-repeat;
@@ -6816,9 +6818,19 @@
 
     #tools::before {
       background-image: url("assets/images/bg-editing-flatlay.png");
-      opacity: 0.65;
+      inset: -14% -10% -18% -10%;
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.72;
       animation-duration: 27s;
       animation-delay: -6s;
+      transform: perspective(1400px) translate3d(0, 0, 0) scale(1.18);
+    }
+
+    #tools::after {
+      background:
+        radial-gradient(circle at 35% 18%, rgba(143,216,232,0.12), transparent 46%),
+        linear-gradient(180deg, rgba(4,18,24,0.38), rgba(4,18,24,0.48) 48%, rgba(4,18,24,0.78));
     }
 
     #numbers::before {
