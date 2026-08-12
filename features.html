@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-features-review-hud-bg" />
+  <meta name="vixpod-build" content="2026-08-12-mobile-nav-cleanup" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -5607,8 +5607,14 @@
       .site-shell { width: min(calc(100% - 28px), var(--container)); }
       .top-pill { top: 12px; width: calc(100% - 24px); min-height: 54px; height: auto; padding: 7px 7px 7px 16px; gap: 8px; }
       .top-pill__brand { min-width: 0; margin-right: auto; }
-      .top-pill__hamburger { display: grid; }
-      .top-pill__action { display: flex; margin-left: 0; }
+      .top-pill__hamburger {
+        display: grid;
+        margin-left: 0;
+        order: 3;
+      }
+      .top-pill__action {
+        display: none !important;
+      }
       .top-pill__nav {
         position: absolute;
         left: 0;

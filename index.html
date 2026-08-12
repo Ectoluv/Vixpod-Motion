@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-work-aspect-sections" />
+  <meta name="vixpod-build" content="2026-08-12-mobile-nav-cleanup" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -5601,8 +5601,14 @@
       .site-shell { width: min(calc(100% - 28px), var(--container)); }
       .top-pill { top: 12px; width: calc(100% - 24px); min-height: 54px; height: auto; padding: 7px 7px 7px 16px; gap: 8px; }
       .top-pill__brand { min-width: 0; margin-right: auto; }
-      .top-pill__hamburger { display: grid; }
-      .top-pill__action { display: flex; margin-left: 0; }
+      .top-pill__hamburger {
+        display: grid;
+        margin-left: 0;
+        order: 3;
+      }
+      .top-pill__action {
+        display: none !important;
+      }
       .top-pill__nav {
         position: absolute;
         left: 0;
