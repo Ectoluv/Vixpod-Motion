@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-review-popup" />
+  <meta name="vixpod-build" content="2026-08-12-review-popup-static" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2136,7 +2136,6 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.28s var(--ease), visibility 0.28s var(--ease);
     }
 
     .review-popup.is-open {
@@ -2172,12 +2171,6 @@
         0 30px 80px rgba(0,0,0,0.5),
         0 0 40px rgba(143,216,232,0.16),
         inset 0 1px 0 rgba(255,255,255,0.18);
-      transform: translateY(18px) scale(0.94);
-      transition: transform 0.32s var(--ease);
-    }
-
-    .review-popup.is-open .review-popup__card {
-      transform: translateY(0) scale(1);
     }
 
     .review-popup__close {
