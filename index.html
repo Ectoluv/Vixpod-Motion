@@ -7,8 +7,15 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-restore-sections-keep-prototype" />
+  <meta name="vixpod-build" content="2026-08-12-smooth-fast" />
 
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="https://cdn.coverr.co" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="assets/images/hero-vixpod-editing-studio.jpg" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
@@ -7290,6 +7297,84 @@
       justify-content: flex-start;
     }
 
+
+    /* ===== Performance / smoothness layer ===== */
+
+    html.js-await-motion .reveal,
+    html.js-await-motion .stagger-item {
+      opacity: 0;
+    }
+
+    .js-lite-reveal .reveal,
+    .js-lite-reveal .stagger-item {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0);
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+      will-change: auto;
+    }
+
+    .js-lite-reveal .reveal.is-inview,
+    .js-lite-reveal .stagger-item.is-inview {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      #client-feedback,
+      #why-us,
+      #creator-trust,
+      #workflow-system,
+      #tools,
+      #numbers,
+      #faq,
+      #cta,
+      #talk,
+      #vixpod-motion {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 720px;
+      }
+
+      .hero-bg-video {
+        display: none !important;
+      }
+
+      .hero-card__float,
+      .hero-glass-float,
+      .hero-glow-pulse {
+        animation: none !important;
+      }
+
+      .reveal,
+      .stagger-item,
+      .hero-cards,
+      .hero-card {
+        will-change: auto !important;
+      }
+
+      .top-pill,
+      .work-card,
+      .feature-card,
+      .cta-panel,
+      .label-pill,
+      .btn--glass,
+      .trust-card,
+      .tool-card,
+      .talk-form,
+      .calendly-booking {
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js-lite-reveal .reveal,
+      .js-lite-reveal .stagger-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -7333,8 +7418,8 @@
 
     <main id="top">
 <section class="hero glow-section hero-video-section">
-      <video class="hero-bg-video" autoplay muted loop playsinline poster="assets/images/hero-vixpod-editing-studio.jpg" aria-hidden="true">
-        <source src="https://cdn.coverr.co/videos/coverr-modern-house-interior-5244/1080p.mp4" type="video/mp4" />
+      <video class="hero-bg-video" data-hero-video muted loop playsinline preload="none" poster="assets/images/hero-vixpod-editing-studio.jpg" aria-hidden="true">
+        <source data-src="https://cdn.coverr.co/videos/coverr-modern-house-interior-5244/1080p.mp4" type="video/mp4" />
       </video>
       <div class="hero-video-overlay" aria-hidden="true"></div>
       <div class="hero-video-vignette" aria-hidden="true"></div>
@@ -7358,11 +7443,11 @@
         </div>
 
         <div class="hero-cards" data-parallax="hero-cards" aria-label="Vixpod Motion creative production workflow">
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Platform-ready video export workflow</span><img src="assets/images/hero-platform-exports.jpg" alt="Platform-ready video export workflow" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Real-estate short-form content workflow</span><img src="assets/images/hero-real-estate-content.jpg" alt="Real-estate short-form content workflow" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Platform-ready video export workflow</span><img src="assets/images/hero-platform-exports.jpg" alt="Platform-ready video export workflow" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Real-estate short-form content workflow</span><img src="assets/images/hero-real-estate-content.jpg" alt="Real-estate short-form content workflow" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Vixpod Motion premium video editing workstation</span><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="Vixpod Motion premium video editing workstation" width="720" height="1279" loading="eager" decoding="async" fetchpriority="high" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
-          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="eager" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
+          <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
         </div>
         <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
       </div>
@@ -7385,7 +7470,7 @@
         <div class="work-masonry stagger-parent">
           <button class="work-card work-card--tall stagger-item" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Luxury Realtor Brand Reel">
             <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Luxury Realtor Brand Reel" loading="lazy" width="900" height="1200" />
+              <img decoding="async" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Luxury Realtor Brand Reel" loading="lazy" width="900" height="1200" />
               <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
             </div>
             <div class="work-card__body">
@@ -7407,7 +7492,7 @@
 
           <button class="work-card work-card--portrait stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Property Interview">
             <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Commercial Property Interview" loading="lazy" width="900" height="1200" />
+              <img decoding="async" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Commercial Property Interview" loading="lazy" width="900" height="1200" />
               <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
             </div>
             <div class="work-card__body">
@@ -7418,7 +7503,7 @@
 
           <button class="work-card work-card--short stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Market Update Video">
             <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Market Update Video" loading="lazy" width="900" height="700" />
+              <img decoding="async" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Market Update Video" loading="lazy" width="900" height="700" />
               <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
             </div>
             <div class="work-card__body">
@@ -7429,7 +7514,7 @@
 
           <button class="work-card work-card--mid stagger-item" type="button" data-modal-video="assets/videos/product-ad-edit.mp4" aria-label="Play Mortgage Education Short">
             <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Mortgage Education Short" loading="lazy" width="900" height="900" />
+              <img decoding="async" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Mortgage Education Short" loading="lazy" width="900" height="900" />
               <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
             </div>
             <div class="work-card__body">
@@ -7451,7 +7536,7 @@
 
           <button class="work-card work-card--short stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Realtor YouTube Edit">
             <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Realtor YouTube Edit" loading="lazy" width="900" height="700" />
+              <img decoding="async" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Realtor YouTube Edit" loading="lazy" width="900" height="700" />
               <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
             </div>
             <div class="work-card__body">
@@ -8043,90 +8128,144 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <script>
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let lenisInstance = null;
-
     const mobilePerformanceMode = window.matchMedia('(max-width: 768px)').matches;
+    if (!mobilePerformanceMode && !prefersReduced) document.documentElement.classList.add('js-await-motion');
 
-    if (!prefersReduced && !mobilePerformanceMode && window.Lenis) {
-      lenisInstance = new Lenis({
-        duration: 1.18,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        wheelMultiplier: 0.82,
-        touchMultiplier: 1.6
+    function loadExternalScript(src) {
+      return new Promise((resolve, reject) => {
+        const existing = document.querySelector(`script[src="${src}"]`);
+        if (existing) {
+          if (existing.dataset.loaded === 'true') resolve();
+          else existing.addEventListener('load', () => resolve(), { once: true });
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.addEventListener('load', () => {
+          script.dataset.loaded = 'true';
+          resolve();
+        }, { once: true });
+        script.addEventListener('error', reject, { once: true });
+        document.head.appendChild(script);
       });
+    }
 
-      function raf(time) {
-        lenisInstance.raf(time);
+    function setupLiteReveals() {
+      document.documentElement.classList.add('js-lite-reveal');
+      const nodes = Array.from(document.querySelectorAll('.reveal, .stagger-item'));
+      if (!nodes.length) return;
+
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        nodes.forEach((node) => node.classList.add('is-inview'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-inview');
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      nodes.forEach((node) => observer.observe(node));
+    }
+
+    function setupDesktopMotion() {
+      document.documentElement.classList.remove('js-await-motion');
+      document.documentElement.classList.add('js-motion-ready');
+      if (!prefersReduced && !mobilePerformanceMode && window.Lenis) {
+        lenisInstance = new Lenis({
+          duration: 1.05,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          wheelMultiplier: 0.9,
+          touchMultiplier: 1.4
+        });
+
+        function raf(time) {
+          lenisInstance.raf(time);
+          requestAnimationFrame(raf);
+        }
+
         requestAnimationFrame(raf);
       }
 
-      requestAnimationFrame(raf);
+      if (!prefersReduced && window.gsap && window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.reveal').forEach((element) => {
+          gsap.fromTo(element,
+            { opacity: 0, y: 40, scale: 0.98 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.85,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: element,
+                start: 'top 88%',
+                once: true
+              }
+            }
+          );
+        });
+
+        gsap.utils.toArray('.stagger-parent').forEach((parent) => {
+          const children = parent.querySelectorAll('.stagger-item');
+          gsap.fromTo(children,
+            { opacity: 0, y: 36, scale: 0.98 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.75,
+              stagger: 0.08,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: parent,
+                start: 'top 88%',
+                once: true
+              }
+            }
+          );
+        });
+
+        gsap.utils.toArray('.parallax-img').forEach((image) => {
+          gsap.fromTo(image,
+            { yPercent: -4, scale: 1.06 },
+            {
+              yPercent: 5,
+              scale: 1.12,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: image.closest('.image-banner'),
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+              }
+            }
+          );
+        });
+      } else {
+        setupLiteReveals();
+      }
     }
 
-    if (!prefersReduced && window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray('.reveal').forEach((element) => {
-        gsap.fromTo(element,
-          { opacity: 0, y: 60, scale: 0.96 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.05,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: element,
-              start: 'top 84%',
-              once: true
-            }
-          }
-        );
-      });
-
-      gsap.utils.toArray('.stagger-parent').forEach((parent) => {
-        const children = parent.querySelectorAll('.stagger-item');
-        gsap.fromTo(children,
-          { opacity: 0, y: 60, scale: 0.96 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.95,
-            stagger: 0.12,
-            ease: 'expo.out',
-            scrollTrigger: {
-              trigger: parent,
-              start: 'top 84%',
-              once: true
-            }
-          }
-        );
-      });
-
-      gsap.utils.toArray('.parallax-img').forEach((image) => {
-        gsap.fromTo(image,
-          { yPercent: -5, scale: 1.08 },
-          {
-            yPercent: 7,
-            scale: 1.16,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: image.closest('.image-banner'),
-              start: 'top bottom',
-              end: 'bottom top',
-              scrub: true
-            }
-          }
-        );
-      });
+    if (mobilePerformanceMode || prefersReduced) {
+      setupLiteReveals();
+    } else {
+      Promise.all([
+        loadExternalScript('https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js'),
+        loadExternalScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js')
+      ]).then(() => loadExternalScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'))
+        .then(setupDesktopMotion)
+        .catch(() => { document.documentElement.classList.remove('js-await-motion'); setupLiteReveals(); });
     }
 
     const closeCustomSelects = (except = null) => {
@@ -9392,6 +9531,6 @@
     })();
   </script>
 
-  <script src="assets/performance.js?v=hero-type-only-20260812" defer></script>
+  <script src="assets/performance.js?v=smooth-fast-20260812" defer></script>
 </body>
 </html>

@@ -2,13 +2,17 @@
   'use strict';
 
   const loadScriptOnce = (id, src) => {
-    if (document.getElementById(id)) return;
+    if (document.getElementById(id)) return Promise.resolve();
 
-    const script = document.createElement('script');
-    script.id = id;
-    script.src = src;
-    script.async = true;
-    document.head.appendChild(script);
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.id = id;
+      script.src = src;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
   };
 
   const loadStyleOnce = (id, href) => {
@@ -34,10 +38,13 @@
       if (!entries.some((entry) => entry.isIntersecting)) return;
       observer.disconnect();
       callback();
-    }, { rootMargin: '900px 0px' });
+    }, { rootMargin: '600px 0px' });
 
     targets.forEach((target) => observer.observe(target));
   };
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
   const addSoftSectionGlow = () => {
     if (document.getElementById('vixpod-section-glow')) return;
@@ -77,13 +84,55 @@
           width: min(420px, 90vw);
           height: 150px;
           opacity: 0.42;
+          filter: blur(18px);
         }
       }
     `;
     document.head.appendChild(style);
   };
 
+  const setupHeroVideo = () => {
+    const video = document.querySelector('video[data-hero-video]');
+    if (!video) return;
+
+    if (prefersReducedMotion || isMobile) {
+      video.removeAttribute('autoplay');
+      video.pause?.();
+      video.removeAttribute('src');
+      video.querySelectorAll('source').forEach((source) => source.removeAttribute('src'));
+      video.load?.();
+      video.style.display = 'none';
+      return;
+    }
+
+    const activate = () => {
+      const source = video.querySelector('source[data-src]');
+      if (!source || source.getAttribute('src')) return;
+      source.setAttribute('src', source.getAttribute('data-src'));
+      source.removeAttribute('data-src');
+      video.load();
+      const playPromise = video.play();
+      if (playPromise) playPromise.catch(() => {});
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(activate, { timeout: 1800 });
+    } else {
+      window.setTimeout(activate, 700);
+    }
+  };
+
+  const setupNativeLazyImages = () => {
+    document.querySelectorAll('img:not([loading])').forEach((img) => {
+      if (img.fetchPriority === 'high' || img.getAttribute('fetchpriority') === 'high') return;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+    });
+  };
+
   addSoftSectionGlow();
+  setupHeroVideo();
+  setupNativeLazyImages();
 
   loadWhenNear('.calendly-inline-widget', () => {
     loadStyleOnce('calendly-widget-style', 'https://assets.calendly.com/assets/external/widget.css');
