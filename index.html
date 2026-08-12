@@ -250,6 +250,11 @@
       background: #000;
     }
 
+    /* Plus / quick menu: mobile only */
+    .top-pill__action {
+      display: none;
+    }
+
     .section {
       position: relative;
       padding: 104px 0;
@@ -2732,7 +2737,7 @@
     /* Premium add-on objects: kept inside the same Vixpod Motion theme */
     .top-pill__action {
       position: relative;
-      display: flex;
+      display: none;
       align-items: center;
     }
 
@@ -5444,6 +5449,7 @@
       .top-pill { top: 12px; width: calc(100% - 24px); min-height: 54px; height: auto; padding: 7px 7px 7px 16px; gap: 8px; }
       .top-pill__brand { min-width: 0; margin-right: auto; }
       .top-pill__hamburger { display: grid; }
+      .top-pill__action { display: flex; margin-left: 0; }
       .top-pill__nav {
         position: absolute;
         left: 0;
@@ -5471,7 +5477,6 @@
       }
       .top-pill.is-mobile-nav-open .top-pill__nav { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0) scale(1); }
       .top-pill__nav a { width: 100%; min-height: 44px; justify-content: flex-start; padding-inline: 16px; font-size: 9px; background: rgba(255,255,255,0.045); }
-      .top-pill__action { margin-left: 0; }
       .quick-menu { right: 0; width: min(calc(100vw - 24px), 410px); max-height: calc(100vh - 100px); overflow-y: auto; }
       .quick-menu__item { min-height: 60px; }
       .section { padding: 72px 0; }
