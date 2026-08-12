@@ -5505,6 +5505,7 @@
       .review-card { min-height: auto; }
       .review-card__quote, .price-note, .tool-card p, .trust-card p, .faq-answer-inner, .footer-copy { overflow-wrap: break-word; }
       .talk-layout { grid-template-columns: 1fr; gap: 18px; }
+      .talk-shell { padding: 22px; border-radius: 28px; gap: 24px; }
       .form-grid { grid-template-columns: 1fr; }
       .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 44px; }
       .custom-select__button { min-height: 44px; }
@@ -6849,10 +6850,19 @@
 
     #talk::before {
       background-image: url("assets/images/bg-design-workspace.png");
-      opacity: 0.6;
+      inset: -14% -10% -16% -10%;
+      background-size: cover;
+      background-position: center 32%;
+      opacity: 0.68;
       animation-duration: 31s;
       animation-delay: -5s;
-      background-position: 50% 35%;
+      transform: perspective(1400px) translate3d(0, 0, 0) scale(1.16);
+    }
+
+    #talk::after {
+      background:
+        radial-gradient(circle at 50% 18%, rgba(143,216,232,0.10), transparent 44%),
+        linear-gradient(180deg, rgba(4,18,24,0.36), rgba(4,18,24,0.46) 50%, rgba(4,18,24,0.76));
     }
 
     @keyframes bg3dDrift {
@@ -7270,18 +7280,31 @@
     }
 
     .cta-panel {
-      padding: clamp(32px, 5vw, 64px);
-      border-radius: 36px;
+      padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px) clamp(8px, 1.5vw, 16px);
+      border-radius: 0;
+      border: 0;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      text-align: center;
+      box-shadow: none;
+    }
+
+    .talk-shell {
+      display: grid;
+      gap: clamp(28px, 4vw, 40px);
+      padding: clamp(28px, 4vw, 48px);
+      border-radius: 40px;
       border: 1px solid rgba(255,255,255,0.12);
       background:
         linear-gradient(
-          135deg,
-          rgba(255,255,255,0.07),
-          rgba(255,255,255,0.03)
+          160deg,
+          rgba(255,255,255,0.09),
+          rgba(255,255,255,0.035) 46%,
+          rgba(255,255,255,0.05)
         );
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
-      text-align: center;
       box-shadow: 0 28px 90px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.12);
     }
 
@@ -7321,6 +7344,7 @@
       justify-content: center;
       gap: 10px 18px;
       margin-top: 28px;
+      padding-bottom: 8px;
     }
 
     .cta-trust-row span {
@@ -7512,7 +7536,6 @@
       #client-feedback,
       #creator-trust,
       #workflow-system,
-      #cta,
       #vixpod-motion {
         content-visibility: auto;
         contain-intrinsic-size: 1px 720px;
@@ -8143,25 +8166,6 @@
     </section>
 
     
-<section class="section section--compact glow-section" id="cta">
-      <div class="motion-icon-layer reveal" aria-hidden="true">
-        <span class="motion-icon motion-icon--spark" style="--x: 12%; --y: 34%; --size: 46px; --r: 8deg; --delay: 0.1s;"></span>
-        <span class="motion-icon motion-icon--send" style="--x: 86%; --y: 60%; --size: 50px; --r: -6deg; --delay: 0.5s;"></span>
-      </div>
-      <div class="site-shell">
-        <div class="cta-card reveal">
-          <div class="center-copy">
-            <span class="label-pill">Build Authority</span>
-            <h2>Ready to Upgrade Your Real-Estate Content?</h2>
-            <div class="button-row">
-              <a class="btn btn--dark" href="#book-consultation">Book Strategy Call</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
     <section class="section glow-section" id="talk">
       <span id="contact" aria-hidden="true"></span>
       <div class="motion-icon-layer reveal" aria-hidden="true">
@@ -8170,62 +8174,64 @@
         <span class="motion-icon motion-icon--camera" style="--x: 11%; --y: 77%; --size: 52px; --r: -8deg; --delay: 1s;"></span>
       </div>
       <div class="site-shell">
-        <div class="cta-panel reveal">
-          <span class="label-pill">LetΓÇÖs Talk</span>
-          <h2 class="cta-heading">Ready to Build a Premium Real-Estate Content System?</h2>
-          <p class="cta-description">Whether you need YouTube editing, podcast repurposing, vertical content, or a complete real-estate content workflow, Vixpod Motion can help you publish consistently and look more professional across every platform.</p>
-          <div class="cta-actions">
-            <a class="btn btn--dark" href="#book-consultation">Book Free Strategy Call <span aria-hidden="true">&#8599;</span></a>
-            <a class="btn btn--glass" href="mailto:contact@vixpodmotion.com?subject=Custom%20Proposal%20Request">Request Custom Proposal</a>
-          </div>
-          <div class="cta-trust-row" aria-label="Trust indicators">
-            <span>24h Response</span>
-            <span>Worldwide Delivery</span>
-            <span>YouTube + Shorts + Podcast Workflow</span>
-            <span>Real-Estate Content Focus</span>
-          </div>
-        </div>
-
-        <div class="talk-layout">
-          <div class="talk-info reveal">
-            <div>
-              <span class="label-pill">Let&rsquo;s Talk</span>
-              <h2>Let&rsquo;s Build a Real-Estate Content System.</h2>
-              <p class="lead">Share your property niche, platforms, content volume, and goals. We&rsquo;ll help you choose the right workflow, delivery structure, and revision process.</p>
+        <div class="talk-shell">
+          <div class="cta-panel reveal">
+            <span class="label-pill">Let&rsquo;s Talk</span>
+            <h2 class="cta-heading">Ready to Build a Premium Real-Estate Content System?</h2>
+            <p class="cta-description">Whether you need YouTube editing, podcast repurposing, vertical content, or a complete real-estate content workflow, Vixpod Motion can help you publish consistently and look more professional across every platform.</p>
+            <div class="cta-actions">
+              <a class="btn btn--dark" href="#book-consultation">Book Free Strategy Call <span aria-hidden="true">&#8599;</span></a>
+              <a class="btn btn--glass" href="mailto:contact@vixpodmotion.com?subject=Custom%20Proposal%20Request">Request Custom Proposal</a>
             </div>
+            <div class="cta-trust-row" aria-label="Trust indicators">
+              <span>24h Response</span>
+              <span>Worldwide Delivery</span>
+              <span>YouTube + Shorts + Podcast Workflow</span>
+              <span>Real-Estate Content Focus</span>
+            </div>
+          </div>
 
-            <div class="contact-stack">
-              <div><span class="contact-kicker">Company</span><p class="contact-value">Vixpod Motion</p></div>
-              <div><span class="contact-kicker">Founder</span><p class="contact-value">Ashu Rawat</p></div>
-              <div><span class="contact-kicker">Email</span><p class="contact-value">contact@vixpodmotion.com</p></div>
-              <div><span class="contact-kicker">Studio</span><p class="contact-value">Remote Real-Estate Post-Production Studio<br />Serving property brands worldwide</p></div>
-              <div><span class="contact-kicker">Response Time</span><p class="contact-value">Usually within 12 hours</p></div>
+          <div class="talk-layout">
+            <div class="talk-info reveal">
               <div>
-                <span class="contact-kicker">Social</span>
-                <div class="social-row">
-                  <a class="social-dot" href="https://www.instagram.com/vixpodmotion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></a>
-                  <a class="social-dot" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
-                  <a class="social-dot" href="https://www.youtube.com/@ashensvow" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></a>
-                  <a class="social-dot" href="https://wa.me/917087457425" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg></a>
+                <span class="label-pill">Let&rsquo;s Talk</span>
+                <h2>Let&rsquo;s Build a Real-Estate Content System.</h2>
+                <p class="lead">Share your property niche, platforms, content volume, and goals. We&rsquo;ll help you choose the right workflow, delivery structure, and revision process.</p>
+              </div>
+
+              <div class="contact-stack">
+                <div><span class="contact-kicker">Company</span><p class="contact-value">Vixpod Motion</p></div>
+                <div><span class="contact-kicker">Founder</span><p class="contact-value">Ashu Rawat</p></div>
+                <div><span class="contact-kicker">Email</span><p class="contact-value">contact@vixpodmotion.com</p></div>
+                <div><span class="contact-kicker">Studio</span><p class="contact-value">Remote Real-Estate Post-Production Studio<br />Serving property brands worldwide</p></div>
+                <div><span class="contact-kicker">Response Time</span><p class="contact-value">Usually within 12 hours</p></div>
+                <div>
+                  <span class="contact-kicker">Social</span>
+                  <div class="social-row">
+                    <a class="social-dot" href="https://www.instagram.com/vixpodmotion/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true" focusable="false"><use href="#icon-instagram"></use></svg></a>
+                    <a class="social-dot" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg></a>
+                    <a class="social-dot" href="https://www.youtube.com/@ashensvow" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true" focusable="false"><use href="#icon-youtube"></use></svg></a>
+                    <a class="social-dot" href="https://wa.me/917087457425" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <form id="contactForm" class="talk-form reveal" method="post" novalidate data-secure-form>
-            <div class="form-grid">
-              <div class="form-field"><label for="name">Your Name <span class="form-required" aria-hidden="true">*</span></label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
-              <div class="form-field"><label for="email">Email Address <span class="form-required" aria-hidden="true">*</span></label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
-              <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+1 555-123-4567" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" /></div>
-              <div class="form-field"><label for="country">Country <span class="form-required" aria-hidden="true">*</span></label><select id="country" name="country" autocomplete="country-name" required><option>United States</option><option selected>India</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>United Arab Emirates</option><option>Singapore</option><option>Germany</option><option>France</option><option>Netherlands</option><option>New Zealand</option><option>Ireland</option><option>Spain</option><option>Italy</option><option>Portugal</option><option>Switzerland</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Norway</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>South Africa</option><option>Nigeria</option><option>Kenya</option><option>Saudi Arabia</option><option>Qatar</option><option>Japan</option><option>South Korea</option><option>China</option><option>Hong Kong</option><option>Malaysia</option><option>Indonesia</option><option>Philippines</option><option>Thailand</option><option>Brazil</option><option>Mexico</option><option>Argentina</option><option>Other</option></select></div>
-              <div class="form-field full"><label for="message">Message <span class="form-required" aria-hidden="true">*</span></label><textarea id="message" name="message" placeholder="Please share details about your project" autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
-              <div class="form-field full form-captcha"><label for="captchaAnswer">Captcha <span class="form-required" aria-hidden="true">*</span></label><div class="captcha-line"><span aria-hidden="true">2 + 4 =</span><input class="captcha-answer" id="captchaAnswer" name="captcha_answer" type="text" inputmode="numeric" pattern="6" maxlength="1" autocomplete="off" aria-label="What is 2 plus 4?" required /></div></div>
-              <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
-              <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" data-size="normal" hidden aria-hidden="true"></div>
-              <p class="form-status" id="talkFormStatus" aria-live="polite"></p>
-              <div class="form-field full"><button class="btn btn--dark" type="submit">CONTACT US</button></div>
-            </div>
-          </form>
+            <form id="contactForm" class="talk-form reveal" method="post" novalidate data-secure-form>
+              <div class="form-grid">
+                <div class="form-field"><label for="name">Your Name <span class="form-required" aria-hidden="true">*</span></label><input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required /></div>
+                <div class="form-field"><label for="email">Email Address <span class="form-required" aria-hidden="true">*</span></label><input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="120" required /></div>
+                <div class="form-field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="+1 555-123-4567" autocomplete="tel" inputmode="tel" maxlength="24" pattern="[0-9+()\-\s]{7,24}" /></div>
+                <div class="form-field"><label for="country">Country <span class="form-required" aria-hidden="true">*</span></label><select id="country" name="country" autocomplete="country-name" required><option>United States</option><option selected>India</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>United Arab Emirates</option><option>Singapore</option><option>Germany</option><option>France</option><option>Netherlands</option><option>New Zealand</option><option>Ireland</option><option>Spain</option><option>Italy</option><option>Portugal</option><option>Switzerland</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Norway</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>South Africa</option><option>Nigeria</option><option>Kenya</option><option>Saudi Arabia</option><option>Qatar</option><option>Japan</option><option>South Korea</option><option>China</option><option>Hong Kong</option><option>Malaysia</option><option>Indonesia</option><option>Philippines</option><option>Thailand</option><option>Brazil</option><option>Mexico</option><option>Argentina</option><option>Other</option></select></div>
+                <div class="form-field full"><label for="message">Message <span class="form-required" aria-hidden="true">*</span></label><textarea id="message" name="message" placeholder="Please share details about your project" autocomplete="off" minlength="10" maxlength="1200" required></textarea></div>
+                <div class="form-field full form-captcha"><label for="captchaAnswer">Captcha <span class="form-required" aria-hidden="true">*</span></label><div class="captcha-line"><span aria-hidden="true">2 + 4 =</span><input class="captcha-answer" id="captchaAnswer" name="captcha_answer" type="text" inputmode="numeric" pattern="6" maxlength="1" autocomplete="off" aria-label="What is 2 plus 4?" required /></div></div>
+                <div class="form-field full form-honeypot" aria-hidden="true"><label for="companyWebsite">Company Website</label><input id="companyWebsite" name="company_website" type="text" tabindex="-1" autocomplete="off" /></div>
+                <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" data-size="normal" hidden aria-hidden="true"></div>
+                <p class="form-status" id="talkFormStatus" aria-live="polite"></p>
+                <div class="form-field full"><button class="btn btn--dark" type="submit">CONTACT US</button></div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
