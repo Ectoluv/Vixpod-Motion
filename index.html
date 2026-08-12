@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-review-hud-bg" />
+  <meta name="vixpod-build" content="2026-08-12-hero-marquees" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -5198,7 +5198,7 @@
       .hero {
         min-height: auto;
         padding-top: 120px;
-        padding-bottom: 60px;
+        padding-bottom: 0;
       }
 
       h1 {
@@ -6738,6 +6738,143 @@
       .hero-typing-cursor { animation: none; }
     }
 
+    /* Hero bottom marquees */
+    .hero.hero-video-section {
+      padding-bottom: 0;
+    }
+
+    .hero-bottom-motion {
+      position: relative;
+      z-index: 4;
+      width: 100%;
+      margin-top: clamp(20px, 4vh, 48px);
+      display: grid;
+      gap: 0;
+      align-self: end;
+    }
+
+    .hero-media-marquee {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 28px 0 8px;
+      background: linear-gradient(180deg, transparent, rgba(2,10,14,0.55) 70%);
+      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    }
+
+    .hero-media-marquee__track {
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      width: max-content;
+      padding-inline: 24px;
+      animation: heroMediaMarquee 40s linear infinite;
+      will-change: transform;
+    }
+
+    .hero-media-marquee:hover .hero-media-marquee__track,
+    .hero-ticker:hover .hero-ticker__track {
+      animation-play-state: paused;
+    }
+
+    .hero-media-marquee__item {
+      flex: 0 0 auto;
+      width: clamp(118px, 13.5vw, 172px);
+      height: clamp(156px, 19vw, 228px);
+      margin: 0 0 0 -36px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(8,24,31,0.8);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+      transform: rotate(7deg);
+      transform-origin: center bottom;
+    }
+
+    .hero-media-marquee__item:nth-child(5n + 2) { transform: rotate(9deg); }
+    .hero-media-marquee__item:nth-child(5n + 3) { transform: rotate(5deg); }
+    .hero-media-marquee__item:nth-child(5n + 4) { transform: rotate(10deg); }
+    .hero-media-marquee__item:nth-child(5n + 5) { transform: rotate(6deg); }
+
+    .hero-media-marquee__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-ticker {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(143,216,232,0.16);
+      background:
+        linear-gradient(90deg, rgba(4,16,22,0.35), rgba(10,36,46,0.78), rgba(4,16,22,0.35)),
+        #050b10;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .hero-ticker__track {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      width: max-content;
+      padding: 15px 0;
+      animation: heroTextMarquee 32s linear infinite;
+      will-change: transform;
+      color: rgba(188,214,226,0.9);
+      font-size: clamp(11px, 1.1vw, 12.5px);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-ticker__dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 1px;
+      background: #8FD8E8;
+      box-shadow: 0 0 12px rgba(143,216,232,0.85), 0 0 2px rgba(143,216,232,1);
+      transform: rotate(45deg);
+    }
+
+    @keyframes heroMediaMarquee {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @keyframes heroTextMarquee {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-50%, 0, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-bottom-motion { margin-top: 18px; }
+      .hero-media-marquee { padding: 18px 0 6px; }
+      .hero-media-marquee__item {
+        width: 100px;
+        height: 138px;
+        margin-left: -26px;
+        border-radius: 14px;
+      }
+      .hero-media-marquee__track { animation-duration: 32s; }
+      .hero-ticker__track { gap: 18px; font-size: 10px; letter-spacing: 0.12em; animation-duration: 26s; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-media-marquee__track,
+      .hero-ticker__track {
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+
     /* 3D animated section backgrounds (60–70% image opacity) */
     .hero.hero-video-section,
     #work,
@@ -6767,7 +6904,7 @@
       overflow: hidden;
       min-height: 100svh;
       padding-top: clamp(120px, 16vh, 160px);
-      padding-bottom: clamp(72px, 10vh, 120px);
+      padding-bottom: 0;
       align-content: center;
     }
 
@@ -7720,12 +7857,58 @@
           <p class="hero-trust-line hero-rating-line"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Trusted by Top Real Estate Brands</p>
         </div>
 
-        <div class="hero-cards" data-parallax="hero-cards" aria-label="Vixpod Motion creative production workflow">
+          <div class="hero-cards" data-parallax="hero-cards" aria-label="Vixpod Motion creative production workflow">
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Platform-ready video export workflow</span><img src="assets/images/hero-platform-exports.jpg" alt="Platform-ready video export workflow" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Real-estate short-form content workflow</span><img src="assets/images/hero-real-estate-content.jpg" alt="Real-estate short-form content workflow" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Vixpod Motion premium video editing workstation</span><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="Vixpod Motion premium video editing workstation" width="720" height="1279" loading="eager" decoding="async" fetchpriority="high" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Podcast production and audio editing studio</span><img src="assets/images/hero-podcast-production.jpg" alt="Podcast production and audio editing studio" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
           <div class="hero-card"><div class="hero-card__float"><span class="hero-card__fallback">Content planning workflow for podcasts and social video</span><img src="assets/images/hero-content-planning.jpg" alt="Content planning workflow for podcasts and social video" width="720" height="1279" loading="lazy" decoding="async" fetchpriority="low" /></div></div>
+        </div>
+      </div>
+
+      <div class="hero-bottom-motion" aria-label="Studio highlights">
+        <div class="hero-media-marquee" aria-hidden="true">
+          <div class="hero-media-marquee__track">
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-platform-exports.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-real-estate-content.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-podcast-production.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-content-planning.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-platform-exports.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-real-estate-content.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-vixpod-editing-studio.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-podcast-production.jpg" alt="" loading="lazy" decoding="async" /></figure>
+            <figure class="hero-media-marquee__item"><img src="assets/images/hero-content-planning.jpg" alt="" loading="lazy" decoding="async" /></figure>
+          </div>
+        </div>
+
+        <div class="hero-ticker">
+          <div class="hero-ticker__track">
+            <span>After Effects · Blender</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>Drone To Doorstep</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>Graded · Scored · Shipped</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>500+ Properties Cut</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>4K / 8K Delivery</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>Premiere Pro · DaVinci</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>After Effects · Blender</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>Drone To Doorstep</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>Graded · Scored · Shipped</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>500+ Properties Cut</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>4K / 8K Delivery</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <span>Premiere Pro · DaVinci</span>
+            <span class="hero-ticker__dot" aria-hidden="true"></span>
+          </div>
         </div>
       </div>
     </section>
