@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-select-scrollbar" />
+  <meta name="vixpod-build" content="2026-08-12-ticker-loop" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -6977,17 +6977,13 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
 
-    .hero-ticker:hover .hero-ticker__track {
-      animation-play-state: paused;
-    }
-
     .hero-ticker__track {
       display: flex;
       align-items: center;
-      gap: 26px;
       width: max-content;
       padding: 15px 0;
-      animation: heroTextMarquee 32s linear infinite;
+      animation: heroTextMarquee var(--ticker-duration, 36s) linear infinite;
+      animation-play-state: running !important;
       will-change: transform;
       color: rgba(188,214,226,0.9);
       font-size: clamp(11px, 1.1vw, 12.5px);
@@ -6995,6 +6991,15 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       white-space: nowrap;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .hero-ticker__group {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex: 0 0 auto;
+      padding-right: 26px;
     }
 
     .hero-ticker__dot {
@@ -7009,18 +7014,23 @@
 
     @keyframes heroTextMarquee {
       from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(-50%, 0, 0); }
+      to { transform: translate3d(var(--ticker-shift, -50%), 0, 0); }
     }
 
     @media (max-width: 768px) {
       .hero-bottom-motion { margin-top: 18px; }
-      .hero-ticker__track { gap: 18px; font-size: 10px; letter-spacing: 0.12em; animation-duration: 26s; }
+      .hero-ticker__track { font-size: 10px; letter-spacing: 0.12em; --ticker-duration: 28s; }
+      .hero-ticker__group { gap: 18px; padding-right: 18px; }
     }
 
+    /* Keep ticker looping even when OS reduced-motion is on */
     @media (prefers-reduced-motion: reduce) {
-      .hero-ticker__track {
-        animation: none !important;
-        transform: none !important;
+      .hero-ticker .hero-ticker__track {
+        animation: heroTextMarquee var(--ticker-duration, 48s) linear infinite !important;
+        animation-duration: var(--ticker-duration, 48s) !important;
+        animation-iteration-count: infinite !important;
+        animation-play-state: running !important;
+        transform: translate3d(0, 0, 0);
       }
     }
 
@@ -8086,32 +8096,22 @@
       </div>
 
       <div class="hero-bottom-motion" aria-label="Studio highlights">
-        <div class="hero-ticker">
+        <div class="hero-ticker" data-hero-ticker>
           <div class="hero-ticker__track">
-            <span>After Effects · Blender</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>Drone To Doorstep</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>Graded · Scored · Shipped</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>500+ Properties Cut</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>4K / 8K Delivery</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>Premiere Pro · DaVinci</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>After Effects · Blender</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>Drone To Doorstep</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>Graded · Scored · Shipped</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>500+ Properties Cut</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>4K / 8K Delivery</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
-            <span>Premiere Pro · DaVinci</span>
-            <span class="hero-ticker__dot" aria-hidden="true"></span>
+            <div class="hero-ticker__group">
+              <span>After Effects · Blender</span>
+              <span class="hero-ticker__dot" aria-hidden="true"></span>
+              <span>Drone To Doorstep</span>
+              <span class="hero-ticker__dot" aria-hidden="true"></span>
+              <span>Graded · Scored · Shipped</span>
+              <span class="hero-ticker__dot" aria-hidden="true"></span>
+              <span>500+ Properties Cut</span>
+              <span class="hero-ticker__dot" aria-hidden="true"></span>
+              <span>4K / 8K Delivery</span>
+              <span class="hero-ticker__dot" aria-hidden="true"></span>
+              <span>Premiere Pro · DaVinci</span>
+              <span class="hero-ticker__dot" aria-hidden="true"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -8548,7 +8548,45 @@
   <a class="floating-contact" href="#talk" aria-label="Let&rsquo;s talk"><span>LET&rsquo;S TALK</span><span class="floating-contact__arrow" aria-hidden="true">&#8599;</span></a>
 
   <script>
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        (function setupHeroTickerLoop() {
+      const root = document.querySelector('[data-hero-ticker]');
+      const track = root && root.querySelector('.hero-ticker__track');
+      const group = track && track.querySelector('.hero-ticker__group');
+      if (!root || !track || !group) return;
+
+      const rebuild = () => {
+        while (track.children.length > 1) track.removeChild(track.lastElementChild);
+        let guard = 0;
+        while (track.scrollWidth < root.clientWidth * 2.2 && guard < 10) {
+          const clone = group.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+          guard += 1;
+        }
+        if (track.children.length < 2) {
+          const clone = group.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        }
+        const shift = group.getBoundingClientRect().width;
+        track.style.setProperty('--ticker-shift', `-${Math.max(1, Math.round(shift))}px`);
+        const duration = Math.max(18, Math.round(shift / 42));
+        track.style.setProperty('--ticker-duration', `${duration}s`);
+        track.style.animation = 'none';
+        void track.offsetWidth;
+        track.style.animation = '';
+      };
+
+      rebuild();
+      window.addEventListener('resize', () => {
+        window.clearTimeout(setupHeroTickerLoop._t);
+        setupHeroTickerLoop._t = window.setTimeout(rebuild, 120);
+      }, { passive: true });
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) rebuild();
+      });
+    })();
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let lenisInstance = null;
     const mobilePerformanceMode = window.matchMedia('(max-width: 768px)').matches;
     if (!mobilePerformanceMode && !prefersReduced) document.documentElement.classList.add('js-await-motion');
