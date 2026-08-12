@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-remove-social-float" />
+  <meta name="vixpod-build" content="2026-08-12-select-scrollbar" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -5046,6 +5046,40 @@
       transition: opacity 0.32s var(--ease), visibility 0.32s var(--ease), transform 0.32s var(--ease);
     }
 
+    .custom-select__menu {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(143, 216, 232, 0.5) rgba(8, 28, 36, 0.92);
+    }
+
+    .custom-select__menu::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .custom-select__menu::-webkit-scrollbar-track {
+      margin: 8px 0;
+      background: rgba(8, 28, 36, 0.95);
+      border-radius: 999px;
+    }
+
+    .custom-select__menu::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, rgba(143, 216, 232, 0.58), rgba(143, 216, 232, 0.28));
+      border: 2px solid rgba(8, 28, 36, 0.95);
+      border-radius: 999px;
+    }
+
+    .custom-select__menu::-webkit-scrollbar-thumb:hover {
+      background: rgba(143, 216, 232, 0.72);
+    }
+
+    .custom-select__menu::-webkit-scrollbar-button {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    .custom-select__menu::-webkit-scrollbar-corner {
+      background: transparent;
+    }
     .custom-select.is-open .custom-select__menu {
       opacity: 1;
       visibility: visible;
