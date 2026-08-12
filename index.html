@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-12-work-dedupe" />
+  <meta name="vixpod-build" content="2026-08-12-work-aspect-sections" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7403,6 +7403,58 @@
       margin-top: 42px;
     }
 
+    .work-block {
+      margin-top: clamp(36px, 5vw, 56px);
+    }
+
+    .work-block__head {
+      max-width: 720px;
+      margin-bottom: 22px;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .work-block__title {
+      margin: 12px 0 0;
+      color: var(--text);
+      font-size: clamp(22px, 2.4vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+    }
+
+    .work-block__copy {
+      margin: 10px 0 0;
+      color: rgba(244,251,255,0.68);
+      font-size: clamp(13px, 1.2vw, 15px);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .work-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .work-grid--landscape {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .work-grid--portrait {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+      justify-content: center;
+    }
+
+    .work-card--landscape .work-card__media {
+      aspect-ratio: 16 / 9;
+      height: auto;
+    }
+
+    .work-card--vertical .work-card__media {
+      aspect-ratio: 9 / 16;
+      height: auto;
+    }
+
     .work-card {
       break-inside: avoid;
       margin-bottom: 24px;
@@ -7685,6 +7737,14 @@
       .work-masonry {
         columns: 3 280px;
       }
+
+      .work-grid--landscape {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid--portrait {
+        grid-template-columns: repeat(2, minmax(0, 240px));
+      }
     }
 
     @media (max-width: 900px) {
@@ -7735,6 +7795,16 @@
 
       .work-masonry {
         columns: 1;
+      }
+
+      .work-grid--landscape,
+      .work-grid--portrait {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid--portrait {
+        max-width: 320px;
+        margin-inline: auto;
       }
 
       .hero-single-visual {
@@ -8021,39 +8091,55 @@
           <p class="section-copy">Cinematic YouTube edits, podcast transformations, realtor brand reels, market updates, and motion-graphics-driven property content built for engagement and authority.</p>
         </div>
 
-        <div class="work-masonry stagger-parent">
-          <button class="work-card work-card--mid stagger-item" type="button" data-modal-video="assets/videos/real-estate-podcast-transformation.mp4" aria-label="Play Property Investment Podcast">
-            <div class="work-card__media">
-              <img decoding="async" src="assets/images/real-estate-podcast-transformation-poster.jpg" alt="Property Investment Podcast" loading="lazy" width="720" height="900" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Property Investment Podcast</h3>
-              <p>Long-form podcast transformed into a cinematic YouTube episode.</p>
-            </div>
-          </button>
+        <div class="work-block reveal">
+          <div class="work-block__head">
+            <span class="label-pill">16:9 Long-Form</span>
+            <h3 class="work-block__title">YouTube &amp; Long Videos</h3>
+            <p class="work-block__copy">Cinematic widescreen edits built for podcasts, interviews, and property storytelling.</p>
+          </div>
+          <div class="work-grid work-grid--landscape stagger-parent">
+            <button class="work-card work-card--landscape stagger-item" type="button" data-modal-video="assets/videos/real-estate-podcast-transformation.mp4" aria-label="Play Property Investment Podcast">
+              <div class="work-card__media">
+                <img decoding="async" src="assets/images/real-estate-podcast-transformation-poster.jpg" alt="Property Investment Podcast" loading="lazy" width="1280" height="720" />
+                <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>16:9</span>
+              </div>
+              <div class="work-card__body">
+                <h3>Property Investment Podcast</h3>
+                <p>Long-form podcast transformed into a cinematic YouTube episode.</p>
+              </div>
+            </button>
 
-          <button class="work-card work-card--tall stagger-item" type="button" data-modal-video="assets/videos/luxury-property-tour-promo.mp4" aria-label="Play Luxury Home Walkthrough">
-            <div class="work-card__media">
-              <img decoding="async" src="assets/images/luxury-property-tour-promo-poster.jpg" alt="Luxury Home Walkthrough" loading="lazy" width="720" height="1280" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Luxury Home Walkthrough</h3>
-              <p>Cinematic property tour edit built for luxury brand presentation.</p>
-            </div>
-          </button>
+            <button class="work-card work-card--landscape stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Property Interview">
+              <div class="work-card__media">
+                <img decoding="async" src="assets/images/real-estate-system-long-form.jpg" alt="Commercial Property Interview" loading="lazy" width="1280" height="720" />
+                <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>16:9</span>
+              </div>
+              <div class="work-card__body">
+                <h3>Commercial Property Interview</h3>
+                <p>Multi-camera interview with lower thirds and market callouts.</p>
+              </div>
+            </button>
+          </div>
+        </div>
 
-          <button class="work-card work-card--portrait stagger-item" type="button" data-modal-video="assets/videos/sample-video.mp4" aria-label="Play Commercial Property Interview">
-            <div class="work-card__media">
-              <img decoding="async" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&amp;fit=crop&amp;w=720&amp;q=70" alt="Commercial Property Interview" loading="lazy" width="900" height="1200" />
-              <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>VIDEO</span>
-            </div>
-            <div class="work-card__body">
-              <h3>Commercial Property Interview</h3>
-              <p>Multi-camera interview with lower thirds and market callouts.</p>
-            </div>
-          </button>
+        <div class="work-block reveal">
+          <div class="work-block__head">
+            <span class="label-pill">9:16 Vertical</span>
+            <h3 class="work-block__title">Reels, Shorts &amp; Stories</h3>
+            <p class="work-block__copy">Vertical property cuts optimized for Reels, Shorts, TikTok, and social ads.</p>
+          </div>
+          <div class="work-grid work-grid--portrait stagger-parent">
+            <button class="work-card work-card--vertical stagger-item" type="button" data-modal-video="assets/videos/luxury-property-tour-promo.mp4" aria-label="Play Luxury Home Walkthrough">
+              <div class="work-card__media">
+                <img decoding="async" src="assets/images/luxury-property-tour-promo-poster.jpg" alt="Luxury Home Walkthrough" loading="lazy" width="720" height="1280" />
+                <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>9:16</span>
+              </div>
+              <div class="work-card__body">
+                <h3>Luxury Home Walkthrough</h3>
+                <p>Cinematic property tour edit built for luxury brand presentation.</p>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </section>
