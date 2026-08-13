@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-12-no-review-float" />
+  <meta name="vixpod-build" content="2026-08-13-features-typing" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -6878,6 +6878,21 @@
       animation: heroCursorBlink 0.8s steps(2, start) infinite;
     }
 
+    .work-typing-line {
+      min-height: 32px;
+      margin-top: 14px;
+      color: rgba(205,247,255,0.96);
+      font-size: clamp(16px, 2vw, 24px);
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-shadow: 0 0 24px rgba(143,216,232,0.2);
+    }
+
+    #features .work-typing-line {
+      margin-bottom: 6px;
+    }
+
     .btn--hero-primary {
       gap: 10px;
       color: #071f28;
@@ -7905,6 +7920,7 @@
         <div class="section-head reveal">
           <span class="label-pill">Why Vixpod Motion</span>
           <h2 class="section-heading">Built for Real-Estate Creators Who Need Consistent Premium Content</h2>
+          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="Specialized in the content real-estate brands actually need."></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
           <p class="section-copy">A streamlined editing system designed for podcasts, YouTube channels, realtor brands, and property-investment content pipelines.</p>
         </div>
 
@@ -9676,6 +9692,39 @@
         if (index <= text.length + 1) window.setTimeout(tick, 48);
       };
       window.setTimeout(tick, 260);
+    })();
+
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('[data-type-text]').forEach((target) => {
+        const text = (target.dataset.typeText || '').trim();
+        const typeLine = () => {
+          if (reduceMotion || !text) {
+            target.textContent = text;
+            return;
+          }
+          let index = 0;
+          const tick = () => {
+            target.textContent = text.slice(0, index);
+            index += 1;
+            if (index <= text.length) window.setTimeout(tick, 48);
+          };
+          tick();
+        };
+
+        const section = target.closest('section') || target;
+        if (!('IntersectionObserver' in window)) {
+          typeLine();
+          return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          observer.disconnect();
+          typeLine();
+        }, { threshold: 0.28 });
+        observer.observe(section);
+      });
     })();
   </script>
 
