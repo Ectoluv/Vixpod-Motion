@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Our Work | Vixpod Motion</title>
   <meta name="description" content="See Vixpod Motion real-estate video edits, YouTube episodes, vertical reels, and client reviews." />
-  <meta name="vixpod-build" content="2026-08-14-work-9-16-4col" />
+  <meta name="vixpod-build" content="2026-08-14-ig-reel" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -871,6 +871,16 @@
       border: 0;
       border-radius: 18px;
       background: #02070A;
+    }
+
+    .video-modal__content.is-portrait {
+      width: min(420px, calc(100vw - 48px));
+    }
+
+    .video-modal__content.is-portrait iframe {
+      aspect-ratio: 9 / 16;
+      height: min(78vh, 720px);
+      max-height: min(78vh, 720px);
     }
 
     .video-close-btn {
@@ -8231,6 +8241,17 @@
                 <p>Slow-paced 9:16 real estate edit &mdash; cinematic pacing and text-driven storytelling built for Reels, Shorts, and Stories.</p>
               </div>
             </button>
+
+            <button class="work-card work-card--vertical stagger-item" type="button" data-modal-instagram="DYew3pYN9Gs" aria-label="Play Naples Property Reel">
+              <div class="work-card__media">
+                <img decoding="async" src="assets/images/instagram-reel-dyew3pyn9gs.jpg" alt="Naples Property Reel" loading="lazy" width="720" height="1280" />
+                <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>9:16</span>
+              </div>
+              <div class="work-card__body">
+                <h3>Naples Property Reel</h3>
+                <p>Vertical Instagram listing reel with cinematic pacing and text-driven storytelling.</p>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -8328,7 +8349,7 @@
       <video id="modalVideo" controls playsinline preload="metadata">
         <source src="" type="video/mp4" />
       </video>
-      <iframe id="modalYoutube" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen hidden></iframe>
+      <iframe id="modalYoutube" title="Work video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen hidden></iframe>
     </div>
   </div>
 
@@ -9716,27 +9737,32 @@
       const modalVideo = document.getElementById('modalVideo');
       const modalSource = modalVideo ? modalVideo.querySelector('source') : null;
       const modalYoutube = document.getElementById('modalYoutube');
-      const triggers = Array.from(document.querySelectorAll('[data-modal-video], [data-modal-youtube]'));
+      const triggers = Array.from(document.querySelectorAll('[data-modal-video], [data-modal-youtube], [data-modal-instagram]'));
 
       if (!modal || !modalVideo || !modalSource || !triggers.length) return;
 
       let lastTrigger = null;
+      const modalContent = modal.querySelector('.video-modal__content');
 
       function openVideoModal(trigger) {
         const youtubeId = trigger.dataset.modalYoutube;
+        const instagramId = trigger.dataset.modalInstagram;
         const videoSrc = trigger.dataset.modalVideo;
-        if (!youtubeId && !videoSrc) return;
+        if (!youtubeId && !instagramId && !videoSrc) return;
 
         lastTrigger = trigger;
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('video-modal-open');
+        if (modalContent) modalContent.classList.toggle('is-portrait', Boolean(instagramId));
 
-        if (youtubeId && modalYoutube) {
+        if ((youtubeId || instagramId) && modalYoutube) {
           modalVideo.pause();
           modalVideo.style.display = 'none';
           modalYoutube.hidden = false;
-          modalYoutube.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+          modalYoutube.src = youtubeId
+            ? `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`
+            : `https://www.instagram.com/reel/${instagramId}/embed`;
           return;
         }
 
@@ -9767,6 +9793,7 @@
           modalYoutube.hidden = true;
           modalYoutube.src = '';
         }
+        if (modalContent) modalContent.classList.remove('is-portrait');
         if (lastTrigger) lastTrigger.focus({ preventScroll: true });
       }
 
