@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-14-ig-playable" />
+  <meta name="vixpod-build" content="2026-08-14-work-see-more" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7553,6 +7553,16 @@
       line-height: 1.45;
     }
 
+    .work-more {
+      display: flex;
+      justify-content: center;
+      margin-top: 36px;
+    }
+
+    .work-grid--portrait.is-collapsed .work-card:nth-child(n+5) {
+      display: none;
+    }
+
     .work-card--landscape .work-card__media {
       aspect-ratio: 16 / 9;
       height: auto;
@@ -7855,6 +7865,10 @@
 
       .work-grid--portrait {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .work-grid--portrait.is-collapsed .work-card:nth-child(n+3) {
+        display: none;
       }
     }
 
@@ -8273,7 +8287,7 @@
             <h3 class="work-block__title">Reels, Shorts &amp; Stories</h3>
             <p class="work-block__copy">Vertical property cuts optimized for Reels, Shorts, TikTok, and social ads.</p>
           </div>
-          <div class="work-grid work-grid--portrait stagger-parent">
+          <div class="work-grid work-grid--portrait stagger-parent is-collapsed">
             <button class="work-card work-card--vertical stagger-item" type="button" data-modal-video="assets/videos/vertical-property-reel.mp4" aria-label="Play Property Reel">
               <div class="work-card__media">
                 <video muted playsinline preload="metadata" src="assets/videos/vertical-property-reel.mp4" aria-hidden="true"></video>
@@ -8362,6 +8376,10 @@
               </div>
             </button>
           </div>
+        </div>
+
+        <div class="work-more">
+          <button class="btn btn--glass" type="button" data-work-more aria-expanded="false">See more</button>
         </div>
       </div>
     </section>
@@ -10141,6 +10159,21 @@
     }
 
     setupWorkVideoModal();
+
+    function setupWorkMore() {
+      const section = document.getElementById('work');
+      const button = section ? section.querySelector('[data-work-more]') : null;
+      const grid = section ? section.querySelector('.work-grid--portrait') : null;
+      if (!button || !grid) return;
+
+      button.addEventListener('click', () => {
+        const expanded = grid.classList.toggle('is-collapsed') === false;
+        button.setAttribute('aria-expanded', String(expanded));
+        button.textContent = expanded ? 'See less' : 'See more';
+      });
+    }
+
+    setupWorkMore();
 
     function animateCounter(el) {
       if (el.dataset.counted === 'true') return;
