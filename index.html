@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-14-work-4col" />
+  <meta name="vixpod-build" content="2026-08-14-work-9-16-4col" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7516,8 +7516,29 @@
     }
 
     .work-grid--portrait {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
-      justify-content: center;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      justify-content: stretch;
+    }
+
+    .work-grid--portrait .work-card {
+      margin-bottom: 0;
+      border-radius: 20px;
+    }
+
+    .work-grid--portrait .work-card__body {
+      padding: 12px 12px 14px;
+    }
+
+    .work-grid--portrait .work-card__body h3 {
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .work-grid--portrait .work-card__body p {
+      margin-top: 6px;
+      font-size: 11px;
+      line-height: 1.45;
     }
 
     .work-card--landscape .work-card__media {
@@ -7821,7 +7842,7 @@
       }
 
       .work-grid--portrait {
-        grid-template-columns: repeat(2, minmax(0, 240px));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
