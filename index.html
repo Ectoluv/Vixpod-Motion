@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-14-property-reel-copy" />
+  <meta name="vixpod-build" content="2026-08-14-youtube-16-9" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -862,10 +862,13 @@
       transform: translateY(0) scale(1);
     }
 
-    .video-modal__content video {
+    .video-modal__content video,
+    .video-modal__content iframe {
       width: 100%;
       max-height: min(76vh, 720px);
+      aspect-ratio: 16 / 9;
       display: block;
+      border: 0;
       border-radius: 18px;
       background: #02070A;
     }
@@ -8164,9 +8167,9 @@
             <p class="work-block__copy">Cinematic widescreen edits built for podcasts, interviews, and property storytelling.</p>
           </div>
           <div class="work-grid work-grid--landscape stagger-parent">
-            <button class="work-card work-card--landscape stagger-item" type="button" data-modal-video="assets/videos/real-estate-podcast-transformation.mp4" aria-label="Play Property Investment Podcast">
+            <button class="work-card work-card--landscape stagger-item" type="button" data-modal-youtube="96hap1wGl5U" aria-label="Play Property Investment Podcast">
               <div class="work-card__media">
-                <img decoding="async" src="assets/images/real-estate-podcast-transformation-poster.jpg" alt="Property Investment Podcast" loading="lazy" width="1280" height="720" />
+                <img decoding="async" src="https://img.youtube.com/vi/96hap1wGl5U/hqdefault.jpg" alt="Property Investment Podcast" loading="lazy" width="1280" height="720" />
                 <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>16:9</span>
               </div>
               <div class="work-card__body">
@@ -8534,6 +8537,7 @@
       <video id="modalVideo" controls playsinline preload="metadata">
         <source src="" type="video/mp4" />
       </video>
+      <iframe id="modalYoutube" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen hidden></iframe>
     </div>
   </div>
 
@@ -9920,24 +9924,40 @@
       const modal = document.getElementById('videoModal');
       const modalVideo = document.getElementById('modalVideo');
       const modalSource = modalVideo ? modalVideo.querySelector('source') : null;
-      const triggers = Array.from(document.querySelectorAll('[data-modal-video]'));
+      const modalYoutube = document.getElementById('modalYoutube');
+      const triggers = Array.from(document.querySelectorAll('[data-modal-video], [data-modal-youtube]'));
 
       if (!modal || !modalVideo || !modalSource || !triggers.length) return;
 
       let lastTrigger = null;
 
       function openVideoModal(trigger) {
+        const youtubeId = trigger.dataset.modalYoutube;
         const videoSrc = trigger.dataset.modalVideo;
-        if (!videoSrc) return;
+        if (!youtubeId && !videoSrc) return;
 
         lastTrigger = trigger;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('video-modal-open');
+
+        if (youtubeId && modalYoutube) {
+          modalVideo.pause();
+          modalVideo.style.display = 'none';
+          modalYoutube.hidden = false;
+          modalYoutube.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+          return;
+        }
+
+        if (modalYoutube) {
+          modalYoutube.hidden = true;
+          modalYoutube.src = '';
+        }
+        modalVideo.style.display = '';
         modalSource.src = videoSrc;
         modalVideo.muted = false;
         modalVideo.volume = 1;
         modalVideo.load();
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('video-modal-open');
 
         const playPromise = modalVideo.play();
         if (playPromise) playPromise.catch(() => {});
@@ -9951,6 +9971,11 @@
         modalVideo.currentTime = 0;
         modalSource.src = '';
         modalVideo.load();
+        modalVideo.style.display = '';
+        if (modalYoutube) {
+          modalYoutube.hidden = true;
+          modalYoutube.src = '';
+        }
         if (lastTrigger) lastTrigger.focus({ preventScroll: true });
       }
 
