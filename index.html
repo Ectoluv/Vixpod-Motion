@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-14-work-leads-typing" />
+  <meta name="vixpod-build" content="2026-08-14-vertical-reel" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7540,14 +7540,17 @@
       background: rgba(2,7,10,0.35);
     }
 
-    .work-card__media img {
+    .work-card__media img,
+    .work-card__media video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      pointer-events: none;
       transition: transform .55s var(--ease);
     }
 
-    .work-card:hover .work-card__media img {
+    .work-card:hover .work-card__media img,
+    .work-card:hover .work-card__media video {
       transform: scale(1.08);
     }
 
@@ -8200,6 +8203,17 @@
               <div class="work-card__body">
                 <h3>Luxury Home Walkthrough</h3>
                 <p>Cinematic property tour edit built for luxury brand presentation.</p>
+              </div>
+            </button>
+
+            <button class="work-card work-card--vertical stagger-item" type="button" data-modal-video="assets/videos/vertical-property-reel.mp4" aria-label="Play Vertical Property Reel">
+              <div class="work-card__media">
+                <video muted playsinline preload="metadata" src="assets/videos/vertical-property-reel.mp4" aria-hidden="true"></video>
+                <span class="work-card__badge"><span class="work-card__badge-play" aria-hidden="true"></span>9:16</span>
+              </div>
+              <div class="work-card__body">
+                <h3>Vertical Property Reel</h3>
+                <p>Short-form 9:16 cut built for Reels, Shorts, and Stories.</p>
               </div>
             </button>
           </div>
