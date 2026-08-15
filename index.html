@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-15-modal-portrait-fix" />
+  <meta name="vixpod-build" content="2026-08-15-rating-4-5" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -6955,11 +6955,24 @@
       color: rgba(244,251,255,0.82);
     }
 
-    .hero-rating-line span {
+    .hero-rating-line .hero-stars,
+    .hero-rating-line .hero-rating-score {
       margin-right: 9px;
       color: #8FD8E8;
       letter-spacing: 0.1em;
       text-shadow: 0 0 18px rgba(143,216,232,0.42);
+    }
+
+    .hero-rating-score {
+      font-weight: 800;
+    }
+
+    .hero-star--half {
+      background: linear-gradient(90deg, #8FD8E8 50%, rgba(143,216,232,0.28) 50%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: none;
     }
 
     @keyframes heroCursorBlink {
@@ -8195,7 +8208,7 @@
             <a class="btn btn--dark btn--hero-primary" href="#book-consultation">Book Strategy Call <span aria-hidden="true">&#8599;</span></a>
             <a class="btn btn--glass" href="#work">View Our Work</a>
           </div>
-          <p class="hero-trust-line hero-rating-line"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Trusted by Top Real Estate Brands</p>
+          <p class="hero-trust-line hero-rating-line"><span class="hero-stars" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">&#9733;</span><span aria-hidden="true">&#9733;</span><span aria-hidden="true">&#9733;</span><span aria-hidden="true">&#9733;</span><span class="hero-star--half" aria-hidden="true">&#9733;</span></span><span class="hero-rating-score">4.5</span> Trusted by Top Real Estate Brands</p>
         </div>
 
           <div class="hero-cards" data-parallax="hero-cards" aria-label="Vixpod Motion creative production workflow">
