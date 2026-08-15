@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-14-work-see-more-8" />
+  <meta name="vixpod-build" content="2026-08-15-see-more-work-page" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -8375,7 +8375,7 @@
         </div>
 
         <div class="work-more">
-          <button class="btn btn--glass" type="button" data-work-more aria-expanded="false">See more</button>
+          <a class="btn btn--glass" href="work.html#work">See more</a>
         </div>
       </div>
     </section>
@@ -10155,21 +10155,6 @@
     }
 
     setupWorkVideoModal();
-
-    function setupWorkMore() {
-      const section = document.getElementById('work');
-      const button = section ? section.querySelector('[data-work-more]') : null;
-      const grid = section ? section.querySelector('.work-grid--portrait') : null;
-      if (!button || !grid) return;
-
-      button.addEventListener('click', () => {
-        const expanded = grid.classList.toggle('is-collapsed') === false;
-        button.setAttribute('aria-expanded', String(expanded));
-        button.textContent = expanded ? 'See less' : 'See more';
-      });
-    }
-
-    setupWorkMore();
 
     function animateCounter(el) {
       if (el.dataset.counted === 'true') return;
