@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-15-strategy-bg" />
+  <meta name="vixpod-build" content="2026-08-15-modal-portrait-fix" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -873,16 +873,22 @@
       background: #02070A;
     }
 
+    .video-modal__content iframe[hidden],
+    .video-modal__content video[hidden] {
+      display: none;
+    }
+
     .video-modal__content.is-portrait {
-      width: min(420px, calc(100vw - 48px));
+      width: min(420px, calc(100vw - 48px), calc(min(78vh, 720px) * 9 / 16 + 24px));
     }
 
     .video-modal__content.is-portrait video,
-    .video-modal__content.is-portrait iframe {
-      aspect-ratio: 9 / 16;
-      height: min(78vh, 720px);
+    .video-modal__content.is-portrait iframe:not([hidden]) {
+      width: 100%;
+      height: auto;
       max-height: min(78vh, 720px);
-      object-fit: contain;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
     }
 
     .video-close-btn {
