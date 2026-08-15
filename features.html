@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-13-features-typing" />
+  <meta name="vixpod-build" content="2026-08-15-spotlight-bg" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -2266,6 +2266,9 @@
       display: grid;
       align-items: center;
       overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(8, 24, 32, 0.42), rgba(2, 7, 10, 0.58)),
+        url("assets/images/bg-teal-spotlight.png") center / cover no-repeat;
     }
 
     .final-brand-card {
@@ -2278,9 +2281,10 @@
       display: grid;
       align-items: center;
       background:
-        radial-gradient(circle at 50% 45%, rgba(143,216,232,0.28), transparent 26%),
-        radial-gradient(circle at 72% 20%, rgba(255,255,255,0.12), transparent 24%),
-        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.045));
+        radial-gradient(circle at 50% 45%, rgba(143,216,232,0.16), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,0.10), rgba(8, 24, 32, 0.28));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.16);
       isolation: isolate;
     }
@@ -2397,7 +2401,9 @@
 
     .footer {
       padding: 68px 0 34px;
-      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.04));
+      background:
+        linear-gradient(180deg, rgba(8, 24, 32, 0.55), rgba(2, 7, 10, 0.72)),
+        url("assets/images/bg-teal-spotlight.png") center / cover no-repeat;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
