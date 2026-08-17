@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-17-pages-retry" />
+  <meta name="vixpod-build" content="2026-08-18-phone-subtitles" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -10295,7 +10295,7 @@
       }
 
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion || window.matchMedia('(max-width: 768px)').matches) {
+      if (reduceMotion) {
         target.textContent = text;
         return;
       }
@@ -10315,16 +10315,15 @@
       const startTyping = (target, text) => {
         if (target.dataset.typed === 'true') return;
         target.dataset.typed = 'true';
-        if (reduceMotion || window.matchMedia('(max-width: 768px)').matches) {
+        if (reduceMotion) {
           target.textContent = text;
           return;
         }
-        target.textContent = '';
         let index = 0;
         const tick = () => {
           index += 1;
           target.textContent = text.slice(0, index);
-          if (index < text.length) window.setTimeout(tick, 48);
+          if (index < text.length) window.setTimeout(tick, 42);
         };
         tick();
       };
@@ -10337,20 +10336,28 @@
 
           const line = target.closest('.work-typing-line') || target;
           const tryStart = () => startTyping(target, text);
+          const inView = () => {
+            const rect = line.getBoundingClientRect();
+            const vh = window.innerHeight || document.documentElement.clientHeight || 800;
+            return rect.top < vh + 80 && rect.bottom > 24;
+          };
 
           if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
               if (!entries.some((entry) => entry.isIntersecting)) return;
               observer.disconnect();
               tryStart();
-            }, { threshold: 0, rootMargin: '240px 0px' });
+            }, { threshold: 0, rootMargin: '160px 0px' });
             observer.observe(line);
           }
 
-          const rect = line.getBoundingClientRect();
-          const vh = window.innerHeight || document.documentElement.clientHeight || 800;
-          if (rect.top < vh + 240 && rect.bottom > -80) tryStart();
-          window.setTimeout(tryStart, 450);
+          if (inView()) tryStart();
+          const onScroll = () => {
+            if (!inView()) return;
+            window.removeEventListener('scroll', onScroll);
+            tryStart();
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
         });
       };
 
