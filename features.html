@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-15-why-cards-compact" />
+  <meta name="vixpod-build" content="2026-08-17-mobile-typing" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -9749,8 +9749,13 @@
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.querySelectorAll('[data-type-text]').forEach((target) => {
         const text = (target.dataset.typeText || '').trim();
+        if (!text) return;
+
+        let started = false;
         const typeLine = () => {
-          if (reduceMotion || !text) {
+          if (started) return;
+          started = true;
+          if (reduceMotion) {
             target.textContent = text;
             return;
           }
@@ -9763,7 +9768,7 @@
           tick();
         };
 
-        const section = target.closest('section') || target;
+        const observeEl = target.closest('.work-typing-line') || target;
         if (!('IntersectionObserver' in window)) {
           typeLine();
           return;
@@ -9773,8 +9778,14 @@
           if (!entries.some((entry) => entry.isIntersecting)) return;
           observer.disconnect();
           typeLine();
-        }, { threshold: 0.28 });
-        observer.observe(section);
+        }, { threshold: 0, rootMargin: '160px 0px' });
+        observer.observe(observeEl);
+
+        const rect = observeEl.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < (window.innerHeight || 800) + 160) {
+          observer.disconnect();
+          typeLine();
+        }
       });
     })();
   </script>
