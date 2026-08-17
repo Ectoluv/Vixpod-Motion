@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Features | Vixpod Motion Real-Estate Content System</title>
   <meta name="description" content="See why property brands choose Vixpod Motion for consistent editing systems and platform-ready real-estate content." />
-  <meta name="vixpod-build" content="2026-08-17-mobile-typing" />
+  <meta name="vixpod-build" content="2026-08-17-mobile-typing-2" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -7840,6 +7840,13 @@
     }
 
     @media (max-width: 768px) {
+      #features .section-head.reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
       #client-feedback,
       #creator-trust,
       #workflow-system,
@@ -7971,7 +7978,7 @@
         <div class="section-head reveal">
           <span class="label-pill">Why Vixpod Motion</span>
           <h2 class="section-heading">Built for Real-Estate Creators Who Need Consistent Premium Content</h2>
-          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="Specialized in the content real-estate brands actually need."></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
+          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="Specialized in the content real-estate brands actually need.">Specialized in the content real-estate brands actually need.</span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
           <p class="section-copy">A streamlined editing system designed for podcasts, YouTube channels, realtor brands, and property-investment content pipelines.</p>
         </div>
 
@@ -8361,7 +8368,7 @@
 
       // Hero must show on first paint / first frame
       nodes.forEach((node) => {
-        if (node.closest('.hero')) node.classList.add('is-inview');
+        if (node.closest('.hero') || node.closest('#features .section-head')) node.classList.add('is-inview');
       });
 
       if (prefersReduced || !('IntersectionObserver' in window)) {
@@ -8375,7 +8382,7 @@
           entry.target.classList.add('is-inview');
           obs.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0, rootMargin: '120px 0px' });
 
       nodes.forEach((node) => {
         if (node.classList.contains('is-inview')) return;
@@ -9747,46 +9754,51 @@
 
     (() => {
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      document.querySelectorAll('[data-type-text]').forEach((target) => {
-        const text = (target.dataset.typeText || '').trim();
-        if (!text) return;
 
-        let started = false;
-        const typeLine = () => {
-          if (started) return;
-          started = true;
-          if (reduceMotion) {
-            target.textContent = text;
-            return;
-          }
-          let index = 0;
-          const tick = () => {
-            target.textContent = text.slice(0, index);
-            index += 1;
-            if (index <= text.length) window.setTimeout(tick, 48);
-          };
-          tick();
-        };
-
-        const observeEl = target.closest('.work-typing-line') || target;
-        if (!('IntersectionObserver' in window)) {
-          typeLine();
+      const startTyping = (target, text) => {
+        if (target.dataset.typed === 'true') return;
+        target.dataset.typed = 'true';
+        if (reduceMotion || window.matchMedia('(max-width: 768px)').matches) {
+          target.textContent = text;
           return;
         }
+        target.textContent = '';
+        let index = 0;
+        const tick = () => {
+          index += 1;
+          target.textContent = text.slice(0, index);
+          if (index < text.length) window.setTimeout(tick, 48);
+        };
+        tick();
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-          if (!entries.some((entry) => entry.isIntersecting)) return;
-          observer.disconnect();
-          typeLine();
-        }, { threshold: 0, rootMargin: '160px 0px' });
-        observer.observe(observeEl);
+      const boot = () => {
+        document.querySelectorAll('[data-type-text]').forEach((target) => {
+          const text = (target.dataset.typeText || target.textContent || '').trim();
+          if (!text) return;
+          if (!target.textContent.trim()) target.textContent = text;
 
-        const rect = observeEl.getBoundingClientRect();
-        if (rect.bottom > 0 && rect.top < (window.innerHeight || 800) + 160) {
-          observer.disconnect();
-          typeLine();
-        }
-      });
+          const line = target.closest('.work-typing-line') || target;
+          const tryStart = () => startTyping(target, text);
+
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+              if (!entries.some((entry) => entry.isIntersecting)) return;
+              observer.disconnect();
+              tryStart();
+            }, { threshold: 0, rootMargin: '240px 0px' });
+            observer.observe(line);
+          }
+
+          const rect = line.getBoundingClientRect();
+          const vh = window.innerHeight || document.documentElement.clientHeight || 800;
+          if (rect.top < vh + 240 && rect.bottom > -80) tryStart();
+          window.setTimeout(tryStart, 450);
+        });
+      };
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+      else window.setTimeout(boot, 0);
     })();
   </script>
 

@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="assets/favicon.svg" />
 <title>Vixpod Motion | Real Estate Video Editing &amp; Podcast Production Agency</title>
   <meta name="description" content="Vixpod Motion is a premium post-production partner for real-estate podcasts, property investment brands, realtors, developers, mortgage companies, and real-estate YouTube channels." />
-  <meta name="vixpod-build" content="2026-08-17-mobile-typing" />
+  <meta name="vixpod-build" content="2026-08-17-mobile-typing-2" />
 
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
@@ -8096,6 +8096,13 @@
     }
 
     @media (max-width: 768px) {
+      #work .section-head.reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
       #client-feedback,
       #creator-trust,
       #workflow-system,
@@ -8202,7 +8209,7 @@
       <div class="site-shell">
         <div class="center-copy reveal">
           <h1>Stop Paying for Property Tours No One Finishes</h1>
-          <p class="hero-typing-line" aria-live="polite"><span class="hero-typed-text" data-hero-text="Start Publishing Videos That Sell"></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
+          <p class="hero-typing-line" aria-live="polite"><span class="hero-typed-text" data-hero-text="Start Publishing Videos That Sell">Start Publishing Videos That Sell</span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
           <p class="lead">Cinematic real-estate editing, short-form reels, podcast clips, and property brand videos built for attention, trust, and conversion.</p>
           <div class="button-row">
             <a class="btn btn--dark btn--hero-primary" href="#book-consultation">Book Strategy Call <span aria-hidden="true">&#8599;</span></a>
@@ -8253,7 +8260,7 @@
         <div class="section-head reveal">
           <span class="label-pill">Work</span>
           <h2 class="section-heading">Work That Makes Real-Estate Content Look Premium Before It Gets Clicked</h2>
-          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="We edit videos that generate leads."></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
+          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="We edit videos that generate leads.">We edit videos that generate leads.</span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
           <p class="section-copy">Cinematic YouTube edits, podcast transformations, realtor brand reels, market updates, and motion-graphics-driven property content built for engagement and authority.</p>
         </div>
 
@@ -8517,7 +8524,7 @@
         <div class="section-head reveal">
           <span class="label-pill">Studio Toolkit</span>
           <h2>The Production Tools We Work With</h2>
-          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="No shortcuts. Just the right tool for every frame."></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
+          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="No shortcuts. Just the right tool for every frame.">No shortcuts. Just the right tool for every frame.</span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
           <p class="lead">Industry-standard editing, color, effects, and compositing workflows used to keep real-estate content clean, organised, and premium.</p>
         </div>
 
@@ -8645,7 +8652,7 @@
           <div class="cta-panel reveal">
             <span class="label-pill">Let&rsquo;s Talk</span>
             <h2 class="cta-heading">Ready to Build a Premium Real-Estate Content System?</h2>
-            <p class="work-typing-line talk-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="The foundation for a content presence that matches your reputation."></span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
+            <p class="work-typing-line talk-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="The foundation for a content presence that matches your reputation.">The foundation for a content presence that matches your reputation.</span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
             <p class="cta-description">Whether you need YouTube editing, podcast repurposing, vertical content, or a complete real-estate content workflow, Vixpod Motion can help you publish consistently and look more professional across every platform.</p>
             <div class="cta-actions">
               <a class="btn btn--dark" href="https://wa.me/917087457425?text=Hello%20Vixpod%20Motion%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer">Book Free Strategy Call <span aria-hidden="true">&#8599;</span></a>
@@ -8891,7 +8898,7 @@
 
       // Hero must show on first paint / first frame
       nodes.forEach((node) => {
-        if (node.closest('.hero')) node.classList.add('is-inview');
+        if (node.closest('.hero') || node.closest('#work .section-head')) node.classList.add('is-inview');
       });
 
       if (prefersReduced || !('IntersectionObserver' in window)) {
@@ -8905,7 +8912,7 @@
           entry.target.classList.add('is-inview');
           obs.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0, rootMargin: '120px 0px' });
 
       nodes.forEach((node) => {
         if (node.classList.contains('is-inview')) return;
@@ -10288,7 +10295,7 @@
       }
 
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) {
+      if (reduceMotion || window.matchMedia('(max-width: 768px)').matches) {
         target.textContent = text;
         return;
       }
@@ -10304,46 +10311,51 @@
 
     (() => {
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      document.querySelectorAll('[data-type-text]').forEach((target) => {
-        const text = (target.dataset.typeText || '').trim();
-        if (!text) return;
 
-        let started = false;
-        const typeLine = () => {
-          if (started) return;
-          started = true;
-          if (reduceMotion) {
-            target.textContent = text;
-            return;
-          }
-          let index = 0;
-          const tick = () => {
-            target.textContent = text.slice(0, index);
-            index += 1;
-            if (index <= text.length) window.setTimeout(tick, 48);
-          };
-          tick();
-        };
-
-        const observeEl = target.closest('.work-typing-line') || target;
-        if (!('IntersectionObserver' in window)) {
-          typeLine();
+      const startTyping = (target, text) => {
+        if (target.dataset.typed === 'true') return;
+        target.dataset.typed = 'true';
+        if (reduceMotion || window.matchMedia('(max-width: 768px)').matches) {
+          target.textContent = text;
           return;
         }
+        target.textContent = '';
+        let index = 0;
+        const tick = () => {
+          index += 1;
+          target.textContent = text.slice(0, index);
+          if (index < text.length) window.setTimeout(tick, 48);
+        };
+        tick();
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-          if (!entries.some((entry) => entry.isIntersecting)) return;
-          observer.disconnect();
-          typeLine();
-        }, { threshold: 0, rootMargin: '160px 0px' });
-        observer.observe(observeEl);
+      const boot = () => {
+        document.querySelectorAll('[data-type-text]').forEach((target) => {
+          const text = (target.dataset.typeText || target.textContent || '').trim();
+          if (!text) return;
+          if (!target.textContent.trim()) target.textContent = text;
 
-        const rect = observeEl.getBoundingClientRect();
-        if (rect.bottom > 0 && rect.top < (window.innerHeight || 800) + 160) {
-          observer.disconnect();
-          typeLine();
-        }
-      });
+          const line = target.closest('.work-typing-line') || target;
+          const tryStart = () => startTyping(target, text);
+
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+              if (!entries.some((entry) => entry.isIntersecting)) return;
+              observer.disconnect();
+              tryStart();
+            }, { threshold: 0, rootMargin: '240px 0px' });
+            observer.observe(line);
+          }
+
+          const rect = line.getBoundingClientRect();
+          const vh = window.innerHeight || document.documentElement.clientHeight || 800;
+          if (rect.top < vh + 240 && rect.bottom > -80) tryStart();
+          window.setTimeout(tryStart, 450);
+        });
+      };
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+      else window.setTimeout(boot, 0);
     })();
   </script>
 
