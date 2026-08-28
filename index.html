@@ -8608,6 +8608,363 @@
       }
     }
 
+    .services-engine__head {
+      text-align: center;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .services-engine__flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 34px;
+      align-items: stretch;
+    }
+
+    .services-engine__flow-step {
+      position: relative;
+      border: 1px solid rgba(143, 216, 232, 0.22);
+      background: rgba(5, 25, 33, 0.55);
+      border-radius: 20px;
+      padding: 18px 14px 16px;
+      text-align: center;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .services-engine__flow-step:not(:last-child)::after {
+      content: "\2192";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8fd8e8;
+      font-size: 18px;
+      z-index: 2;
+    }
+
+    .services-engine__flow-icon {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      border-radius: 12px;
+      background: rgba(143, 216, 232, 0.1);
+      color: #8fd8e8;
+    }
+
+    .services-engine__flow-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .services-engine__flow-step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #f4fbff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .services-engine__flow-step span {
+      display: block;
+      color: rgba(244, 251, 255, 0.68);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .services-engine__deliverables {
+      margin-top: 28px;
+      border: 1px solid rgba(143, 216, 232, 0.22);
+      border-radius: 22px;
+      background: rgba(5, 25, 33, 0.45);
+      padding: 20px 16px 18px;
+      overflow: hidden;
+    }
+
+    .services-engine__deliverables h3 {
+      margin: 0 0 18px;
+      color: #8fd8e8;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .services-engine__deliverables-track {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+
+    .services-engine__deliverable {
+      flex: 1 0 150px;
+      min-width: 150px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .services-engine__deliverable-icon {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      color: #8fd8e8;
+    }
+
+    .services-engine__deliverable-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .services-engine__deliverable strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f4fbff;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .services-engine__deliverable span {
+      display: block;
+      color: rgba(244, 251, 255, 0.64);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .services-engine__plus {
+      flex: 0 0 auto;
+      align-self: center;
+      color: #8fd8e8;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 0 2px;
+    }
+
+    .services-engine__cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .services-engine__card {
+      border: 1px solid rgba(143, 216, 232, 0.22);
+      background: rgba(5, 25, 33, 0.5);
+      border-radius: 22px;
+      padding: 22px 18px 20px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .services-engine__card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .services-engine__card-num {
+      color: rgba(244, 251, 255, 0.42);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .services-engine__card-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(143, 216, 232, 0.1);
+      color: #8fd8e8;
+      flex-shrink: 0;
+    }
+
+    .services-engine__card-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .services-engine__card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #f4fbff;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .services-engine__card span {
+      color: rgba(244, 251, 255, 0.68);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .services-engine__footer {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .services-engine__audit-cta {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #8fd8e8, #6ec8db);
+      color: #071f28;
+      text-decoration: none;
+      box-shadow: 0 20px 54px rgba(143, 216, 232, 0.28);
+      transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+    }
+
+    .services-engine__audit-cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 70px rgba(143, 216, 232, 0.38);
+    }
+
+    .services-engine__audit-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(7, 31, 40, 0.12);
+      color: #071f28;
+    }
+
+    .services-engine__audit-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .services-engine__audit-copy strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .services-engine__audit-copy span {
+      display: block;
+      font-size: 12px;
+      line-height: 1.45;
+      color: rgba(7, 31, 40, 0.82);
+    }
+
+    .services-engine__audit-arrow {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(7, 31, 40, 0.88);
+      color: #8fd8e8;
+      font-size: 18px;
+    }
+
+    .services-engine__trust {
+      display: grid;
+      gap: 12px;
+    }
+
+    .services-engine__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(244, 251, 255, 0.78);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .services-engine__trust-item svg {
+      width: 18px;
+      height: 18px;
+      color: #8fd8e8;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .services-engine__flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-engine__flow-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .services-engine__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-engine__footer {
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-engine__flow,
+      .services-engine__cards {
+        grid-template-columns: 1fr;
+      }
+
+      .services-engine__audit-cta {
+        grid-template-columns: auto 1fr;
+      }
+
+      .services-engine__audit-arrow {
+        display: none;
+      }
+    }
+
     .content-transform {
       display: grid;
       grid-template-columns: repeat(6, minmax(120px, 1fr));
@@ -8883,27 +9240,164 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="services">
+    <section class="section glow-section services-engine" id="services">
       <div class="site-shell">
-        <div class="section-head reveal">
+        <div class="services-engine__head reveal">
           <span class="label-pill">Services</span>
           <h2>THE VIXPOD CONTENT ENGINE</h2>
           <p class="lead">One recording. Multiple platforms. One consistent content system.</p>
         </div>
-        <div class="content-engine-flow reveal">
-          <article class="engine-step"><strong>Record</strong><span>Podcast / Interview / Webinar</span></article>
-          <article class="engine-step"><strong>Edit</strong><span>Storytelling / Sound / Colour / Motion</span></article>
-          <article class="engine-step"><strong>Repurpose</strong><span>Shorts / Reels / LinkedIn / Social</span></article>
-          <article class="engine-step"><strong>Distribute</strong><span>Platform-ready content</span></article>
-          <article class="engine-step"><strong>Optimize</strong><span>Review performance and improve future content</span></article>
+
+        <div class="services-engine__flow reveal" aria-label="Content engine workflow">
+          <article class="services-engine__flow-step">
+            <span class="services-engine__flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M19 11v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v3"/><path d="M8 21h8"/></svg></span>
+            <strong>Record</strong>
+            <span>Podcast / Interview / Webinar</span>
+          </article>
+          <article class="services-engine__flow-step">
+            <span class="services-engine__flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h4"/><path d="M7 13h7"/><path d="m16 8 3 4-3 4"/></svg></span>
+            <strong>Edit</strong>
+            <span>Storytelling / Sound / Colour / Motion</span>
+          </article>
+          <article class="services-engine__flow-step">
+            <span class="services-engine__flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6z"/><path d="M10 7h8"/><path d="M10 11h8"/><path d="M10 15h5"/></svg></span>
+            <strong>Repurpose</strong>
+            <span>Shorts / Reels / LinkedIn / Social</span>
+          </article>
+          <article class="services-engine__flow-step">
+            <span class="services-engine__flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>
+            <strong>Distribute</strong>
+            <span>Platform-ready content</span>
+          </article>
+          <article class="services-engine__flow-step">
+            <span class="services-engine__flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18V8"/><path d="M10 18V5"/><path d="M16 18v-7"/><path d="M22 18V3"/></svg></span>
+            <strong>Optimize</strong>
+            <span>Review performance and improve future content</span>
+          </article>
         </div>
-        <div class="content-system-grid reveal">
-          <article class="content-system-card"><strong>01 Podcast Production</strong><span>Long-form podcast editing designed for YouTube and professional distribution.</span></article>
-          <article class="content-system-card"><strong>02 Short-Form Content</strong><span>High-retention Shorts and Reels extracted from long-form conversations.</span></article>
-          <article class="content-system-card"><strong>03 Motion Graphics</strong><span>Professional titles, callouts, charts, maps, B-roll and visual storytelling.</span></article>
-          <article class="content-system-card"><strong>04 Social Content</strong><span>Platform-specific content for Instagram, LinkedIn and X.</span></article>
-          <article class="content-system-card"><strong>05 Content Management</strong><span>Organise, schedule and maintain a consistent content pipeline.</span></article>
-          <article class="content-system-card"><strong>06 YouTube Packaging</strong><span>Thumbnails, titles, structure and visual packaging designed for stronger click and retention potential.</span></article>
+
+        <div class="services-engine__deliverables reveal">
+          <h3>What You Get From One Podcast Episode</h3>
+          <div class="services-engine__deliverables-track">
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2 2.78 2.78 0 0 0-.42 1.58v3a2.78 2.78 0 0 0 .42 1.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2 2.78 2.78 0 0 0 .42-1.58v-3a2.78 2.78 0 0 0-.42-1.58Z"/></svg></span>
+              <strong>1 YouTube Episode</strong>
+              <span>Edited long-form video</span>
+            </article>
+            <span class="services-engine__plus" aria-hidden="true">+</span>
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/></svg></span>
+              <strong>8&ndash;12 Shorts &amp; Reels</strong>
+              <span>High-retention clips for every platform</span>
+            </article>
+            <span class="services-engine__plus" aria-hidden="true">+</span>
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></span>
+              <strong>LinkedIn Clips</strong>
+              <span>Professional clips for reach &amp; authority</span>
+            </article>
+            <span class="services-engine__plus" aria-hidden="true">+</span>
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 13h2"/><path d="M11 13h6"/><path d="M7 9h10"/></svg></span>
+              <strong>Captions</strong>
+              <span>Engaging captions that boost retention</span>
+            </article>
+            <span class="services-engine__plus" aria-hidden="true">+</span>
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4"/><path d="M8 7v10"/><path d="M12 4v16"/><path d="M16 8v8"/><path d="M20 10v4"/></svg></span>
+              <strong>Motion Graphics</strong>
+              <span>Titles, callouts, charts, B-roll &amp; more</span>
+            </article>
+            <span class="services-engine__plus" aria-hidden="true">+</span>
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-4 4-2-2-5 5"/></svg></span>
+              <strong>Thumbnails &amp; Titles</strong>
+              <span>Click-worthy visuals that get noticed</span>
+            </article>
+            <span class="services-engine__plus" aria-hidden="true">+</span>
+            <article class="services-engine__deliverable">
+              <span class="services-engine__deliverable-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 10h6"/><path d="M7 14h4"/><path d="M15 10h2"/><path d="M15 14h2"/><path d="M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 2v-2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg></span>
+              <strong>Social Posts</strong>
+              <span>Ready-to-post content for all platforms</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="services-engine__cards reveal">
+          <article class="services-engine__card">
+            <div class="services-engine__card-top">
+              <span class="services-engine__card-num">01</span>
+              <span class="services-engine__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z"/><path d="M19 11v1a7 7 0 0 1-14 0v-1"/></svg></span>
+            </div>
+            <strong>Podcast Production</strong>
+            <span>Long-form podcast editing designed for YouTube and professional publishing.</span>
+          </article>
+          <article class="services-engine__card">
+            <div class="services-engine__card-top">
+              <span class="services-engine__card-num">02</span>
+              <span class="services-engine__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/></svg></span>
+            </div>
+            <strong>Short-Form Content</strong>
+            <span>High-retention Shorts and Reels extracted from long-form conversations.</span>
+          </article>
+          <article class="services-engine__card">
+            <div class="services-engine__card-top">
+              <span class="services-engine__card-num">03</span>
+              <span class="services-engine__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 18 9 5 9-5"/></svg></span>
+            </div>
+            <strong>Motion Graphics</strong>
+            <span>Professional titles, callouts, charts, maps, B-roll and visual storytelling.</span>
+          </article>
+          <article class="services-engine__card">
+            <div class="services-engine__card-top">
+              <span class="services-engine__card-num">04</span>
+              <span class="services-engine__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><path d="M4 17h16"/></svg></span>
+            </div>
+            <strong>Social Content</strong>
+            <span>Platform-specific content for Instagram, LinkedIn and X (Twitter).</span>
+          </article>
+          <article class="services-engine__card">
+            <div class="services-engine__card-top">
+              <span class="services-engine__card-num">05</span>
+              <span class="services-engine__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M4 11h16"/></svg></span>
+            </div>
+            <strong>Content Management</strong>
+            <span>Organise, schedule and maintain a consistent content pipeline.</span>
+          </article>
+          <article class="services-engine__card">
+            <div class="services-engine__card-top">
+              <span class="services-engine__card-num">06</span>
+              <span class="services-engine__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="m10 10 4 2-4 2v-4Z"/></svg></span>
+            </div>
+            <strong>YouTube Packaging</strong>
+            <span>Thumbnails, titles, structure and visual packaging for more clicks and retention.</span>
+          </article>
+        </div>
+
+        <div class="services-engine__footer reveal">
+          <a class="services-engine__audit-cta" href="#talk">
+            <span class="services-engine__audit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/><path d="M11 8v6"/></svg></span>
+            <span class="services-engine__audit-copy">
+              <strong>Get a Free Content Audit</strong>
+              <span>We&rsquo;ll review your latest podcast or long-form video and show you how we can turn it into 10+ pieces of content.</span>
+            </span>
+            <span class="services-engine__audit-arrow" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="btn btn--glass" href="#work">VIEW OUR WORK <span aria-hidden="true">&#8594;</span></a>
+          <div class="services-engine__trust">
+            <div class="services-engine__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V7l-8-4Z"/></svg>
+              <span>Built for Real Estate Brands</span>
+            </div>
+            <div class="services-engine__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
+              <span>Fast Turnaround Times</span>
+            </div>
+            <div class="services-engine__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 20c1.5-3.5 4.8-5 7-5s5.5 1.5 7 5"/></svg>
+              <span>One Content Partner for Everything</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
