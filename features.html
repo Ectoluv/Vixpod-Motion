@@ -6929,21 +6929,6 @@
       animation: heroCursorBlink 0.8s steps(2, start) infinite;
     }
 
-    .work-typing-line {
-      min-height: 32px;
-      margin-top: 14px;
-      color: rgba(205,247,255,0.96);
-      font-size: clamp(16px, 2vw, 24px);
-      line-height: 1.3;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      text-shadow: 0 0 24px rgba(143,216,232,0.2);
-    }
-
-    #features .work-typing-line {
-      margin-bottom: 6px;
-    }
-
     .btn--hero-primary {
       gap: 10px;
       color: #071f28;
@@ -7926,6 +7911,152 @@
       transform: perspective(1400px) translate3d(0, 0, 0) scale(1.16);
     }
 
+
+    .content-system-grid,
+    .content-engine-flow,
+    .process-flow,
+    .credibility-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .content-system-card,
+    .engine-step,
+    .process-step,
+    .credibility-pill {
+      border: 1px solid rgba(148, 225, 241, 0.22);
+      background: rgba(255, 255, 255, 0.045);
+      border-radius: 26px;
+      padding: clamp(18px, 2.6vw, 28px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-system-card strong,
+    .engine-step strong,
+    .process-step strong,
+    .credibility-pill strong {
+      display: block;
+      color: #f4fbff;
+      font-size: clamp(18px, 1.7vw, 24px);
+      line-height: 1.14;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .content-system-card span,
+    .engine-step span,
+    .process-step span,
+    .credibility-pill span {
+      color: rgba(244, 251, 255, 0.68);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .content-output-visual {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
+      max-width: 720px;
+    }
+
+    .content-output-visual__item {
+      border: 1px solid rgba(148, 225, 241, 0.22);
+      background: rgba(5, 25, 33, 0.72);
+      border-radius: 999px;
+      padding: 14px 18px;
+      color: #f4fbff;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      box-shadow: 0 18px 48px rgba(143, 216, 232, 0.1);
+    }
+
+    .content-output-visual__arrow {
+      color: #8fd8e8;
+      font-size: 24px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .audit-asset-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+    }
+
+    .audit-asset-list li {
+      border: 1px solid rgba(148, 225, 241, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      color: rgba(244, 251, 255, 0.78);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      padding: 10px 13px;
+      text-transform: uppercase;
+    }
+
+    .content-transform {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .content-transform__step {
+      position: relative;
+      border: 1px solid rgba(148, 225, 241, 0.22);
+      background: rgba(255, 255, 255, 0.045);
+      border-radius: 22px;
+      min-height: 118px;
+      padding: 18px 14px;
+      display: grid;
+      align-content: center;
+      color: #f4fbff;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      line-height: 1.22;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .content-transform__step:not(:last-child)::after {
+      content: "\2192";
+      position: absolute;
+      right: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8fd8e8;
+      font-size: 18px;
+      z-index: 2;
+    }
+
+    @media (max-width: 900px) {
+      .content-transform {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .content-transform__step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .content-transform,
+      .content-system-grid,
+      .content-engine-flow,
+      .process-flow,
+      .credibility-pill-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -7978,7 +8109,6 @@
         <div class="section-head reveal">
           <span class="label-pill">Why Vixpod Motion</span>
           <h2 class="section-heading">Built for Real-Estate Creators Who Need Consistent Premium Content</h2>
-          <p class="work-typing-line" aria-live="polite"><span class="work-typed-text" data-type-text="Specialized in the content real-estate brands actually need.">Specialized in the content real-estate brands actually need.</span><span class="hero-typing-cursor" aria-hidden="true">|</span></p>
           <p class="section-copy">A streamlined editing system designed for podcasts, YouTube channels, realtor brands, and property-investment content pipelines.</p>
         </div>
 
@@ -8040,12 +8170,12 @@
           <p class="lead">We help real-estate businesses replace scattered editing with a consistent content system built for trust, authority, and long-term visibility.</p>
         </div>
 
-        <article class="why-client-review trust-reveal" style="--trust-delay: 0s;" aria-label="Verified client review from Maya Chen">
-          <span class="why-client-review__mark"><img decoding="async" src="assets/images/reviews/avatar-01.jpg" alt="Maya Chen" width="52" height="52" loading="lazy" /></span>
+        <article class="why-client-review trust-reveal" style="--trust-delay: 0s;" aria-label="Vixpod Motion content partner focus">
+          <span class="why-client-review__mark"><img decoding="async" src="assets/images/logo-icon.svg" alt="" width="52" height="52" loading="lazy" /></span>
           <div>
-            <span class="why-client-review__eyebrow">Verified Client Review</span>
-            <h3>Maya Chen</h3>
-            <p>&ldquo;Our listing reels finally hold attention past the first three seconds. Buyers message us from the cuts.&rdquo; &mdash; Luxury Listing Agent</p>
+            <span class="why-client-review__eyebrow">Content Partner Focus</span>
+            <h3>Built For Real-Estate Brands</h3>
+            <p>Podcast editing, short-form repurposing, motion graphics, and social content stay inside one consistent production workflow.</p>
           </div>
         </article>
 
@@ -8125,88 +8255,39 @@
       </div>
     </section>
     
+
 <section class="section trust-section glow-section" id="client-feedback" data-trust-section>
       <div class="site-shell">
         <div class="section-head trust-title-block trust-reveal">
-          <span class="label-pill">Reviews</span>
-          <h2>Client Feedback</h2>
-          <p class="lead">Property brands and creators on the cuts, pacing, and delivery that keep listings moving.</p>
-        </div>
-      </div>
-
-      <div class="review-marquee" aria-label="Scrolling client reviews">
-        <div class="review-marquee__row" data-direction="left">
-          <div class="review-marquee__track">
-            <article class="review-float-card" style="--float-delay: 0s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-01.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Maya Chen</strong><span class="review-float-card__role">Luxury Listing Agent</span><p class="review-float-card__quote">&ldquo;Our listing reels finally hold attention past the first three seconds. Buyers message us from the cuts.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.4s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-02.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Jordan Hale</strong><span class="review-float-card__role">Property Creator</span><p class="review-float-card__quote">&ldquo;Fast turnaround, cinematic feel, and pacing that just works. Worth every penny.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.8s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-03.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Priya Nair</strong><span class="review-float-card__role">Brokerage Marketing</span><p class="review-float-card__quote">&ldquo;They took long-form tours and made them genuinely scroll-stopping for our team pages.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.2s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-04.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Ethan Brooks</strong><span class="review-float-card__role">Short-Stay Brand</span><p class="review-float-card__quote">&ldquo;The edits feel premium without being over-produced. Perfect for our rental brand.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.6s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-05.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Sofia Reyes</strong><span class="review-float-card__role">Real Estate Coach</span><p class="review-float-card__quote">&ldquo;My highlight reels finally feel like trailers. Subscribers messaged me about them.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-06.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Marcus Webb</strong><span class="review-float-card__role">Development Studio</span><p class="review-float-card__quote">&ldquo;Color grading and sound design are next level. Our project films look far more expensive.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.4s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-07.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Aisha Rahman</strong><span class="review-float-card__role">Boutique Agency</span><p class="review-float-card__quote">&ldquo;Reliable, fast, and visually crisp. We outsource all client property edits here now.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.8s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-08.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Liam Porter</strong><span class="review-float-card__role">Short-Form Realtor</span><p class="review-float-card__quote">&ldquo;Energy, cuts, transitions â€” everything hits. Best editors I&rsquo;ve worked with.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.2s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-09.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Hannah Cole</strong><span class="review-float-card__role">Portfolio Manager</span><p class="review-float-card__quote">&ldquo;Insane attention to detail. Our retention jumped after the first batch landed.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.6s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-10.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Noah Kim</strong><span class="review-float-card__role">Channel Owner</span><p class="review-float-card__quote">&ldquo;They understand real-estate storytelling â€” not just pretty cuts, but conversion pacing.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-01.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Maya Chen</strong><span class="review-float-card__role">Luxury Listing Agent</span><p class="review-float-card__quote">&ldquo;Our listing reels finally hold attention past the first three seconds. Buyers message us from the cuts.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.4s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-02.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Jordan Hale</strong><span class="review-float-card__role">Property Creator</span><p class="review-float-card__quote">&ldquo;Fast turnaround, cinematic feel, and pacing that just works. Worth every penny.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.8s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-03.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Priya Nair</strong><span class="review-float-card__role">Brokerage Marketing</span><p class="review-float-card__quote">&ldquo;They took long-form tours and made them genuinely scroll-stopping for our team pages.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.2s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-04.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Ethan Brooks</strong><span class="review-float-card__role">Short-Stay Brand</span><p class="review-float-card__quote">&ldquo;The edits feel premium without being over-produced. Perfect for our rental brand.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.6s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-05.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Sofia Reyes</strong><span class="review-float-card__role">Real Estate Coach</span><p class="review-float-card__quote">&ldquo;My highlight reels finally feel like trailers. Subscribers messaged me about them.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-06.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Marcus Webb</strong><span class="review-float-card__role">Development Studio</span><p class="review-float-card__quote">&ldquo;Color grading and sound design are next level. Our project films look far more expensive.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.4s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-07.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Aisha Rahman</strong><span class="review-float-card__role">Boutique Agency</span><p class="review-float-card__quote">&ldquo;Reliable, fast, and visually crisp. We outsource all client property edits here now.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.8s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-08.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Liam Porter</strong><span class="review-float-card__role">Short-Form Realtor</span><p class="review-float-card__quote">&ldquo;Energy, cuts, transitions â€” everything hits. Best editors I&rsquo;ve worked with.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.2s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-09.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Hannah Cole</strong><span class="review-float-card__role">Portfolio Manager</span><p class="review-float-card__quote">&ldquo;Insane attention to detail. Our retention jumped after the first batch landed.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.6s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-10.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Noah Kim</strong><span class="review-float-card__role">Channel Owner</span><p class="review-float-card__quote">&ldquo;They understand real-estate storytelling â€” not just pretty cuts, but conversion pacing.&rdquo;</p></article>
-          </div>
+          <span class="label-pill">Content System</span>
+          <h2>CONTENT BUILT FOR REAL-ESTATE BRANDS</h2>
+          <p class="lead">From one recording to a complete content system - built for consistent publishing across every platform.</p>
         </div>
 
-        <div class="review-marquee__row" data-direction="right">
-          <div class="review-marquee__track">
-            <article class="review-float-card" style="--float-delay: 0.2s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-11.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Elena Vasquez</strong><span class="review-float-card__role">Luxury Concierge</span><p class="review-float-card__quote">&ldquo;Drone-to-doorstep storytelling that feels polished and personal. Clients notice immediately.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.6s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-12.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Caleb Ortiz</strong><span class="review-float-card__role">Investor Media</span><p class="review-float-card__quote">&ldquo;Market callouts and captions are clean. Our deal updates finally look institutional.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-13.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Zoe Lang</strong><span class="review-float-card__role">Staging + Content</span><p class="review-float-card__quote">&ldquo;They grade interiors so rooms feel inviting, not washed out. Huge difference on social.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.4s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-14.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Ryan Patel</strong><span class="review-float-card__role">Team Lead</span><p class="review-float-card__quote">&ldquo;Revision rounds are painless. Deadlines stick, and the package always arrives platform-ready.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.8s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-15.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Isla Morgan</strong><span class="review-float-card__role">New-Build Marketing</span><p class="review-float-card__quote">&ldquo;From raw walkthroughs to launch day films â€” the system is clear and the quality is consistent.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.2s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-16.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Diego Santos</strong><span class="review-float-card__role">Podcast Host</span><p class="review-float-card__quote">&ldquo;Clip packages from our property podcast sound crisp and look branded. Growth finally moved.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.6s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-17.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Nora Blake</strong><span class="review-float-card__role">Social Media Manager</span><p class="review-float-card__quote">&ldquo;We get vertical, square, and story cuts in one drop. Content calendar stays full without stress.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-18.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Amir Khan</strong><span class="review-float-card__role">Boutique Broker</span><p class="review-float-card__quote">&ldquo;Subtle motion graphics, clean lower thirds, no clutter. Exactly the tone our brand needed.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.4s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-19.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Claire Nguyen</strong><span class="review-float-card__role">Relocation Specialist</span><p class="review-float-card__quote">&ldquo;Neighborhood stories feel warm and credible. Families trust the videos before they book a tour.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.8s;"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-20.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Felix Grant</strong><span class="review-float-card__role">Property Tour Lead</span><p class="review-float-card__quote">&ldquo;4K delivery, sharp sound, and pacing built for attention. Our open-house clips convert.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.2s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-11.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Elena Vasquez</strong><span class="review-float-card__role">Luxury Concierge</span><p class="review-float-card__quote">&ldquo;Drone-to-doorstep storytelling that feels polished and personal. Clients notice immediately.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 0.6s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-12.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Caleb Ortiz</strong><span class="review-float-card__role">Investor Media</span><p class="review-float-card__quote">&ldquo;Market callouts and captions are clean. Our deal updates finally look institutional.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-13.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Zoe Lang</strong><span class="review-float-card__role">Staging + Content</span><p class="review-float-card__quote">&ldquo;They grade interiors so rooms feel inviting, not washed out. Huge difference on social.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.4s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-14.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Ryan Patel</strong><span class="review-float-card__role">Team Lead</span><p class="review-float-card__quote">&ldquo;Revision rounds are painless. Deadlines stick, and the package always arrives platform-ready.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 1.8s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-15.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Isla Morgan</strong><span class="review-float-card__role">New-Build Marketing</span><p class="review-float-card__quote">&ldquo;From raw walkthroughs to launch day films â€” the system is clear and the quality is consistent.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.2s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-16.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Diego Santos</strong><span class="review-float-card__role">Podcast Host</span><p class="review-float-card__quote">&ldquo;Clip packages from our property podcast sound crisp and look branded. Growth finally moved.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 2.6s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-17.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Nora Blake</strong><span class="review-float-card__role">Social Media Manager</span><p class="review-float-card__quote">&ldquo;We get vertical, square, and story cuts in one drop. Content calendar stays full without stress.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-18.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Amir Khan</strong><span class="review-float-card__role">Boutique Broker</span><p class="review-float-card__quote">&ldquo;Subtle motion graphics, clean lower thirds, no clutter. Exactly the tone our brand needed.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.4s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-19.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Claire Nguyen</strong><span class="review-float-card__role">Relocation Specialist</span><p class="review-float-card__quote">&ldquo;Neighborhood stories feel warm and credible. Families trust the videos before they book a tour.&rdquo;</p></article>
-            <article class="review-float-card" style="--float-delay: 3.8s;" aria-hidden="true"><img class="review-float-card__avatar" src="assets/images/reviews/avatar-20.jpg" alt="" width="56" height="56" loading="lazy" decoding="async" /><strong class="review-float-card__name">Felix Grant</strong><span class="review-float-card__role">Property Tour Lead</span><p class="review-float-card__quote">&ldquo;4K delivery, sharp sound, and pacing built for attention. Our open-house clips convert.&rdquo;</p></article>
-          </div>
+        <div class="content-transform trust-reveal" aria-label="One podcast episode repurposed into a complete content system">
+          <div class="content-transform__step">1 Podcast Episode</div>
+          <div class="content-transform__step">YouTube</div>
+          <div class="content-transform__step">8-12 Short-Form Videos</div>
+          <div class="content-transform__step">LinkedIn Clips</div>
+          <div class="content-transform__step">Instagram Reels</div>
+          <div class="content-transform__step">Social Content</div>
         </div>
-      </div>
 
-      <div class="site-shell">
         <div class="trust-grid trust-grid--review-cta">
-          <article class="clutch-widget-card trust-reveal" style="--trust-delay: 0.08s;">
-            <div class="review-cta-content">
-              <span class="review-cta-eyebrow">Client Feedback</span>
-              <h3>Help Us Build Trust on Clutch</h3>
-              <p>Your feedback helps future real-estate creators and business brands understand the quality, communication, and delivery experience behind Vixpod Motion.</p>
-              <small>Takes less than 2 minutes.</small>
-            </div>
-            <div class="review-cta-action">
-              <a class="clutch-review-link" href="https://review.clutch.co/review?provider_id=0a2630ec-af69-49a4-a386-653f5c769ab3" target="_blank" rel="noopener noreferrer" aria-label="Review Vixpod Motion on Clutch">
-                <span class="clutch-review-mark" aria-hidden="true"><span>C</span><i></i></span>
-                <span class="clutch-review-label">Review us</span>
-                <span class="clutch-review-arrow" aria-hidden="true">&rsaquo;</span>
-              </a>
-            </div>
+          <article class="trust-card trust-card--clutch trust-reveal">
+            <span class="label-pill">Client Feedback</span>
+            <h3>Help Us Build Trust on Clutch</h3>
+            <p>Your feedback helps future real-estate creators and business brands understand the quality, communication, and delivery experience behind Vixpod Motion.</p>
+            <a class="btn btn--glass clutch-review-btn" href="https://review.clutch.co/review?provider_id=0a2630ec-af69-49a4-a386-653f5c769ab3" target="_blank" rel="noopener" aria-label="Review Vixpod Motion on Clutch">
+              <span class="clutch-review-btn__icon" aria-hidden="true">C</span>
+              <span>Review us</span>
+              <span aria-hidden="true">&#8599;</span>
+            </a>
+            <span class="trust-card__note">Takes less than 2 minutes.</span>
           </article>
         </div>
       </div>
     </section>
-
 
 <section class="section section--compact glow-section" id="features-cta">
   <div class="site-shell">
@@ -9725,88 +9806,7 @@
     }
   </script>
   <script>
-    (() => {
-      // Only this exact hero line may use the typing animation.
-      const ALLOWED = 'Start Publishing Videos That Sell.';
-      const target = document.querySelector('.hero-typing-line .hero-typed-text[data-hero-text]');
-      if (!target) return;
 
-      const text = (target.dataset.heroText || '').trim();
-      if (text !== ALLOWED) {
-        target.textContent = text;
-        return;
-      }
-
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) {
-        target.textContent = text;
-        return;
-      }
-
-      let index = 0;
-      const tick = () => {
-        target.textContent = text.slice(0, index);
-        index += 1;
-        if (index <= text.length + 1) window.setTimeout(tick, 48);
-      };
-      window.setTimeout(tick, 260);
-    })();
-
-    (() => {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      const startTyping = (target, text) => {
-        if (target.dataset.typed === 'true') return;
-        target.dataset.typed = 'true';
-        if (reduceMotion) {
-          target.textContent = text;
-          return;
-        }
-        let index = 0;
-        const tick = () => {
-          index += 1;
-          target.textContent = text.slice(0, index);
-          if (index < text.length) window.setTimeout(tick, 42);
-        };
-        tick();
-      };
-
-      const boot = () => {
-        document.querySelectorAll('[data-type-text]').forEach((target) => {
-          const text = (target.dataset.typeText || target.textContent || '').trim();
-          if (!text) return;
-          if (!target.textContent.trim()) target.textContent = text;
-
-          const line = target.closest('.work-typing-line') || target;
-          const tryStart = () => startTyping(target, text);
-          const inView = () => {
-            const rect = line.getBoundingClientRect();
-            const vh = window.innerHeight || document.documentElement.clientHeight || 800;
-            return rect.top < vh + 80 && rect.bottom > 24;
-          };
-
-          if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-              if (!entries.some((entry) => entry.isIntersecting)) return;
-              observer.disconnect();
-              tryStart();
-            }, { threshold: 0, rootMargin: '160px 0px' });
-            observer.observe(line);
-          }
-
-          if (inView()) tryStart();
-          const onScroll = () => {
-            if (!inView()) return;
-            window.removeEventListener('scroll', onScroll);
-            tryStart();
-          };
-          window.addEventListener('scroll', onScroll, { passive: true });
-        });
-      };
-
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
-      else window.setTimeout(boot, 0);
-    })();
   </script>
 
   <script src="assets/performance.js?v=smooth-fast-20260812" defer></script>
