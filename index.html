@@ -8965,6 +8965,383 @@
       }
     }
 
+    .why-vixpod__head {
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .why-vixpod__brand {
+      color: #8fd8e8;
+      text-shadow: 0 0 24px rgba(143, 216, 232, 0.35);
+    }
+
+    .why-vixpod__cards {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .why-vixpod__card {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 12px;
+      min-height: 100%;
+      border: 1px solid rgba(143, 216, 232, 0.22);
+      background: rgba(5, 25, 33, 0.5);
+      border-radius: 22px;
+      padding: 18px 14px 16px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .why-vixpod__card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .why-vixpod__card-num {
+      color: rgba(244, 251, 255, 0.42);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .why-vixpod__card-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(143, 216, 232, 0.1);
+      color: #8fd8e8;
+      flex-shrink: 0;
+    }
+
+    .why-vixpod__card-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .why-vixpod__card strong {
+      display: block;
+      color: #f4fbff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .why-vixpod__card > span {
+      color: rgba(244, 251, 255, 0.68);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .why-vixpod__card-footer {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid rgba(143, 216, 232, 0.12);
+    }
+
+    .why-vixpod__tags,
+    .why-vixpod__service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .why-vixpod__tags span,
+    .why-vixpod__service-tags span {
+      border: 1px solid rgba(143, 216, 232, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 999px;
+      color: rgba(244, 251, 255, 0.72);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 5px 8px;
+      text-transform: uppercase;
+    }
+
+    .why-vixpod__platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: #8fd8e8;
+    }
+
+    .why-vixpod__platforms svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .why-vixpod__mini-flow {
+      display: grid;
+      gap: 8px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .why-vixpod__mini-flow span {
+      border: 1px solid rgba(143, 216, 232, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      color: rgba(244, 251, 255, 0.72);
+      padding: 7px 8px;
+      line-height: 1.35;
+    }
+
+    .why-vixpod__mini-flow em {
+      color: #8fd8e8;
+      font-style: normal;
+      font-size: 14px;
+    }
+
+    .why-vixpod__pipeline {
+      margin-top: 28px;
+      border: 1px solid rgba(143, 216, 232, 0.22);
+      border-radius: 24px;
+      background: rgba(5, 25, 33, 0.45);
+      padding: 20px 16px 18px;
+    }
+
+    .why-vixpod__pipeline h3 {
+      margin: 0 0 18px;
+      color: #8fd8e8;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .why-vixpod__pipeline-track {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .why-vixpod__pipeline-step {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      text-align: center;
+    }
+
+    .why-vixpod__pipeline-step:not(:last-child)::after {
+      content: "\2192";
+      position: absolute;
+      right: -10px;
+      top: 42%;
+      color: #8fd8e8;
+      font-size: 16px;
+      z-index: 2;
+    }
+
+    .why-vixpod__pipeline-step strong {
+      display: block;
+      color: rgba(244, 251, 255, 0.82);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .why-vixpod__pipeline-media {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(143, 216, 232, 0.16);
+      background: rgba(2, 7, 10, 0.5);
+      aspect-ratio: 16 / 10;
+    }
+
+    .why-vixpod__pipeline-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .why-vixpod__pipeline-media--reels {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      aspect-ratio: auto;
+      padding: 6px;
+      background: rgba(2, 7, 10, 0.35);
+    }
+
+    .why-vixpod__pipeline-reel {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      border: 1px solid rgba(143, 216, 232, 0.12);
+    }
+
+    .why-vixpod__pipeline-reel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .why-vixpod__pipeline-reel span {
+      position: absolute;
+      left: 6px;
+      right: 6px;
+      bottom: 10%;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    .why-vixpod__pipeline-play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(2, 7, 10, 0.08), rgba(2, 7, 10, 0.42));
+    }
+
+    .why-vixpod__pipeline-play span {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(143, 216, 232, 0.92);
+      color: #071f28;
+      font-size: 12px;
+    }
+
+    .why-vixpod__published {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+      min-height: 100%;
+      padding: 10px 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(143, 216, 232, 0.16);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .why-vixpod__published-platforms,
+    .why-vixpod__published-services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .why-vixpod__published-platforms span,
+    .why-vixpod__published-services span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: rgba(244, 251, 255, 0.72);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .why-vixpod__published-platforms svg,
+    .why-vixpod__published-services svg {
+      width: 14px;
+      height: 14px;
+      color: #8fd8e8;
+      fill: currentColor;
+    }
+
+    .why-vixpod__footer {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .why-vixpod__trust {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .why-vixpod__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(244, 251, 255, 0.78);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.35;
+    }
+
+    .why-vixpod__trust-item svg {
+      width: 16px;
+      height: 16px;
+      color: #8fd8e8;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1180px) {
+      .why-vixpod__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-vixpod__pipeline-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-vixpod__pipeline-step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .why-vixpod__footer {
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .why-vixpod__cards,
+      .why-vixpod__pipeline-track,
+      .why-vixpod__trust {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .content-transform {
       display: grid;
       grid-template-columns: repeat(6, minmax(120px, 1fr));
@@ -9402,19 +9779,171 @@
       </div>
     </section>
 
-    <section class="section glow-section" id="why-vixpod">
+    <section class="section glow-section why-vixpod" id="why-vixpod">
       <div class="site-shell">
-        <div class="section-head reveal">
+        <div class="why-vixpod__head reveal">
           <span class="label-pill">Why Vixpod</span>
-          <h2>WHY REAL-ESTATE BRANDS CHOOSE VIXPOD</h2>
+          <h2>WHY REAL-ESTATE BRANDS CHOOSE <span class="why-vixpod__brand">VIXPOD</span></h2>
           <p class="lead">Editing, short-form repurposing, motion graphics and publishing structure under one content partner.</p>
         </div>
-        <div class="content-system-grid reveal">
-          <article class="content-system-card"><strong>01 One Recording To Multiple Assets</strong><span>Turn every podcast episode into a complete content package.</span></article>
-          <article class="content-system-card"><strong>02 Built For Real Estate</strong><span>Our workflow is designed around property, investment, brokerage and real-estate media content.</span></article>
-          <article class="content-system-card"><strong>03 Consistent Publishing</strong><span>No more chasing different freelancers for every platform.</span></article>
-          <article class="content-system-card"><strong>04 One Content Partner</strong><span>Editing, Shorts, motion graphics and social content stay connected.</span></article>
-          <article class="content-system-card"><strong>05 Brand Consistency</strong><span>Keep your visual identity consistent across YouTube, Instagram, LinkedIn and other platforms.</span></article>
+
+        <div class="why-vixpod__cards reveal">
+          <article class="why-vixpod__card">
+            <div class="why-vixpod__card-top">
+              <span class="why-vixpod__card-num">01</span>
+              <span class="why-vixpod__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 6V4h10v2"/><path d="m10 12 2 2 4-4"/></svg></span>
+            </div>
+            <strong>One Recording To Multiple Assets</strong>
+            <span>Turn every podcast episode into a complete content package.</span>
+            <div class="why-vixpod__card-footer">
+              <div class="why-vixpod__platforms" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2 2.78 2.78 0 0 0-.42 1.58v3a2.78 2.78 0 0 0 .42 1.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2 2.78 2.78 0 0 0 .42-1.58v-3a2.78 2.78 0 0 0-.42-1.58Z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/></svg>
+                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/></svg>
+                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                <span>+</span>
+              </div>
+            </div>
+          </article>
+          <article class="why-vixpod__card">
+            <div class="why-vixpod__card-top">
+              <span class="why-vixpod__card-num">02</span>
+              <span class="why-vixpod__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/><path d="M4 12h16"/></svg></span>
+            </div>
+            <strong>Built For Real Estate</strong>
+            <span>Our workflow is designed around property, investment, brokerage and real-estate media content.</span>
+            <div class="why-vixpod__card-footer">
+              <div class="why-vixpod__tags">
+                <span>Investors</span><span>Brokers</span><span>Agents</span><span>Developers</span><span>CRE Brands</span>
+              </div>
+            </div>
+          </article>
+          <article class="why-vixpod__card">
+            <div class="why-vixpod__card-top">
+              <span class="why-vixpod__card-num">03</span>
+              <span class="why-vixpod__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M4 11h16"/><circle cx="12" cy="15" r="2"/></svg></span>
+            </div>
+            <strong>Consistent Publishing</strong>
+            <span>No more chasing different freelancers for every platform.</span>
+            <div class="why-vixpod__card-footer">
+              <div class="why-vixpod__mini-flow">
+                <span>One Episode<br>60 Min</span>
+                <em>&#8595;</em>
+                <span>10+ Assets<br>Multiple Platforms</span>
+              </div>
+            </div>
+          </article>
+          <article class="why-vixpod__card">
+            <div class="why-vixpod__card-top">
+              <span class="why-vixpod__card-num">04</span>
+              <span class="why-vixpod__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c1.2-3 3.4-4.5 6-4.5s4.8 1.5 6 4.5"/><path d="M14.5 20c.8-2 2.2-3 3.5-3s2.7 1 3.5 3"/></svg></span>
+            </div>
+            <strong>One Content Partner</strong>
+            <span>Editing, Shorts, motion graphics and social content stay connected.</span>
+            <div class="why-vixpod__card-footer">
+              <div class="why-vixpod__service-tags">
+                <span>Edit</span><span>Shorts</span><span>Motion</span><span>Captions</span><span>Thumbnails</span><span>Social</span>
+              </div>
+            </div>
+          </article>
+          <article class="why-vixpod__card">
+            <div class="why-vixpod__card-top">
+              <span class="why-vixpod__card-num">05</span>
+              <span class="why-vixpod__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V7l-8-4Z"/><path d="m9.5 12.5 1.8 1.8 3.7-3.8"/></svg></span>
+            </div>
+            <strong>Brand Consistency</strong>
+            <span>Keep your visual identity consistent across YouTube, Instagram, LinkedIn and other platforms.</span>
+            <div class="why-vixpod__card-footer">
+              <div class="why-vixpod__platforms" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2 2.78 2.78 0 0 0-.42 1.58v3a2.78 2.78 0 0 0 .42 1.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2 2.78 2.78 0 0 0 .42-1.58v-3a2.78 2.78 0 0 0-.42-1.58Z"/></svg>
+                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/></svg>
+                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M7 7h4v4H7z"/></svg>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="why-vixpod__pipeline reveal">
+          <h3>From Podcast To Published</h3>
+          <div class="why-vixpod__pipeline-track" aria-label="Content transformation pipeline">
+            <article class="why-vixpod__pipeline-step">
+              <strong>Podcast Episode</strong>
+              <div class="why-vixpod__pipeline-media">
+                <img src="assets/images/hero-podcast-production.jpg" alt="Podcast recording session" width="480" height="300" loading="lazy" decoding="async" />
+              </div>
+            </article>
+            <article class="why-vixpod__pipeline-step">
+              <strong>Long-Form Video</strong>
+              <div class="why-vixpod__pipeline-media">
+                <img src="https://img.youtube.com/vi/96hap1wGl5U/hqdefault.jpg" alt="Long-form YouTube episode" width="480" height="300" loading="lazy" decoding="async" />
+                <div class="why-vixpod__pipeline-play" aria-hidden="true"><span>&#9654;</span></div>
+              </div>
+            </article>
+            <article class="why-vixpod__pipeline-step">
+              <strong>Shorts / Reels</strong>
+              <div class="why-vixpod__pipeline-media why-vixpod__pipeline-media--reels">
+                <div class="why-vixpod__pipeline-reel"><img src="assets/images/instagram-reel-dymv4zoxval.jpg" alt="" width="240" height="426" loading="lazy" decoding="async" /><span>Cash Flow Is King.</span></div>
+                <div class="why-vixpod__pipeline-reel"><img src="assets/images/instagram-reel-dzmmknmi5s4.jpg" alt="" width="240" height="426" loading="lazy" decoding="async" /><span>Location Beats Price.</span></div>
+                <div class="why-vixpod__pipeline-reel"><img src="assets/images/instagram-reel-dyew3pyn9gs.jpg" alt="" width="240" height="426" loading="lazy" decoding="async" /><span>Real Estate Is A Long Game.</span></div>
+              </div>
+            </article>
+            <article class="why-vixpod__pipeline-step">
+              <strong>Social Clips</strong>
+              <div class="why-vixpod__pipeline-media why-vixpod__pipeline-media--reels" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                <div class="why-vixpod__pipeline-reel"><img src="assets/images/instagram-reel-dav3jbyt5mk.jpg" alt="" width="240" height="426" loading="lazy" decoding="async" /><span>3 Tips For New Real Estate Investors</span></div>
+                <div class="why-vixpod__pipeline-reel"><img src="assets/images/instagram-reel-dvwjcmaeruo.jpg" alt="" width="240" height="426" loading="lazy" decoding="async" /><span>Don&rsquo;t Buy Assets. Build Equity.</span></div>
+              </div>
+            </article>
+            <article class="why-vixpod__pipeline-step">
+              <strong>Published Everywhere</strong>
+              <div class="why-vixpod__published">
+                <div class="why-vixpod__published-platforms" aria-hidden="true">
+                  <span><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.42a2.78 2.78 0 0 0-1.95 2 2.78 2.78 0 0 0-.42 1.58v3a2.78 2.78 0 0 0 .42 1.58 2.78 2.78 0 0 0 1.95 2C5.12 20 12 20 12 20s6.88 0 8.59-.42a2.78 2.78 0 0 0 1.95-2 2.78 2.78 0 0 0 .42-1.58v-3a2.78 2.78 0 0 0-.42-1.58Z"/></svg>YouTube</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/></svg>Shorts</span>
+                  <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/></svg>Instagram</span>
+                  <span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>LinkedIn</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>X</span>
+                </div>
+                <div class="why-vixpod__published-services" aria-hidden="true">
+                  <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/></svg>Captions</span>
+                  <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/></svg>Thumbnails</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M4 10v4"/><path d="M8 7v10"/><path d="M12 4v16"/><path d="M16 8v8"/><path d="M20 10v4"/></svg>Motion</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M7 10h6"/><path d="M7 14h4"/><path d="M15 10h2"/><path d="M15 14h2"/></svg>Posts</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="why-vixpod__footer reveal">
+          <a class="services-engine__audit-cta" href="#talk">
+            <span class="services-engine__audit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/><path d="M11 8v6"/></svg></span>
+            <span class="services-engine__audit-copy">
+              <strong>Get a Free Content Audit</strong>
+              <span>We&rsquo;ll review your latest podcast or long-form video and show you how we can turn it into 10+ pieces of content.</span>
+            </span>
+            <span class="services-engine__audit-arrow" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="btn btn--glass" href="#work">VIEW OUR WORK <span aria-hidden="true">&#8594;</span></a>
+          <div class="why-vixpod__trust">
+            <div class="why-vixpod__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V7l-8-4Z"/></svg>
+              <span>Real Estate Content Experts</span>
+            </div>
+            <div class="why-vixpod__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 10-14h-7l0-6Z"/></svg>
+              <span>Fast Turnaround</span>
+            </div>
+            <div class="why-vixpod__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a4 4 0 0 1 4-4h1"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/><path d="M6 14h12v5H6z"/></svg>
+              <span>Dedicated Support</span>
+            </div>
+            <div class="why-vixpod__trust-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 20c1.5-3.5 4.8-5 7-5s5.5 1.5 7 5"/></svg>
+              <span>One Partner for Everything</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
