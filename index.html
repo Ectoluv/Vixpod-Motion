@@ -9543,6 +9543,166 @@
       }
     }
 
+
+    /* Brand trust section: balanced headline and readable audience cards. */
+    #brand-trust .section-head {
+      width: min(1000px, 100%);
+      margin-bottom: 38px;
+    }
+
+    #brand-trust .section-head h2 {
+      max-width: 100%;
+      margin-inline: auto;
+      font-size: clamp(38px, 4.15vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -0.052em;
+      text-wrap: balance;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    #brand-trust .section-head .lead {
+      max-width: 720px;
+      margin-inline: auto;
+      line-height: 1.65;
+    }
+
+    #brand-trust .credibility-pill-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    #brand-trust .credibility-pill {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      align-content: start;
+      align-items: center;
+      column-gap: 15px;
+      row-gap: 7px;
+      min-width: 0;
+      min-height: 144px;
+      padding: 22px 22px;
+      overflow: hidden;
+      border: 1px solid rgba(143, 216, 232, 0.22);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(18, 50, 61, 0.78), rgba(7, 30, 39, 0.84));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.045), 0 14px 34px rgba(0,0,0,0.12);
+      transition: transform 380ms var(--ease), border-color 380ms var(--ease), box-shadow 380ms var(--ease), background 380ms var(--ease);
+    }
+
+    #brand-trust .credibility-pill::before {
+      content: attr(data-mark);
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(143,216,232,0.2);
+      border-radius: 15px;
+      background: linear-gradient(145deg, rgba(143,216,232,0.18), rgba(143,216,232,0.06));
+      color: #a7e5ef;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 8px 22px rgba(0,0,0,0.14);
+      transition: transform 380ms var(--ease), background 380ms var(--ease), box-shadow 380ms var(--ease);
+    }
+
+    #brand-trust .credibility-pill::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 22px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(143,216,232,0.6), transparent);
+      opacity: 0.55;
+      transform: scaleX(0.45);
+      transition: transform 380ms var(--ease), opacity 380ms var(--ease);
+    }
+
+    #brand-trust .credibility-pill strong {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: end;
+      margin: 0;
+      color: #f4fbff;
+      font-size: 15px;
+      line-height: 1.25;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    #brand-trust .credibility-pill span {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: start;
+      color: rgba(228,241,245,0.74);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    #brand-trust .credibility-pill:hover {
+      transform: translateY(-4px);
+      border-color: rgba(143,216,232,0.42);
+      background: linear-gradient(145deg, rgba(20, 59, 71, 0.88), rgba(7, 30, 39, 0.92));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 20px 42px rgba(0,0,0,0.2), 0 0 24px rgba(143,216,232,0.07);
+    }
+
+    #brand-trust .credibility-pill:hover::before {
+      transform: translateY(-2px) rotate(-4deg);
+      background: linear-gradient(145deg, rgba(143,216,232,0.26), rgba(143,216,232,0.09));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 0 22px rgba(143,216,232,0.12);
+    }
+
+    #brand-trust .credibility-pill:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      #brand-trust .credibility-pill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      #brand-trust .section-head h2 {
+        font-size: clamp(34px, 9vw, 48px);
+      }
+
+      #brand-trust .credibility-pill-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      #brand-trust .credibility-pill {
+        min-height: 0;
+        padding: 18px;
+      }
+
+      #brand-trust .credibility-pill::after {
+        left: 18px;
+        right: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #brand-trust .credibility-pill,
+      #brand-trust .credibility-pill::before,
+      #brand-trust .credibility-pill::after {
+        transition: none !important;
+      }
+
+      #brand-trust .credibility-pill:hover {
+        transform: none;
+      }
+    }
+
 </style>
 </head>
 
@@ -9952,16 +10112,16 @@
       <div class="site-shell">
         <div class="section-head reveal">
           <span class="label-pill">Trust</span>
-          <h2>BUILT FOR CONTENT-DRIVEN REAL-ESTATE BRANDS</h2>
+          <h2>BUILT FOR REAL ESTATE BRANDS</h2>
           <p class="lead">Real-estate content support for podcast, investment, brokerage, development and property media teams.</p>
         </div>
         <div class="credibility-pill-grid reveal">
-          <article class="credibility-pill"><strong>Real Estate</strong><span>Property-first storytelling and editing direction.</span></article>
-          <article class="credibility-pill"><strong>Podcast</strong><span>Long-form edits plus clips from the same recording.</span></article>
-          <article class="credibility-pill"><strong>Investment</strong><span>Clear visual communication for market and deal content.</span></article>
-          <article class="credibility-pill"><strong>Brokerage</strong><span>Consistent assets for agents and team brands.</span></article>
-          <article class="credibility-pill"><strong>Development</strong><span>Polished visual systems for launches and project updates.</span></article>
-          <article class="credibility-pill"><strong>Property Media</strong><span>Content packaging built for recurring publication.</span></article>
+          <article class="credibility-pill" data-mark="RE"><strong>Real Estate</strong><span>Property-first storytelling and editing direction.</span></article>
+          <article class="credibility-pill" data-mark="POD"><strong>Podcast</strong><span>Long-form edits plus clips from the same recording.</span></article>
+          <article class="credibility-pill" data-mark="INV"><strong>Investment</strong><span>Clear visual communication for market and deal content.</span></article>
+          <article class="credibility-pill" data-mark="BRO"><strong>Brokerage</strong><span>Consistent assets for agents and team brands.</span></article>
+          <article class="credibility-pill" data-mark="DEV"><strong>Development</strong><span>Polished visual systems for launches and project updates.</span></article>
+          <article class="credibility-pill" data-mark="PM"><strong>Property Media</strong><span>Content packaging built for recurring publication.</span></article>
         </div>
       </div>
     </section>
