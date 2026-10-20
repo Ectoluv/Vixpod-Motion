@@ -9331,6 +9331,161 @@
       }
     }
 
+
+    /* Why Vixpod: a clearer, consistent feature-card system */
+    #why-vixpod .content-system-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    #why-vixpod .content-system-card {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 244px;
+      overflow: hidden;
+      padding: 22px 20px 24px;
+      border: 1px solid rgba(143, 216, 232, 0.2);
+      border-radius: 24px;
+      background: linear-gradient(155deg, rgba(19, 53, 64, 0.78), rgba(6, 30, 39, 0.84));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.045), 0 16px 40px rgba(0,0,0,0.12);
+      transition: transform 420ms var(--ease), border-color 420ms var(--ease), box-shadow 420ms var(--ease), background 420ms var(--ease);
+    }
+
+    #why-vixpod .content-system-card::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 0 0 auto;
+      height: 2px;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(143,216,232,0.8), transparent);
+      opacity: 0.58;
+      transform: scaleX(0.48);
+      transition: transform 420ms var(--ease), opacity 420ms var(--ease);
+    }
+
+    #why-vixpod .content-system-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(143,216,232,0.44);
+      background: linear-gradient(155deg, rgba(23, 64, 76, 0.86), rgba(6, 30, 39, 0.92));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 22px 46px rgba(0,0,0,0.22), 0 0 28px rgba(143,216,232,0.08);
+    }
+
+    #why-vixpod .content-system-card:hover::before {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .content-system-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .content-system-card__number {
+      color: rgba(169, 220, 231, 0.78);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+    }
+
+    .content-system-card__icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(143,216,232,0.18);
+      border-radius: 14px;
+      background: rgba(143,216,232,0.09);
+      color: #8fd8e8;
+      transition: transform 420ms var(--ease), background 420ms var(--ease), box-shadow 420ms var(--ease);
+    }
+
+    .content-system-card__icon svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    #why-vixpod .content-system-card:hover .content-system-card__icon {
+      transform: translateY(-2px) rotate(-4deg);
+      background: rgba(143,216,232,0.15);
+      box-shadow: 0 0 22px rgba(143,216,232,0.14);
+    }
+
+    #why-vixpod .content-system-card h3 {
+      margin: 0 0 10px;
+      color: #f4fbff;
+      font-size: clamp(15px, 1.25vw, 18px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      text-transform: none;
+      text-wrap: pretty;
+    }
+
+    #why-vixpod .content-system-card p {
+      margin: 0;
+      color: rgba(228, 241, 245, 0.72);
+      font-size: 13px;
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    @media (max-width: 1080px) {
+      #why-vixpod .content-system-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      #why-vixpod .content-system-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      #why-vixpod .content-system-card {
+        min-height: 220px;
+        padding: 18px;
+      }
+
+      .content-system-card__top {
+        margin-bottom: 22px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      #why-vixpod .content-system-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #why-vixpod .content-system-card {
+        min-height: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #why-vixpod .content-system-card,
+      #why-vixpod .content-system-card::before,
+      .content-system-card__icon {
+        transition: none !important;
+      }
+
+      #why-vixpod .content-system-card:hover {
+        transform: none;
+      }
+    }
+
 </style>
 </head>
 
@@ -9577,11 +9732,26 @@
           <p class="lead">Editing, short-form repurposing, motion graphics and publishing structure under one content partner.</p>
         </div>
         <div class="content-system-grid reveal">
-          <article class="content-system-card"><strong>01 One Recording To Multiple Assets</strong><span>Turn every podcast episode into a complete content package.</span></article>
-          <article class="content-system-card"><strong>02 Built For Real Estate</strong><span>Our workflow is designed around property, investment, brokerage and real-estate media content.</span></article>
-          <article class="content-system-card"><strong>03 Consistent Publishing</strong><span>No more chasing different freelancers for every platform.</span></article>
-          <article class="content-system-card"><strong>04 One Content Partner</strong><span>Editing, Shorts, motion graphics and social content stay connected.</span></article>
-          <article class="content-system-card"><strong>05 Brand Consistency</strong><span>Keep your visual identity consistent across YouTube, Instagram, LinkedIn and other platforms.</span></article>
+          <article class="content-system-card">
+            <div class="content-system-card__top"><span class="content-system-card__number">01</span><span class="content-system-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 21h6M12 17v4M10 9l5 2-5 2V9Z"/></svg></span></div>
+            <h3>One recording, more content</h3><p>Turn each podcast episode into a complete, ready-to-publish content package.</p>
+          </article>
+          <article class="content-system-card">
+            <div class="content-system-card__top"><span class="content-system-card__number">02</span><span class="content-system-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-5h6v5M8 10h.01M16 10h.01"/></svg></span></div>
+            <h3>Built for real estate</h3><p>A workflow shaped around property, investment, brokerage and real estate media.</p>
+          </article>
+          <article class="content-system-card">
+            <div class="content-system-card__top"><span class="content-system-card__number">03</span><span class="content-system-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 15l2 2 5-5"/></svg></span></div>
+            <h3>Consistent publishing</h3><p>Keep a dependable content schedule without coordinating multiple freelancers.</p>
+          </article>
+          <article class="content-system-card">
+            <div class="content-system-card__top"><span class="content-system-card__number">04</span><span class="content-system-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="6" r="3"/><circle cx="17" cy="18" r="3"/><path d="m9.5 10.5 5-3M9.5 13.5l5 3"/></svg></span></div>
+            <h3>One connected partner</h3><p>Editing, short-form, motion graphics and social content work as one system.</p>
+          </article>
+          <article class="content-system-card">
+            <div class="content-system-card__top"><span class="content-system-card__number">05</span><span class="content-system-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 14.7 8.5 21 9.4l-4.5 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2L3 9.4l6.3-.9L12 3Z"/><path d="M12 7v7"/></svg></span></div>
+            <h3>Brand consistency</h3><p>Carry a clear visual identity across YouTube, Instagram, LinkedIn and more.</p>
+          </article>
         </div>
       </div>
     </section>
